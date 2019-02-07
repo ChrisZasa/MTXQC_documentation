@@ -7,7 +7,7 @@ Herein explained are the customizable tables of the MTXQCvX2 universe.
 
 ```{r con_se, echo=FALSE}
 data = read.csv("example/tables/config_conse.csv", TRUE)
-knitr::kable(data, bookstab = TRUE)
+knitr::kable(data, booktabs = TRUE)
 ```
 
 
@@ -16,7 +16,7 @@ knitr::kable(data, bookstab = TRUE)
 ```{r metprofile, echo=FALSE}
 
 data = read.csv("example/tables/config_metprofile.csv", TRUE)
-knitr::kable(data, bookstab = TRUE)
+knitr::kable(data, booktabs = TRUE)
 
 ```
 
@@ -25,7 +25,7 @@ knitr::kable(data, bookstab = TRUE)
 ```{r quant1, echo=FALSE}
 
 data = read.csv("example/tables/config_quant1.csv", TRUE)
-knitr::kable(data, bookstab = TRUE)
+knitr::kable(data, booktabs = TRUE)
 
 ```
 
@@ -34,14 +34,14 @@ knitr::kable(data, bookstab = TRUE)
 ```{r inccalc, echo=FALSE}
 
 data = read.csv("example/tables/config_inccalc.csv", TRUE)
-knitr::kable(data, bookstab = TRUE)
+knitr::kable(data, booktabs = TRUE)
 
 ```
 
 ```{r backup, echo=FALSE}
 
 data = read.csv("example/tables/config_backup.csv", TRUE)
-knitr::kable(data, bookstab = TRUE)
+knitr::kable(data, booktabs = TRUE)
 
 ```
 

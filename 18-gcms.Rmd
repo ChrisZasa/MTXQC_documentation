@@ -7,16 +7,18 @@ In the following paragraphs details of GC-MS settings are described in detail. T
 The table \@ref(tab:gerstel) summarises the defined parameter for method settings of the Gerstel MPS.
 
 ```{r gerstel, echo=FALSE}
+library(magrittr)
+library(kableExtra)
 
 mps = read.csv("example/tables/mps_settings.csv", TRUE)
 
 #knitr::kable(mps, booktabs = TRUE, caption = "Parameter of Gerstel MPS settings")
 # 
-knitr::kable(mps, booktabs = TRUE, caption = "Parameter of Gerstel MPS settings") %>%
-   kable_styling() %>%
-   group_rows(index = c("System" = 3, 
-                       "MPS Liq. Inj." = 15,
-                        "MPS Rinse" = 8))
+# knitr::kable(mps, booktabs = TRUE, caption = "Parameter of Gerstel MPS settings") %>%
+#    kable_styling() %>%
+#    group_rows(index = c("System" = 3, 
+#                        "MPS Liq. Inj." = 15,
+#                         "MPS Rinse" = 8))
   
 
 ```
@@ -48,11 +50,11 @@ mps = read.csv("example/tables/gc_settings.csv", TRUE)
 
 #knitr::kable(mps, booktabs = TRUE, caption = "Parameter of Gerstel MPS settings")
 # 
-knitr::kable(mps, booktabs = TRUE, caption = "Parameter of Gerstel MPS settings") %>%
-   kable_styling() %>%
-   group_rows(index = c("System" = 2, 
-                       "Front Inlet" = 5,
-                        "Oven" = 3))
+# knitr::kable(mps, booktabs = TRUE, caption = "Parameter of Gerstel MPS settings") %>%
+#    kable_styling() %>%
+#    group_rows(index = c("System" = 2, 
+#                        "Front Inlet" = 5,
+#                         "Oven" = 3))
   
 
 ```
@@ -69,7 +71,7 @@ grad = data.frame(Rate = c("Initial", 5, 7, 12),
                   Target_Temp = c(68, 120, 200, 320),
                   Duration = c( 2, 0, 0, 6))
 
-kable(grad, booktabs = TRUE, caption = "GC gradient profile - Rate shown in (K/min), Target Temp in (&deg;C), Duration in (min)")
+kable(grad, booktabs = TRUE, caption = "GC gradient profile - Rate shown in (K/min), Target Temp in (C), Duration in (min)")
 
 ```
 
@@ -80,12 +82,12 @@ kable(grad, booktabs = TRUE, caption = "GC gradient profile - Rate shown in (K/m
 mps = read.csv("example/tables/ms_setting.csv", TRUE)
 
 #knitr::kable(mps, booktabs = TRUE, caption = "Parameter of Gerstel MPS settings")
-# 
-knitr::kable(mps, booktabs = TRUE, caption = "Parameter of Gerstel MPS settings") %>%
-   kable_styling() %>%
-   group_rows(index = c("Filament" = 4, 
-                       "Mass detection" = 7,
-                        "Ion source" = 3))
+# # 
+# knitr::kable(mps, booktabs = TRUE, caption = "Parameter of Gerstel MPS settings") %>%
+#    kable_styling() %>%
+#    group_rows(index = c("Filament" = 4, 
+#                        "Mass detection" = 7,
+#                         "Ion source" = 3))
   
 
 ```

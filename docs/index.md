@@ -1,7 +1,7 @@
 --- 
 title: "MTXQCvX2 documentation"
 author: "Christin Zasada"
-date: "`r Sys.Date()`"
+date: "2019-02-07"
 github-repo: chriszasa/MTXQC_documentation
 site: bookdown::bookdown_site
 documentclass: book
@@ -25,9 +25,4 @@ Nevertheless MTXQCvX2 includes a module in order to integrate all kind of data p
 Both workflows are introduced in the distinct chapters including their required input parameter (chapter [Workflow Maui](#wf:maui) and [Workflow Metmax](#wf:metmax)). 
 
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
+

@@ -60,11 +60,17 @@ Adjust the volumes of the alkane stocks in order to create a curve shaped distri
 
 ## Materials
 
-```{r chemicals,echo=FALSE}
 
-chem = read.csv("example/tables/chemicals.csv", TRUE)
+Table: (\#tab:chemicals)List of chemicals including company names and catalog number.
 
-knitr::kable(chem, booktabs = TRUE, caption = "List of chemicals including company names and catalog number.")
-```
+Chemical                                        Catalog.Nb     Company          Storage 
+----------------------------------------------  -------------  ---------------  --------
+Chloroform                                      132950-1L      Sigma            RT      
+Cinnamic acid                                   C80857  5g     Aldrich          RT      
+Hexane for HPLC > 97% (GC)                      34859-1L       Sigma            RT      
+Methanol                                        1060351000     Merck            RT      
+Methoxyamine hydrochloride                      226904-5G      Aldrich          RT      
+MSTFA - Methyltrimethylsilyltrifluoracetamide   701270201      Macherey-Nagel   4°C     
+Pyridine                                        270970-100ML   Sigma            RT      
 
 

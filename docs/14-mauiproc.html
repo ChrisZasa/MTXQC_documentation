@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>MTXQCvX2 documentation</title>
+  <title>Chapter 14 Data processing - MAUI | MTXQCvX2 documentation</title>
   <meta name="description" content="This is the offical documentation for the MTXQCvX2 toolbox.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="MTXQCvX2 documentation" />
+  <meta property="og:title" content="Chapter 14 Data processing - MAUI | MTXQCvX2 documentation" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="chriszasa/MTXQC_documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="MTXQCvX2 documentation" />
+  <meta name="twitter:title" content="Chapter 14 Data processing - MAUI | MTXQCvX2 documentation" />
   
   <meta name="twitter:description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="2-intro.html">
+<link rel="prev" href="13-protocols-gc-tof-ms-measurement.html">
+<link rel="next" href="15-metmaxexport.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -235,27 +235,95 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">MTXQCvX2 documentation</h1>
-<p class="author"><em>Christin Zasada</em></p>
-<p class="date"><em>2019-02-07</em></p>
+<div id="mauiproc" class="section level1">
+<h1><span class="header-section-number">Chapter 14</span> Data processing - MAUI</h1>
+<div id="processing-in-chromatof" class="section level2">
+<h2><span class="header-section-number">14.1</span> Processing In ChromaToF</h2>
+<p>Create a new folder in ChromaToF Pegasus Acquired Samples and import your files. The processing of files for Maui-assisted annotation is a two step process. Therefore two data processing methods have to be set up and applied to all files.</p>
+<div id="resampling" class="section level3">
+<h3><span class="header-section-number">14.1.1</span> Resampling</h3>
+<p>Resampling is commonly applied and results into a data transformation enabling an improved detection of low abundant peaks and a reduction of noise. (Maybe include an example?)</p>
+<p>The processing methods requires to tick <code>Export of ...</code>. Subsequently, you are asked to define an output folder and the following paramter:</p>
+<ul>
+<li>Reduction rate: 4</li>
+<li>Beginning to end of the file</li>
+<li><code>.peg</code>-files</li>
+</ul>
 </div>
-<div id="welcome" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Welcome</h1>
-<p>This documentation introduced to you how to use MTXQCvX2 in order to assess the quality of your GC-MS derived data, perform the determination of calibration curves and absolute quantification. It furthermore provides you two normalisation strategies and the calculation of quantities in, e.g., pmol/1e+6 cells or pmol/mg tissue.</p>
-<p>MTXQCvX2 does also enable the calculation of stable isotopic incorporation and the evaluation of the underlying data, the mass isotopomer distributions (MIDs).</p>
-<p>The tool has been set up to support the in-lab developed workflow for quantitative metabolomics experiments using the in-house developed software Maui for the annotation of data. MTXQCvX2 bridges the gap between quality control and first data post-processing / analysis of GC-MS derived data (MTXQCvX2_part1, MTXQCvX2_part2).</p>
-<p>Nevertheless MTXQCvX2 includes a module in order to integrate all kind of data provided in spreadsheet-format, e.g., derived from metmax, extracting required information and creating corresponding files (MTXQCvX2_part4).</p>
-<p>Both workflows are introduced in the distinct chapters including their required input parameter (chapter <a href="3-wf-maui.html#wf:maui">Workflow Maui</a> and <a href="4-wf-metmax.html#wf:metmax">Workflow Metmax</a>).</p>
+<div id="combo-export-.cdf-.csv" class="section level3">
+<h3><span class="header-section-number">14.1.2</span> Combo-export (<code>.cdf</code> &amp; <code>.csv</code>)</h3>
+<p>Re-import the generated <code>.peg</code>-files into a subfolder and apply the following data processing method.</p>
+<p>Activate the box <code>asddasd</code> and define for both file types the following parameter.</p>
+<p><code>.cdf</code>-file:</p>
+<ul>
+<li>export directory</li>
+<li></li>
+</ul>
+<p><code>.csv</code>-file:</p>
+<ul>
+<li>export directory</li>
+<li></li>
+</ul>
+</div>
+</div>
+<div id="maui-notes" class="section level2">
+<h2><span class="header-section-number">14.2</span> Maui notes</h2>
+</div>
+<div id="mauiexport" class="section level2">
+<h2><span class="header-section-number">14.3</span> Maui exports</h2>
+<p>With initiation of a project folder via <code>MTXQCvX2_init.Rmd</code> you created an <code>input</code>-folder containing three subfolders: <code>gc</code>, <code>inc</code>, <code>quant</code>. In the following all files that should be exported and copied into these folders are described in detail.</p>
+<div id="inputgc..." class="section level3">
+<h3><span class="header-section-number">14.3.1</span> <code>input/gc/...</code></h3>
+<p>Four input files are exported in order to assess the quality of the GC-MS performance of the run. The menue <code>Diagnostics</code> is selectable via right click on your Maui project name. Only the cinnamic acid peak areas are exported via the function <code>Export Quantification</code> with right click on the actual container.</p>
+<p>Exported Files:</p>
+<ul>
+<li><code>Alcane_intensities.csv</code> - Diagnostics/Export Alcane intensities</li>
+<li><code>InternalStandard.csv</code> - cinAcid container, Export quantification, rename!</li>
+<li><code>MassSum-73.csv</code> - Diagnostics/QC Mass Sum Export; enter: 73 for m/z 73</li>
+<li><code>PeakDensities-Chroma.csv</code> - Diagnostics/ExportPeakDensities</li>
+</ul>
+</div>
+<div id="inputquant..." class="section level3">
+<h3><span class="header-section-number">14.3.2</span> <code>input/quant/...</code></h3>
+<p>Only one container has to be exported and contains the peak areas of each metabolite and measurement. Keep in mind that you should have uploaded <code>pTop5 mass list</code> for the correct determination of peak areas in case of labeling with stable isotopes.</p>
+<p>A further note - Maui performs absolute quantification and stores values in the <code>samplePeakGroups-QMQ</code> container. These quantities are determined by polynominal regression, and not linear regression.</p>
+<p>The file <code>ManualQuantTable.tsv</code> is automatically generated by Maui during processing the absolute quantification.</p>
+<p>Exported Files:</p>
+<ul>
+<li><code>ManualQuantTable.tsv</code> - location: <code>Maui-project/export/QM-AbsoluteQuantification/...</code><a href="#fn30" class="footnoteRef" id="fnref30"><sup>30</sup></a></li>
+<li><code>quantMassAreasMatrix.csv</code> - Quantification export of the container <code>samplesPeakGroups</code></li>
+</ul>
+</div>
+<div id="inputinc..." class="section level3">
+<h3><span class="header-section-number">14.3.3</span> <code>input/inc/...</code></h3>
+<p>This exports are only required in case of an experiment including the application of stable isotopes. It´s this the case you should have performed two things:</p>
+<ol style="list-style-type: decimal">
+<li>Used the optional upload of <code>pTop5 mass list</code></li>
+<li>Go through the pSIRM workflow in Maui</li>
+</ol>
+<p>Exported Files:</p>
+<ul>
+<li><code>DataMatrix.csv</code> - Export % Label of container <code>pSIRM-samplesPeakGroups</code></li>
+<li><code>pSIRM_SpectraData.csv</code> - pSIRM Spectra Export of container <code>pSIRM-samplesPeakGroups</code><a href="#fn31" class="footnoteRef" id="fnref31"><sup>31</sup></a></li>
+</ul>
 
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="30">
+<li id="fn30"><p>Don´t forget to rename it - e.g., e17123cz<a href="14-mauiproc.html#fnref30">↩</a></p></li>
+<li id="fn31"><p>Requires the selection of Natural_MIDs.txt<a href="14-mauiproc.html#fnref31">↩</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="2-intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="13-protocols-gc-tof-ms-measurement.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="15-metmaxexport.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

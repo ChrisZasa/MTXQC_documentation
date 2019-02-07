@@ -1,0 +1,2798 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 17 Appendix - Tables | MTXQCvX2 documentation</title>
+  <meta name="description" content="This is the offical documentation for the MTXQCvX2 toolbox.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 17 Appendix - Tables | MTXQCvX2 documentation" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
+  <meta name="github-repo" content="chriszasa/MTXQC_documentation" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 17 Appendix - Tables | MTXQCvX2 documentation" />
+  
+  <meta name="twitter:description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
+  
+
+<meta name="author" content="Christin Zasada">
+
+
+<meta name="date" content="2019-02-07">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="16-FAQ.html">
+<link rel="next" href="18-psirm.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MTXQC documentation</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a></li>
+<li class="chapter" data-level="2" data-path="2-intro.html"><a href="2-intro.html"><i class="fa fa-check"></i><b>2</b> Content of MTXQCvX documentation</a></li>
+<li class="chapter" data-level="3" data-path="3-wf-maui.html"><a href="3-wf-maui.html"><i class="fa fa-check"></i><b>3</b> Workflow for Maui-annotation projects</a><ul>
+<li class="chapter" data-level="3.1" data-path="3-wf-maui.html"><a href="3-wf-maui.html#read-this-in-case"><i class="fa fa-check"></i><b>3.1</b> Read this in case</a></li>
+<li class="chapter" data-level="3.2" data-path="3-wf-maui.html"><a href="3-wf-maui.html#quick-view"><i class="fa fa-check"></i><b>3.2</b> Quick view</a></li>
+<li class="chapter" data-level="3.3" data-path="3-wf-maui.html"><a href="3-wf-maui.html#input-files"><i class="fa fa-check"></i><b>3.3</b> Input files</a></li>
+<li class="chapter" data-level="3.4" data-path="3-wf-maui.html"><a href="3-wf-maui.html#annotation-file"><i class="fa fa-check"></i><b>3.4</b> Annotation-file</a></li>
+<li class="chapter" data-level="3.5" data-path="3-wf-maui.html"><a href="3-wf-maui.html#sample_extracts-file"><i class="fa fa-check"></i><b>3.5</b> Sample_extracts-file</a></li>
+<li class="chapter" data-level="3.6" data-path="3-wf-maui.html"><a href="3-wf-maui.html#internal-standard"><i class="fa fa-check"></i><b>3.6</b> Internal Standard</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html"><i class="fa fa-check"></i><b>4</b> Workflow for Metmax-extracted projects</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#you-want-to-follow-this"><i class="fa fa-check"></i><b>4.1</b> You want to follow this …</a></li>
+<li class="chapter" data-level="4.2" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#introduction"><i class="fa fa-check"></i><b>4.2</b> Introduction</a></li>
+<li class="chapter" data-level="4.3" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#quick-view-1"><i class="fa fa-check"></i><b>4.3</b> Quick view</a></li>
+<li class="chapter" data-level="4.4" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#input-files-1"><i class="fa fa-check"></i><b>4.4</b> Input files</a></li>
+<li class="chapter" data-level="4.5" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#annotation-file-1"><i class="fa fa-check"></i><b>4.5</b> Annotation-file</a></li>
+<li class="chapter" data-level="4.6" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#sample_extracts-file-1"><i class="fa fa-check"></i><b>4.6</b> Sample_extracts-file</a></li>
+<li class="chapter" data-level="4.7" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#update-metabolite-names-in-conversion_metabolite.csv"><i class="fa fa-check"></i><b>4.7</b> Update metabolite names in <code>conversion_metabolite.csv</code></a><ul>
+<li class="chapter" data-level="4.7.1" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#match-your-annotation-with-library-names"><i class="fa fa-check"></i><b>4.7.1</b> Match your annotation with library names</a></li>
+<li class="chapter" data-level="4.7.2" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#define-your-internal-standards-and-alkanes"><i class="fa fa-check"></i><b>4.7.2</b> Define your internal standards and alkanes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-init.html"><a href="5-init.html"><i class="fa fa-check"></i><b>5</b> MTXQCvX2_init</a></li>
+<li class="chapter" data-level="6" data-path="6-ExpSetup.html"><a href="6-ExpSetup.html"><i class="fa fa-check"></i><b>6</b> MTXQCvX_experimentalSetup.Rmd</a></li>
+<li class="chapter" data-level="7" data-path="7-part1.html"><a href="7-part1.html"><i class="fa fa-check"></i><b>7</b> MTXQCvX_part1.Rmd</a></li>
+<li class="chapter" data-level="8" data-path="8-part2.html"><a href="8-part2.html"><i class="fa fa-check"></i><b>8</b> MTXQCvX_part2.Rmd</a></li>
+<li class="chapter" data-level="9" data-path="9-mtxqcvx-part3-rmd.html"><a href="9-mtxqcvx-part3-rmd.html"><i class="fa fa-check"></i><b>9</b> MTXQCvX_part3.Rmd</a></li>
+<li class="chapter" data-level="10" data-path="10-mtxqcvx-part4-rmd-metmax-parser.html"><a href="10-mtxqcvx-part4-rmd-metmax-parser.html"><i class="fa fa-check"></i><b>10</b> MTXQCvX_part4.Rmd - Metmax parser</a><ul>
+<li class="chapter" data-level="10.1" data-path="10-mtxqcvx-part4-rmd-metmax-parser.html"><a href="10-mtxqcvx-part4-rmd-metmax-parser.html#this-section-explains"><i class="fa fa-check"></i><b>10.1</b> This section explains …</a></li>
+<li class="chapter" data-level="10.2" data-path="10-mtxqcvx-part4-rmd-metmax-parser.html"><a href="10-mtxqcvx-part4-rmd-metmax-parser.html#input-files-2"><i class="fa fa-check"></i><b>10.2</b> Input files</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="10-mtxqcvx-part4-rmd-metmax-parser.html"><a href="10-mtxqcvx-part4-rmd-metmax-parser.html#quantification---peakareas.csv"><i class="fa fa-check"></i><b>10.2.1</b> Quantification - PeakAreas.csv</a></li>
+<li class="chapter" data-level="10.2.2" data-path="10-mtxqcvx-part4-rmd-metmax-parser.html"><a href="10-mtxqcvx-part4-rmd-metmax-parser.html#isotope-incorporation---mids.csv"><i class="fa fa-check"></i><b>10.2.2</b> Isotope incorporation - MIDs.csv</a></li>
+<li class="chapter" data-level="10.2.3" data-path="10-mtxqcvx-part4-rmd-metmax-parser.html"><a href="10-mtxqcvx-part4-rmd-metmax-parser.html#derivatisation-efficiency---mz73.csv"><i class="fa fa-check"></i><b>10.2.3</b> Derivatisation efficiency - mz73.csv</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="11-configuration-of-mtxqcvx2-config-mtx-.html"><a href="11-configuration-of-mtxqcvx2-config-mtx-.html"><i class="fa fa-check"></i><b>11</b> Configuration of MTXQCvX2 - <code id="config">config_mtx/...</code></a><ul>
+<li class="chapter" data-level="11.1" data-path="11-configuration-of-mtxqcvx2-config-mtx-.html"><a href="11-configuration-of-mtxqcvx2-config-mtx-.html#conversion_metabolite.csv"><i class="fa fa-check"></i><b>11.1</b> <code>conversion_metabolite.csv</code></a></li>
+<li class="chapter" data-level="11.2" data-path="11-configuration-of-mtxqcvx2-config-mtx-.html"><a href="11-configuration-of-mtxqcvx2-config-mtx-.html#letter_pathway_complete.csv"><i class="fa fa-check"></i><b>11.2</b> <code>letter_pathway_complete.csv</code></a></li>
+<li class="chapter" data-level="11.3" data-path="11-configuration-of-mtxqcvx2-config-mtx-.html"><a href="11-configuration-of-mtxqcvx2-config-mtx-.html#quant1-values.csv"><i class="fa fa-check"></i><b>11.3</b> <code>quant1-values.csv</code></a></li>
+<li class="chapter" data-level="11.4" data-path="11-configuration-of-mtxqcvx2-config-mtx-.html"><a href="11-configuration-of-mtxqcvx2-config-mtx-.html#incorporation_calc.csv-mid_backups.csv"><i class="fa fa-check"></i><b>11.4</b> <code>incorporation_calc.csv</code> &amp; <code>mid_backups.csv</code></a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="12-protocols-sample-extraction.html"><a href="12-protocols-sample-extraction.html"><i class="fa fa-check"></i><b>12</b> Protocols - Sample extraction</a><ul>
+<li class="chapter" data-level="12.1" data-path="12-protocols-sample-extraction.html"><a href="12-protocols-sample-extraction.html#cell-extracts"><i class="fa fa-check"></i><b>12.1</b> Cell extracts</a></li>
+<li class="chapter" data-level="12.2" data-path="12-protocols-sample-extraction.html"><a href="12-protocols-sample-extraction.html#tissue-samples"><i class="fa fa-check"></i><b>12.2</b> Tissue samples</a></li>
+<li class="chapter" data-level="12.3" data-path="12-protocols-sample-extraction.html"><a href="12-protocols-sample-extraction.html#blood-samples"><i class="fa fa-check"></i><b>12.3</b> Blood samples</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="13-protocols-gc-tof-ms-measurement.html"><a href="13-protocols-gc-tof-ms-measurement.html"><i class="fa fa-check"></i><b>13</b> Protocols - GC-ToF-MS measurement</a><ul>
+<li class="chapter" data-level="13.1" data-path="13-protocols-gc-tof-ms-measurement.html"><a href="13-protocols-gc-tof-ms-measurement.html#sample-derivatisation"><i class="fa fa-check"></i><b>13.1</b> Sample derivatisation</a></li>
+<li class="chapter" data-level="13.2" data-path="13-protocols-gc-tof-ms-measurement.html"><a href="13-protocols-gc-tof-ms-measurement.html#gc-ms-measurement"><i class="fa fa-check"></i><b>13.2</b> GC-MS measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="14-mauiproc.html"><a href="14-mauiproc.html"><i class="fa fa-check"></i><b>14</b> Data processing - MAUI</a><ul>
+<li class="chapter" data-level="14.1" data-path="14-mauiproc.html"><a href="14-mauiproc.html#processing-in-chromatof"><i class="fa fa-check"></i><b>14.1</b> Processing In ChromaToF</a><ul>
+<li class="chapter" data-level="14.1.1" data-path="14-mauiproc.html"><a href="14-mauiproc.html#resampling"><i class="fa fa-check"></i><b>14.1.1</b> Resampling</a></li>
+<li class="chapter" data-level="14.1.2" data-path="14-mauiproc.html"><a href="14-mauiproc.html#combo-export-.cdf-.csv"><i class="fa fa-check"></i><b>14.1.2</b> Combo-export (<code>.cdf</code> &amp; <code>.csv</code>)</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="14-mauiproc.html"><a href="14-mauiproc.html#maui-notes"><i class="fa fa-check"></i><b>14.2</b> Maui notes</a></li>
+<li class="chapter" data-level="14.3" data-path="14-mauiproc.html"><a href="14-mauiproc.html#mauiexport"><i class="fa fa-check"></i><b>14.3</b> Maui exports</a><ul>
+<li class="chapter" data-level="14.3.1" data-path="14-mauiproc.html"><a href="14-mauiproc.html#inputgc..."><i class="fa fa-check"></i><b>14.3.1</b> <code>input/gc/...</code></a></li>
+<li class="chapter" data-level="14.3.2" data-path="14-mauiproc.html"><a href="14-mauiproc.html#inputquant..."><i class="fa fa-check"></i><b>14.3.2</b> <code>input/quant/...</code></a></li>
+<li class="chapter" data-level="14.3.3" data-path="14-mauiproc.html"><a href="14-mauiproc.html#inputinc..."><i class="fa fa-check"></i><b>14.3.3</b> <code>input/inc/...</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="15-metmaxexport.html"><a href="15-metmaxexport.html"><i class="fa fa-check"></i><b>15</b> Data Processing - Metmax</a><ul>
+<li class="chapter" data-level="15.1" data-path="15-metmaxexport.html"><a href="15-metmaxexport.html#resampling-1"><i class="fa fa-check"></i><b>15.1</b> Resampling</a></li>
+<li class="chapter" data-level="15.2" data-path="15-metmaxexport.html"><a href="15-metmaxexport.html#d-basic"><i class="fa fa-check"></i><b>15.2</b> 1D-basic</a></li>
+<li class="chapter" data-level="15.3" data-path="15-metmaxexport.html"><a href="15-metmaxexport.html#reference-search"><i class="fa fa-check"></i><b>15.3</b> Reference search</a></li>
+<li class="chapter" data-level="15.4" data-path="15-metmaxexport.html"><a href="15-metmaxexport.html#export-for-metmax"><i class="fa fa-check"></i><b>15.4</b> Export for Metmax</a></li>
+<li class="chapter" data-level="15.5" data-path="15-metmaxexport.html"><a href="15-metmaxexport.html#data-extraction-with-metmax"><i class="fa fa-check"></i><b>15.5</b> Data extraction with Metmax</a><ul>
+<li class="chapter" data-level="15.5.1" data-path="15-metmaxexport.html"><a href="15-metmaxexport.html#peak-areas"><i class="fa fa-check"></i><b>15.5.1</b> Peak areas</a></li>
+<li class="chapter" data-level="15.5.2" data-path="15-metmaxexport.html"><a href="15-metmaxexport.html#mids"><i class="fa fa-check"></i><b>15.5.2</b> MIDs</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="16-FAQ.html"><a href="16-FAQ.html"><i class="fa fa-check"></i><b>16</b> Frequently Asked Questions</a><ul>
+<li class="chapter" data-level="16.1" data-path="16-FAQ.html"><a href="16-FAQ.html#what-are-additional-quantification-standards"><i class="fa fa-check"></i><b>16.1</b> What are additional quantification standards</a></li>
+<li class="chapter" data-level="16.2" data-path="16-FAQ.html"><a href="16-FAQ.html#how-do-i-extend-conversion_metabolite.csv"><i class="fa fa-check"></i><b>16.2</b> How do I extend conversion_metabolite.csv</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="17-tables.html"><a href="17-tables.html"><i class="fa fa-check"></i><b>17</b> Appendix - Tables</a><ul>
+<li class="chapter" data-level="17.1" data-path="17-tables.html"><a href="17-tables.html#mtxqc-base-tables"><i class="fa fa-check"></i><b>17.1</b> MTXQC base tables</a><ul>
+<li class="chapter" data-level="17.1.1" data-path="17-tables.html"><a href="17-tables.html#config_mtx-tables"><i class="fa fa-check"></i><b>17.1.1</b> <code>config_mtx</code> tables</a><ul>
+<li class="chapter" data-level="17.1.1.1" data-path="17-tables.html"><a href="17-tables.html#app:filenames"><i class="fa fa-check"></i><b>17.1.1.1</b> conv_filenames.csv</a></li>
+<li class="chapter" data-level="17.1.1.2" data-path="17-tables.html"><a href="17-tables.html#app:filenamesManVal"><i class="fa fa-check"></i><b>17.1.1.2</b> conv_filesnames_manVal.csv</a></li>
+<li class="chapter" data-level="17.1.1.3" data-path="17-tables.html"><a href="17-tables.html#depricated-file-mq_correction.csv"><i class="fa fa-check"></i><b>17.1.1.3</b> DEPRICATED FILE: MQ_correction.csv</a></li>
+</ul></li>
+<li class="chapter" data-level="17.1.2" data-path="17-tables.html"><a href="17-tables.html#config_files-tables"><i class="fa fa-check"></i><b>17.1.2</b> <code>config_files</code> tables</a><ul>
+<li class="chapter" data-level="17.1.2.1" data-path="17-tables.html"><a href="17-tables.html#app:conse"><i class="fa fa-check"></i><b>17.1.2.1</b> conversion_metabolite.csv</a></li>
+<li class="chapter" data-level="17.1.2.2" data-path="17-tables.html"><a href="17-tables.html#app:pathway"><i class="fa fa-check"></i><b>17.1.2.2</b> letter_pathway_complete.csv</a></li>
+<li class="chapter" data-level="17.1.2.3" data-path="17-tables.html"><a href="17-tables.html#app:incorp"><i class="fa fa-check"></i><b>17.1.2.3</b> incorp_calc_masses.csv</a></li>
+<li class="chapter" data-level="17.1.2.4" data-path="17-tables.html"><a href="17-tables.html#app:quant1"><i class="fa fa-check"></i><b>17.1.2.4</b> quant1_values.csv</a></li>
+<li class="chapter" data-level="17.1.2.5" data-path="17-tables.html"><a href="17-tables.html#app:midbackup"><i class="fa fa-check"></i><b>17.1.2.5</b> mid_backups.csv</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="17-tables.html"><a href="17-tables.html#input-data"><i class="fa fa-check"></i><b>17.2</b> Input data</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="17-tables.html"><a href="17-tables.html#maui-derived-tables"><i class="fa fa-check"></i><b>17.2.1</b> MAUI derived tables</a></li>
+<li class="chapter" data-level="17.2.2" data-path="17-tables.html"><a href="17-tables.html#metmax-derived-tables"><i class="fa fa-check"></i><b>17.2.2</b> Metmax derived tables</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="17-tables.html"><a href="17-tables.html#output-data"><i class="fa fa-check"></i><b>17.3</b> Output data</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="17-tables.html"><a href="17-tables.html#experimental-setup"><i class="fa fa-check"></i><b>17.3.1</b> Experimental Setup</a></li>
+<li class="chapter" data-level="17.3.2" data-path="17-tables.html"><a href="17-tables.html#mtxqcvx2-part1"><i class="fa fa-check"></i><b>17.3.2</b> MTXQCvX2 part1</a><ul>
+<li class="chapter" data-level="17.3.2.1" data-path="17-tables.html"><a href="17-tables.html#outputgc..."><i class="fa fa-check"></i><b>17.3.2.1</b> <code id="o_gc">output/gc/...</code></a><ul>
+<li class="chapter" data-level="17.3.2.1.1" data-path="17-tables.html"><a href="17-tables.html#hm_gc_values.csv-qcmetric_xy.csv"><i class="fa fa-check"></i><b>17.3.2.1.1</b> <code>HM_GC_values.csv</code> &amp; <code>qcmetric_xy.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.1.2" data-path="17-tables.html"><a href="17-tables.html#intstandard_normfactors.csv-intstandard_stats.csv"><i class="fa fa-check"></i><b>17.3.2.1.2</b> <code>IntStandard_normfactors.csv</code> &amp; <code>IntStandard_stats.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.1.3" data-path="17-tables.html"><a href="17-tables.html#min_annotation.csv-sumarea_stats.csv"><i class="fa fa-check"></i><b>17.3.2.1.3</b> <code>Min_Annotation.csv</code> &amp; <code>SumArea_stats.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.1.4" data-path="17-tables.html"><a href="17-tables.html#mz73_data.csv"><i class="fa fa-check"></i><b>17.3.2.1.4</b> <code>mz73_data.csv</code></a></li>
+</ul></li>
+<li class="chapter" data-level="17.3.2.2" data-path="17-tables.html"><a href="17-tables.html#outputquant..."><i class="fa fa-check"></i><b>17.3.2.2</b> <code id="o_quant">output/quant/...</code></a><ul>
+<li class="chapter" data-level="17.3.2.2.1" data-path="17-tables.html"><a href="17-tables.html#calcheck_linearity.csv"><i class="fa fa-check"></i><b>17.3.2.2.1</b> <code>calcheck_linearity.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.2.2" data-path="17-tables.html"><a href="17-tables.html#calculationfiledata.csv"><i class="fa fa-check"></i><b>17.3.2.2.2</b> <code id="CalcFileData">CalculationFileData.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.2.3" data-path="17-tables.html"><a href="17-tables.html#heatmap_quant_ptop5.csv"><i class="fa fa-check"></i><b>17.3.2.2.3</b> <code>HeatMap_Quant_pTop5.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.2.4" data-path="17-tables.html"><a href="17-tables.html#ptop5_calibration_samples_lincheck.csv"><i class="fa fa-check"></i><b>17.3.2.2.4</b> <code>pTop5_Calibration_Samples_lincheck.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.2.5" data-path="17-tables.html"><a href="17-tables.html#top5_calibrationinfo_unique.csv"><i class="fa fa-check"></i><b>17.3.2.2.5</b> <code>top5_CalibrationInfo_unique.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.2.6" data-path="17-tables.html"><a href="17-tables.html#top5_qmqcurveinfo.csv"><i class="fa fa-check"></i><b>17.3.2.2.6</b> <code>top5_QMQcurveInfo.csv</code></a></li>
+</ul></li>
+<li class="chapter" data-level="17.3.2.3" data-path="17-tables.html"><a href="17-tables.html#outputinc..."><i class="fa fa-check"></i><b>17.3.2.3</b> <code id="o_inc">output/inc/...</code></a><ul>
+<li class="chapter" data-level="17.3.2.3.1" data-path="17-tables.html"><a href="17-tables.html#heatmap_incorporation.csv"><i class="fa fa-check"></i><b>17.3.2.3.1</b> <code>HeatMap_Incorporation.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.3.2" data-path="17-tables.html"><a href="17-tables.html#se_calculation_nascore.csv"><i class="fa fa-check"></i><b>17.3.2.3.2</b> <code>SE_calculation_NAscore.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.3.3" data-path="17-tables.html"><a href="17-tables.html#se_classification.csv"><i class="fa fa-check"></i><b>17.3.2.3.3</b> <code>SE_classification.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.3.4" data-path="17-tables.html"><a href="17-tables.html#se_validation.csv"><i class="fa fa-check"></i><b>17.3.2.3.4</b> <code>SE_validation.csv</code></a></li>
+</ul></li>
+<li class="chapter" data-level="17.3.2.4" data-path="17-tables.html"><a href="17-tables.html#mtxqcvx2-part3"><i class="fa fa-check"></i><b>17.3.2.4</b> MTXQCvX2 part3</a></li>
+<li class="chapter" data-level="17.3.2.5" data-path="17-tables.html"><a href="17-tables.html#mtxqcvx2-part4"><i class="fa fa-check"></i><b>17.3.2.5</b> MTXQCvX2 part4</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="18-psirm.html"><a href="18-psirm.html"><i class="fa fa-check"></i><b>18</b> pSIRM experiments</a><ul>
+<li class="chapter" data-level="18.1" data-path="18-psirm.html"><a href="18-psirm.html#experimental-design"><i class="fa fa-check"></i><b>18.1</b> Experimental design</a></li>
+<li class="chapter" data-level="18.2" data-path="18-psirm.html"><a href="18-psirm.html#experimental-procedures"><i class="fa fa-check"></i><b>18.2</b> Experimental procedures</a></li>
+<li class="chapter" data-level="18.3" data-path="18-psirm.html"><a href="18-psirm.html#protocol-psirm"><i class="fa fa-check"></i><b>18.3</b> Protocol pSIRM</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="18-psirm.html"><a href="18-psirm.html#psirm:adherent"><i class="fa fa-check"></i><b>18.3.1</b> Adherent cell cultures</a></li>
+<li class="chapter" data-level="18.3.2" data-path="18-psirm.html"><a href="18-psirm.html#psirm:suspension"><i class="fa fa-check"></i><b>18.3.2</b> Supension cell cultures</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="18-psirm.html"><a href="18-psirm.html#hints-notes"><i class="fa fa-check"></i><b>18.4</b> Hints &amp; notes</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="19-gcms.html"><a href="19-gcms.html"><i class="fa fa-check"></i><b>19</b> GC-MS settings</a><ul>
+<li class="chapter" data-level="19.0.1" data-path="19-gcms.html"><a href="19-gcms.html#autosampler-settings"><i class="fa fa-check"></i><b>19.0.1</b> Autosampler settings</a></li>
+<li class="chapter" data-level="19.0.2" data-path="19-gcms.html"><a href="19-gcms.html#gas-chromatography"><i class="fa fa-check"></i><b>19.0.2</b> Gas chromatography</a></li>
+<li class="chapter" data-level="19.0.3" data-path="19-gcms.html"><a href="19-gcms.html#mass-spectrometer-settings"><i class="fa fa-check"></i><b>19.0.3</b> Mass spectrometer settings</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="20-mm.html"><a href="20-mm.html"><i class="fa fa-check"></i><b>20</b> Solutions and Materials</a><ul>
+<li class="chapter" data-level="20.1" data-path="20-mm.html"><a href="20-mm.html#solutions"><i class="fa fa-check"></i><b>20.1</b> Solutions</a><ul>
+<li class="chapter" data-level="20.1.1" data-path="20-mm.html"><a href="20-mm.html#washingbuffer"><i class="fa fa-check"></i><b>20.1.1</b> Label buffer</a></li>
+<li class="chapter" data-level="20.1.2" data-path="20-mm.html"><a href="20-mm.html#mcw"><i class="fa fa-check"></i><b>20.1.2</b> MCW</a></li>
+<li class="chapter" data-level="20.1.3" data-path="20-mm.html"><a href="20-mm.html#alkanemix"><i class="fa fa-check"></i><b>20.1.3</b> Alkane-Mix</a></li>
+</ul></li>
+<li class="chapter" data-level="20.2" data-path="20-mm.html"><a href="20-mm.html#materials"><i class="fa fa-check"></i><b>20.2</b> Materials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MTXQCvX2 documentation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tables" class="section level1">
+<h1><span class="header-section-number">Chapter 17</span> Appendix - Tables</h1>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<p>This chapter shows the structure of all input or output csv-files that are referenced throughout the documentation. Please refer to the chapters for more detailed explanations.</p>
+<div id="mtxqc-base-tables" class="section level2">
+<h2><span class="header-section-number">17.1</span> MTXQC base tables</h2>
+<div id="config_mtx-tables" class="section level3">
+<h3><span class="header-section-number">17.1.1</span> <code>config_mtx</code> tables</h3>
+<div id="app:filenames" class="section level4">
+<h4><span class="header-section-number">17.1.1.1</span> conv_filenames.csv</h4>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Metabolite_manual
+</td>
+<td style="text-align:left;">
+Manual defined metabolite name
+</td>
+<td style="text-align:left;">
+#Alanine (2TMS)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Metabolite
+</td>
+<td style="text-align:left;">
+Library name of the metabolite
+</td>
+<td style="text-align:left;">
+Alanine_(2TMS)_BP_RI:1097_IDENT:B+C
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Metabolite_short
+</td>
+<td style="text-align:left;">
+Short version of library name of the metabolite
+</td>
+<td style="text-align:left;">
+Alanine_(2TMS)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lettercode
+</td>
+<td style="text-align:left;">
+Lettercode version of metabolite name
+</td>
+<td style="text-align:left;">
+Ala_2TMS
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Q1_value
+</td>
+<td style="text-align:left;">
+Checked if quant1:1 value available
+</td>
+<td style="text-align:left;">
+x
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mass_Pos
+</td>
+<td style="text-align:left;">
+m/z-value corresponding to m_inc
+</td>
+<td style="text-align:left;">
+118
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SE_sel
+</td>
+<td style="text-align:left;">
+Evaluation of the MIDs
+</td>
+<td style="text-align:left;">
+x
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Q_sel
+</td>
+<td style="text-align:left;">
+Evaluation for absolute quantification
+</td>
+<td style="text-align:left;">
+x
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nopsirm
+</td>
+<td style="text-align:left;">
+Exclusively for absolute quantification
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Standards
+</td>
+<td style="text-align:left;">
+Defined as standard
+</td>
+<td style="text-align:left;">
+InternalStandard, Alk
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="app:filenamesManVal" class="section level4">
+<h4><span class="header-section-number">17.1.1.2</span> conv_filesnames_manVal.csv</h4>
+<pre><code>## &#39;data.frame&#39;:    3 obs. of  2 variables:
+##  $ AssociatedFile: Factor w/ 3 levels &quot;inc&quot;,&quot;pSIRM_se&quot;,..: 3 2 1
+##  $ Filename      : Factor w/ 3 levels &quot;DataMatrix_manVal.csv&quot;,..: 3 2 1</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+AssociatedFile
+</th>
+<th style="text-align:left;">
+Filename
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+sample_area
+</td>
+<td style="text-align:left;">
+quantMassAreasMatrix_manVal.csv
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+pSIRM_se
+</td>
+<td style="text-align:left;">
+pSIRM_SpectraData_manVal.csv
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+inc
+</td>
+<td style="text-align:left;">
+DataMatrix_manVal.csv
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA.1
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="depricated-file-mq_correction.csv" class="section level4">
+<h4><span class="header-section-number">17.1.1.3</span> DEPRICATED FILE: MQ_correction.csv</h4>
+<p>Not in use anymore since fluffy adventure!</p>
+<pre><code>## &#39;data.frame&#39;:    7 obs. of  3 variables:
+##  $ Metabolite  : Factor w/ 7 levels &quot;Alanine_(2TMS)_BP_RI:1097_IDENT:B+C&quot;,..: 1 2 3 6 7 4 5
+##  $ Cor_factor  : num  12 12 6.33 11.82 2.41 ...
+##  $ Target_value: num  134695 134695 83259 388544 65154 ...</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Metabolite
+</th>
+<th style="text-align:right;">
+Cor_factor
+</th>
+<th style="text-align:right;">
+Target_value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Alanine_(2TMS)_BP_RI:1097_IDENT:B+C
+</td>
+<td style="text-align:right;">
+12.00
+</td>
+<td style="text-align:right;">
+134695.25
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alanine_(3TMS)_MP_RI:1367_IDENT:B+C
+</td>
+<td style="text-align:right;">
+12.00
+</td>
+<td style="text-align:right;">
+134695.25
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fructose_(1MEOX)(5TMS)_BP_RI:1872_IDENT:B+C
+</td>
+<td style="text-align:right;">
+6.33
+</td>
+<td style="text-align:right;">
+83259.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Glucose_(1MEOX)(5TMS)_MP_RI:1886_IDENT:B+D
+</td>
+<td style="text-align:right;">
+11.82
+</td>
+<td style="text-align:right;">
+388543.52
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Glycerol_(3TMS)_MP_RI:1280_IDENT:C+D
+</td>
+<td style="text-align:right;">
+2.41
+</td>
+<td style="text-align:right;">
+65153.65
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fructose_(1MEOX)(5TMS)_MP_RI:1862_IDENT:B+C
+</td>
+<td style="text-align:right;">
+6.33
+</td>
+<td style="text-align:right;">
+83259.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Glucose_(1MEOX)(5TMS)_BP_RI:1904_IDENT:B+D
+</td>
+<td style="text-align:right;">
+11.82
+</td>
+<td style="text-align:right;">
+388543.52
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="config_files-tables" class="section level3">
+<h3><span class="header-section-number">17.1.2</span> <code>config_files</code> tables</h3>
+<p>These tables are supposed to be modified in relation to the individual needs of a project.</p>
+<div id="app:conse" class="section level4">
+<h4><span class="header-section-number">17.1.2.1</span> conversion_metabolite.csv</h4>
+<pre><code>## &#39;data.frame&#39;:    166 obs. of  10 variables:
+##  $ Metabolite_manual: Factor w/ 115 levels &quot;&quot;,&quot;#2OG&quot;,&quot;#Adenine (2TMS)&quot;,..: 1 1 4 1 1 7 5 6 8 9 ...
+##  $ Metabolite       : Factor w/ 166 levels &quot;Acetoacetic acid_(1MEOX)(1TMS)_MP_RI:1132_BMD&quot;,..: 1 2 4 5 7 6 8 9 10 11 ...
+##  $ Metabolite_short : Factor w/ 161 levels &quot;Acetoacetic acid_(1MEOX)(1TMS)&quot;,..: 1 2 4 5 7 6 8 9 10 11 ...
+##  $ Lettercode       : Factor w/ 143 levels &quot;2PGA&quot;,&quot;3PGA&quot;,..: 4 5 6 7 13 14 8 9 11 12 ...
+##  $ Q1_value         : Factor w/ 2 levels &quot;&quot;,&quot;x&quot;: 1 1 1 1 2 2 2 2 1 1 ...
+##  $ Mass_Pos         : int  NA NA NA NA NA NA 118 190 249 NA ...
+##  $ SE_sel           : Factor w/ 2 levels &quot;&quot;,&quot;x&quot;: 1 1 1 1 1 1 2 2 2 2 ...
+##  $ Q_sel            : Factor w/ 2 levels &quot;&quot;,&quot;x&quot;: 1 1 2 2 1 1 2 2 2 2 ...
+##  $ nopsirm          : Factor w/ 2 levels &quot;&quot;,&quot;x&quot;: 2 2 1 2 2 2 1 1 1 2 ...
+##  $ Standards        : Factor w/ 3 levels &quot;&quot;,&quot;Alk&quot;,&quot;InternalStandard&quot;: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Metabolite_manual
+</th>
+<th style="text-align:left;">
+Metabolite
+</th>
+<th style="text-align:left;">
+Metabolite_short
+</th>
+<th style="text-align:left;">
+Lettercode
+</th>
+<th style="text-align:left;">
+Q1_value
+</th>
+<th style="text-align:right;">
+Mass_Pos
+</th>
+<th style="text-align:left;">
+SE_sel
+</th>
+<th style="text-align:left;">
+Q_sel
+</th>
+<th style="text-align:left;">
+nopsirm
+</th>
+<th style="text-align:left;">
+Standards
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Acetoacetic acid_(1MEOX)(1TMS)_MP_RI:1132_BMD
+</td>
+<td style="text-align:left;">
+Acetoacetic acid_(1MEOX)(1TMS)
+</td>
+<td style="text-align:left;">
+Aceto_1MEOX_1TMS
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+x
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Acetoacetic acid_(2TMS)_MP_RI:1239_GMDpred
+</td>
+<td style="text-align:left;">
+Acetoacetic acid_(2TMS)
+</td>
+<td style="text-align:left;">
+Aceto_2TMS
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+x
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+#Adenosine (3TMS)
+</td>
+<td style="text-align:left;">
+Adenosine (3TMS)_noIdent
+</td>
+<td style="text-align:left;">
+Adenosine (3TMS)
+</td>
+<td style="text-align:left;">
+Adenosine_3TMS
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+x
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Adenosine_(4TMS)_MP_RI:2644_IDENT:A+B
+</td>
+<td style="text-align:left;">
+Adenosine_(4TMS)
+</td>
+<td style="text-align:left;">
+Adenosine_4TMS
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+x
+</td>
+<td style="text-align:left;">
+x
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Alanine_ beta-_(2TMS)_BP_RI:1188_IDENT:A+D
+</td>
+<td style="text-align:left;">
+Alanine_ beta-_(2TMS)
+</td>
+<td style="text-align:left;">
+bAla_2TMS
+</td>
+<td style="text-align:left;">
+x
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+x
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="app:pathway" class="section level4">
+<h4><span class="header-section-number">17.1.2.2</span> letter_pathway_complete.csv</h4>
+<pre><code>## &#39;data.frame&#39;:    100 obs. of  7 variables:
+##  $ Letter_Derivate: Factor w/ 69 levels &quot;2HG&quot;,&quot;2OG&quot;,&quot;3PGA&quot;,..: 1 2 3 4 5 5 6 6 7 8 ...
+##  $ Lettercode     : Factor w/ 100 levels &quot;2HG&quot;,&quot;2OG&quot;,&quot;3PGA&quot;,..: 1 2 3 4 6 5 8 7 9 10 ...
+##  $ Pathway        : Factor w/ 9 levels &quot;aa&quot;,&quot;glut&quot;,&quot;glyc&quot;,..: 2 9 3 4 5 5 1 1 1 1 ...
+##  $ Pathway.1      : Factor w/ 9 levels &quot;1-glyc&quot;,&quot;2-tca&quot;,..: 3 2 1 7 9 9 5 5 5 5 ...
+##  $ Met_pathway    : Factor w/ 97 levels &quot;1-glyc_DHAP_BP&quot;,..: 28 21 17 91 96 96 35 34 36 37 ...
+##  $ Subs_class     : Factor w/ 11 levels &quot;aa&quot;,&quot;amino sugar&quot;,..: 6 6 8 3 4 4 1 1 1 1 ...
+##  $ Met_class      : Factor w/ 97 levels &quot;aa_Ala_2TMS&quot;,..: 55 56 83 43 46 46 2 1 3 4 ...</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Letter_Derivate
+</th>
+<th style="text-align:left;">
+Lettercode
+</th>
+<th style="text-align:left;">
+Pathway
+</th>
+<th style="text-align:left;">
+Pathway.1
+</th>
+<th style="text-align:left;">
+Met_pathway
+</th>
+<th style="text-align:left;">
+Subs_class
+</th>
+<th style="text-align:left;">
+Met_class
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+2HG
+</td>
+<td style="text-align:left;">
+2HG
+</td>
+<td style="text-align:left;">
+glut
+</td>
+<td style="text-align:left;">
+3-glut
+</td>
+<td style="text-align:left;">
+3-glut_Glut_2hydroxy
+</td>
+<td style="text-align:left;">
+organic acid
+</td>
+<td style="text-align:left;">
+organic acid_Glut_2hydroxy
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2OG
+</td>
+<td style="text-align:left;">
+2OG
+</td>
+<td style="text-align:left;">
+tca
+</td>
+<td style="text-align:left;">
+2-tca
+</td>
+<td style="text-align:left;">
+2-tca_Glut_2oxo
+</td>
+<td style="text-align:left;">
+organic acid
+</td>
+<td style="text-align:left;">
+organic acid_Glut_2oxo
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3PGA
+</td>
+<td style="text-align:left;">
+3PGA
+</td>
+<td style="text-align:left;">
+glyc
+</td>
+<td style="text-align:left;">
+1-glyc
+</td>
+<td style="text-align:left;">
+1-glyc_PGA
+</td>
+<td style="text-align:left;">
+phosphate
+</td>
+<td style="text-align:left;">
+phosphate_PGA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:left;">
+nucleobase
+</td>
+<td style="text-align:left;">
+7-nucleobase
+</td>
+<td style="text-align:left;">
+7-nucleobase_Adenosine
+</td>
+<td style="text-align:left;">
+nucleobase
+</td>
+<td style="text-align:left;">
+nucleobase_Adenosine
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="app:incorp" class="section level4">
+<h4><span class="header-section-number">17.1.2.3</span> incorp_calc_masses.csv</h4>
+<pre><code>## &#39;data.frame&#39;:    90 obs. of  3 variables:
+##  $ Metabolite: Factor w/ 45 levels &quot;Alanine_(2TMS)_BP_RI:1097_IDENT:B+C&quot;,..: 1 1 2 2 3 3 4 4 5 5 ...
+##  $ Mass_mz   : int  116 118 188 190 245 249 273 275 273 276 ...
+##  $ LI_MID    : Factor w/ 2 levels &quot;m0&quot;,&quot;minc&quot;: 1 2 1 2 1 2 1 2 1 2 ...</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Metabolite
+</th>
+<th style="text-align:right;">
+Mass_mz
+</th>
+<th style="text-align:left;">
+LI_MID
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Alanine_(2TMS)_BP_RI:1097_IDENT:B+C
+</td>
+<td style="text-align:right;">
+116
+</td>
+<td style="text-align:left;">
+m0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alanine_(2TMS)_BP_RI:1097_IDENT:B+C
+</td>
+<td style="text-align:right;">
+118
+</td>
+<td style="text-align:left;">
+minc
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alanine_(3TMS)_MP_RI:1367_IDENT:B+C
+</td>
+<td style="text-align:right;">
+188
+</td>
+<td style="text-align:left;">
+m0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alanine_(3TMS)_MP_RI:1367_IDENT:B+C
+</td>
+<td style="text-align:right;">
+190
+</td>
+<td style="text-align:left;">
+minc
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Aspartic acid_(2TMS)_BP_RI:1433_IDENT:A+C
+</td>
+<td style="text-align:right;">
+245
+</td>
+<td style="text-align:left;">
+m0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="app:quant1" class="section level4">
+<h4><span class="header-section-number">17.1.2.4</span> quant1_values.csv</h4>
+<pre><code>## &#39;data.frame&#39;:    70 obs. of  3 variables:
+##  $ Letter_Derivate: Factor w/ 70 levels &quot;2HG&quot;,&quot;2OG&quot;,&quot;3PGA&quot;,..: 1 2 3 4 5 6 7 8 9 10 ...
+##  $ Quant1_v4      : int  57270 34220 43480 7400 18710 134700 11480 22710 15030 11220 ...
+##  $ Quant1_v3      : int  57270 34220 43480 7400 18710 134700 11480 22710 15030 11220 ...</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Letter_Derivate
+</th>
+<th style="text-align:right;">
+Quant1_v4
+</th>
+<th style="text-align:right;">
+Quant1_v3
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+2HG
+</td>
+<td style="text-align:right;">
+57270
+</td>
+<td style="text-align:right;">
+57270
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2OG
+</td>
+<td style="text-align:right;">
+34220
+</td>
+<td style="text-align:right;">
+34220
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3PGA
+</td>
+<td style="text-align:right;">
+43480
+</td>
+<td style="text-align:right;">
+43480
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+A
+</td>
+<td style="text-align:right;">
+7400
+</td>
+<td style="text-align:right;">
+7400
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Adenosine
+</td>
+<td style="text-align:right;">
+18710
+</td>
+<td style="text-align:right;">
+18710
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="app:midbackup" class="section level4">
+<h4><span class="header-section-number">17.1.2.5</span> mid_backups.csv</h4>
+<pre><code>## &#39;data.frame&#39;:    224 obs. of  4 variables:
+##  $ Metabolite    : Factor w/ 38 levels &quot;Alanine_ beta-_(3TMS)_MP_RI:1435_IDENT:A+D&quot;,..: 1 1 1 1 2 2 2 2 3 3 ...
+##  $ Mass.m.z.     : int  188 189 190 191 116 117 118 119 188 189 ...
+##  $ BackupPeakArea: int  4960 876 307 53 2616179 323019 99834 19759 4960 876 ...
+##  $ BackupMID     : num  0.8005 0.1414 0.0495 0.0086 0.8553 ...</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Metabolite
+</th>
+<th style="text-align:right;">
+Mass.m.z.
+</th>
+<th style="text-align:right;">
+BackupPeakArea
+</th>
+<th style="text-align:right;">
+BackupMID
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Alanine_ beta-_(3TMS)_MP_RI:1435_IDENT:A+D
+</td>
+<td style="text-align:right;">
+188
+</td>
+<td style="text-align:right;">
+4960
+</td>
+<td style="text-align:right;">
+0.8005000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alanine_ beta-_(3TMS)_MP_RI:1435_IDENT:A+D
+</td>
+<td style="text-align:right;">
+189
+</td>
+<td style="text-align:right;">
+876
+</td>
+<td style="text-align:right;">
+0.1414000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alanine_ beta-_(3TMS)_MP_RI:1435_IDENT:A+D
+</td>
+<td style="text-align:right;">
+190
+</td>
+<td style="text-align:right;">
+307
+</td>
+<td style="text-align:right;">
+0.0495000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alanine_ beta-_(3TMS)_MP_RI:1435_IDENT:A+D
+</td>
+<td style="text-align:right;">
+191
+</td>
+<td style="text-align:right;">
+53
+</td>
+<td style="text-align:right;">
+0.0086000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alanine_(2TMS)_BP_RI:1097_IDENT:B+C
+</td>
+<td style="text-align:right;">
+116
+</td>
+<td style="text-align:right;">
+2616179
+</td>
+<td style="text-align:right;">
+0.8552984
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alanine_(2TMS)_BP_RI:1097_IDENT:B+C
+</td>
+<td style="text-align:right;">
+117
+</td>
+<td style="text-align:right;">
+323019
+</td>
+<td style="text-align:right;">
+0.1056035
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alanine_(2TMS)_BP_RI:1097_IDENT:B+C
+</td>
+<td style="text-align:right;">
+118
+</td>
+<td style="text-align:right;">
+99834
+</td>
+<td style="text-align:right;">
+0.0326384
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alanine_(2TMS)_BP_RI:1097_IDENT:B+C
+</td>
+<td style="text-align:right;">
+119
+</td>
+<td style="text-align:right;">
+19759
+</td>
+<td style="text-align:right;">
+0.0064597
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alanine_(3TMS)_MP_RI:1367_IDENT:B+C
+</td>
+<td style="text-align:right;">
+188
+</td>
+<td style="text-align:right;">
+4960
+</td>
+<td style="text-align:right;">
+0.8005000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alanine_(3TMS)_MP_RI:1367_IDENT:B+C
+</td>
+<td style="text-align:right;">
+189
+</td>
+<td style="text-align:right;">
+876
+</td>
+<td style="text-align:right;">
+0.1414000
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="input-data" class="section level2">
+<h2><span class="header-section-number">17.2</span> Input data</h2>
+<div id="maui-derived-tables" class="section level3">
+<h3><span class="header-section-number">17.2.1</span> MAUI derived tables</h3>
+</div>
+<div id="metmax-derived-tables" class="section level3">
+<h3><span class="header-section-number">17.2.2</span> Metmax derived tables</h3>
+</div>
+</div>
+<div id="output-data" class="section level2">
+<h2><span class="header-section-number">17.3</span> Output data</h2>
+<div id="experimental-setup" class="section level3">
+<h3><span class="header-section-number">17.3.1</span> Experimental Setup</h3>
+</div>
+<div id="mtxqcvx2-part1" class="section level3">
+<h3><span class="header-section-number">17.3.2</span> MTXQCvX2 part1</h3>
+<div id="outputgc..." class="section level4">
+<h4><span class="header-section-number">17.3.2.1</span> <code id="o_gc">output/gc/...</code></h4>
+<div id="hm_gc_values.csv-qcmetric_xy.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.1.1</span> <code>HM_GC_values.csv</code> &amp; <code>qcmetric_xy.csv</code></h5>
+<p>MTXQC exports a file summarising quality factors for each of the four parameter evaluating the GC performance. A summary representing the values illustrated in the heatmap are shown in table <a href="@ref(tab:o_hm_gc)"><code>HM_GC_values.csv</code></a>, individual exports for each metric in table <a href="@ref(tab:o_gc_metric)"><code>qcmetric_xy.csv</code></a>.</p>
+<pre><code>## &#39;data.frame&#39;:    3 obs. of  3 variables:
+##  $ Column.name: Factor w/ 3 levels &quot;Batch_Id&quot;,&quot;qc_metric&quot;,..: 1 2 3
+##  $ Description: Factor w/ 3 levels &quot;Batch-Id&quot;,&quot;Class of QC metric&quot;,..: 1 3 2
+##  $ Value      : Factor w/ 3 levels &quot;0.937254457&quot;,..: 3 1 2</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Batch_Id
+</td>
+<td style="text-align:left;">
+Batch-Id
+</td>
+<td style="text-align:left;">
+e18274ba
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+qc_metric
+</td>
+<td style="text-align:left;">
+QC metric factor corresponding with 1 - very good and 0 - very low
+</td>
+<td style="text-align:left;">
+0.937254457
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+title
+</td>
+<td style="text-align:left;">
+Class of QC metric
+</td>
+<td style="text-align:left;">
+alkanes
+</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## &#39;data.frame&#39;:    3 obs. of  3 variables:
+##  $ Column.name: Factor w/ 3 levels &quot;Batch_Id&quot;,&quot;qc_metric&quot;,..: 1 2 3
+##  $ Description: Factor w/ 3 levels &quot;Batch-Id&quot;,&quot;Class of QC metric&quot;,..: 1 3 2
+##  $ Value      : Factor w/ 3 levels &quot;0.937254457&quot;,..: 3 1 2</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Batch_Id
+</td>
+<td style="text-align:left;">
+Batch-Id
+</td>
+<td style="text-align:left;">
+e18274ba
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+qc_metric
+</td>
+<td style="text-align:left;">
+QC metric factor corresponding with 1 - very good and 0 - very low
+</td>
+<td style="text-align:left;">
+0.937254457
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+title
+</td>
+<td style="text-align:left;">
+Class of QC metric
+</td>
+<td style="text-align:left;">
+alkanes
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="intstandard_normfactors.csv-intstandard_stats.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.1.2</span> <code>IntStandard_normfactors.csv</code> &amp; <code>IntStandard_stats.csv</code></h5>
+<pre><code>## &#39;data.frame&#39;:    5 obs. of  3 variables:
+##  $ Column.name: Factor w/ 5 levels &quot;Batch_Id&quot;,&quot;File&quot;,..: 2 5 1 4 3
+##  $ Description: Factor w/ 5 levels &quot;Bacth-Id&quot;,&quot;Determined normalisation factor&quot;,..: 4 5 1 2 3
+##  $ Value      : Factor w/ 5 levels &quot;0.837457514&quot;,..: 4 2 3 1 5</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+File
+</td>
+<td style="text-align:left;">
+File name
+</td>
+<td style="text-align:left;">
+e18274ba_17.cdf
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PeakArea
+</td>
+<td style="text-align:left;">
+Peak area of internal extraction standard
+</td>
+<td style="text-align:left;">
+89308492
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Batch_Id
+</td>
+<td style="text-align:left;">
+Bacth-Id
+</td>
+<td style="text-align:left;">
+e18274ba
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IntStd_fac
+</td>
+<td style="text-align:left;">
+Determined normalisation factor
+</td>
+<td style="text-align:left;">
+0.837457514
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IntStd_eval
+</td>
+<td style="text-align:left;">
+Evaluation of normalisation factor in relation to defined range plus/minus one standard deviation
+</td>
+<td style="text-align:left;">
+within
+</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## &#39;data.frame&#39;:    8 obs. of  3 variables:
+##  $ Column.name: Factor w/ 8 levels &quot;Batch_Id&quot;,&quot;File&quot;,..: 2 7 1 4 3 6 5 8
+##  $ Description: Factor w/ 8 levels &quot;Batch-Id&quot;,&quot;Evaluation regarding QC&quot;,..: 3 7 1 5 2 6 4 8
+##  $ Value      : Factor w/ 8 levels &quot;0.837457514&quot;,..: 7 5 6 1 8 4 2 3</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+File
+</td>
+<td style="text-align:left;">
+File name
+</td>
+<td style="text-align:left;">
+e18274ba_17.cdf
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PeakArea
+</td>
+<td style="text-align:left;">
+Peak area of internal extraction standard
+</td>
+<td style="text-align:left;">
+89308492
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Batch_Id
+</td>
+<td style="text-align:left;">
+Batch-Id
+</td>
+<td style="text-align:left;">
+e18274ba
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IntStd_fac
+</td>
+<td style="text-align:left;">
+Normalisation factor
+</td>
+<td style="text-align:left;">
+0.837457514
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IntStd_eval
+</td>
+<td style="text-align:left;">
+Evaluation regarding QC
+</td>
+<td style="text-align:left;">
+within
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="min_annotation.csv-sumarea_stats.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.1.3</span> <code>Min_Annotation.csv</code> &amp; <code>SumArea_stats.csv</code></h5>
+<pre><code>## &#39;data.frame&#39;:    9 obs. of  3 variables:
+##  $ Column.name: Factor w/ 9 levels &quot;area_fac&quot;,&quot;Batch_Id&quot;,..: 3 2 6 9 7 4 8 1 5
+##  $ Description: Factor w/ 9 levels &quot;Extracted Batch-Id derived from file name&quot;,..: 2 1 6 8 9 3 7 4 5
+##  $ Value      : Factor w/ 9 levels &quot;1.296568521&quot;,..: 9 8 2 6 3 5 4 1 7</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+File
+</td>
+<td style="text-align:left;">
+File name
+</td>
+<td style="text-align:left;">
+e18274ba_17.cdf
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Batch_Id
+</td>
+<td style="text-align:left;">
+Extracted Batch-Id derived from file name
+</td>
+<td style="text-align:left;">
+e18274ba
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+n_area
+</td>
+<td style="text-align:left;">
+Number of peak areas per file
+</td>
+<td style="text-align:left;">
+101
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sum_area
+</td>
+<td style="text-align:left;">
+Sum of all peak areas
+</td>
+<td style="text-align:left;">
+44614610885
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+n_total
+</td>
+<td style="text-align:left;">
+Total number of entries (including NA)
+</td>
+<td style="text-align:left;">
+107
+</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## &#39;data.frame&#39;:    2 obs. of  3 variables:
+##  $ Column.name: Factor w/ 2 levels &quot;Batch_Id&quot;,&quot;n_50&quot;: 1 2
+##  $ Description: Factor w/ 2 levels &quot;Batch-Id&quot;,&quot;Number corresponding to fifty percent of the maximum number of annotated peaks per file&quot;: 1 2
+##  $ Value      : Factor w/ 2 levels &quot;53.5&quot;,&quot;e18274ba&quot;: 2 1</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+Batch_Id
+</td>
+<td style="text-align:left;">
+Batch-Id
+</td>
+<td style="text-align:left;">
+e18274ba
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+n_50
+</td>
+<td style="text-align:left;">
+Number corresponding to fifty percent of the maximum number of annotated peaks per file
+</td>
+<td style="text-align:left;">
+53.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA.1
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA.2
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mz73_data.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.1.4</span> <code>mz73_data.csv</code></h5>
+<pre><code>## &#39;data.frame&#39;:    7 obs. of  3 variables:
+##  $ Column.name: Factor w/ 7 levels &quot;Batch_Id&quot;,&quot;File&quot;,..: 2 1 3 6 4 7 5
+##  $ Description: Factor w/ 7 levels &quot;Batch-ID&quot;,&quot;File name&quot;,..: 2 1 3 6 4 7 5
+##  $ Value      : Factor w/ 7 levels &quot;0.002407244&quot;,..: 7 6 3 2 4 5 1</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+File
+</td>
+<td style="text-align:left;">
+File name
+</td>
+<td style="text-align:left;">
+e18274ba_17.cdf
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Batch_Id
+</td>
+<td style="text-align:left;">
+Batch-ID
+</td>
+<td style="text-align:left;">
+e18274ba
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mean_73
+</td>
+<td style="text-align:left;">
+Mean value of the sum of m/z 73 intensities per file
+</td>
+<td style="text-align:left;">
+16314646.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sd_73
+</td>
+<td style="text-align:left;">
+Standard deviation of the mean of the sum of m/z 73 intensities per file
+</td>
+<td style="text-align:left;">
+143890119.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+n_peaks
+</td>
+<td style="text-align:left;">
+Number of intensities used for statistics
+</td>
+<td style="text-align:left;">
+600
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outputquant..." class="section level4">
+<h4><span class="header-section-number">17.3.2.2</span> <code id="o_quant">output/quant/...</code></h4>
+<div id="calcheck_linearity.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.2.1</span> <code>calcheck_linearity.csv</code></h5>
+<pre><code>## &#39;data.frame&#39;:    21 obs. of  3 variables:
+##  $ Column.name: Factor w/ 21 levels &quot;adj_r_squared&quot;,..: 9 2 4 17 14 21 10 11 7 16 ...
+##  $ Description: Factor w/ 21 levels &quot;&quot;,&quot;Adjusted Rsquare value of linear regression of the calibration curve&quot;,..: 8 3 7 5 21 13 16 19 14 18 ...
+##  $ Value      : Factor w/ 18 levels &quot;&quot;,&quot;-898.3400476&quot;,..: 11 12 13 6 7 16 3 10 9 17 ...</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Metabolite
+</td>
+<td style="text-align:left;">
+Full library name of the metabolite
+</td>
+<td style="text-align:left;">
+Alanine_(3TMS)_MP_RI:1367_IDENT:B+C
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Batch_Id
+</td>
+<td style="text-align:left;">
+Batch-Id
+</td>
+<td style="text-align:left;">
+e18274ba
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+File
+</td>
+<td style="text-align:left;">
+File name
+</td>
+<td style="text-align:left;">
+e18274ba_53.cdf
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+QuantMasses
+</td>
+<td style="text-align:left;">
+Defined quantification masses
+</td>
+<td style="text-align:left;">
+110.0 133.0 114.0 100.0 188.0 190.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PeakArea
+</td>
+<td style="text-align:left;">
+Sum of peak areas based on defined QuantMasses
+</td>
+<td style="text-align:left;">
+12710956
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="calculationfiledata.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.2.2</span> <code id="CalcFileData">CalculationFileData.csv</code></h5>
+<p>This is porbably the most important file that is generated by running <code>MTXQCvX2_part1.Rmd</code>. It summarises all quality factors, experimental data and determined quantities of your experiment. This file provides the input for <code>MTXQCvX2_part2-PostProcessing.Rmd</code>.</p>
+<pre><code>## &#39;data.frame&#39;:    43 obs. of  4 variables:
+##  $ Column.name: Factor w/ 43 levels &quot;absconc&quot;,&quot;adj_r_squared&quot;,..: 4 6 9 13 36 41 42 12 43 23 ...
+##  $ Class      : Factor w/ 9 levels &quot;AnnExp&quot;,&quot;AnnExtract&quot;,..: 1 1 1 1 1 1 1 2 2 3 ...
+##  $ Description: Factor w/ 41 levels &quot;Absolute quantity in pmol&quot;,..: 3 14 14 16 6 14 40 7 9 18 ...
+##  $ Value      : Factor w/ 37 levels &quot;&quot;,&quot;#Glycerol-3-phosphate (4TMS)&quot;,..: 27 24 25 28 1 3 34 18 26 29 ...</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Class
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Batch_Id
+</td>
+<td style="text-align:left;">
+AnnExp
+</td>
+<td style="text-align:left;">
+Batch-Id extracted from file name
+</td>
+<td style="text-align:left;">
+e18274ba
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CL
+</td>
+<td style="text-align:left;">
+AnnExp
+</td>
+<td style="text-align:left;">
+Experimental parameter
+</td>
+<td style="text-align:left;">
+BE(2)-C
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cond
+</td>
+<td style="text-align:left;">
+AnnExp
+</td>
+<td style="text-align:left;">
+Experimental parameter
+</td>
+<td style="text-align:left;">
+Control
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+File
+</td>
+<td style="text-align:left;">
+AnnExp
+</td>
+<td style="text-align:left;">
+File name
+</td>
+<td style="text-align:left;">
+e18274ba_25.cdf
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Standards
+</td>
+<td style="text-align:left;">
+AnnExp
+</td>
+<td style="text-align:left;">
+Defined as standard (InternalStandard, Alk)
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Time
+</td>
+<td style="text-align:left;">
+AnnExp
+</td>
+<td style="text-align:left;">
+Experimental parameter
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Type
+</td>
+<td style="text-align:left;">
+AnnExp
+</td>
+<td style="text-align:left;">
+Type of measurement
+</td>
+<td style="text-align:left;">
+sample
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Extract_vol
+</td>
+<td style="text-align:left;">
+AnnExtract
+</td>
+<td style="text-align:left;">
+Defined extractes in count, mg or uL defined in Unit
+</td>
+<td style="text-align:left;">
+3290000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Unit
+</td>
+<td style="text-align:left;">
+AnnExtract
+</td>
+<td style="text-align:left;">
+Defined unit for corresponding Extract_vol
+</td>
+<td style="text-align:left;">
+count
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lettercode
+</td>
+<td style="text-align:left;">
+AnnMet
+</td>
+<td style="text-align:left;">
+Lettercode version of metabolite name
+</td>
+<td style="text-align:left;">
+Glyc3P
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="heatmap_quant_ptop5.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.2.3</span> <code>HeatMap_Quant_pTop5.csv</code></h5>
+<pre><code>## &#39;data.frame&#39;:    5 obs. of  3 variables:
+##  $ Column.name: Factor w/ 5 levels &quot;Batch_Id&quot;,&quot;Lettercode&quot;,..: 2 1 3 4 5
+##  $ Description: Factor w/ 5 levels &quot;Batch-Id&quot;,&quot;Library name of metabolite&quot;,..: 4 1 2 3 5
+##  $ Value      : Factor w/ 5 levels &quot;0.996053496&quot;,..: 2 4 3 5 1</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Lettercode
+</td>
+<td style="text-align:left;">
+Short name of metabolite
+</td>
+<td style="text-align:left;">
+Cit
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Batch_Id
+</td>
+<td style="text-align:left;">
+Batch-Id
+</td>
+<td style="text-align:left;">
+e18274ba
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Metabolite
+</td>
+<td style="text-align:left;">
+Library name of metabolite
+</td>
+<td style="text-align:left;">
+Citric acid_(4TMS)_MP_RI:1814_IDENT:B+D
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Par
+</td>
+<td style="text-align:left;">
+Parameter
+</td>
+<td style="text-align:left;">
+R2_cal
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Val
+</td>
+<td style="text-align:left;">
+Value of the parameter for corresponding metabolite
+</td>
+<td style="text-align:left;">
+0.996053496
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="ptop5_calibration_samples_lincheck.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.2.4</span> <code>pTop5_Calibration_Samples_lincheck.csv</code></h5>
+<pre><code>## &#39;data.frame&#39;:    7 obs. of  3 variables:
+##  $ Column.name: Factor w/ 7 levels &quot;Batch_Id&quot;,&quot;count&quot;,..: 4 3 1 5 2 7 6
+##  $ Description: Factor w/ 7 levels &quot;Batch-Id&quot;,&quot;Evaluation of peak area in relation to calibration curve if available&quot;,..: 6 2 1 5 4 7 3
+##  $ Value      : Factor w/ 5 levels &quot;1&quot;,&quot;3PGA&quot;,&quot;51&quot;,..: 2 5 4 NA 3 3 1</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Lettercode
+</td>
+<td style="text-align:left;">
+Short name of metabolite
+</td>
+<td style="text-align:left;">
+3PGA
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="top5_calibrationinfo_unique.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.2.5</span> <code>top5_CalibrationInfo_unique.csv</code></h5>
+<pre><code>## &#39;data.frame&#39;:    8 obs. of  3 variables:
+##  $ Column.name: Factor w/ 8 levels &quot;adj_r_squared&quot;,..: 6 5 2 7 1 4 8 3
+##  $ Description: Factor w/ 8 levels &quot;Adjsuted Rsquare of calibration curve&quot;,..: 6 5 2 7 1 4 8 3
+##  $ Value      : Factor w/ 8 levels &quot;0.000194064&quot;,..: 6 5 7 8 2 4 1 3</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Metabolite
+</td>
+<td style="text-align:left;">
+Library name of metabolite
+</td>
+<td style="text-align:left;">
+Citric acid_(4TMS)_MP_RI:1814_IDENT:B+D
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lettercode
+</td>
+<td style="text-align:left;">
+Lettercode name of metabolite
+</td>
+<td style="text-align:left;">
+Cit
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Batch_Id
+</td>
+<td style="text-align:left;">
+Batch-Id
+</td>
+<td style="text-align:left;">
+e18274ba
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Origin
+</td>
+<td style="text-align:left;">
+Origin of quant1:1 value
+</td>
+<td style="text-align:left;">
+Qstd
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+adj_r_squared
+</td>
+<td style="text-align:left;">
+Adjsuted Rsquare of calibration curve
+</td>
+<td style="text-align:left;">
+0.996053496
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="top5_qmqcurveinfo.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.2.6</span> <code>top5_QMQcurveInfo.csv</code></h5>
+<pre><code>## &#39;data.frame&#39;:    15 obs. of  3 variables:
+##  $ Column.name: Factor w/ 15 levels &quot;adj_r_squared&quot;,..: 8 7 14 10 2 5 3 4 13 11 ...
+##  $ Description: Factor w/ 15 levels &quot;Adjusted Rsquare of calibration curve&quot;,..: 8 5 13 9 2 6 4 3 12 14 ...
+##  $ Value      : Factor w/ 13 levels &quot;0.000194064&quot;,..: 9 9 7 11 12 2 6 4 13 10 ...</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Lettercode
+</td>
+<td style="text-align:left;">
+Lettercode of metabolite name
+</td>
+<td style="text-align:left;">
+Cit
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Letter_Derivate
+</td>
+<td style="text-align:left;">
+Derivate name
+</td>
+<td style="text-align:left;">
+Cit
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Quant1_v4
+</td>
+<td style="text-align:left;">
+Quant1:1 value in (pmol)
+</td>
+<td style="text-align:left;">
+52050
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Metabolite
+</td>
+<td style="text-align:left;">
+Library name of metabolite
+</td>
+<td style="text-align:left;">
+Citric acid_(4TMS)_MP_RI:1814_IDENT:B+D
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Batch_Id
+</td>
+<td style="text-align:left;">
+Batch-Id
+</td>
+<td style="text-align:left;">
+e18274ba
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dilution
+</td>
+<td style="text-align:left;">
+Dilution factor
+</td>
+<td style="text-align:left;">
+0.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ChromIntensities
+</td>
+<td style="text-align:left;">
+Corresponding peak areas
+</td>
+<td style="text-align:left;">
+45074572
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Concentration
+</td>
+<td style="text-align:left;">
+Concentration in (pmol)
+</td>
+<td style="text-align:left;">
+10410
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Origin
+</td>
+<td style="text-align:left;">
+Origin of quantification standard
+</td>
+<td style="text-align:left;">
+Qstd
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Metabolite_short
+</td>
+<td style="text-align:left;">
+Short name of metabolite
+</td>
+<td style="text-align:left;">
+Citric acid 275_(4TMS)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+adj_r_squared
+</td>
+<td style="text-align:left;">
+Adjusted Rsquare of calibration curve
+</td>
+<td style="text-align:left;">
+0.996053496
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+intercept
+</td>
+<td style="text-align:left;">
+Intercept of calibration curve
+</td>
+<td style="text-align:left;">
+564.549288
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+slope
+</td>
+<td style="text-align:left;">
+Slope of calibration curve
+</td>
+<td style="text-align:left;">
+0.000194064
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+max
+</td>
+<td style="text-align:left;">
+Max. value of calibration curve
+</td>
+<td style="text-align:left;">
+52050
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+min
+</td>
+<td style="text-align:left;">
+Min. value of calibration curve
+</td>
+<td style="text-align:left;">
+260.25
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outputinc..." class="section level4">
+<h4><span class="header-section-number">17.3.2.3</span> <code id="o_inc">output/inc/...</code></h4>
+<div id="heatmap_incorporation.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.3.1</span> <code>HeatMap_Incorporation.csv</code></h5>
+<pre><code>## &#39;data.frame&#39;:    4 obs. of  3 variables:
+##  $ Column.name: Factor w/ 4 levels &quot;Batch_Id&quot;,&quot;Lettercode&quot;,..: 2 1 3 4
+##  $ Description: Factor w/ 4 levels &quot;Batch-Id&quot;,&quot;Lettercode name of metabolite&quot;,..: 2 1 3 4
+##  $ Value      : Factor w/ 4 levels &quot;0.740740741&quot;,..: 2 3 4 1</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+Lettercode
+</td>
+<td style="text-align:left;">
+Lettercode name of metabolite
+</td>
+<td style="text-align:left;">
+3PGA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+Batch_Id
+</td>
+<td style="text-align:left;">
+Batch-Id
+</td>
+<td style="text-align:left;">
+e18274ba
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+Par
+</td>
+<td style="text-align:left;">
+Parameter
+</td>
+<td style="text-align:left;">
+NA_count
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+Val
+</td>
+<td style="text-align:left;">
+Value of the parameter shown in heatmap
+</td>
+<td style="text-align:left;">
+0.740740741
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="se_calculation_nascore.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.3.2</span> <code>SE_calculation_NAscore.csv</code></h5>
+<pre><code>## &#39;data.frame&#39;:    5 obs. of  3 variables:
+##  $ Column.name: Factor w/ 5 levels &quot;Batch_Id&quot;,&quot;fracr_prop&quot;,..: 3 1 5 4 2
+##  $ Description: Factor w/ 5 levels &quot;Batch-Id&quot;,&quot;Class of NA-value&quot;,..: 4 1 2 5 3
+##  $ Value      : Factor w/ 5 levels &quot;0&quot;,&quot;0.851851852&quot;,..: 4 5 1 3 2</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Lettercode
+</td>
+<td style="text-align:left;">
+Lettercode name of metabolite
+</td>
+<td style="text-align:left;">
+Cit
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Batch_Id
+</td>
+<td style="text-align:left;">
+Batch-Id
+</td>
+<td style="text-align:left;">
+e18274ba
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+na_frac_r
+</td>
+<td style="text-align:left;">
+Class of NA-value
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+Number of MIDs
+</td>
+<td style="text-align:left;">
+46
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fracr_prop
+</td>
+<td style="text-align:left;">
+Fraction of MIDs with x NA-values in relation to total number of evaluated MIDs
+</td>
+<td style="text-align:left;">
+0.851851852
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="se_classification.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.3.3</span> <code>SE_classification.csv</code></h5>
+<pre><code>## &#39;data.frame&#39;:    9 obs. of  3 variables:
+##  $ Column.name: Factor w/ 9 levels &quot;Batch_Id&quot;,&quot;count_score&quot;,..: 4 1 3 8 7 5 6 9 2
+##  $ Description: Factor w/ 6 levels &quot;_expl_&quot;,&quot;Batch-Id&quot;,..: 4 2 3 1 1 1 1 6 5
+##  $ Value      : Factor w/ 9 levels &quot;1861&quot;,&quot;2.30897367&quot;,..: 4 6 7 3 1 2 9 5 8</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Lettercode
+</td>
+<td style="text-align:left;">
+Lettercode name of metabolite
+</td>
+<td style="text-align:left;">
+Cit
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Batch_Id
+</td>
+<td style="text-align:left;">
+Batch-Id
+</td>
+<td style="text-align:left;">
+e18274ba
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+File
+</td>
+<td style="text-align:left;">
+File name
+</td>
+<td style="text-align:left;">
+e18274ba_26.cdf
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sum_spa
+</td>
+<td style="text-align:left;">
+<em>expl</em>
+</td>
+<td style="text-align:left;">
+4297
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sum_bpa
+</td>
+<td style="text-align:left;">
+<em>expl</em>
+</td>
+<td style="text-align:left;">
+1861
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="se_validation.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.3.4</span> <code>SE_validation.csv</code></h5>
+<pre><code>## &#39;data.frame&#39;:    6 obs. of  3 variables:
+##  $ Column.name: Factor w/ 6 levels &quot;Batch_Id&quot;,&quot;count_score&quot;,..: 3 1 2 4 6 5
+##  $ Description: Factor w/ 6 levels &quot;Batch-Id&quot;,&quot;Evaluation of MID&quot;,..: 3 1 2 5 4 6
+##  $ Value      : Factor w/ 5 levels &quot;1&quot;,&quot;54&quot;,&quot;Cit&quot;,..: 3 4 5 2 2 1</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Lettercode
+</td>
+<td style="text-align:left;">
+Lettercode name of metabolite
+</td>
+<td style="text-align:left;">
+Cit
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Batch_Id
+</td>
+<td style="text-align:left;">
+Batch-Id
+</td>
+<td style="text-align:left;">
+e18274ba
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+count_score
+</td>
+<td style="text-align:left;">
+Evaluation of MID
+</td>
+<td style="text-align:left;">
+goodQ
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N_count
+</td>
+<td style="text-align:left;">
+Number of evaluated MIDs
+</td>
+<td style="text-align:left;">
+54
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sum_files
+</td>
+<td style="text-align:left;">
+Number of detected MIDs
+</td>
+<td style="text-align:left;">
+54
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="mtxqcvx2-part3" class="section level4">
+<h4><span class="header-section-number">17.3.2.4</span> MTXQCvX2 part3</h4>
+</div>
+<div id="mtxqcvx2-part4" class="section level4">
+<h4><span class="header-section-number">17.3.2.5</span> MTXQCvX2 part4</h4>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="16-FAQ.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="18-psirm.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["MTXQC_documentation.pdf", "MTXQC_documentation.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

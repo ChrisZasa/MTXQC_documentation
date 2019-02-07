@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>MTXQCvX2 documentation</title>
+  <title>Chapter 4 Workflow for Metmax-extracted projects | MTXQCvX2 documentation</title>
   <meta name="description" content="This is the offical documentation for the MTXQCvX2 toolbox.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="MTXQCvX2 documentation" />
+  <meta property="og:title" content="Chapter 4 Workflow for Metmax-extracted projects | MTXQCvX2 documentation" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="chriszasa/MTXQC_documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="MTXQCvX2 documentation" />
+  <meta name="twitter:title" content="Chapter 4 Workflow for Metmax-extracted projects | MTXQCvX2 documentation" />
   
   <meta name="twitter:description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="2-intro.html">
+<link rel="prev" href="3-wf-maui.html">
+<link rel="next" href="5-init.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -235,27 +235,107 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">MTXQCvX2 documentation</h1>
-<p class="author"><em>Christin Zasada</em></p>
-<p class="date"><em>2019-02-07</em></p>
+<div id="wf:metmax" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Workflow for Metmax-extracted projects</h1>
+<div id="you-want-to-follow-this" class="section level2">
+<h2><span class="header-section-number">4.1</span> You want to follow this …</h2>
+<ul>
+<li>in case you have measured samples and quantification standards by GC-MS</li>
+<li>performed the annotation of intermediates in ChromaToF or vendor software</li>
+<li>exported all information into <code>.txt</code> files</li>
+<li>used metmax to extract peak areas / mass isotopomer distributions (MIDs)</li>
+</ul>
 </div>
-<div id="welcome" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Welcome</h1>
-<p>This documentation introduced to you how to use MTXQCvX2 in order to assess the quality of your GC-MS derived data, perform the determination of calibration curves and absolute quantification. It furthermore provides you two normalisation strategies and the calculation of quantities in, e.g., pmol/1e+6 cells or pmol/mg tissue.</p>
-<p>MTXQCvX2 does also enable the calculation of stable isotopic incorporation and the evaluation of the underlying data, the mass isotopomer distributions (MIDs).</p>
-<p>The tool has been set up to support the in-lab developed workflow for quantitative metabolomics experiments using the in-house developed software Maui for the annotation of data. MTXQCvX2 bridges the gap between quality control and first data post-processing / analysis of GC-MS derived data (MTXQCvX2_part1, MTXQCvX2_part2).</p>
-<p>Nevertheless MTXQCvX2 includes a module in order to integrate all kind of data provided in spreadsheet-format, e.g., derived from metmax, extracting required information and creating corresponding files (MTXQCvX2_part4).</p>
-<p>Both workflows are introduced in the distinct chapters including their required input parameter (chapter <a href="3-wf-maui.html#wf:maui">Workflow Maui</a> and <a href="4-wf-metmax.html#wf:metmax">Workflow Metmax</a>).</p>
+<div id="introduction" class="section level2">
+<h2><span class="header-section-number">4.2</span> Introduction</h2>
+<p>This document describes how to use MTXQCvX2 in combination with metmax<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>.</p>
+<p>Historically, MTXQCvX2 has been developed and optimized for Maui-derived input files. The <code>MTXQCvX2-part4.Rmd</code> functions as a converter of metmax-derived files in order to create suitable input formats for <code>MTXQCvX-part1.Rmd</code>.</p>
+<p>This module could also be used to convert tables derived from other programs as long as they are stick with the herein described table formats. Mandatory columns are referenced in the text for each kind of input file.</p>
+<p>The general workflow of the NMTXQCvX2 project is briefly shown below in quick view. More detailed instructions are summarised in the following paragraphs.</p>
+<p>For more detailed explanations about the individual input parameter for each module of MTXQCvX2 please proceed to read the documentation about the individual modules and their knitting parameter. The relation of knitting parameter, input and output files are described in each section.</p>
+</div>
+<div id="quick-view-1" class="section level2">
+<h2><span class="header-section-number">4.3</span> Quick view</h2>
+<ol style="list-style-type: decimal">
+<li>Generate input files: run <code>MTXQC_part4.Rmd</code><a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a></li>
+<li>Setup R-project and copy MTXQC-files</li>
+<li>Knit with parameter: <code>MTXQC_init.Rmd</code></li>
+<li>Copy input files into corresponding folders</li>
+<li>Create annotation.csv and sample_extracts.csv files<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a></li>
+<li>Update metabolite names in <code>conversion_metabolite.csv</code><a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a></li>
+<li>Define the internal standard and/or alkanes<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a></li>
+<li>Knit with parameter: <code>MTXQC_ExperimentalSetup.Rmd</code></li>
+<li>Knit with parameter: <code>MTXQC_part1.Rmd</code></li>
+<li>Knit with parameter: <code>MTXQC_part2.Rmd</code></li>
+<li>If required - proceed with <code>MTXQC_part3.Rmd</code> for ManualValidation</li>
+</ol>
+</div>
+<div id="input-files-1" class="section level2">
+<h2><span class="header-section-number">4.4</span> Input files</h2>
+<p>If you need an introduction about how to use metmax - have a look at the separate documentation <code>Metmax_intro</code>.</p>
+<p>The chapter <a href="#part4"><strong>??</strong></a> <code>MTXQCvX_part4</code> explains in detail how to use this module to generate suitable input files.</p>
+</div>
+<div id="annotation-file-1" class="section level2">
+<h2><span class="header-section-number">4.5</span> Annotation-file</h2>
+<p>The annotation file relate file names with experimental conditions or specify quantification standards in your batch. Two columns - <strong>File and Type</strong> - are obligatory and have to be present in the annotation file. In the case of their absence <code>MTXQCvX_part1.Rmd</code> stops processing and shows an error message.</p>
+<p>A quick way to generate an annotation file is described below:</p>
+<ol style="list-style-type: decimal">
+<li>Copy all file names from a file of your choice</li>
+<li>Paste &amp; transpose the content into a new Excel-File into column A</li>
+<li>Call column A -&gt; File</li>
+<li>Optional: Remove any non-file name entry in this column</li>
+<li>Add the column Type and specify each file either as <strong>sample</strong>, <strong>Q1_diluation</strong>, ,<strong>addQ1_dilution</strong><a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a></li>
+<li>Add more columns specifying your experimental conditions, e.g., Cellline and Treatment<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a></li>
+<li>Save the content as <code>csv-file</code> in the <code>psirm_glucose/input/...</code></li>
+</ol>
+</div>
+<div id="sample_extracts-file-1" class="section level2">
+<h2><span class="header-section-number">4.6</span> Sample_extracts-file</h2>
+<p>The <code>sample_extracts.csv</code> file is required in order to determine automatically absolute quantities in the manner of pmol/1e+6 cells or pmol/mg tissue in the <code>CalculationFileData.csv</code>.</p>
+<p>This file requires two obligatory columns - <strong>Extract_vol</strong> and <strong>Unit</strong><a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a>. Please specify for each experimental condition the amount of extracted cells (count), tissue (mg) or volume of blood/plasme (ul) in the unit shown in the brackets.<br />
+The names of the columns of the experimental conditions have to match up with the annotation file. Save the file in the folder <code>psirm_glucose/input/...</code>.</p>
+<p>If the defined experimental conditions do not match up with the annotation <code>MTXQCvX2_part1.Rmd</code> exit data processing. A template file is saved for review and usage at <code>inst/template_files/...</code></p>
+</div>
+<div id="update-metabolite-names-in-conversion_metabolite.csv" class="section level2">
+<h2><span class="header-section-number">4.7</span> Update metabolite names in <code>conversion_metabolite.csv</code></h2>
+<p>The file <code>conversion_metabolite.csv</code>, saved in <code>config_mtx/</code>, serves as a kind of translational table. It defines alternative version of metabolite library names that come in handy to plot data using shorter metabolite names. This file is also used to define settings and standard classifications. Detailed information for each column of the file are shown here: REF</p>
+<div id="match-your-annotation-with-library-names" class="section level3">
+<h3><span class="header-section-number">4.7.1</span> Match your annotation with library names</h3>
+<p>Prior the analysis you need to match the names of your intermediates with the conversion_metabolite.csv file. You need to update or add the corresponding name for each intermediate in the column <strong>Metabolite_manual</strong>.</p>
+<p>General suggestion for naming conventions in ChromaToF: Metabolite_Derivate, e.g., Lactic acid_(2TMS). In case of the presence of main- (MP) and byproducts (BP) use: Metabolite_Derivate_MP/BP, e.g., Glucose_(1MEOX)(5TMS)_MP.</p>
+<p>If you have annotated intermediates that are not included so far in this table please follow the instructions how to extend <code>conversion_metabolite.csv</code>.REF</p>
+</div>
+<div id="define-your-internal-standards-and-alkanes" class="section level3">
+<h3><span class="header-section-number">4.7.2</span> Define your internal standards and alkanes</h3>
+<p>MTXQCvX2 allows the specification of project-specific internal standards. Corresponding compounds have to be marked as an internal standard in <code>conversion_metabolite.csv</code> by adding the tag <strong>InternalStandard</strong> in the column Standard.</p>
+<p>If you check the box - InternalStandard in the parameter selection for <code>MTXQCvX2_part4.Rmd</code> the module searches in your input file for peak areas of the defined standard and extracts the information. It also generates the file <code>InternalStandard.csv</code> and stores it at <code>psirm_glucose/input/gc/...</code>.</p>
+<p>In the same way alkanes are defined in <code>conversion_metabolite.csv</code>. Each alkane has to be flag tagged with <strong>Alk</strong> in the column Standard. This gives you the opportunity to implement customized mixtures of alkanes in order to determine the retention index. <code>MTXQCvX_part4.Rmd</code> recognises the flag tag and generates <code>Alcane_intensities.csv</code> based on your input file containing peak areas and saves it in <code>psirm_glucose/input/gc/...</code><a href="#fn14" class="footnoteRef" id="fnref14"><sup>14</sup></a>.</p>
+<p>The in-lab protocol considers nine alkanes from c10 to c36. Standard annotation includes an hashtag, e.g., #c10. If you use this annotation even Metmax would be able to determine the retention index.</p>
 
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="6">
+<li id="fn6"><p><a href="http://gmd.mpimp-golm.mpg.de/apps/metmax/default.htm" class="uri">http://gmd.mpimp-golm.mpg.de/apps/metmax/default.htm</a><a href="4-wf-metmax.html#fnref6">↩</a></p></li>
+<li id="fn7"><p>read here the instructions<a href="4-wf-metmax.html#fnref7">↩</a></p></li>
+<li id="fn8"><p>Details further down this document<a href="4-wf-metmax.html#fnref8">↩</a></p></li>
+<li id="fn9"><p>Column: Metabolite_manual<a href="4-wf-metmax.html#fnref9">↩</a></p></li>
+<li id="fn10"><p>Also in conversion_metabolite.csv; see below paragraph Standards<a href="4-wf-metmax.html#fnref10">↩</a></p></li>
+<li id="fn11"><p>see for further details additionalQuant<a href="4-wf-metmax.html#fnref11">↩</a></p></li>
+<li id="fn12"><p>optimal: two-three parameter, max: four parameter. Consider possible combinations, e.g., HCT116-control, HCT116-BPTES<a href="4-wf-metmax.html#fnref12">↩</a></p></li>
+<li id="fn13"><p>Define: count, mg or ul<a href="4-wf-metmax.html#fnref13">↩</a></p></li>
+<li id="fn14"><p>It should be al<strong>k</strong>ane, I know, but Maui doesn’t, unfortunately…<a href="4-wf-metmax.html#fnref14">↩</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="2-intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="3-wf-maui.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="5-init.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

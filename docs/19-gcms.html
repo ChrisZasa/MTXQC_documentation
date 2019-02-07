@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>MTXQCvX2 documentation</title>
+  <title>Chapter 19 GC-MS settings | MTXQCvX2 documentation</title>
   <meta name="description" content="This is the offical documentation for the MTXQCvX2 toolbox.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="MTXQCvX2 documentation" />
+  <meta property="og:title" content="Chapter 19 GC-MS settings | MTXQCvX2 documentation" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="chriszasa/MTXQC_documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="MTXQCvX2 documentation" />
+  <meta name="twitter:title" content="Chapter 19 GC-MS settings | MTXQCvX2 documentation" />
   
   <meta name="twitter:description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="2-intro.html">
+<link rel="prev" href="18-psirm.html">
+<link rel="next" href="20-mm.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -235,27 +235,113 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">MTXQCvX2 documentation</h1>
-<p class="author"><em>Christin Zasada</em></p>
-<p class="date"><em>2019-02-07</em></p>
+<div id="gcms" class="section level1">
+<h1><span class="header-section-number">Chapter 19</span> GC-MS settings</h1>
+<p>In the following paragraphs details of GC-MS settings are described in detail. The herein described settings have been optimized for cell extracts measured in split-mode 1:5 on the instrument Pegasus 4D-C GC-ToF-MS in 1D mode equiped with an autosampler Gerstel MPS.</p>
+<div id="autosampler-settings" class="section level3">
+<h3><span class="header-section-number">19.0.1</span> Autosampler settings</h3>
+<p>The table <a href="#tab:gerstel"><strong>??</strong></a> summarises the defined parameter for method settings of the Gerstel MPS.</p>
+<p>The injector itself is a temperature-regulated system providing the advantage of a focused injection of the sample. Gradient</p>
+<div class="figure"><span id="fig:cis"></span>
+<img src="images/cis.PNG" alt="Settings temperature-regulated injection for Gerstel MPS"  />
+<p class="caption">
+Figure 19.1: Settings temperature-regulated injection for Gerstel MPS
+</p>
 </div>
-<div id="welcome" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Welcome</h1>
-<p>This documentation introduced to you how to use MTXQCvX2 in order to assess the quality of your GC-MS derived data, perform the determination of calibration curves and absolute quantification. It furthermore provides you two normalisation strategies and the calculation of quantities in, e.g., pmol/1e+6 cells or pmol/mg tissue.</p>
-<p>MTXQCvX2 does also enable the calculation of stable isotopic incorporation and the evaluation of the underlying data, the mass isotopomer distributions (MIDs).</p>
-<p>The tool has been set up to support the in-lab developed workflow for quantitative metabolomics experiments using the in-house developed software Maui for the annotation of data. MTXQCvX2 bridges the gap between quality control and first data post-processing / analysis of GC-MS derived data (MTXQCvX2_part1, MTXQCvX2_part2).</p>
-<p>Nevertheless MTXQCvX2 includes a module in order to integrate all kind of data provided in spreadsheet-format, e.g., derived from metmax, extracting required information and creating corresponding files (MTXQCvX2_part4).</p>
-<p>Both workflows are introduced in the distinct chapters including their required input parameter (chapter <a href="3-wf-maui.html#wf:maui">Workflow Maui</a> and <a href="4-wf-metmax.html#wf:metmax">Workflow Metmax</a>).</p>
+</div>
+<div id="gas-chromatography" class="section level3">
+<h3><span class="header-section-number">19.0.2</span> Gas chromatography</h3>
+<p>The most important settings of the GC method are listed below. A graphical representation of the gradient in the oven is shown in figure <a href="19-gcms.html#fig:gradient">19.2</a> and corresponding values in table <a href="19-gcms.html#tab:gradient2">19.1</a>.</p>
+<p>Flow path:</p>
+<ol style="list-style-type: decimal">
+<li>Inlet: Front</li>
+<li>Capillary: GC Oven 50 m, 250 u int. diameter, 0.25 u film thickness, RTX-5 phase</li>
+<li>Capillarty: Detector 0.21 m, 250 u int. diameter, 0.25 u film thickness, RTX-5 phase</li>
+<li>Detector: TOF</li>
+</ol>
+<div class="figure"><span id="fig:gradient"></span>
+<img src="images/gradient.PNG" alt="GC gradient - graphical representation. Rate in (&amp;deg;C/min), Target temperature in (&amp;deg;C), Duratin in (min)."  />
+<p class="caption">
+Figure 19.2: GC gradient - graphical representation. Rate in (°C/min), Target temperature in (°C), Duratin in (min).
+</p>
+</div>
+<table>
+<caption>
+<span id="tab:gradient2">Table 19.1: </span>GC gradient profile - Rate shown in (K/min), Target Temp in (C), Duration in (min)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Rate
+</th>
+<th style="text-align:right;">
+Target_Temp
+</th>
+<th style="text-align:right;">
+Duration
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Initial
+</td>
+<td style="text-align:right;">
+68
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:right;">
+120
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mass-spectrometer-settings" class="section level3">
+<h3><span class="header-section-number">19.0.3</span> Mass spectrometer settings</h3>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="2-intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="18-psirm.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="20-mm.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
