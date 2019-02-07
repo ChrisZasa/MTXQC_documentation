@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 17 Appendix - Tables | MTXQCvX2 documentation</title>
+  <meta name="description" content="This is the start of the official MTXQCvX2 manual.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 17 Appendix - Tables | MTXQCvX2 documentation" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the start of the official MTXQCvX2 manual." />
+  <meta name="github-repo" content="chriszasa/MTXQC_documentation" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 17 Appendix - Tables | MTXQCvX2 documentation" />
+  
+  <meta name="twitter:description" content="This is the start of the official MTXQCvX2 manual." />
+  
+
+<meta name="author" content="Christin Zasada">
+
+
+<meta name="date" content="2019-02-07">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="FAQ.html">
+<link rel="next" href="psirm.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MTXQC documentation</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Content of MTXQCvX documentation</a></li>
+<li class="chapter" data-level="3" data-path="wf-maui.html"><a href="wf-maui.html"><i class="fa fa-check"></i><b>3</b> Workflow for Maui-annotation projects</a><ul>
+<li class="chapter" data-level="3.1" data-path="wf-maui.html"><a href="wf-maui.html#read-this-in-case"><i class="fa fa-check"></i><b>3.1</b> Read this in case</a></li>
+<li class="chapter" data-level="3.2" data-path="wf-maui.html"><a href="wf-maui.html#quick-view"><i class="fa fa-check"></i><b>3.2</b> Quick view</a></li>
+<li class="chapter" data-level="3.3" data-path="wf-maui.html"><a href="wf-maui.html#input-files"><i class="fa fa-check"></i><b>3.3</b> Input files</a></li>
+<li class="chapter" data-level="3.4" data-path="wf-maui.html"><a href="wf-maui.html#annotation-file"><i class="fa fa-check"></i><b>3.4</b> Annotation-file</a></li>
+<li class="chapter" data-level="3.5" data-path="wf-maui.html"><a href="wf-maui.html#sample_extracts-file"><i class="fa fa-check"></i><b>3.5</b> Sample_extracts-file</a></li>
+<li class="chapter" data-level="3.6" data-path="wf-maui.html"><a href="wf-maui.html#internal-standard"><i class="fa fa-check"></i><b>3.6</b> Internal Standard</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wf-metmax.html"><a href="wf-metmax.html"><i class="fa fa-check"></i><b>4</b> Workflow for Metmax-extracted projects</a><ul>
+<li class="chapter" data-level="4.1" data-path="wf-metmax.html"><a href="wf-metmax.html#you-want-to-follow-this"><i class="fa fa-check"></i><b>4.1</b> You want to follow this …</a></li>
+<li class="chapter" data-level="4.2" data-path="wf-metmax.html"><a href="wf-metmax.html#introduction"><i class="fa fa-check"></i><b>4.2</b> Introduction</a></li>
+<li class="chapter" data-level="4.3" data-path="wf-metmax.html"><a href="wf-metmax.html#quick-view-1"><i class="fa fa-check"></i><b>4.3</b> Quick view</a></li>
+<li class="chapter" data-level="4.4" data-path="wf-metmax.html"><a href="wf-metmax.html#input-files-1"><i class="fa fa-check"></i><b>4.4</b> Input files</a></li>
+<li class="chapter" data-level="4.5" data-path="wf-metmax.html"><a href="wf-metmax.html#annotation-file-1"><i class="fa fa-check"></i><b>4.5</b> Annotation-file</a></li>
+<li class="chapter" data-level="4.6" data-path="wf-metmax.html"><a href="wf-metmax.html#sample_extracts-file-1"><i class="fa fa-check"></i><b>4.6</b> Sample_extracts-file</a></li>
+<li class="chapter" data-level="4.7" data-path="wf-metmax.html"><a href="wf-metmax.html#update-metabolite-names-in-conversion_metabolite.csv"><i class="fa fa-check"></i><b>4.7</b> Update metabolite names in <code>conversion_metabolite.csv</code></a><ul>
+<li class="chapter" data-level="4.7.1" data-path="wf-metmax.html"><a href="wf-metmax.html#match-your-annotation-with-library-names"><i class="fa fa-check"></i><b>4.7.1</b> Match your annotation with library names</a></li>
+<li class="chapter" data-level="4.7.2" data-path="wf-metmax.html"><a href="wf-metmax.html#define-your-internal-standards-and-alkanes"><i class="fa fa-check"></i><b>4.7.2</b> Define your internal standards and alkanes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="init.html"><a href="init.html"><i class="fa fa-check"></i><b>5</b> MTXQCvX2_init</a></li>
+<li class="chapter" data-level="6" data-path="ExpSetup.html"><a href="ExpSetup.html"><i class="fa fa-check"></i><b>6</b> MTXQCvX_experimentalSetup.Rmd</a></li>
+<li class="chapter" data-level="7" data-path="part1.html"><a href="part1.html"><i class="fa fa-check"></i><b>7</b> MTXQCvX_part1.Rmd</a></li>
+<li class="chapter" data-level="8" data-path="part2.html"><a href="part2.html"><i class="fa fa-check"></i><b>8</b> MTXQCvX_part2.Rmd</a></li>
+<li class="chapter" data-level="9" data-path="mtxqcvx-part3-rmd.html"><a href="mtxqcvx-part3-rmd.html"><i class="fa fa-check"></i><b>9</b> MTXQCvX_part3.Rmd</a></li>
+<li class="chapter" data-level="10" data-path="mtxqcvx-part4-rmd-metmax-parser.html"><a href="mtxqcvx-part4-rmd-metmax-parser.html"><i class="fa fa-check"></i><b>10</b> MTXQCvX_part4.Rmd - Metmax parser</a><ul>
+<li class="chapter" data-level="10.1" data-path="mtxqcvx-part4-rmd-metmax-parser.html"><a href="mtxqcvx-part4-rmd-metmax-parser.html#this-section-explains"><i class="fa fa-check"></i><b>10.1</b> This section explains …</a></li>
+<li class="chapter" data-level="10.2" data-path="mtxqcvx-part4-rmd-metmax-parser.html"><a href="mtxqcvx-part4-rmd-metmax-parser.html#input-files-2"><i class="fa fa-check"></i><b>10.2</b> Input files</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="mtxqcvx-part4-rmd-metmax-parser.html"><a href="mtxqcvx-part4-rmd-metmax-parser.html#quantification---peakareas.csv"><i class="fa fa-check"></i><b>10.2.1</b> Quantification - PeakAreas.csv</a></li>
+<li class="chapter" data-level="10.2.2" data-path="mtxqcvx-part4-rmd-metmax-parser.html"><a href="mtxqcvx-part4-rmd-metmax-parser.html#isotope-incorporation---mids.csv"><i class="fa fa-check"></i><b>10.2.2</b> Isotope incorporation - MIDs.csv</a></li>
+<li class="chapter" data-level="10.2.3" data-path="mtxqcvx-part4-rmd-metmax-parser.html"><a href="mtxqcvx-part4-rmd-metmax-parser.html#derivatisation-efficiency---mz73.csv"><i class="fa fa-check"></i><b>10.2.3</b> Derivatisation efficiency - mz73.csv</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="configuration-of-mtxqcvx2-config-mtx-.html"><a href="configuration-of-mtxqcvx2-config-mtx-.html"><i class="fa fa-check"></i><b>11</b> Configuration of MTXQCvX2 - <code id="config">config_mtx/...</code></a><ul>
+<li class="chapter" data-level="11.1" data-path="configuration-of-mtxqcvx2-config-mtx-.html"><a href="configuration-of-mtxqcvx2-config-mtx-.html#conversion_metabolite.csv"><i class="fa fa-check"></i><b>11.1</b> <code>conversion_metabolite.csv</code></a></li>
+<li class="chapter" data-level="11.2" data-path="configuration-of-mtxqcvx2-config-mtx-.html"><a href="configuration-of-mtxqcvx2-config-mtx-.html#letter_pathway_complete.csv"><i class="fa fa-check"></i><b>11.2</b> <code>letter_pathway_complete.csv</code></a></li>
+<li class="chapter" data-level="11.3" data-path="configuration-of-mtxqcvx2-config-mtx-.html"><a href="configuration-of-mtxqcvx2-config-mtx-.html#quant1-values.csv"><i class="fa fa-check"></i><b>11.3</b> <code>quant1-values.csv</code></a></li>
+<li class="chapter" data-level="11.4" data-path="configuration-of-mtxqcvx2-config-mtx-.html"><a href="configuration-of-mtxqcvx2-config-mtx-.html#incorporation_calc.csv-mid_backups.csv"><i class="fa fa-check"></i><b>11.4</b> <code>incorporation_calc.csv</code> &amp; <code>mid_backups.csv</code></a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="protocols-sample-extraction.html"><a href="protocols-sample-extraction.html"><i class="fa fa-check"></i><b>12</b> Protocols - Sample extraction</a><ul>
+<li class="chapter" data-level="12.1" data-path="protocols-sample-extraction.html"><a href="protocols-sample-extraction.html#cell-extracts"><i class="fa fa-check"></i><b>12.1</b> Cell extracts</a></li>
+<li class="chapter" data-level="12.2" data-path="protocols-sample-extraction.html"><a href="protocols-sample-extraction.html#tissue-samples"><i class="fa fa-check"></i><b>12.2</b> Tissue samples</a></li>
+<li class="chapter" data-level="12.3" data-path="protocols-sample-extraction.html"><a href="protocols-sample-extraction.html#blood-samples"><i class="fa fa-check"></i><b>12.3</b> Blood samples</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="protocols-gc-tof-ms-measurement.html"><a href="protocols-gc-tof-ms-measurement.html"><i class="fa fa-check"></i><b>13</b> Protocols - GC-ToF-MS measurement</a><ul>
+<li class="chapter" data-level="13.1" data-path="protocols-gc-tof-ms-measurement.html"><a href="protocols-gc-tof-ms-measurement.html#sample-derivatisation"><i class="fa fa-check"></i><b>13.1</b> Sample derivatisation</a></li>
+<li class="chapter" data-level="13.2" data-path="protocols-gc-tof-ms-measurement.html"><a href="protocols-gc-tof-ms-measurement.html#gc-ms-measurement"><i class="fa fa-check"></i><b>13.2</b> GC-MS measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="mauiproc.html"><a href="mauiproc.html"><i class="fa fa-check"></i><b>14</b> Data processing - MAUI</a><ul>
+<li class="chapter" data-level="14.1" data-path="mauiproc.html"><a href="mauiproc.html#processing-in-chromatof"><i class="fa fa-check"></i><b>14.1</b> Processing In ChromaToF</a><ul>
+<li class="chapter" data-level="14.1.1" data-path="mauiproc.html"><a href="mauiproc.html#resampling"><i class="fa fa-check"></i><b>14.1.1</b> Resampling</a></li>
+<li class="chapter" data-level="14.1.2" data-path="mauiproc.html"><a href="mauiproc.html#combo-export-.cdf-.csv"><i class="fa fa-check"></i><b>14.1.2</b> Combo-export (<code>.cdf</code> &amp; <code>.csv</code>)</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="mauiproc.html"><a href="mauiproc.html#maui-notes"><i class="fa fa-check"></i><b>14.2</b> Maui notes</a></li>
+<li class="chapter" data-level="14.3" data-path="mauiproc.html"><a href="mauiproc.html#mauiexport"><i class="fa fa-check"></i><b>14.3</b> Maui exports</a><ul>
+<li class="chapter" data-level="14.3.1" data-path="mauiproc.html"><a href="mauiproc.html#inputgc..."><i class="fa fa-check"></i><b>14.3.1</b> <code>input/gc/...</code></a></li>
+<li class="chapter" data-level="14.3.2" data-path="mauiproc.html"><a href="mauiproc.html#inputquant..."><i class="fa fa-check"></i><b>14.3.2</b> <code>input/quant/...</code></a></li>
+<li class="chapter" data-level="14.3.3" data-path="mauiproc.html"><a href="mauiproc.html#inputinc..."><i class="fa fa-check"></i><b>14.3.3</b> <code>input/inc/...</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="metmaxexport.html"><a href="metmaxexport.html"><i class="fa fa-check"></i><b>15</b> Data Processing - Metmax</a><ul>
+<li class="chapter" data-level="15.1" data-path="metmaxexport.html"><a href="metmaxexport.html#resampling-1"><i class="fa fa-check"></i><b>15.1</b> Resampling</a></li>
+<li class="chapter" data-level="15.2" data-path="metmaxexport.html"><a href="metmaxexport.html#d-basic"><i class="fa fa-check"></i><b>15.2</b> 1D-basic</a></li>
+<li class="chapter" data-level="15.3" data-path="metmaxexport.html"><a href="metmaxexport.html#reference-search"><i class="fa fa-check"></i><b>15.3</b> Reference search</a></li>
+<li class="chapter" data-level="15.4" data-path="metmaxexport.html"><a href="metmaxexport.html#export-for-metmax"><i class="fa fa-check"></i><b>15.4</b> Export for Metmax</a></li>
+<li class="chapter" data-level="15.5" data-path="metmaxexport.html"><a href="metmaxexport.html#data-extraction-with-metmax"><i class="fa fa-check"></i><b>15.5</b> Data extraction with Metmax</a><ul>
+<li class="chapter" data-level="15.5.1" data-path="metmaxexport.html"><a href="metmaxexport.html#peak-areas"><i class="fa fa-check"></i><b>15.5.1</b> Peak areas</a></li>
+<li class="chapter" data-level="15.5.2" data-path="metmaxexport.html"><a href="metmaxexport.html#mids"><i class="fa fa-check"></i><b>15.5.2</b> MIDs</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="FAQ.html"><a href="FAQ.html"><i class="fa fa-check"></i><b>16</b> Frequently Asked Questions</a><ul>
+<li class="chapter" data-level="16.1" data-path="FAQ.html"><a href="FAQ.html#what-are-additional-quantification-standards"><i class="fa fa-check"></i><b>16.1</b> What are additional quantification standards</a></li>
+<li class="chapter" data-level="16.2" data-path="FAQ.html"><a href="FAQ.html#how-do-i-extend-conversion_metabolite.csv"><i class="fa fa-check"></i><b>16.2</b> How do I extend conversion_metabolite.csv</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i><b>17</b> Appendix - Tables</a><ul>
+<li class="chapter" data-level="17.1" data-path="tables.html"><a href="tables.html#mtxqc-base-tables"><i class="fa fa-check"></i><b>17.1</b> MTXQC base tables</a><ul>
+<li class="chapter" data-level="17.1.1" data-path="tables.html"><a href="tables.html#config_mtx-tables"><i class="fa fa-check"></i><b>17.1.1</b> <code>config_mtx</code> tables</a><ul>
+<li class="chapter" data-level="17.1.1.1" data-path="tables.html"><a href="tables.html#app:filenames"><i class="fa fa-check"></i><b>17.1.1.1</b> conv_filenames.csv</a></li>
+<li class="chapter" data-level="17.1.1.2" data-path="tables.html"><a href="tables.html#app:filenamesManVal"><i class="fa fa-check"></i><b>17.1.1.2</b> conv_filesnames_manVal.csv</a></li>
+<li class="chapter" data-level="17.1.1.3" data-path="tables.html"><a href="tables.html#depricated-file-mq_correction.csv"><i class="fa fa-check"></i><b>17.1.1.3</b> DEPRICATED FILE: MQ_correction.csv</a></li>
+</ul></li>
+<li class="chapter" data-level="17.1.2" data-path="tables.html"><a href="tables.html#config_files-tables"><i class="fa fa-check"></i><b>17.1.2</b> <code>config_files</code> tables</a><ul>
+<li class="chapter" data-level="17.1.2.1" data-path="tables.html"><a href="tables.html#app:conse"><i class="fa fa-check"></i><b>17.1.2.1</b> conversion_metabolite.csv</a></li>
+<li class="chapter" data-level="17.1.2.2" data-path="tables.html"><a href="tables.html#app:pathway"><i class="fa fa-check"></i><b>17.1.2.2</b> letter_pathway_complete.csv</a></li>
+<li class="chapter" data-level="17.1.2.3" data-path="tables.html"><a href="tables.html#app:incorp"><i class="fa fa-check"></i><b>17.1.2.3</b> incorp_calc_masses.csv</a></li>
+<li class="chapter" data-level="17.1.2.4" data-path="tables.html"><a href="tables.html#app:quant1"><i class="fa fa-check"></i><b>17.1.2.4</b> quant1_values.csv</a></li>
+<li class="chapter" data-level="17.1.2.5" data-path="tables.html"><a href="tables.html#app:midbackup"><i class="fa fa-check"></i><b>17.1.2.5</b> mid_backups.csv</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="tables.html"><a href="tables.html#input-data"><i class="fa fa-check"></i><b>17.2</b> Input data</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="tables.html"><a href="tables.html#maui-derived-tables"><i class="fa fa-check"></i><b>17.2.1</b> MAUI derived tables</a></li>
+<li class="chapter" data-level="17.2.2" data-path="tables.html"><a href="tables.html#metmax-derived-tables"><i class="fa fa-check"></i><b>17.2.2</b> Metmax derived tables</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="tables.html"><a href="tables.html#output-data"><i class="fa fa-check"></i><b>17.3</b> Output data</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="tables.html"><a href="tables.html#experimental-setup"><i class="fa fa-check"></i><b>17.3.1</b> Experimental Setup</a></li>
+<li class="chapter" data-level="17.3.2" data-path="tables.html"><a href="tables.html#mtxqcvx2-part1"><i class="fa fa-check"></i><b>17.3.2</b> MTXQCvX2 part1</a><ul>
+<li class="chapter" data-level="17.3.2.1" data-path="tables.html"><a href="tables.html#outputgc..."><i class="fa fa-check"></i><b>17.3.2.1</b> <code id="o_gc">output/gc/...</code></a><ul>
+<li class="chapter" data-level="17.3.2.1.1" data-path="tables.html"><a href="tables.html#hm_gc_values.csv-qcmetric_xy.csv"><i class="fa fa-check"></i><b>17.3.2.1.1</b> <code>HM_GC_values.csv</code> &amp; <code>qcmetric_xy.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.1.2" data-path="tables.html"><a href="tables.html#intstandard_normfactors.csv-intstandard_stats.csv"><i class="fa fa-check"></i><b>17.3.2.1.2</b> <code>IntStandard_normfactors.csv</code> &amp; <code>IntStandard_stats.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.1.3" data-path="tables.html"><a href="tables.html#min_annotation.csv-sumarea_stats.csv"><i class="fa fa-check"></i><b>17.3.2.1.3</b> <code>Min_Annotation.csv</code> &amp; <code>SumArea_stats.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.1.4" data-path="tables.html"><a href="tables.html#mz73_data.csv"><i class="fa fa-check"></i><b>17.3.2.1.4</b> <code>mz73_data.csv</code></a></li>
+</ul></li>
+<li class="chapter" data-level="17.3.2.2" data-path="tables.html"><a href="tables.html#outputquant..."><i class="fa fa-check"></i><b>17.3.2.2</b> <code id="o_quant">output/quant/...</code></a><ul>
+<li class="chapter" data-level="17.3.2.2.1" data-path="tables.html"><a href="tables.html#calcheck_linearity.csv"><i class="fa fa-check"></i><b>17.3.2.2.1</b> <code>calcheck_linearity.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.2.2" data-path="tables.html"><a href="tables.html#calculationfiledata.csv"><i class="fa fa-check"></i><b>17.3.2.2.2</b> <code id="CalcFileData">CalculationFileData.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.2.3" data-path="tables.html"><a href="tables.html#heatmap_quant_ptop5.csv"><i class="fa fa-check"></i><b>17.3.2.2.3</b> <code>HeatMap_Quant_pTop5.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.2.4" data-path="tables.html"><a href="tables.html#ptop5_calibration_samples_lincheck.csv"><i class="fa fa-check"></i><b>17.3.2.2.4</b> <code>pTop5_Calibration_Samples_lincheck.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.2.5" data-path="tables.html"><a href="tables.html#top5_calibrationinfo_unique.csv"><i class="fa fa-check"></i><b>17.3.2.2.5</b> <code>top5_CalibrationInfo_unique.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.2.6" data-path="tables.html"><a href="tables.html#top5_qmqcurveinfo.csv"><i class="fa fa-check"></i><b>17.3.2.2.6</b> <code>top5_QMQcurveInfo.csv</code></a></li>
+</ul></li>
+<li class="chapter" data-level="17.3.2.3" data-path="tables.html"><a href="tables.html#outputinc..."><i class="fa fa-check"></i><b>17.3.2.3</b> <code id="o_inc">output/inc/...</code></a><ul>
+<li class="chapter" data-level="17.3.2.3.1" data-path="tables.html"><a href="tables.html#heatmap_incorporation.csv"><i class="fa fa-check"></i><b>17.3.2.3.1</b> <code>HeatMap_Incorporation.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.3.2" data-path="tables.html"><a href="tables.html#se_calculation_nascore.csv"><i class="fa fa-check"></i><b>17.3.2.3.2</b> <code>SE_calculation_NAscore.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.3.3" data-path="tables.html"><a href="tables.html#se_classification.csv"><i class="fa fa-check"></i><b>17.3.2.3.3</b> <code>SE_classification.csv</code></a></li>
+<li class="chapter" data-level="17.3.2.3.4" data-path="tables.html"><a href="tables.html#se_validation.csv"><i class="fa fa-check"></i><b>17.3.2.3.4</b> <code>SE_validation.csv</code></a></li>
+</ul></li>
+<li class="chapter" data-level="17.3.2.4" data-path="tables.html"><a href="tables.html#mtxqcvx2-part3"><i class="fa fa-check"></i><b>17.3.2.4</b> MTXQCvX2 part3</a></li>
+<li class="chapter" data-level="17.3.2.5" data-path="tables.html"><a href="tables.html#mtxqcvx2-part4"><i class="fa fa-check"></i><b>17.3.2.5</b> MTXQCvX2 part4</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="psirm.html"><a href="psirm.html"><i class="fa fa-check"></i><b>18</b> pSIRM experiments</a><ul>
+<li class="chapter" data-level="18.1" data-path="psirm.html"><a href="psirm.html#experimental-design"><i class="fa fa-check"></i><b>18.1</b> Experimental design</a></li>
+<li class="chapter" data-level="18.2" data-path="psirm.html"><a href="psirm.html#experimental-procedures"><i class="fa fa-check"></i><b>18.2</b> Experimental procedures</a></li>
+<li class="chapter" data-level="18.3" data-path="psirm.html"><a href="psirm.html#protocol-psirm"><i class="fa fa-check"></i><b>18.3</b> Protocol pSIRM</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="psirm.html"><a href="psirm.html#psirm:adherent"><i class="fa fa-check"></i><b>18.3.1</b> Adherent cell cultures</a></li>
+<li class="chapter" data-level="18.3.2" data-path="psirm.html"><a href="psirm.html#psirm:suspension"><i class="fa fa-check"></i><b>18.3.2</b> Supension cell cultures</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="psirm.html"><a href="psirm.html#hints-notes"><i class="fa fa-check"></i><b>18.4</b> Hints &amp; notes</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="gcms.html"><a href="gcms.html"><i class="fa fa-check"></i><b>19</b> GC-MS settings</a><ul>
+<li class="chapter" data-level="19.0.1" data-path="gcms.html"><a href="gcms.html#autosampler-settings"><i class="fa fa-check"></i><b>19.0.1</b> Autosampler settings</a></li>
+<li class="chapter" data-level="19.0.2" data-path="gcms.html"><a href="gcms.html#gas-chromatography"><i class="fa fa-check"></i><b>19.0.2</b> Gas chromatography</a></li>
+<li class="chapter" data-level="19.0.3" data-path="gcms.html"><a href="gcms.html#mass-spectrometer-settings"><i class="fa fa-check"></i><b>19.0.3</b> Mass spectrometer settings</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="mm.html"><a href="mm.html"><i class="fa fa-check"></i><b>20</b> Solutions and Materials</a><ul>
+<li class="chapter" data-level="20.1" data-path="mm.html"><a href="mm.html#solutions"><i class="fa fa-check"></i><b>20.1</b> Solutions</a><ul>
+<li class="chapter" data-level="20.1.1" data-path="mm.html"><a href="mm.html#washingbuffer"><i class="fa fa-check"></i><b>20.1.1</b> Label buffer</a></li>
+<li class="chapter" data-level="20.1.2" data-path="mm.html"><a href="mm.html#mcw"><i class="fa fa-check"></i><b>20.1.2</b> MCW</a></li>
+<li class="chapter" data-level="20.1.3" data-path="mm.html"><a href="mm.html#alkanemix"><i class="fa fa-check"></i><b>20.1.3</b> Alkane-Mix</a></li>
+</ul></li>
+<li class="chapter" data-level="20.2" data-path="mm.html"><a href="mm.html#materials"><i class="fa fa-check"></i><b>20.2</b> Materials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MTXQCvX2 documentation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tables" class="section level1">
+<h1><span class="header-section-number">Chapter 17</span> Appendix - Tables</h1>
+<p>This chapter shows the structure of all input or output csv-files that are referenced throughout the documentation. Please refer to the chapters for more detailed explanations.</p>
+<div id="mtxqc-base-tables" class="section level2">
+<h2><span class="header-section-number">17.1</span> MTXQC base tables</h2>
+<div id="config_mtx-tables" class="section level3">
+<h3><span class="header-section-number">17.1.1</span> <code>config_mtx</code> tables</h3>
+<div id="app:filenames" class="section level4">
+<h4><span class="header-section-number">17.1.1.1</span> conv_filenames.csv</h4>
+<pre><code>## &#39;data.frame&#39;:    10 obs. of  2 variables:
+##  $ AssociatedFile: Factor w/ 10 levels &quot;addQ&quot;,&quot;alkane_int&quot;,..: 4 2 7 8 10 9 5 1 6 3
+##  $ Filename      : Factor w/ 10 levels &quot; incorp_calc_masses.csv&quot;,..: 6 4 7 8 10 9 5 3 1 2</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">AssociatedFile</th>
+<th align="left">Filename</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">cin_acid</td>
+<td align="left">InternalStandard.csv</td>
+</tr>
+<tr class="even">
+<td align="left">alkane_int</td>
+<td align="left">Alcane_intensities.csv</td>
+</tr>
+<tr class="odd">
+<td align="left">mz_73</td>
+<td align="left">MassSum-73.csv</td>
+</tr>
+<tr class="even">
+<td align="left">peak_densities</td>
+<td align="left">PeakDensities-Chroma.csv</td>
+</tr>
+<tr class="odd">
+<td align="left">sample_area</td>
+<td align="left">quantMassAreasMatrix.csv</td>
+</tr>
+<tr class="even">
+<td align="left">pSIRM_se</td>
+<td align="left">pSIRM_SpectraData.csv</td>
+</tr>
+<tr class="odd">
+<td align="left">inc</td>
+<td align="left">DataMatrix.csv</td>
+</tr>
+<tr class="even">
+<td align="left">addQ</td>
+<td align="left">additional_quant1_values.csv</td>
+</tr>
+<tr class="odd">
+<td align="left">mass_li</td>
+<td align="left">incorp_calc_masses.csv</td>
+</tr>
+<tr class="even">
+<td align="left">backups_mid</td>
+<td align="left">mid_backups.csv</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="app:filenamesManVal" class="section level4">
+<h4><span class="header-section-number">17.1.1.2</span> conv_filesnames_manVal.csv</h4>
+<pre><code>## &#39;data.frame&#39;:    3 obs. of  2 variables:
+##  $ AssociatedFile: Factor w/ 3 levels &quot;inc&quot;,&quot;pSIRM_se&quot;,..: 3 2 1
+##  $ Filename      : Factor w/ 3 levels &quot;DataMatrix_manVal.csv&quot;,..: 3 2 1</code></pre>
+</div>
+<div id="depricated-file-mq_correction.csv" class="section level4">
+<h4><span class="header-section-number">17.1.1.3</span> DEPRICATED FILE: MQ_correction.csv</h4>
+<p>Not in use anymore since fluffy adventure!</p>
+<pre><code>## &#39;data.frame&#39;:    7 obs. of  3 variables:
+##  $ Metabolite  : Factor w/ 7 levels &quot;Alanine_(2TMS)_BP_RI:1097_IDENT:B+C&quot;,..: 1 2 3 6 7 4 5
+##  $ Cor_factor  : num  12 12 6.33 11.82 2.41 ...
+##  $ Target_value: num  134695 134695 83259 388544 65154 ...</code></pre>
+</div>
+</div>
+<div id="config_files-tables" class="section level3">
+<h3><span class="header-section-number">17.1.2</span> <code>config_files</code> tables</h3>
+<p>These tables are supposed to be modified in relation to the individual needs of a project.</p>
+<div id="app:conse" class="section level4">
+<h4><span class="header-section-number">17.1.2.1</span> conversion_metabolite.csv</h4>
+<pre><code>## &#39;data.frame&#39;:    166 obs. of  10 variables:
+##  $ Metabolite_manual: Factor w/ 115 levels &quot;&quot;,&quot;#2OG&quot;,&quot;#Adenine (2TMS)&quot;,..: 1 1 4 1 1 7 5 6 8 9 ...
+##  $ Metabolite       : Factor w/ 166 levels &quot;Acetoacetic acid_(1MEOX)(1TMS)_MP_RI:1132_BMD&quot;,..: 1 2 4 5 7 6 8 9 10 11 ...
+##  $ Metabolite_short : Factor w/ 161 levels &quot;Acetoacetic acid_(1MEOX)(1TMS)&quot;,..: 1 2 4 5 7 6 8 9 10 11 ...
+##  $ Lettercode       : Factor w/ 143 levels &quot;2PGA&quot;,&quot;3PGA&quot;,..: 4 5 6 7 13 14 8 9 11 12 ...
+##  $ Q1_value         : Factor w/ 2 levels &quot;&quot;,&quot;x&quot;: 1 1 1 1 2 2 2 2 1 1 ...
+##  $ Mass_Pos         : int  NA NA NA NA NA NA 118 190 249 NA ...
+##  $ SE_sel           : Factor w/ 2 levels &quot;&quot;,&quot;x&quot;: 1 1 1 1 1 1 2 2 2 2 ...
+##  $ Q_sel            : Factor w/ 2 levels &quot;&quot;,&quot;x&quot;: 1 1 2 2 1 1 2 2 2 2 ...
+##  $ nopsirm          : Factor w/ 2 levels &quot;&quot;,&quot;x&quot;: 2 2 1 2 2 2 1 1 1 2 ...
+##  $ Standards        : Factor w/ 3 levels &quot;&quot;,&quot;Alk&quot;,&quot;InternalStandard&quot;: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+</div>
+<div id="app:pathway" class="section level4">
+<h4><span class="header-section-number">17.1.2.2</span> letter_pathway_complete.csv</h4>
+<pre><code>## &#39;data.frame&#39;:    100 obs. of  7 variables:
+##  $ Letter_Derivate: Factor w/ 69 levels &quot;2HG&quot;,&quot;2OG&quot;,&quot;3PGA&quot;,..: 1 2 3 4 5 5 6 6 7 8 ...
+##  $ Lettercode     : Factor w/ 100 levels &quot;2HG&quot;,&quot;2OG&quot;,&quot;3PGA&quot;,..: 1 2 3 4 6 5 8 7 9 10 ...
+##  $ Pathway        : Factor w/ 9 levels &quot;aa&quot;,&quot;glut&quot;,&quot;glyc&quot;,..: 2 9 3 4 5 5 1 1 1 1 ...
+##  $ Pathway.1      : Factor w/ 9 levels &quot;1-glyc&quot;,&quot;2-tca&quot;,..: 3 2 1 7 9 9 5 5 5 5 ...
+##  $ Met_pathway    : Factor w/ 97 levels &quot;1-glyc_DHAP_BP&quot;,..: 28 21 17 91 96 96 35 34 36 37 ...
+##  $ Subs_class     : Factor w/ 11 levels &quot;aa&quot;,&quot;amino sugar&quot;,..: 6 6 8 3 4 4 1 1 1 1 ...
+##  $ Met_class      : Factor w/ 97 levels &quot;aa_Ala_2TMS&quot;,..: 55 56 83 43 46 46 2 1 3 4 ...</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Letter_Derivate</th>
+<th align="left">Lettercode</th>
+<th align="left">Pathway</th>
+<th align="left">Pathway.1</th>
+<th align="left">Met_pathway</th>
+<th align="left">Subs_class</th>
+<th align="left">Met_class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2HG</td>
+<td align="left">2HG</td>
+<td align="left">glut</td>
+<td align="left">3-glut</td>
+<td align="left">3-glut_Glut_2hydroxy</td>
+<td align="left">organic acid</td>
+<td align="left">organic acid_Glut_2hydroxy</td>
+</tr>
+<tr class="even">
+<td align="left">2OG</td>
+<td align="left">2OG</td>
+<td align="left">tca</td>
+<td align="left">2-tca</td>
+<td align="left">2-tca_Glut_2oxo</td>
+<td align="left">organic acid</td>
+<td align="left">organic acid_Glut_2oxo</td>
+</tr>
+<tr class="odd">
+<td align="left">3PGA</td>
+<td align="left">3PGA</td>
+<td align="left">glyc</td>
+<td align="left">1-glyc</td>
+<td align="left">1-glyc_PGA</td>
+<td align="left">phosphate</td>
+<td align="left">phosphate_PGA</td>
+</tr>
+<tr class="even">
+<td align="left">A</td>
+<td align="left">A</td>
+<td align="left">nucleobase</td>
+<td align="left">7-nucleobase</td>
+<td align="left">7-nucleobase_Adenosine</td>
+<td align="left">nucleobase</td>
+<td align="left">nucleobase_Adenosine</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="app:incorp" class="section level4">
+<h4><span class="header-section-number">17.1.2.3</span> incorp_calc_masses.csv</h4>
+<pre><code>## &#39;data.frame&#39;:    90 obs. of  3 variables:
+##  $ Metabolite: Factor w/ 45 levels &quot;Alanine_(2TMS)_BP_RI:1097_IDENT:B+C&quot;,..: 1 1 2 2 3 3 4 4 5 5 ...
+##  $ Mass_mz   : int  116 118 188 190 245 249 273 275 273 276 ...
+##  $ LI_MID    : Factor w/ 2 levels &quot;m0&quot;,&quot;minc&quot;: 1 2 1 2 1 2 1 2 1 2 ...</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Metabolite</th>
+<th align="right">Mass_mz</th>
+<th align="left">LI_MID</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Alanine_(2TMS)_BP_RI:1097_IDENT:B+C</td>
+<td align="right">116</td>
+<td align="left">m0</td>
+</tr>
+<tr class="even">
+<td align="left">Alanine_(2TMS)_BP_RI:1097_IDENT:B+C</td>
+<td align="right">118</td>
+<td align="left">minc</td>
+</tr>
+<tr class="odd">
+<td align="left">Alanine_(3TMS)_MP_RI:1367_IDENT:B+C</td>
+<td align="right">188</td>
+<td align="left">m0</td>
+</tr>
+<tr class="even">
+<td align="left">Alanine_(3TMS)_MP_RI:1367_IDENT:B+C</td>
+<td align="right">190</td>
+<td align="left">minc</td>
+</tr>
+<tr class="odd">
+<td align="left">Aspartic acid_(2TMS)_BP_RI:1433_IDENT:A+C</td>
+<td align="right">245</td>
+<td align="left">m0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="app:quant1" class="section level4">
+<h4><span class="header-section-number">17.1.2.4</span> quant1_values.csv</h4>
+<pre><code>## &#39;data.frame&#39;:    70 obs. of  3 variables:
+##  $ Letter_Derivate: Factor w/ 70 levels &quot;2HG&quot;,&quot;2OG&quot;,&quot;3PGA&quot;,..: 1 2 3 4 5 6 7 8 9 10 ...
+##  $ Quant1_v4      : int  57270 34220 43480 7400 18710 134700 11480 22710 15030 11220 ...
+##  $ Quant1_v3      : int  57270 34220 43480 7400 18710 134700 11480 22710 15030 11220 ...</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Letter_Derivate</th>
+<th align="right">Quant1_v4</th>
+<th align="right">Quant1_v3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2HG</td>
+<td align="right">57270</td>
+<td align="right">57270</td>
+</tr>
+<tr class="even">
+<td align="left">2OG</td>
+<td align="right">34220</td>
+<td align="right">34220</td>
+</tr>
+<tr class="odd">
+<td align="left">3PGA</td>
+<td align="right">43480</td>
+<td align="right">43480</td>
+</tr>
+<tr class="even">
+<td align="left">A</td>
+<td align="right">7400</td>
+<td align="right">7400</td>
+</tr>
+<tr class="odd">
+<td align="left">Adenosine</td>
+<td align="right">18710</td>
+<td align="right">18710</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="app:midbackup" class="section level4">
+<h4><span class="header-section-number">17.1.2.5</span> mid_backups.csv</h4>
+<pre><code>## &#39;data.frame&#39;:    224 obs. of  4 variables:
+##  $ Metabolite    : Factor w/ 38 levels &quot;Alanine_ beta-_(3TMS)_MP_RI:1435_IDENT:A+D&quot;,..: 1 1 1 1 2 2 2 2 3 3 ...
+##  $ Mass.m.z.     : int  188 189 190 191 116 117 118 119 188 189 ...
+##  $ BackupPeakArea: int  4960 876 307 53 2616179 323019 99834 19759 4960 876 ...
+##  $ BackupMID     : num  0.8005 0.1414 0.0495 0.0086 0.8553 ...</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Metabolite</th>
+<th align="right">Mass.m.z.</th>
+<th align="right">BackupPeakArea</th>
+<th align="right">BackupMID</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Alanine_ beta-_(3TMS)_MP_RI:1435_IDENT:A+D</td>
+<td align="right">188</td>
+<td align="right">4960</td>
+<td align="right">0.8005000</td>
+</tr>
+<tr class="even">
+<td align="left">Alanine_ beta-_(3TMS)_MP_RI:1435_IDENT:A+D</td>
+<td align="right">189</td>
+<td align="right">876</td>
+<td align="right">0.1414000</td>
+</tr>
+<tr class="odd">
+<td align="left">Alanine_ beta-_(3TMS)_MP_RI:1435_IDENT:A+D</td>
+<td align="right">190</td>
+<td align="right">307</td>
+<td align="right">0.0495000</td>
+</tr>
+<tr class="even">
+<td align="left">Alanine_ beta-_(3TMS)_MP_RI:1435_IDENT:A+D</td>
+<td align="right">191</td>
+<td align="right">53</td>
+<td align="right">0.0086000</td>
+</tr>
+<tr class="odd">
+<td align="left">Alanine_(2TMS)_BP_RI:1097_IDENT:B+C</td>
+<td align="right">116</td>
+<td align="right">2616179</td>
+<td align="right">0.8552984</td>
+</tr>
+<tr class="even">
+<td align="left">Alanine_(2TMS)_BP_RI:1097_IDENT:B+C</td>
+<td align="right">117</td>
+<td align="right">323019</td>
+<td align="right">0.1056035</td>
+</tr>
+<tr class="odd">
+<td align="left">Alanine_(2TMS)_BP_RI:1097_IDENT:B+C</td>
+<td align="right">118</td>
+<td align="right">99834</td>
+<td align="right">0.0326384</td>
+</tr>
+<tr class="even">
+<td align="left">Alanine_(2TMS)_BP_RI:1097_IDENT:B+C</td>
+<td align="right">119</td>
+<td align="right">19759</td>
+<td align="right">0.0064597</td>
+</tr>
+<tr class="odd">
+<td align="left">Alanine_(3TMS)_MP_RI:1367_IDENT:B+C</td>
+<td align="right">188</td>
+<td align="right">4960</td>
+<td align="right">0.8005000</td>
+</tr>
+<tr class="even">
+<td align="left">Alanine_(3TMS)_MP_RI:1367_IDENT:B+C</td>
+<td align="right">189</td>
+<td align="right">876</td>
+<td align="right">0.1414000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="input-data" class="section level2">
+<h2><span class="header-section-number">17.2</span> Input data</h2>
+<div id="maui-derived-tables" class="section level3">
+<h3><span class="header-section-number">17.2.1</span> MAUI derived tables</h3>
+</div>
+<div id="metmax-derived-tables" class="section level3">
+<h3><span class="header-section-number">17.2.2</span> Metmax derived tables</h3>
+</div>
+</div>
+<div id="output-data" class="section level2">
+<h2><span class="header-section-number">17.3</span> Output data</h2>
+<div id="experimental-setup" class="section level3">
+<h3><span class="header-section-number">17.3.1</span> Experimental Setup</h3>
+</div>
+<div id="mtxqcvx2-part1" class="section level3">
+<h3><span class="header-section-number">17.3.2</span> MTXQCvX2 part1</h3>
+<div id="outputgc..." class="section level4">
+<h4><span class="header-section-number">17.3.2.1</span> <code id="o_gc">output/gc/...</code></h4>
+<div id="hm_gc_values.csv-qcmetric_xy.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.1.1</span> <code>HM_GC_values.csv</code> &amp; <code>qcmetric_xy.csv</code></h5>
+<p>MTXQC exports a file summarising quality factors for each of the four parameter evaluating the GC performance. A summary representing the values illustrated in the heatmap are shown in table <a href="@ref(tab:o_hm_gc)"><code>HM_GC_values.csv</code></a>, individual exports for each metric in table <a href="@ref(tab:o_gc_metric)"><code>qcmetric_xy.csv</code></a>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column.name</th>
+<th align="left">Description</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Batch_Id</td>
+<td align="left">Batch-Id</td>
+<td align="left">e18274ba</td>
+</tr>
+<tr class="even">
+<td align="left">qc_metric</td>
+<td align="left">QC metric factor corresponding with 1 - very good and 0 - very low</td>
+<td align="left">0.937254457</td>
+</tr>
+<tr class="odd">
+<td align="left">title</td>
+<td align="left">Class of QC metric</td>
+<td align="left">alkanes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column.name</th>
+<th align="left">Description</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Batch_Id</td>
+<td align="left">Batch-Id</td>
+<td align="left">e18274ba</td>
+</tr>
+<tr class="even">
+<td align="left">qc_metric</td>
+<td align="left">QC metric factor corresponding with 1 - very good and 0 - very low</td>
+<td align="left">0.937254457</td>
+</tr>
+<tr class="odd">
+<td align="left">title</td>
+<td align="left">Class of QC metric</td>
+<td align="left">alkanes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="intstandard_normfactors.csv-intstandard_stats.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.1.2</span> <code>IntStandard_normfactors.csv</code> &amp; <code>IntStandard_stats.csv</code></h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column.name</th>
+<th align="left">Description</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">File</td>
+<td align="left">File name</td>
+<td align="left">e18274ba_17.cdf</td>
+</tr>
+<tr class="even">
+<td align="left">PeakArea</td>
+<td align="left">Peak area of internal extraction standard</td>
+<td align="left">89308492</td>
+</tr>
+<tr class="odd">
+<td align="left">Batch_Id</td>
+<td align="left">Bacth-Id</td>
+<td align="left">e18274ba</td>
+</tr>
+<tr class="even">
+<td align="left">IntStd_fac</td>
+<td align="left">Determined normalisation factor</td>
+<td align="left">0.837457514</td>
+</tr>
+<tr class="odd">
+<td align="left">IntStd_eval</td>
+<td align="left">Evaluation of normalisation factor in relation to defined range plus/minus one standard deviation</td>
+<td align="left">within</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column.name</th>
+<th align="left">Description</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">File</td>
+<td align="left">File name</td>
+<td align="left">e18274ba_17.cdf</td>
+</tr>
+<tr class="even">
+<td align="left">PeakArea</td>
+<td align="left">Peak area of internal extraction standard</td>
+<td align="left">89308492</td>
+</tr>
+<tr class="odd">
+<td align="left">Batch_Id</td>
+<td align="left">Batch-Id</td>
+<td align="left">e18274ba</td>
+</tr>
+<tr class="even">
+<td align="left">IntStd_fac</td>
+<td align="left">Normalisation factor</td>
+<td align="left">0.837457514</td>
+</tr>
+<tr class="odd">
+<td align="left">IntStd_eval</td>
+<td align="left">Evaluation regarding QC</td>
+<td align="left">within</td>
+</tr>
+<tr class="even">
+<td align="left">n_batch</td>
+<td align="left">Number of annotated intermediates</td>
+<td align="left">54</td>
+</tr>
+<tr class="odd">
+<td align="left">mean_batch</td>
+<td align="left">Mean value of internal standard peak area across the batch</td>
+<td align="left">106642415.3</td>
+</tr>
+<tr class="even">
+<td align="left">sd_batch</td>
+<td align="left">Standard deviation of the peak area across the batch of the internal extraction standard</td>
+<td align="left">36710894.86</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="min_annotation.csv-sumarea_stats.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.1.3</span> <code>Min_Annotation.csv</code> &amp; <code>SumArea_stats.csv</code></h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column.name</th>
+<th align="left">Description</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">File</td>
+<td align="left">File name</td>
+<td align="left">e18274ba_17.cdf</td>
+</tr>
+<tr class="even">
+<td align="left">Batch_Id</td>
+<td align="left">Extracted Batch-Id derived from file name</td>
+<td align="left">e18274ba</td>
+</tr>
+<tr class="odd">
+<td align="left">n_area</td>
+<td align="left">Number of peak areas per file</td>
+<td align="left">101</td>
+</tr>
+<tr class="even">
+<td align="left">sum_area</td>
+<td align="left">Sum of all peak areas</td>
+<td align="left">44614610885</td>
+</tr>
+<tr class="odd">
+<td align="left">n_total</td>
+<td align="left">Total number of entries (including NA)</td>
+<td align="left">107</td>
+</tr>
+<tr class="even">
+<td align="left">mean_batch</td>
+<td align="left">Mean value of peak areas across the batch</td>
+<td align="left">34409759414</td>
+</tr>
+<tr class="odd">
+<td align="left">sd_batch</td>
+<td align="left">Standard deviation of peak areas across the batch</td>
+<td align="left">12913422445</td>
+</tr>
+<tr class="even">
+<td align="left">area_fac</td>
+<td align="left">Normalisation factor of the file</td>
+<td align="left">1.296568521</td>
+</tr>
+<tr class="odd">
+<td align="left">n_50</td>
+<td align="left">Number of annotated peak areas per file corresponding to fifty percent of maximum number of annotated peaks in the batch</td>
+<td align="left">53.5</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column.name</th>
+<th align="left">Description</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Batch_Id</td>
+<td align="left">Batch-Id</td>
+<td align="left">e18274ba</td>
+</tr>
+<tr class="even">
+<td align="left">n_50</td>
+<td align="left">Number corresponding to fifty percent of the maximum number of annotated peaks per file</td>
+<td align="left">53.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mz73_data.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.1.4</span> <code>mz73_data.csv</code></h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column.name</th>
+<th align="left">Description</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">File</td>
+<td align="left">File name</td>
+<td align="left">e18274ba_17.cdf</td>
+</tr>
+<tr class="even">
+<td align="left">Batch_Id</td>
+<td align="left">Batch-ID</td>
+<td align="left">e18274ba</td>
+</tr>
+<tr class="odd">
+<td align="left">mean_73</td>
+<td align="left">Mean value of the sum of m/z 73 intensities per file</td>
+<td align="left">16314646.1</td>
+</tr>
+<tr class="even">
+<td align="left">sd_73</td>
+<td align="left">Standard deviation of the mean of the sum of m/z 73 intensities per file</td>
+<td align="left">143890119.5</td>
+</tr>
+<tr class="odd">
+<td align="left">n_peaks</td>
+<td align="left">Number of intensities used for statistics</td>
+<td align="left">600</td>
+</tr>
+<tr class="even">
+<td align="left">sum_area</td>
+<td align="left">Sum of all m/z intensities</td>
+<td align="left">6777312761</td>
+</tr>
+<tr class="odd">
+<td align="left">ratio_total</td>
+<td align="left">Ratio of sum_area in relation to the sum of all annotated peak areas</td>
+<td align="left">0.002407244</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outputquant..." class="section level4">
+<h4><span class="header-section-number">17.3.2.2</span> <code id="o_quant">output/quant/...</code></h4>
+<div id="calcheck_linearity.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.2.1</span> <code>calcheck_linearity.csv</code></h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column.name</th>
+<th align="left">Description</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Metabolite</td>
+<td align="left">Full library name of the metabolite</td>
+<td align="left">Alanine_(3TMS)_MP_RI:1367_IDENT:B+C</td>
+</tr>
+<tr class="even">
+<td align="left">Batch_Id</td>
+<td align="left">Batch-Id</td>
+<td align="left">e18274ba</td>
+</tr>
+<tr class="odd">
+<td align="left">File</td>
+<td align="left">File name</td>
+<td align="left">e18274ba_53.cdf</td>
+</tr>
+<tr class="even">
+<td align="left">QuantMasses</td>
+<td align="left">Defined quantification masses</td>
+<td align="left">110.0 133.0 114.0 100.0 188.0 190.0</td>
+</tr>
+<tr class="odd">
+<td align="left">PeakArea</td>
+<td align="left">Sum of peak areas based on defined QuantMasses</td>
+<td align="left">12710956</td>
+</tr>
+<tr class="even">
+<td align="left">Type</td>
+<td align="left">Kind of sample</td>
+<td align="left">sample</td>
+</tr>
+<tr class="odd">
+<td align="left">Metabolite_manual</td>
+<td align="left">Manual defined metabolite name</td>
+<td align="left">#Alanine (3TMS)</td>
+</tr>
+<tr class="even">
+<td align="left">Metabolite_short</td>
+<td align="left">Short version of metabolite name</td>
+<td align="left">Alanine_(3TMS)</td>
+</tr>
+<tr class="odd">
+<td align="left">Lettercode</td>
+<td align="left">Lettercode version of metabolite name</td>
+<td align="left">Ala_3TMS</td>
+</tr>
+<tr class="even">
+<td align="left">Q1_value</td>
+<td align="left">Quantity in the quantification standard Q1:1 if included in pmol</td>
+<td align="left">x</td>
+</tr>
+<tr class="odd">
+<td align="left">Mass_Pos</td>
+<td align="left">m/z value that should be evaluated in case of the application of isotopes</td>
+<td align="left">190</td>
+</tr>
+<tr class="even">
+<td align="left">SE_sel</td>
+<td align="left">Intermediate used for evaluation of MIDs if present</td>
+<td align="left">x</td>
+</tr>
+<tr class="odd">
+<td align="left">Q_sel</td>
+<td align="left">Intermediate used for absolute quantification if Q1:1 present</td>
+<td align="left">x</td>
+</tr>
+<tr class="even">
+<td align="left">nopsirm</td>
+<td align="left">If exclusivly used for quantification purposes only</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Standards</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Origin</td>
+<td align="left">Quantification standard</td>
+<td align="left">Qstd</td>
+</tr>
+<tr class="odd">
+<td align="left">adj_r_squared</td>
+<td align="left">Adjusted Rsquare value of linear regression of the calibration curve</td>
+<td align="left">0.997002799</td>
+</tr>
+<tr class="even">
+<td align="left">slope</td>
+<td align="left">Slope of the calibration curve determined by linear regression</td>
+<td align="left">0.000578604</td>
+</tr>
+<tr class="odd">
+<td align="left">intercept</td>
+<td align="left">Intercept of the calibration curve determined by linear regression</td>
+<td align="left">-898.3400476</td>
+</tr>
+<tr class="even">
+<td align="left">calc_curve</td>
+<td align="left">Calibration curve available for absolute quantification</td>
+<td align="left">yes_cal</td>
+</tr>
+<tr class="odd">
+<td align="left">islinear</td>
+<td align="left">Evaluation of peak area in relation to linear range of the calibration curve</td>
+<td align="left">linear</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="calculationfiledata.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.2.2</span> <code id="CalcFileData">CalculationFileData.csv</code></h5>
+<p>This is porbably the most important file that is generated by running <code>MTXQCvX2_part1.Rmd</code>. It summarises all quality factors, experimental data and determined quantities of your experiment. This file provides the input for <code>MTXQCvX2_part2-PostProcessing.Rmd</code>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column.name</th>
+<th align="left">Class</th>
+<th align="left">Description</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Batch_Id</td>
+<td align="left">AnnExp</td>
+<td align="left">Batch-Id extracted from file name</td>
+<td align="left">e18274ba</td>
+</tr>
+<tr class="even">
+<td align="left">CL</td>
+<td align="left">AnnExp</td>
+<td align="left">Experimental parameter</td>
+<td align="left">BE(2)-C</td>
+</tr>
+<tr class="odd">
+<td align="left">Cond</td>
+<td align="left">AnnExp</td>
+<td align="left">Experimental parameter</td>
+<td align="left">Control</td>
+</tr>
+<tr class="even">
+<td align="left">File</td>
+<td align="left">AnnExp</td>
+<td align="left">File name</td>
+<td align="left">e18274ba_25.cdf</td>
+</tr>
+<tr class="odd">
+<td align="left">Standards</td>
+<td align="left">AnnExp</td>
+<td align="left">Defined as standard (InternalStandard, Alk)</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Time</td>
+<td align="left">AnnExp</td>
+<td align="left">Experimental parameter</td>
+<td align="left">0</td>
+</tr>
+<tr class="odd">
+<td align="left">Type</td>
+<td align="left">AnnExp</td>
+<td align="left">Type of measurement</td>
+<td align="left">sample</td>
+</tr>
+<tr class="even">
+<td align="left">Extract_vol</td>
+<td align="left">AnnExtract</td>
+<td align="left">Defined extractes in count, mg or uL defined in Unit</td>
+<td align="left">3290000</td>
+</tr>
+<tr class="odd">
+<td align="left">Unit</td>
+<td align="left">AnnExtract</td>
+<td align="left">Defined unit for corresponding Extract_vol</td>
+<td align="left">count</td>
+</tr>
+<tr class="even">
+<td align="left">Lettercode</td>
+<td align="left">AnnMet</td>
+<td align="left">Lettercode version of metabolite name</td>
+<td align="left">Glyc3P</td>
+</tr>
+<tr class="odd">
+<td align="left">Metabolite</td>
+<td align="left">AnnMet</td>
+<td align="left">Library name</td>
+<td align="left">Glycerol-3-phosphate_(4TMS)_MP_RI:1756_IDENT:B+C</td>
+</tr>
+<tr class="even">
+<td align="left">Metabolite_manual</td>
+<td align="left">AnnMet</td>
+<td align="left">Manual defined metabolite name</td>
+<td align="left">#Glycerol-3-phosphate (4TMS)</td>
+</tr>
+<tr class="odd">
+<td align="left">Metabolite_short</td>
+<td align="left">AnnMet</td>
+<td align="left">Short version of library name</td>
+<td align="left">Glycerol-3-phosphate_(4TMS)</td>
+</tr>
+<tr class="even">
+<td align="left">absconc</td>
+<td align="left">CalCurve</td>
+<td align="left">Absolute quantity in pmol</td>
+<td align="left">24061.77157</td>
+</tr>
+<tr class="odd">
+<td align="left">adj_r_squared</td>
+<td align="left">CalCurve</td>
+<td align="left">Adjusted Rsquare value of calibration curve</td>
+<td align="left">0.999667641</td>
+</tr>
+<tr class="even">
+<td align="left">calc_curve</td>
+<td align="left">CalCurve</td>
+<td align="left">Relation of peak area to calibration curve</td>
+<td align="left">yes_cal</td>
+</tr>
+<tr class="odd">
+<td align="left">intercept</td>
+<td align="left">CalCurve</td>
+<td align="left">Intercept of calibration curve</td>
+<td align="left">234.0083706</td>
+</tr>
+<tr class="even">
+<td align="left">islinear</td>
+<td align="left">CalCurve</td>
+<td align="left">Classification of peak area</td>
+<td align="left">linear</td>
+</tr>
+<tr class="odd">
+<td align="left">Origin</td>
+<td align="left">CalCurve</td>
+<td align="left">Source of Quant1:1 value</td>
+<td align="left">Qstd</td>
+</tr>
+<tr class="even">
+<td align="left">Q1_value</td>
+<td align="left">CalCurve</td>
+<td align="left">Quantity defined in Q1:1 standard</td>
+<td align="left">x</td>
+</tr>
+<tr class="odd">
+<td align="left">slope</td>
+<td align="left">CalCurve</td>
+<td align="left">Slope of calibration curve</td>
+<td align="left">0.000821689</td>
+</tr>
+<tr class="even">
+<td align="left">corr_absconc</td>
+<td align="left">ExtrFactor</td>
+<td align="left">Corrected absolute quantities by extraction factor</td>
+<td align="left">16041.18105</td>
+</tr>
+<tr class="odd">
+<td align="left">extr_fac</td>
+<td align="left">ExtrFactor</td>
+<td align="left">Extraction factor derived from MTXQC_params</td>
+<td align="left">0.666666667</td>
+</tr>
+<tr class="even">
+<td align="left">Mass_Pos</td>
+<td align="left">MTXQCsettings</td>
+<td align="left">m/z-value (m_inc) used for determination of stable isotope incorporation</td>
+<td align="left">359</td>
+</tr>
+<tr class="odd">
+<td align="left">nopsirm</td>
+<td align="left">MTXQCsettings</td>
+<td align="left">Exclusivly used for absolute quantification</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Q_sel</td>
+<td align="left">MTXQCsettings</td>
+<td align="left">Used for absolute quantification</td>
+<td align="left">x</td>
+</tr>
+<tr class="odd">
+<td align="left">QuantMasses</td>
+<td align="left">MTXQCsettings</td>
+<td align="left">Defined quantification masses</td>
+<td align="left">101.0 299.0 133.0 357.0 103.0 359.0</td>
+</tr>
+<tr class="even">
+<td align="left">SE_sel</td>
+<td align="left">MTXQCsettings</td>
+<td align="left">Evaluation of MIDs if available</td>
+<td align="left">x</td>
+</tr>
+<tr class="odd">
+<td align="left">IntStd_eval</td>
+<td align="left">Norm_InternalStd</td>
+<td align="left">Evaluation of internal extraction standard</td>
+<td align="left">within</td>
+</tr>
+<tr class="even">
+<td align="left">IntStd_fac</td>
+<td align="left">Norm_InternalStd</td>
+<td align="left">Normalisation factor based on internal extraction standard</td>
+<td align="left">1.090830836</td>
+</tr>
+<tr class="odd">
+<td align="left">area_fac</td>
+<td align="left">Norm_SumOfArea</td>
+<td align="left">Normalisation factor for sum of area normalisation</td>
+<td align="left">0.507591279</td>
+</tr>
+<tr class="even">
+<td align="left">sum_area</td>
+<td align="left">Norm_SumOfArea</td>
+<td align="left">Sum of all peak areas of the file</td>
+<td align="left">17466093782</td>
+</tr>
+<tr class="odd">
+<td align="left">Conc_microM</td>
+<td align="left">Quantities</td>
+<td align="left">Quantities in (micromolar) only determined for extracted volumes</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Conc_pmio</td>
+<td align="left">Quantities</td>
+<td align="left">Quantities in (pmol)</td>
+<td align="left">4875.73892</td>
+</tr>
+<tr class="odd">
+<td align="left">IntStd_Conc</td>
+<td align="left">Quantities</td>
+<td align="left">Quantities in (pmol) after normalisation with internal standard factor</td>
+<td align="left">14705.47084</td>
+</tr>
+<tr class="even">
+<td align="left">IntStd_Conc_microM</td>
+<td align="left">Quantities</td>
+<td align="left">Quantities in (micromolar) after normalisation with internal standard factor: only for volumes</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">IntStd_Conc_pmio</td>
+<td align="left">Quantities</td>
+<td align="left">Quantities in (pmol/unit) after normalisation with internal standard factor</td>
+<td align="left">4469.747976</td>
+</tr>
+<tr class="even">
+<td align="left">IntStd_sumA_Conc</td>
+<td align="left">Quantities</td>
+<td align="left">Quantities in (pmol) after normalisation with internal standard factor and sum of area normalisation</td>
+<td align="left">28971.0865</td>
+</tr>
+<tr class="odd">
+<td align="left">IntStd_sumA_Conc_pmio</td>
+<td align="left">Quantities</td>
+<td align="left">Quantities in (pmol/per unit) after normalisation with internal standard factor and sum of area normalisation</td>
+<td align="left">8805.801367</td>
+</tr>
+<tr class="even">
+<td align="left">PeakArea</td>
+<td align="left">Quantities</td>
+<td align="left">Determined peak area based on QuantMasses</td>
+<td align="left">28998527</td>
+</tr>
+<tr class="odd">
+<td align="left">sumA_Conc</td>
+<td align="left">Quantities</td>
+<td align="left">Quantities in (pmol) after sum of area normalisation</td>
+<td align="left">31602.5545</td>
+</tr>
+<tr class="even">
+<td align="left">sumA_Conc_microM</td>
+<td align="left">Quantities</td>
+<td align="left">Quantities in (micromolar) after sum of area normalisation</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">sumA_Conc_pmio</td>
+<td align="left">Quantities</td>
+<td align="left">Quantities in (pmol/per unit) after sum of area normalisation</td>
+<td align="left">9605.639664</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="heatmap_quant_ptop5.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.2.3</span> <code>HeatMap_Quant_pTop5.csv</code></h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column.name</th>
+<th align="left">Description</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Lettercode</td>
+<td align="left">Short name of metabolite</td>
+<td align="left">Cit</td>
+</tr>
+<tr class="even">
+<td align="left">Batch_Id</td>
+<td align="left">Batch-Id</td>
+<td align="left">e18274ba</td>
+</tr>
+<tr class="odd">
+<td align="left">Metabolite</td>
+<td align="left">Library name of metabolite</td>
+<td align="left">Citric acid_(4TMS)_MP_RI:1814_IDENT:B+D</td>
+</tr>
+<tr class="even">
+<td align="left">Par</td>
+<td align="left">Parameter</td>
+<td align="left">R2_cal</td>
+</tr>
+<tr class="odd">
+<td align="left">Val</td>
+<td align="left">Value of the parameter for corresponding metabolite</td>
+<td align="left">0.996053496</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="ptop5_calibration_samples_lincheck.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.2.4</span> <code>pTop5_Calibration_Samples_lincheck.csv</code></h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column.name</th>
+<th align="left">Description</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Lettercode</td>
+<td align="left">Short name of metabolite</td>
+<td align="left">3PGA</td>
+</tr>
+<tr class="even">
+<td align="left">islinear</td>
+<td align="left">Evaluation of peak area in relation to calibration curve if available</td>
+<td align="left">NaCal</td>
+</tr>
+<tr class="odd">
+<td align="left">Batch_Id</td>
+<td align="left">Batch-Id</td>
+<td align="left">e18274ba</td>
+</tr>
+<tr class="even">
+<td align="left">Origin</td>
+<td align="left">Origin of Quant1:1-value</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">count</td>
+<td align="left">Number of peak areas</td>
+<td align="left">51</td>
+</tr>
+<tr class="even">
+<td align="left">sum_lin</td>
+<td align="left">Sum of peak area per islinear level</td>
+<td align="left">51</td>
+</tr>
+<tr class="odd">
+<td align="left">prop</td>
+<td align="left">Fraction of count to sum_lin</td>
+<td align="left">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="top5_calibrationinfo_unique.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.2.5</span> <code>top5_CalibrationInfo_unique.csv</code></h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column.name</th>
+<th align="left">Description</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Metabolite</td>
+<td align="left">Library name of metabolite</td>
+<td align="left">Citric acid_(4TMS)_MP_RI:1814_IDENT:B+D</td>
+</tr>
+<tr class="even">
+<td align="left">Lettercode</td>
+<td align="left">Lettercode name of metabolite</td>
+<td align="left">Cit</td>
+</tr>
+<tr class="odd">
+<td align="left">Batch_Id</td>
+<td align="left">Batch-Id</td>
+<td align="left">e18274ba</td>
+</tr>
+<tr class="even">
+<td align="left">Origin</td>
+<td align="left">Origin of quant1:1 value</td>
+<td align="left">Qstd</td>
+</tr>
+<tr class="odd">
+<td align="left">adj_r_squared</td>
+<td align="left">Adjsuted Rsquare of calibration curve</td>
+<td align="left">0.996053496</td>
+</tr>
+<tr class="even">
+<td align="left">intercept</td>
+<td align="left">Intercept of calibration curve</td>
+<td align="left">564.549288</td>
+</tr>
+<tr class="odd">
+<td align="left">slope</td>
+<td align="left">Slope of calibration curve</td>
+<td align="left">0.000194064</td>
+</tr>
+<tr class="even">
+<td align="left">Frac_calcurve</td>
+<td align="left">Fraction of peak area in linear range of calibration curve</td>
+<td align="left">10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="top5_qmqcurveinfo.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.2.6</span> <code>top5_QMQcurveInfo.csv</code></h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column.name</th>
+<th align="left">Description</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Lettercode</td>
+<td align="left">Lettercode of metabolite name</td>
+<td align="left">Cit</td>
+</tr>
+<tr class="even">
+<td align="left">Letter_Derivate</td>
+<td align="left">Derivate name</td>
+<td align="left">Cit</td>
+</tr>
+<tr class="odd">
+<td align="left">Quant1_v4</td>
+<td align="left">Quant1:1 value in (pmol)</td>
+<td align="left">52050</td>
+</tr>
+<tr class="even">
+<td align="left">Metabolite</td>
+<td align="left">Library name of metabolite</td>
+<td align="left">Citric acid_(4TMS)_MP_RI:1814_IDENT:B+D</td>
+</tr>
+<tr class="odd">
+<td align="left">Batch_Id</td>
+<td align="left">Batch-Id</td>
+<td align="left">e18274ba</td>
+</tr>
+<tr class="even">
+<td align="left">Dilution</td>
+<td align="left">Dilution factor</td>
+<td align="left">0.2</td>
+</tr>
+<tr class="odd">
+<td align="left">ChromIntensities</td>
+<td align="left">Corresponding peak areas</td>
+<td align="left">45074572</td>
+</tr>
+<tr class="even">
+<td align="left">Concentration</td>
+<td align="left">Concentration in (pmol)</td>
+<td align="left">10410</td>
+</tr>
+<tr class="odd">
+<td align="left">Origin</td>
+<td align="left">Origin of quantification standard</td>
+<td align="left">Qstd</td>
+</tr>
+<tr class="even">
+<td align="left">Metabolite_short</td>
+<td align="left">Short name of metabolite</td>
+<td align="left">Citric acid 275_(4TMS)</td>
+</tr>
+<tr class="odd">
+<td align="left">adj_r_squared</td>
+<td align="left">Adjusted Rsquare of calibration curve</td>
+<td align="left">0.996053496</td>
+</tr>
+<tr class="even">
+<td align="left">intercept</td>
+<td align="left">Intercept of calibration curve</td>
+<td align="left">564.549288</td>
+</tr>
+<tr class="odd">
+<td align="left">slope</td>
+<td align="left">Slope of calibration curve</td>
+<td align="left">0.000194064</td>
+</tr>
+<tr class="even">
+<td align="left">max</td>
+<td align="left">Max. value of calibration curve</td>
+<td align="left">52050</td>
+</tr>
+<tr class="odd">
+<td align="left">min</td>
+<td align="left">Min. value of calibration curve</td>
+<td align="left">260.25</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outputinc..." class="section level4">
+<h4><span class="header-section-number">17.3.2.3</span> <code id="o_inc">output/inc/...</code></h4>
+<div id="heatmap_incorporation.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.3.1</span> <code>HeatMap_Incorporation.csv</code></h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column.name</th>
+<th align="left">Description</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Lettercode</td>
+<td align="left">Lettercode name of metabolite</td>
+<td align="left">3PGA</td>
+</tr>
+<tr class="even">
+<td align="left">Batch_Id</td>
+<td align="left">Batch-Id</td>
+<td align="left">e18274ba</td>
+</tr>
+<tr class="odd">
+<td align="left">Par</td>
+<td align="left">Parameter</td>
+<td align="left">NA_count</td>
+</tr>
+<tr class="even">
+<td align="left">Val</td>
+<td align="left">Value of the parameter shown in heatmap</td>
+<td align="left">0.740740741</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="se_calculation_nascore.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.3.2</span> <code>SE_calculation_NAscore.csv</code></h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column.name</th>
+<th align="left">Description</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Lettercode</td>
+<td align="left">Lettercode name of metabolite</td>
+<td align="left">Cit</td>
+</tr>
+<tr class="even">
+<td align="left">Batch_Id</td>
+<td align="left">Batch-Id</td>
+<td align="left">e18274ba</td>
+</tr>
+<tr class="odd">
+<td align="left">na_frac_r</td>
+<td align="left">Class of NA-value</td>
+<td align="left">0</td>
+</tr>
+<tr class="even">
+<td align="left">N</td>
+<td align="left">Number of MIDs</td>
+<td align="left">46</td>
+</tr>
+<tr class="odd">
+<td align="left">fracr_prop</td>
+<td align="left">Fraction of MIDs with x NA-values in relation to total number of evaluated MIDs</td>
+<td align="left">0.851851852</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="se_classification.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.3.3</span> <code>SE_classification.csv</code></h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column.name</th>
+<th align="left">Description</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Lettercode</td>
+<td align="left">Lettercode name of metabolite</td>
+<td align="left">Cit</td>
+</tr>
+<tr class="even">
+<td align="left">Batch_Id</td>
+<td align="left">Batch-Id</td>
+<td align="left">e18274ba</td>
+</tr>
+<tr class="odd">
+<td align="left">File</td>
+<td align="left">File name</td>
+<td align="left">e18274ba_26.cdf</td>
+</tr>
+<tr class="even">
+<td align="left">sum_spa</td>
+<td align="left"><em>expl</em></td>
+<td align="left">4297</td>
+</tr>
+<tr class="odd">
+<td align="left">sum_bpa</td>
+<td align="left"><em>expl</em></td>
+<td align="left">1861</td>
+</tr>
+<tr class="even">
+<td align="left">low3a_ratio</td>
+<td align="left"><em>expl</em></td>
+<td align="left">2.30897367</td>
+</tr>
+<tr class="odd">
+<td align="left">rel_sb</td>
+<td align="left"><em>expl</em></td>
+<td align="left">higher</td>
+</tr>
+<tr class="even">
+<td align="left">val_score</td>
+<td align="left">Validation score</td>
+<td align="left">confident</td>
+</tr>
+<tr class="odd">
+<td align="left">count_score</td>
+<td align="left">MID evaluation</td>
+<td align="left">goodQ</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="se_validation.csv" class="section level5">
+<h5><span class="header-section-number">17.3.2.3.4</span> <code>SE_validation.csv</code></h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column.name</th>
+<th align="left">Description</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Lettercode</td>
+<td align="left">Lettercode name of metabolite</td>
+<td align="left">Cit</td>
+</tr>
+<tr class="even">
+<td align="left">Batch_Id</td>
+<td align="left">Batch-Id</td>
+<td align="left">e18274ba</td>
+</tr>
+<tr class="odd">
+<td align="left">count_score</td>
+<td align="left">Evaluation of MID</td>
+<td align="left">goodQ</td>
+</tr>
+<tr class="even">
+<td align="left">N_count</td>
+<td align="left">Number of evaluated MIDs</td>
+<td align="left">54</td>
+</tr>
+<tr class="odd">
+<td align="left">sum_files</td>
+<td align="left">Number of detected MIDs</td>
+<td align="left">54</td>
+</tr>
+<tr class="even">
+<td align="left">prop</td>
+<td align="left">Proportion of MIDs for count_score level</td>
+<td align="left">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="mtxqcvx2-part3" class="section level4">
+<h4><span class="header-section-number">17.3.2.4</span> MTXQCvX2 part3</h4>
+</div>
+<div id="mtxqcvx2-part4" class="section level4">
+<h4><span class="header-section-number">17.3.2.5</span> MTXQCvX2 part4</h4>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="FAQ.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="psirm.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["MTXQC_documentation.pdf", "MTXQC_documentation.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
