@@ -1,3 +1,31 @@
+---
+always_allow_html: yes
+---
+
+
 # MTXQCvX2_init{#init}
 
 MTXQCvX2_init.Rmd - why and how to use it. Advantages of the project folder.
+
+```{r test_tables, echo=FALSE, message=FALSE}
+source("example/R/fcn_documentation.R")
+
+library(kableExtra)
+library(dplyr)
+library(magrittr)
+
+options(kableExtra.html.bsTable = T)
+
+```
+
+```{r dir_str, echo=FALSE}
+
+t1 = appendix_print("example/tables/tables_init.csv")
+
+t1 %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+

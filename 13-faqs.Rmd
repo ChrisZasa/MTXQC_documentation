@@ -60,7 +60,9 @@ The herein described process provides a quick way how to combine the exported fi
 
 ## How do I extend conversion_metabolite.csv{#extendconse}
 
-## How do I prepare my data in ChromaToF for manual data validation{#howmanval}
+## How do I prepare my data in ChromaToF for manual data validation{#howmanval-chroma}
+
+## How do I perform the manual validation with MTXQC_part3?{#howmanval-part3}
 
 ## How do I distinguish between standard and additional quantification standards?{#quantquant}
 

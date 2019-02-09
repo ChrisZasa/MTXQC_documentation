@@ -90,6 +90,7 @@
 <li class="chapter" data-level="3.4.8" data-path="3-maui.html"><a href="3-maui.html#process-mtxqc_part1.rmd"><i class="fa fa-check"></i><b>3.4.8</b> Process <code>MTXQC_part1.Rmd</code></a></li>
 <li class="chapter" data-level="3.4.9" data-path="3-maui.html"><a href="3-maui.html#process-mtxqc_part2.rmd"><i class="fa fa-check"></i><b>3.4.9</b> Process <code>MTXQC_part2.Rmd</code></a></li>
 </ul></li>
+<li class="chapter" data-level="3.5" data-path="3-maui.html"><a href="3-maui.html#at-the-end"><i class="fa fa-check"></i><b>3.5</b> At the end…</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html"><i class="fa fa-check"></i><b>4</b> Workflow for Metmax-extracted projects</a><ul>
 <li class="chapter" data-level="4.1" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#you-want-to-follow-this"><i class="fa fa-check"></i><b>4.1</b> You want to follow this …</a></li>
@@ -150,9 +151,10 @@
 <li class="chapter" data-level="14.3" data-path="14-FAQ.html"><a href="14-FAQ.html#definternal"><i class="fa fa-check"></i><b>14.3</b> How do I define an internal extraction standard other than cinnamic acid?</a></li>
 <li class="chapter" data-level="14.4" data-path="14-FAQ.html"><a href="14-FAQ.html#multipleproj"><i class="fa fa-check"></i><b>14.4</b> How do I combine multiple MAUI-projects into a single MTXQC-project?</a></li>
 <li class="chapter" data-level="14.5" data-path="14-FAQ.html"><a href="14-FAQ.html#extendconse"><i class="fa fa-check"></i><b>14.5</b> How do I extend conversion_metabolite.csv</a></li>
-<li class="chapter" data-level="14.6" data-path="14-FAQ.html"><a href="14-FAQ.html#howmanval"><i class="fa fa-check"></i><b>14.6</b> How do I prepare my data in ChromaToF for manual data validation</a></li>
-<li class="chapter" data-level="14.7" data-path="14-FAQ.html"><a href="14-FAQ.html#quantquant"><i class="fa fa-check"></i><b>14.7</b> How do I distinguish between standard and additional quantification standards?</a></li>
-<li class="chapter" data-level="14.8" data-path="14-FAQ.html"><a href="14-FAQ.html#addqadds"><i class="fa fa-check"></i><b>14.8</b> How do I integrate additional quantification standards into MTXQCvX2</a></li>
+<li class="chapter" data-level="14.6" data-path="14-FAQ.html"><a href="14-FAQ.html#howmanval-chroma"><i class="fa fa-check"></i><b>14.6</b> How do I prepare my data in ChromaToF for manual data validation</a></li>
+<li class="chapter" data-level="14.7" data-path="14-FAQ.html"><a href="14-FAQ.html#howmanval-part3"><i class="fa fa-check"></i><b>14.7</b> How do I perform the manual validation with MTXQC_part3?</a></li>
+<li class="chapter" data-level="14.8" data-path="14-FAQ.html"><a href="14-FAQ.html#quantquant"><i class="fa fa-check"></i><b>14.8</b> How do I distinguish between standard and additional quantification standards?</a></li>
+<li class="chapter" data-level="14.9" data-path="14-FAQ.html"><a href="14-FAQ.html#addqadds"><i class="fa fa-check"></i><b>14.9</b> How do I integrate additional quantification standards into MTXQCvX2</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="15-tables.html"><a href="15-tables.html"><i class="fa fa-check"></i><b>15</b> Appendix - Dictionary Tables</a><ul>
 <li class="chapter" data-level="15.1" data-path="15-tables.html"><a href="15-tables.html#mtxqc-base-tables"><i class="fa fa-check"></i><b>15.1</b> MTXQC base tables</a><ul>
@@ -210,7 +212,7 @@
 </ul></li>
 <li class="chapter" data-level="16.4" data-path="16-psirm.html"><a href="16-psirm.html#hints-notes"><i class="fa fa-check"></i><b>16.4</b> Hints &amp; notes</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="17-protocols.html"><a href="17-protocols.html"><i class="fa fa-check"></i><b>17</b> Protocols &amp; Procedures</a><ul>
+<li class="chapter" data-level="17" data-path="17-protocols.html"><a href="17-protocols.html"><i class="fa fa-check"></i><b>17</b> Appendix - Protocols</a><ul>
 <li class="chapter" data-level="17.1" data-path="17-protocols.html"><a href="17-protocols.html#materials"><i class="fa fa-check"></i><b>17.1</b> Materials</a></li>
 <li class="chapter" data-level="17.2" data-path="17-protocols.html"><a href="17-protocols.html#solutions"><i class="fa fa-check"></i><b>17.2</b> Solutions</a><ul>
 <li class="chapter" data-level="17.2.1" data-path="17-protocols.html"><a href="17-protocols.html#washingbuffer"><i class="fa fa-check"></i><b>17.2.1</b> Label buffer</a></li>
@@ -252,12 +254,12 @@
 <div id="createannotation" class="section level2">
 <h2><span class="header-section-number">14.1</span> How do I create my annotation-file?</h2>
 <p>The annotation file relate file names with experimental conditions or specify quantification standards in your batch. Two columns - <strong>File and Type</strong> - are obligatory and have to be present in the annotation file. In the case of their absence <code>MTXQCvX_part1.Rmd</code> stops processing and shows an error message.</p>
-<p>A quick way to generate an annotation file is described below: 1. Copy the first row / header of <code>quantMassAreaMatrix.csv</code> file 2. Paste &amp; transpose the content into a new Excel-File into column A 3. Change the first entry: Metabolite -&gt; File 4. Remove the entry QuantMasses at the very end of the column A 5. Add the column Type and specify each file either as <strong>sample</strong>, <strong>Q1_dilution</strong> or <strong>addQ1_dilution</strong><a href="#fn25" class="footnoteRef" id="fnref25"><sup>25</sup></a> 6. Add more columns specifying your experimental conditions, e.g., Cellline and Treatment<a href="#fn26" class="footnoteRef" id="fnref26"><sup>26</sup></a> 7. Save the content as <code>csv-file</code> in, e.g., <code>psirm_glucose/input/...</code></p>
+<p>A quick way to generate an annotation file is described below: 1. Copy the first row / header of <code>quantMassAreaMatrix.csv</code> file 2. Paste &amp; transpose the content into a new Excel-File into column A 3. Change the first entry: Metabolite -&gt; File 4. Remove the entry QuantMasses at the very end of the column A 5. Add the column Type and specify each file either as <strong>sample</strong>, <strong>Q1_dilution</strong> or <strong>addQ1_dilution</strong><a href="#fn33" class="footnoteRef" id="fnref33"><sup>33</sup></a> 6. Add more columns specifying your experimental conditions, e.g., Cellline and Treatment<a href="#fn34" class="footnoteRef" id="fnref34"><sup>34</sup></a> 7. Save the content as <code>csv-file</code> in, e.g., <code>psirm_glucose/input/...</code></p>
 </div>
 <div id="createsampleextracts" class="section level2">
 <h2><span class="header-section-number">14.2</span> How do I create the file <code>sample_extracts.csv</code>?</h2>
 <p>The <code>sample_extracts.csv</code> file is required in order to determine automatically absolute quantities in the manner of pmol/1e+6 cells or pmol/mg tissue in the <code>CalculationFileData.csv</code>.</p>
-<p>This file requires two obligatory columns - <strong>Extract_vol</strong> and <strong>Unit</strong><a href="#fn27" class="footnoteRef" id="fnref27"><sup>27</sup></a>. Please specify for each experimental condition the amount of extracted cells (count), tissue (mg) or volume of blood/plasme (ul) in the unit shown in the brackets.<br />
+<p>This file requires two obligatory columns - <strong>Extract_vol</strong> and <strong>Unit</strong><a href="#fn35" class="footnoteRef" id="fnref35"><sup>35</sup></a>. Please specify for each experimental condition the amount of extracted cells (count), tissue (mg) or volume of blood/plasme (ul) in the unit shown in the brackets.<br />
 The names of the columns of the experimental conditions have to match up with the annotation file. Save the file in the folder <code>psirm_glucose/input/...</code>.</p>
 <p>If the defined experimental conditions do not match up with the annotation <code>MTXQCvX2_part1.Rmd</code> exit data processing. A template file is saved for review and usage at <code>inst/template_files/...</code></p>
 </div>
@@ -266,17 +268,17 @@ The names of the columns of the experimental conditions have to match up with th
 <p>MTXQCvX2 allows the specification of project-specific internal extraction standards. The only thing you need to do is to define the corresponding compounds as an internal standard in the <code>config_mtx/conversion_metabolite.csv</code> file. To do so, add to the compound in last column <code>Standard</code> the entry <code>InternalStandard</code>.</p>
 <p>The definition of an internal standard requires the file ‘InternalStandard.csv’ in the folder <code>input/gc</code> since it is used for the evaluation of normalisation factors in MTXQC_part1.</p>
 <p><strong>Scenario 1</strong> Maui-project and Cinnamic acid</p>
-<p>For an classical pSIRM experiment in the Kempa lab we are using cinnamic acid. The evaluation of this compound has been integrated into Maui. Peak areas of cinnamic acid are exported from the container called <code>cinAcid</code>. The exported file<a href="#fn28" class="footnoteRef" id="fnref28"><sup>28</sup></a> has to be renamed to <code>InternalStandard.csv</code> though and moved to <code>psirm_glucose/input/gc/...</code>.</p>
+<p>For an classical pSIRM experiment in the Kempa lab we are using cinnamic acid. The evaluation of this compound has been integrated into Maui. Peak areas of cinnamic acid are exported from the container called <code>cinAcid</code>. The exported file<a href="#fn36" class="footnoteRef" id="fnref36"><sup>36</sup></a> has to be renamed to <code>InternalStandard.csv</code> though and moved to <code>psirm_glucose/input/gc/...</code>.</p>
 <p><strong>Scenario 2</strong> Maui-project and different internal standard</p>
 <p>If you have used a different compound as an internal extraction standard you might need to extract the peak areas of this compound from the file <code>quantPeakAreasMatrix.csv</code> and save it in the folder <code>psirm_glucose/input/gc/InternalStandard.csv</code>, respectively. Prerequisite here - you have annotated the compound in your Maui-project.</p>
 <p><strong>Scenario 3</strong> Metmax-project</p>
-<p>In the case you used metmax the module <code>MTXQC_part4.Rmd</code> takes care for you of the generation of the <code>InternalStandard.csv</code> based on the definition in <code>conversion_metabolite.csv</code> and provided peak areas<a href="#fn29" class="footnoteRef" id="fnref29"><sup>29</sup></a>. This procedure is independent what standard you have defined. It only requires the annotation of your compound in chromtof and successful export with metmax.</p>
+<p>In the case you used metmax the module <code>MTXQC_part4.Rmd</code> takes care for you of the generation of the <code>InternalStandard.csv</code> based on the definition in <code>conversion_metabolite.csv</code> and provided peak areas<a href="#fn37" class="footnoteRef" id="fnref37"><sup>37</sup></a>. This procedure is independent what standard you have defined. It only requires the annotation of your compound in chromtof and successful export with metmax.</p>
 </div>
 <div id="multipleproj" class="section level2">
 <h2><span class="header-section-number">14.4</span> How do I combine multiple MAUI-projects into a single MTXQC-project?</h2>
 <p>Certain circumstances might wish you to combine <em>multiple MAUI-projects</em> into one MTXQC-project. This might be the case when you run the same samples in split and splitless mode on the machine or your experimental setup has been measured in multiple batches in order to avoid derivatisation effects.</p>
-<p>It is highly recommended to combine the input files derived from a different Maui projects beforehand the analysis. In that way you have only to work with a single file <code>CalculationFileData.csv</code><a href="#fn30" class="footnoteRef" id="fnref30"><sup>30</sup></a> containing all data of the your experiment.</p>
-<p>The herein described process provides a quick way how to combine the exported files from different Maui projects. The script <code>combine-sets.R</code><a href="#fn31" class="footnoteRef" id="fnref31"><sup>31</sup></a> automatically saves all combined files into the correct <code>input</code> folder. Just update the folder and subfolder names. All the rest has been taken care of for you.</p>
+<p>It is highly recommended to combine the input files derived from a different Maui projects beforehand the analysis. In that way you have only to work with a single file <code>CalculationFileData.csv</code><a href="#fn38" class="footnoteRef" id="fnref38"><sup>38</sup></a> containing all data of the your experiment.</p>
+<p>The herein described process provides a quick way how to combine the exported files from different Maui projects. The script <code>combine-sets.R</code><a href="#fn39" class="footnoteRef" id="fnref39"><sup>39</sup></a> automatically saves all combined files into the correct <code>input</code> folder. Just update the folder and subfolder names. All the rest has been taken care of for you.</p>
 <ol style="list-style-type: decimal">
 <li>Create in the MTXQC-project folder (e.g., <code>psirm_glucose/</code>) a new folder called <code>raw-data</code></li>
 <li>Create a subfolder for each Maui-project in <code>psirm_glucose/raw_data/...</code></li>
@@ -290,27 +292,30 @@ The names of the columns of the experimental conditions have to match up with th
 <div id="extendconse" class="section level2">
 <h2><span class="header-section-number">14.5</span> How do I extend conversion_metabolite.csv</h2>
 </div>
-<div id="howmanval" class="section level2">
+<div id="howmanval-chroma" class="section level2">
 <h2><span class="header-section-number">14.6</span> How do I prepare my data in ChromaToF for manual data validation</h2>
 </div>
+<div id="howmanval-part3" class="section level2">
+<h2><span class="header-section-number">14.7</span> How do I perform the manual validation with MTXQC_part3?</h2>
+</div>
 <div id="quantquant" class="section level2">
-<h2><span class="header-section-number">14.7</span> How do I distinguish between standard and additional quantification standards?</h2>
+<h2><span class="header-section-number">14.8</span> How do I distinguish between standard and additional quantification standards?</h2>
 </div>
 <div id="addqadds" class="section level2">
-<h2><span class="header-section-number">14.8</span> How do I integrate additional quantification standards into MTXQCvX2</h2>
+<h2><span class="header-section-number">14.9</span> How do I integrate additional quantification standards into MTXQCvX2</h2>
 
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="25">
-<li id="fn25"><p>see for further details additionalQuant<a href="14-FAQ.html#fnref25">↩</a></p></li>
-<li id="fn26"><p>optimal: two to three parameter, at maimumx: four parameter. Consider combinations of parameter, e.g., HCT116-control, HCT116-BPTES<a href="14-FAQ.html#fnref26">↩</a></p></li>
-<li id="fn27"><p>Define: count, mg or ul<a href="14-FAQ.html#fnref27">↩</a></p></li>
-<li id="fn28"><p>see section <a href="#mauiexports"><strong>??</strong></a><a href="14-FAQ.html#fnref28">↩</a></p></li>
-<li id="fn29"><p>see chapter <a href="10-Metmax.html#Metmax">10</a><a href="14-FAQ.html#fnref29">↩</a></p></li>
-<li id="fn30"><p>stored in <code>psirm_glucose/output/quant/...</code><a href="14-FAQ.html#fnref30">↩</a></p></li>
-<li id="fn31"><p>inst/template_files/…<a href="14-FAQ.html#fnref31">↩</a></p></li>
+<ol start="33">
+<li id="fn33"><p>see for further details additionalQuant<a href="14-FAQ.html#fnref33">↩</a></p></li>
+<li id="fn34"><p>optimal: two to three parameter, at maimumx: four parameter. Consider combinations of parameter, e.g., HCT116-control, HCT116-BPTES<a href="14-FAQ.html#fnref34">↩</a></p></li>
+<li id="fn35"><p>Define: count, mg or ul<a href="14-FAQ.html#fnref35">↩</a></p></li>
+<li id="fn36"><p>see section <a href="#mauiexports"><strong>??</strong></a><a href="14-FAQ.html#fnref36">↩</a></p></li>
+<li id="fn37"><p>see chapter <a href="10-Metmax.html#Metmax">10</a><a href="14-FAQ.html#fnref37">↩</a></p></li>
+<li id="fn38"><p>stored in <code>psirm_glucose/output/quant/...</code><a href="14-FAQ.html#fnref38">↩</a></p></li>
+<li id="fn39"><p>inst/template_files/…<a href="14-FAQ.html#fnref39">↩</a></p></li>
 </ol>
 </div>
             </section>

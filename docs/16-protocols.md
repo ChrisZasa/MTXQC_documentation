@@ -2,7 +2,7 @@
 always_allow_html: yes
 ---
 
-# Protocols \& Procedures{#protocols}
+# Appendix - Protocols{#protocols}
 
 ## Materials{#materials}
 

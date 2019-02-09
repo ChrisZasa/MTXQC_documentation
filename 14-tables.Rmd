@@ -4,7 +4,7 @@ always_allow_html: yes
 
 # Appendix - Dictionary Tables{#tables}
 
-```{r test_tables, echo=FALSE}
+```{r test_tables, echo=FALSE, message=FALSE}
 source("example/R/fcn_documentation.R")
 
 library(kableExtra)

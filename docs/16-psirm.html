@@ -90,6 +90,7 @@
 <li class="chapter" data-level="3.4.8" data-path="3-maui.html"><a href="3-maui.html#process-mtxqc_part1.rmd"><i class="fa fa-check"></i><b>3.4.8</b> Process <code>MTXQC_part1.Rmd</code></a></li>
 <li class="chapter" data-level="3.4.9" data-path="3-maui.html"><a href="3-maui.html#process-mtxqc_part2.rmd"><i class="fa fa-check"></i><b>3.4.9</b> Process <code>MTXQC_part2.Rmd</code></a></li>
 </ul></li>
+<li class="chapter" data-level="3.5" data-path="3-maui.html"><a href="3-maui.html#at-the-end"><i class="fa fa-check"></i><b>3.5</b> At the end…</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html"><i class="fa fa-check"></i><b>4</b> Workflow for Metmax-extracted projects</a><ul>
 <li class="chapter" data-level="4.1" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#you-want-to-follow-this"><i class="fa fa-check"></i><b>4.1</b> You want to follow this …</a></li>
@@ -150,9 +151,10 @@
 <li class="chapter" data-level="14.3" data-path="14-FAQ.html"><a href="14-FAQ.html#definternal"><i class="fa fa-check"></i><b>14.3</b> How do I define an internal extraction standard other than cinnamic acid?</a></li>
 <li class="chapter" data-level="14.4" data-path="14-FAQ.html"><a href="14-FAQ.html#multipleproj"><i class="fa fa-check"></i><b>14.4</b> How do I combine multiple MAUI-projects into a single MTXQC-project?</a></li>
 <li class="chapter" data-level="14.5" data-path="14-FAQ.html"><a href="14-FAQ.html#extendconse"><i class="fa fa-check"></i><b>14.5</b> How do I extend conversion_metabolite.csv</a></li>
-<li class="chapter" data-level="14.6" data-path="14-FAQ.html"><a href="14-FAQ.html#howmanval"><i class="fa fa-check"></i><b>14.6</b> How do I prepare my data in ChromaToF for manual data validation</a></li>
-<li class="chapter" data-level="14.7" data-path="14-FAQ.html"><a href="14-FAQ.html#quantquant"><i class="fa fa-check"></i><b>14.7</b> How do I distinguish between standard and additional quantification standards?</a></li>
-<li class="chapter" data-level="14.8" data-path="14-FAQ.html"><a href="14-FAQ.html#addqadds"><i class="fa fa-check"></i><b>14.8</b> How do I integrate additional quantification standards into MTXQCvX2</a></li>
+<li class="chapter" data-level="14.6" data-path="14-FAQ.html"><a href="14-FAQ.html#howmanval-chroma"><i class="fa fa-check"></i><b>14.6</b> How do I prepare my data in ChromaToF for manual data validation</a></li>
+<li class="chapter" data-level="14.7" data-path="14-FAQ.html"><a href="14-FAQ.html#howmanval-part3"><i class="fa fa-check"></i><b>14.7</b> How do I perform the manual validation with MTXQC_part3?</a></li>
+<li class="chapter" data-level="14.8" data-path="14-FAQ.html"><a href="14-FAQ.html#quantquant"><i class="fa fa-check"></i><b>14.8</b> How do I distinguish between standard and additional quantification standards?</a></li>
+<li class="chapter" data-level="14.9" data-path="14-FAQ.html"><a href="14-FAQ.html#addqadds"><i class="fa fa-check"></i><b>14.9</b> How do I integrate additional quantification standards into MTXQCvX2</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="15-tables.html"><a href="15-tables.html"><i class="fa fa-check"></i><b>15</b> Appendix - Dictionary Tables</a><ul>
 <li class="chapter" data-level="15.1" data-path="15-tables.html"><a href="15-tables.html#mtxqc-base-tables"><i class="fa fa-check"></i><b>15.1</b> MTXQC base tables</a><ul>
@@ -210,7 +212,7 @@
 </ul></li>
 <li class="chapter" data-level="16.4" data-path="16-psirm.html"><a href="16-psirm.html#hints-notes"><i class="fa fa-check"></i><b>16.4</b> Hints &amp; notes</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="17-protocols.html"><a href="17-protocols.html"><i class="fa fa-check"></i><b>17</b> Protocols &amp; Procedures</a><ul>
+<li class="chapter" data-level="17" data-path="17-protocols.html"><a href="17-protocols.html"><i class="fa fa-check"></i><b>17</b> Appendix - Protocols</a><ul>
 <li class="chapter" data-level="17.1" data-path="17-protocols.html"><a href="17-protocols.html#materials"><i class="fa fa-check"></i><b>17.1</b> Materials</a></li>
 <li class="chapter" data-level="17.2" data-path="17-protocols.html"><a href="17-protocols.html#solutions"><i class="fa fa-check"></i><b>17.2</b> Solutions</a><ul>
 <li class="chapter" data-level="17.2.1" data-path="17-protocols.html"><a href="17-protocols.html#washingbuffer"><i class="fa fa-check"></i><b>17.2.1</b> Label buffer</a></li>
@@ -261,12 +263,12 @@
 Figure 16.1: Experimental design of a pSIRM experiment distuingishing short and long labeling with stable isotopes.
 </p>
 </div>
-<p>For adherent cell cultures only: Include for each experimental condition an additional petri dish that is solely used to determine the cell count at the time point of your harvest. This additional plate ensures a correct determination of absolute quantities and might reduce variation of pool sizes in the statistical analysis<a href="#fn32" class="footnoteRef" id="fnref32"><sup>32</sup></a>. Think carefully about control conditions and include cell culture dishes that are not labeled. These dishes function as a control for your labeling procedure and the natural abundance of isotopes.</p>
+<p>For adherent cell cultures only: Include for each experimental condition an additional petri dish that is solely used to determine the cell count at the time point of your harvest. This additional plate ensures a correct determination of absolute quantities and might reduce variation of pool sizes in the statistical analysis<a href="#fn40" class="footnoteRef" id="fnref40"><sup>40</sup></a>. Think carefully about control conditions and include cell culture dishes that are not labeled. These dishes function as a control for your labeling procedure and the natural abundance of isotopes.</p>
 </div>
 <div id="experimental-procedures" class="section level2">
 <h2><span class="header-section-number">16.2</span> Experimental procedures</h2>
 <p>There is a slight difference in the protocols for <a href="16-psirm.html#psirm:adherent">adherent</a> and <a href="16-psirm.html#psirm:suspension">suspension</a> cells. Please read instructions and footnotes carefully.</p>
-<p>Short<a href="#fn33" class="footnoteRef" id="fnref33"><sup>33</sup></a> and long term labeling procured differ only in the applied solvents during the labeling - either label buffer (<a href="17-protocols.html#washingbuffer">LB</a>) only or a combination of full label medium (LM) and label buffer (LB). Latter one is applied in order to remove extracellular metabolites of the media. Both label buffer and media contain the major nutrients / stable isotopes to keep the main substrates at constant supply at all times (Table <a href="16-psirm.html#tab:solvent">16.1</a>). During the application of stable isotopes longer than a few minutes cells might sense the absence of further intermediates provided during standard cell culture procedure and and adjust their metabolic program accordingly.</p>
+<p>Short<a href="#fn41" class="footnoteRef" id="fnref41"><sup>41</sup></a> and long term labeling procured differ only in the applied solvents during the labeling - either label buffer (<a href="17-protocols.html#washingbuffer">LB</a>) only or a combination of full label medium (LM) and label buffer (LB). Latter one is applied in order to remove extracellular metabolites of the media. Both label buffer and media contain the major nutrients / stable isotopes to keep the main substrates at constant supply at all times (Table <a href="16-psirm.html#tab:solvent">16.1</a>). During the application of stable isotopes longer than a few minutes cells might sense the absence of further intermediates provided during standard cell culture procedure and and adjust their metabolic program accordingly.</p>
 <table>
 <caption>
 <span id="tab:solvent">Table 16.1: </span>Solvent composition of Full label medium (LM) and label buffer (BF) for a pSIRM experiment labeling with 13C-glucose.
@@ -327,10 +329,10 @@ HEPES (5 mM), NaCl (140 mM), pH 7.4
 <p>Materials:</p>
 <ul>
 <li>Cell culture dishes, max. confluency 80 %</li>
-<li>Labeling media (LM) supplemented with substrates (5 ml / dish)<a href="#fn34" class="footnoteRef" id="fnref34"><sup>34</sup></a></li>
+<li>Labeling media (LM) supplemented with substrates (5 ml / dish)<a href="#fn42" class="footnoteRef" id="fnref42"><sup>42</sup></a></li>
 <li>Label buffer (LB) supplemented with substrates (5 ml / dish)</li>
 <li>Ice-cold 50 % MeOH supplemented with 2 ug/ul cinnamic acid</li>
-<li>2x 5 ml pipette and tips<a href="#fn35" class="footnoteRef" id="fnref35"><sup>35</sup></a></li>
+<li>2x 5 ml pipette and tips<a href="#fn43" class="footnoteRef" id="fnref43"><sup>43</sup></a></li>
 <li>Beaker</li>
 <li>Ice</li>
 <li>15 ml falcons (chloroform resistant)</li>
@@ -362,7 +364,7 @@ HEPES (5 mM), NaCl (140 mM), pH 7.4
 <ul>
 <li>Cell culture flasks</li>
 <li>Labeling media (LM) supplemented with substrates</li>
-<li>5 ml pipette and tips<a href="#fn36" class="footnoteRef" id="fnref36"><sup>36</sup></a></li>
+<li>5 ml pipette and tips<a href="#fn44" class="footnoteRef" id="fnref44"><sup>44</sup></a></li>
 <li>1 ml pipette</li>
 <li>Beaker</li>
 <li>paper tissues</li>
@@ -378,10 +380,10 @@ HEPES (5 mM), NaCl (140 mM), pH 7.4
 <li>Take aliquots of <span class="math inline">\(10-15e+6\)</span> cells and transfer into 15 ml falcon</li>
 <li>Spin down cells very gently 300 g, 2 min at room temperature</li>
 <li>Discard media into beaker</li>
-<li>Resuspend cells gently in three-times 1 ml<a href="#fn37" class="footnoteRef" id="fnref37"><sup>37</sup></a></li>
+<li>Resuspend cells gently in three-times 1 ml<a href="#fn45" class="footnoteRef" id="fnref45"><sup>45</sup></a></li>
 <li>Incubate and keep warm</li>
 <li>Fractionate cell supension in three eppendorf tubes (3x 1 ml each)</li>
-<li>Spin down quickly in top-bench centrifuge<a href="#fn38" class="footnoteRef" id="fnref38"><sup>38</sup></a></li>
+<li>Spin down quickly in top-bench centrifuge<a href="#fn46" class="footnoteRef" id="fnref46"><sup>46</sup></a></li>
 <li>Discard media blandtly on paper tissues</li>
 <li>Snap-freeze immediatly in liquid nitrogen</li>
 <li>Store cells until further processing (see chapter <a href="#ccextraction_susp">Cell extraction suspension cells</a>)</li>
@@ -406,14 +408,14 @@ HEPES (5 mM), NaCl (140 mM), pH 7.4
 </div>
 <div class="footnotes">
 <hr />
-<ol start="32">
-<li id="fn32"><p>Pelleting these cells and snap-freezing might give usefull additional samples for western blotting.<a href="16-psirm.html#fnref32">↩</a></p></li>
-<li id="fn33"><p>I would rather recommend this up to 2 min of labeling<a href="16-psirm.html#fnref33">↩</a></p></li>
-<li id="fn34"><p>Not required for short term labeling<a href="16-psirm.html#fnref34">↩</a></p></li>
-<li id="fn35"><p>Highly recommended, makes labeling and harvest super quick<a href="16-psirm.html#fnref35">↩</a></p></li>
-<li id="fn36"><p>Highly recommended, makes labeling and harvest super quick<a href="16-psirm.html#fnref36">↩</a></p></li>
-<li id="fn37"><p>To generate three replicates<a href="16-psirm.html#fnref37">↩</a></p></li>
-<li id="fn38"><p>Most of the times 30 s are already enough<a href="16-psirm.html#fnref38">↩</a></p></li>
+<ol start="40">
+<li id="fn40"><p>Pelleting these cells and snap-freezing might give usefull additional samples for western blotting.<a href="16-psirm.html#fnref40">↩</a></p></li>
+<li id="fn41"><p>I would rather recommend this up to 2 min of labeling<a href="16-psirm.html#fnref41">↩</a></p></li>
+<li id="fn42"><p>Not required for short term labeling<a href="16-psirm.html#fnref42">↩</a></p></li>
+<li id="fn43"><p>Highly recommended, makes labeling and harvest super quick<a href="16-psirm.html#fnref43">↩</a></p></li>
+<li id="fn44"><p>Highly recommended, makes labeling and harvest super quick<a href="16-psirm.html#fnref44">↩</a></p></li>
+<li id="fn45"><p>To generate three replicates<a href="16-psirm.html#fnref45">↩</a></p></li>
+<li id="fn46"><p>Most of the times 30 s are already enough<a href="16-psirm.html#fnref46">↩</a></p></li>
 </ol>
 </div>
             </section>
