@@ -1,5 +1,9 @@
 # Frequently Asked Questions{#FAQ}
 
+Please keep in mind that thorughout this section the project-folder is referred as 'psirm_glucose'.
+
+If you do not find an answer to your question - please create an issue directly in the github repository^[check https://www.github.com/ChrisZasa/MTXQC_documentation/] or write an e-mail.
+
 ## How do I create my annotation-file?{#createannotation}
 
 The annotation file relate file names with experimental conditions or specify quantification standards in your batch. Two columns - **File and Type** - are obligatory and have to be present in the annotation file. In the case of their absence `MTXQCvX_part1.Rmd` stops processing and shows an error message.
@@ -60,11 +64,50 @@ The herein described process provides a quick way how to combine the exported fi
 
 ## How do I extend conversion_metabolite.csv{#extendconse}
 
+At a certain point you might want to add a compound or derivate that is not part of the current setup of metabolites. For simplicity we assume you want to add an intermediate for quantitative and isotope incorporation^[Just skip this if this is not required].
+
+In order to include this new compound you need to add information to the following files in `config_mtx`:
+
+  * `conversion_metabolite.csv`
+  * `letter_pathway_complete.csv`
+  * `incorp_calc_masses.csv`
+  * `mid_backups.csv`
+  
+If you desire the absolute quantification of this new compound you most probably need to either: (1) include the compound in quant-standards or (2) measure additional quantification standards. Please read sections \@ref(quantquant), \@ref(#quantind) and \@ref(addqadds) how to proceed.
+
+**`conversion_metabolite.csv`**
+
+  * Define the three variations - Metabolite, Metaboite_short, Lettercode - of the compound name by analogy with the present list (text)
+  * Q1_value: check only if this compound is part of a quantification mix (x)
+  * Mass_Pos: define the m/z-value reflecting the shift of intensity in case of the incorporation of stable isotopes (numeric)
+  * SE_sel: check only if MID exports are available (x)
+  * Q_sel:
+  * nopsirm: check if this compound should not considered for isotope inc. (x)
+  * Standards: define as *InternalStandard* if applicable
+  
+** `letter_pathway_complete.csv`
+
+** `ìncorp_calc_masses.csv`
+
+Define the couple of m/z-values for your compound: 
+  - m0 - mono-isotopic mass/charge value and 
+  - minc - mass/charge value reflecting shift of intensities
+  
+In case you want to define more than one pair of m/z-values have a look at the defined TCA-cycle intermediates.
+
+** `mid_backups.csv`
+
+
+
+
+
 ## How do I prepare my data in ChromaToF for manual data validation{#howmanval-chroma}
 
 ## How do I perform the manual validation with MTXQC_part3?{#howmanval-part3}
 
 ## How do I distinguish between standard and additional quantification standards?{#quantquant}
+
+## How do I define my own quantification standards?{#quantind}
 
 ## How do I integrate additional quantification standards into MTXQCvX2{#addqadds}
 

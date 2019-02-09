@@ -1,7 +1,7 @@
 --- 
 title: "MTXQCvX2 documentation"
 author: "Christin Zasada"
-date: "2019-02-09"
+date: "2019-02-10"
 github-repo: chriszasa/MTXQC_documentation
 site: bookdown::bookdown_site
 documentclass: book
@@ -12,8 +12,8 @@ description: "This is the offical documentation for the MTXQCvX2 toolbox."
 always_allow_html: yes
 ---
 
-# Welcome
+# Preface
 
-Let's get started .... this part is going to be written in the proximate future.
+Let's get started .... this part is going to be written in the near future.
 
 

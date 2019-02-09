@@ -2,10 +2,17 @@
 always_allow_html: yes
 ---
 
-
 # MTXQCvX2_init{#init}
 
-MTXQCvX2_init.Rmd - why and how to use it. Advantages of the project folder.
+## Knit with parameter
+
+List of parameter:
+
+  * **Definition of the project-folder:** psirm_glucose (text)
+
+## Text
+
+`MTXQCvX2_init.Rmd` - why and how to use it. Advantages of the project folder.
 
 ```{r test_tables, echo=FALSE, message=FALSE}
 source("example/R/fcn_documentation.R")
@@ -23,7 +30,7 @@ options(kableExtra.html.bsTable = T)
 t1 = appendix_print("example/tables/tables_init.csv")
 
 t1 %>%
-   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable(escape = TRUE, booktabs = TRUE) %>%
    kable_styling(c("striped", "condensed"), 
                  latex_options = "striped", 
                  full_width = TRUE)

@@ -1,11 +1,11 @@
-# Tutorial: Maui-annotation projects{#maui}
+# Tutorial: MTXQCvX2 for Maui-projects{#maui}
 
-## Read this in case
+## Prerequisites
 
-- you have successfully finished the annotation using Maui-SILVIA
-- exported all required MAUI container (see \@ref(mauiexport))
-- you have a list of your GC-MS sequence and related experimental conditions
-- you know the extraction procedure of standards and samples
+- You have successfully finished the annotation using Maui-SILVIA
+- Exported all required MAUI container (see section \@ref(mauiexport))
+- You have a list of your GC-MS sequence and related experimental conditions
+- You know the extraction procedure of your standards and samples
 
 ## In a nutshell{#nutshellmaui}
 
@@ -25,8 +25,8 @@
 Copy the dataset `tutorial_single_maui` somewhere local on your computer or laptop. The dataset represents the data of the first psirm metabolomics experiment in the Kempa Lab. HEK293 cells have been cultivated at 21\% oxygen and a range of glucose levels (0.3 - 4.5 g/L Glc) and constant glutamine concentration (4 mM) following standard cell culture procedures. During the cell harvest cells have been labeled for two minutes with uniformly labeled 13C-glucose, three replicates per condition.
 
 
-## In detail
-### Setup a R-project
+## In detail{#indetail-maui}
+### Create a R-project
 
 R-projects provide a secure environment to handle your data from the processing in MTXQCvX2 until the final reports and analysis. Think about it as a big bubble containing and carrying all your data and analysis savely from one place to the other undisturbed of the outside changes.
 
@@ -159,6 +159,8 @@ Go and process this module with the following parameter:
   * par1: time
   * par2: substrate
   * par3: whatelse
+  * updated: none
+  * pre-defined color scheme: choose yourself
   
 Feel free to add further plots at the end of this report if required or define your project specific color code at the beginning of the document.
 

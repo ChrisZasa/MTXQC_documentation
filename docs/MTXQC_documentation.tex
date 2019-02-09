@@ -85,7 +85,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-02-09}
+    \date{2019-02-10}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -145,10 +145,10 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter{Welcome}\label{welcome}
+\chapter{Preface}\label{preface}
 
-Let's get started \ldots{}. this part is going to be written in the
-proximate future.
+Let's get started \ldots{}. this part is going to be written in the near
+future.
 
 \chapter{Introduction MTXQCvX documentation}\label{intro}
 
@@ -235,21 +235,21 @@ If you are familiar with github and the create an issue - please head on
 to the gihub repository (github.com/ChrisZasa/MTXQC\_documentation) of
 this documentation and create one or write me a message.
 
-\chapter{Tutorial: Maui-annotation projects}\label{maui}
+\chapter{Tutorial: MTXQCvX2 for Maui-projects}\label{maui}
 
-\section{Read this in case}\label{read-this-in-case}
+\section{Prerequisites}\label{prerequisites}
 
 \begin{itemize}
 \tightlist
 \item
-  you have successfully finished the annotation using Maui-SILVIA
+  You have successfully finished the annotation using Maui-SILVIA
 \item
-  exported all required MAUI container (see \ref{mauiexport})
+  Exported all required MAUI container (see section \ref{mauiexport})
 \item
-  you have a list of your GC-MS sequence and related experimental
+  You have a list of your GC-MS sequence and related experimental
   conditions
 \item
-  you know the extraction procedure of standards and samples
+  You know the extraction procedure of your standards and samples
 \end{itemize}
 
 \section{In a nutshell}\label{nutshellmaui}
@@ -295,9 +295,9 @@ culture procedures. During the cell harvest cells have been labeled for
 two minutes with uniformly labeled 13C-glucose, three replicates per
 condition.
 
-\section{In detail}\label{in-detail}
+\section{In detail}\label{indetail-maui}
 
-\subsection{Setup a R-project}\label{setup-a-r-project}
+\subsection{Create a R-project}\label{create-a-r-project}
 
 R-projects provide a secure environment to handle your data from the
 processing in MTXQCvX2 until the final reports and analysis. Think about
@@ -601,6 +601,10 @@ Go and process this module with the following parameter:
   par2: substrate
 \item
   par3: whatelse
+\item
+  updated: none
+\item
+  pre-defined color scheme: choose yourself
 \end{itemize}
 
 Feel free to add further plots at the end of this report if required or
@@ -832,8 +836,20 @@ even Metmax would be able to determine the retention index.
 
 \chapter{MTXQCvX2\_init}\label{init}
 
-MTXQCvX2\_init.Rmd - why and how to use it. Advantages of the project
-folder.
+\section{Knit with parameter}\label{knit-with-parameter}
+
+List of parameter:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Definition of the project-folder:} psirm\_glucose (text)
+\end{itemize}
+
+\section{Text}\label{text}
+
+\texttt{MTXQCvX2\_init.Rmd} - why and how to use it. Advantages of the
+project folder.
 
 \begin{verbatim}
 ## 'data.frame':    10 obs. of  3 variables:
@@ -868,9 +884,146 @@ output & gc & Output for MTXQC\_part1\\
 
 \chapter{MTXQCvX\_experimentalSetup.Rmd}\label{ExpSetup}
 
+\section{Knit with parameter}\label{knit-with-parameter-1}
+
+List of parameter:
+
+\begin{itemize}
+\tightlist
+\item
+  **Define project-folder:* psirm\_glucose (text)
+\item
+  \textbf{Define input-format:} maui, metmax
+\item
+  **Name of annotation \url{file:**} annotation.csv (text)
+\item
+  **Name of sample extracts \url{file:**} sample\_extracts.csv (text)
+\item
+  \textbf{Type of experiment:} qMTX\footnote{quantitative metabolomics,
+    no evaluation of stable isotopes}, pSIRM, pSIRM time series{]}
+\item
+  \textbf{Applied 13C-substrates:} glc, gln, pyr, other, multiple, none
+\item
+  \textbf{Internal standard:} check
+\item
+  \textbf{Type of samples:} cell extracts, blood/serum, tissue,
+  supernatant, mixed
+\item
+  \textbf{Additional calibration curves:} no
+\item
+  \textbf{Integrate add. calibration curves:} no
+\item
+  \textbf{Quantification standards:} Quant1\_v3, Quant1\_v4,
+  Quant1\_indv\footnote{Refer to section \ref{quantind}}
+\item
+  \textbf{Volume polar phase of Quants:} 500 (numeric, in uL)
+\item
+  \textbf{Technical replicates:} 1 (numeric, range 1-5)
+\end{itemize}
+
 \chapter{MTXQCvX\_part1.Rmd}\label{part1}
 
+\section{Knit with parameter}\label{knit-with-parameter-2}
+
+List of parameter:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Definition of the project-folder:} psirm\_glucose (text)
+\item
+  **Type of \url{data:**} maui, metmax
+\item
+  **Manual validated \url{data:**} none, PeakArea, Incorporation, both
+\end{itemize}
+
 \chapter{MTXQCvX\_part2.Rmd}\label{part2}
+
+\section{Knit with parameter}\label{knit-with-parameter-3}
+
+List of parameter:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Project-folder:} psirm\_glucose (text)
+\item
+  \textbf{Tpye of analysis:} stringent, less stringent
+\item
+  \textbf{Internal standard:} QC, all, none
+\item
+  \textbf{Quantitative value:}\footnote{Or visualised as y-axis
+    parameter}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    PeakArea
+  \item
+    absconc: applied calibration curve
+  \item
+    corr\_absconc: technical replicates, quant-volume
+  \item
+    Conc\_pmio: pmol per defined unit defined in sample extracts
+  \item
+    Conc\_microM\footnote{only calculated for unit = ul in sample
+      extracts}
+  \item
+    sumA\_Conc: norm (sum of area) pmol
+  \item
+    sumA\_Conc\_pmio: norm. (sum of area) pmol / defined unit
+  \item
+    sumA\_Conc\_microM
+  \item
+    IntStd\_Conc: norm (internal standard) pmol
+  \item
+    IntStd\_Conc\_pmio
+  \item
+    IntStd\_Conc\_microM
+  \item
+    IntStd\_sumA\_Conc
+  \item
+    IntStd\_sumA\_Conc\_pmio
+  \end{itemize}
+\item
+  \textbf{par1:} parmater\footnote{accordingly to annotation file},
+  visualised as x-axis parameter
+\item
+  \textbf{par2:} subgrouping
+\item
+  \textbf{par3:} sub-figure, extra panel/page
+\item
+  \textbf{par4:}
+\item
+  \textbf{updated:} none, PeakArea, Incorporation, both
+\item
+  \textbf{pre-defined color schemes:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    main
+  \item
+    cheerful
+  \item
+    hot
+  \item
+    greens
+  \item
+    sleek
+  \item
+    clean
+  \item
+    cool
+  \item
+    art
+  \end{itemize}
+\end{itemize}
+
+\section{In more detail - processing
+parameter}\label{in-more-detail---processing-parameter}
+
+\section{Notes}\label{notes}
 
 \chapter{MTXQCvX\_part3.Rmd}\label{part3}
 
@@ -1250,6 +1403,14 @@ corresponding export function:
 
 \chapter{Frequently Asked Questions}\label{FAQ}
 
+Please keep in mind that thorughout this section the project-folder is
+referred as `psirm\_glucose'.
+
+If you do not find an answer to your question - please create an issue
+directly in the github repository\footnote{check
+  \url{https://www.github.com/ChrisZasa/MTXQC_documentation/}} or write
+an e-mail.
+
 \section{How do I create my annotation-file?}\label{createannotation}
 
 The annotation file relate file names with experimental conditions or
@@ -1382,6 +1543,68 @@ been taken care of for you.
 
 \section{How do I extend conversion\_metabolite.csv}\label{extendconse}
 
+At a certain point you might want to add a compound or derivate that is
+not part of the current setup of metabolites. For simplicity we assume
+you want to add an intermediate for quantitative and isotope
+incorporation\footnote{Just skip this if this is not required}.
+
+In order to include this new compound you need to add information to the
+following files in \texttt{config\_mtx}:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{conversion\_metabolite.csv}
+\item
+  \texttt{letter\_pathway\_complete.csv}
+\item
+  \texttt{incorp\_calc\_masses.csv}
+\item
+  \texttt{mid\_backups.csv}
+\end{itemize}
+
+If you desire the absolute quantification of this new compound you most
+probably need to either: (1) include the compound in quant-standards or
+(2) measure additional quantification standards. Please read sections
+\ref{quantquant}, @ref(\#quantind) and \ref{addqadds} how to proceed.
+
+\textbf{\texttt{conversion\_metabolite.csv}}
+
+\begin{itemize}
+\tightlist
+\item
+  Define the three variations - Metabolite, Metaboite\_short, Lettercode
+  - of the compound name by analogy with the present list (text)
+\item
+  Q1\_value: check only if this compound is part of a quantification mix
+  (x)
+\item
+  Mass\_Pos: define the m/z-value reflecting the shift of intensity in
+  case of the incorporation of stable isotopes (numeric)
+\item
+  SE\_sel: check only if MID exports are available (x)
+\item
+  Q\_sel:
+\item
+  nopsirm: check if this compound should not considered for isotope inc.
+  (x)
+\item
+  Standards: define as \emph{InternalStandard} if applicable
+\end{itemize}
+
+** \texttt{letter\_pathway\_complete.csv}
+
+** \texttt{ìncorp\_calc\_masses.csv}
+
+Define the couple of m/z-values for your compound: - m0 - mono-isotopic
+mass/charge value and - minc - mass/charge value reflecting shift of
+intensities
+
+In case you want to define more than one pair of m/z-values have a look
+at the defined TCA-cycle intermediates.
+
+** \texttt{mid\_backups.csv}
+
 \section{How do I prepare my data in ChromaToF for manual data
 validation}\label{howmanval-chroma}
 
@@ -1390,6 +1613,9 @@ MTXQC\_part3?}\label{howmanval-part3}
 
 \section{How do I distinguish between standard and additional
 quantification standards?}\label{quantquant}
+
+\section{How do I define my own quantification
+standards?}\label{quantind}
 
 \section{How do I integrate additional quantification standards into
 MTXQCvX2}\label{addqadds}

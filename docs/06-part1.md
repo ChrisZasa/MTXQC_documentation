@@ -1,2 +1,9 @@
 # MTXQCvX_part1.Rmd{#part1}
 
+## Knit with parameter
+
+List of parameter:
+
+  * **Definition of the project-folder:** psirm_glucose (text)
+  * **Type of data:** maui, metmax 
+  * **Manual validated data:** none, PeakArea, Incorporation, both
