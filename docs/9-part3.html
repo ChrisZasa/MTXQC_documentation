@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="10-Metmax.html">
-<link rel="next" href="12-mauiproc.html">
+<link rel="prev" href="8-part2.html">
+<link rel="next" href="10-Metmax.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -247,220 +247,17 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="configuration-of-mtxqcvx2---config_mtx..." class="section level1">
-<h1><span class="header-section-number">Chapter 11</span> Configuration of MTXQCvX2 - <code id="config">config_mtx/...</code></h1>
-<p>Herein explained are the customizable tables of the MTXQCvX2 universe.</p>
-<div id="conversion_metabolite.csv" class="section level2">
-<h2><span class="header-section-number">11.1</span> <code>conversion_metabolite.csv</code></h2>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Column.name</th>
-<th align="left">Description</th>
-<th align="left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Metabolite_manual</td>
-<td align="left">Manual defined metabolite name</td>
-<td align="left">#Alanine (2TMS)</td>
-</tr>
-<tr class="even">
-<td align="left">Metabolite</td>
-<td align="left">Library name of the metabolite</td>
-<td align="left">Alanine_(2TMS)_BP_RI:1097_IDENT:B+C</td>
-</tr>
-<tr class="odd">
-<td align="left">Metabolite_short</td>
-<td align="left">Short version of library name of the metabolite</td>
-<td align="left">Alanine_(2TMS)</td>
-</tr>
-<tr class="even">
-<td align="left">Lettercode</td>
-<td align="left">Lettercode version of metabolite name</td>
-<td align="left">Ala_2TMS</td>
-</tr>
-<tr class="odd">
-<td align="left">Q1_value</td>
-<td align="left">Checked if quant1:1 value available</td>
-<td align="left">x</td>
-</tr>
-<tr class="even">
-<td align="left">Mass_Pos</td>
-<td align="left">m/z-value corresponding to m_inc</td>
-<td align="left">118</td>
-</tr>
-<tr class="odd">
-<td align="left">SE_sel</td>
-<td align="left">Evaluation of the MIDs</td>
-<td align="left">x</td>
-</tr>
-<tr class="even">
-<td align="left">Q_sel</td>
-<td align="left">Evaluation for absolute quantification</td>
-<td align="left">x</td>
-</tr>
-<tr class="odd">
-<td align="left">nopsirm</td>
-<td align="left">Exclusively for absolute quantification</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">Standards</td>
-<td align="left">Defined as standard</td>
-<td align="left">InternalStandard, Alk</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="letter_pathway_complete.csv" class="section level2">
-<h2><span class="header-section-number">11.2</span> <code>letter_pathway_complete.csv</code></h2>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Column.name</th>
-<th align="left">Description</th>
-<th align="left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Letter_Derivate</td>
-<td align="left">Derivate definition</td>
-<td align="left">Ala</td>
-</tr>
-<tr class="even">
-<td align="left">Lettercode</td>
-<td align="left">Lettercode name of metabolite</td>
-<td align="left">Ala_3TMS</td>
-</tr>
-<tr class="odd">
-<td align="left">Pathway</td>
-<td align="left">Ass.pathway</td>
-<td align="left">aa</td>
-</tr>
-<tr class="even">
-<td align="left">Pathway.1</td>
-<td align="left">Ass. pathway - ordered for heatmap</td>
-<td align="left">5-aa</td>
-</tr>
-<tr class="odd">
-<td align="left">Met_pathway</td>
-<td align="left">Ass. pathway - ordered for heatmap incl. Lettercode</td>
-<td align="left">5-aa_Ala_3TMS</td>
-</tr>
-<tr class="even">
-<td align="left">Subs_class</td>
-<td align="left">Substance class</td>
-<td align="left">aa</td>
-</tr>
-<tr class="odd">
-<td align="left">Met_class</td>
-<td align="left">Substance class incl. Lettercode</td>
-<td align="left">aa_Ala_3TMS</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="quant1-values.csv" class="section level2">
-<h2><span class="header-section-number">11.3</span> <code>quant1-values.csv</code></h2>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Column.name</th>
-<th align="left">Description</th>
-<th align="left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Letter_Derivate</td>
-<td align="left">Derivate name of metabolite</td>
-<td align="left">3PGA</td>
-</tr>
-<tr class="even">
-<td align="left">Quant1_v4</td>
-<td align="left">Quantity in (pmol)</td>
-<td align="left">43480</td>
-</tr>
-<tr class="odd">
-<td align="left">Quant1_v3</td>
-<td align="left">Quantity in (pmol)</td>
-<td align="left">43480</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="incorporation_calc.csv-mid_backups.csv" class="section level2">
-<h2><span class="header-section-number">11.4</span> <code>incorporation_calc.csv</code> &amp; <code>mid_backups.csv</code></h2>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Column.name</th>
-<th align="left">Description</th>
-<th align="left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Metabolite</td>
-<td align="left">Library name of metabolite</td>
-<td align="left">Alanine_(2TMS)_BP_RI:1097_IDENT:B+C</td>
-</tr>
-<tr class="even">
-<td align="left">Mass_mz</td>
-<td align="left">m/z-value</td>
-<td align="left">116, 118</td>
-</tr>
-<tr class="odd">
-<td align="left">LI_MID</td>
-<td align="left">Definition of mass level</td>
-<td align="left">m0, minc</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Column.name</th>
-<th align="left">Description</th>
-<th align="left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Metabolite</td>
-<td align="left">Library name of metabolite</td>
-<td align="left">Alanine_ beta-_(3TMS)_MP_RI:1435_IDENT:A+D</td>
-</tr>
-<tr class="even">
-<td align="left">Mass.m.z.</td>
-<td align="left">m/z value</td>
-<td align="left">188</td>
-</tr>
-<tr class="odd">
-<td align="left">BackupPeakArea</td>
-<td align="left">Peak area of Backup MID</td>
-<td align="left">4960</td>
-</tr>
-<tr class="even">
-<td align="left">BackupMID</td>
-<td align="left">MID value for corresponding Mass.m.z.</td>
-<td align="left">0.8005</td>
-</tr>
-</tbody>
-</table>
+<div id="part3" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> MTXQCvX_part3.Rmd</h1>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="10-Metmax.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="12-mauiproc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="8-part2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="10-Metmax.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

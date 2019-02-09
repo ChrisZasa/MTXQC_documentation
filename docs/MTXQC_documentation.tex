@@ -85,7 +85,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-02-07}
+    \date{2019-02-09}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -118,6 +118,20 @@
 \usepackage[normalem]{ulem}
 \usepackage{makecell}
 
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
 \begin{document}
 \maketitle
 
@@ -127,11 +141,22 @@
 }
 \chapter{Welcome}\label{welcome}
 
-This documentation introduced to you how to use MTXQCvX2 in order to
-assess the quality of your GC-MS derived data, perform the determination
-of calibration curves and absolute quantification. It furthermore
-provides you two normalisation strategies and the calculation of
-quantities in, e.g., pmol/1e+6 cells or pmol/mg tissue.
+Let's get started \ldots{}. this part is going to be written in the
+proximate future.
+
+\chapter{Introduction MTXQCvX documentation}\label{intro}
+
+This documentation introduces to you how to use MTXQCvX2 in order to run
+a first straight-forward data analysis of your metabolomics experiment.
+The underling experimental and mathematical concepts have been
+introduced for the pulsed stable isotope resolved metabolomics (pSIRM)
+approach published in \citep{Pietzke2014}.
+
+This documentation shows you how to use MTXQCvX2 in order to assess the
+quality of your GC-MS derived data, perform the determination of
+calibration curves and absolute quantification. It furthermore provides
+you two normalisation strategies and the calculation of quantities in,
+e.g., pmol/1e+6 cells or pmol/mg tissue.
 
 MTXQCvX2 does also enable the calculation of stable isotopic
 incorporation and the evaluation of the underlying data, the mass
@@ -148,17 +173,7 @@ of data provided in spreadsheet-format, e.g., derived from metmax,
 extracting required information and creating corresponding files
 (MTXQCvX2\_part4).
 
-Both workflows are introduced in the distinct chapters including their
-required input parameter (chapter \protect\hyperlink{wf:maui}{Workflow
-Maui} and \protect\hyperlink{wf:metmax}{Workflow Metmax}).
-
-\chapter{Content of MTXQCvX documentation}\label{intro}
-
-This documentation introduces to you how to use MTXQCvX2 in order to run
-a first straight-forward data analysis of your metabolomics experiment.
-Experimental and mathematical concepts have been introduced for the
-pulsed stable isotope resolved metabolomics (pSIRM) approach published
-in \citep{Pietzke2014}.
+\section{Structure}\label{structure}
 
 MTXQCvX2 contains a suite of modules is optimized to process GC-MS
 derived data and processed either in Maui or Chromatof/Metmax. Workflows
@@ -175,199 +190,252 @@ specific parameters \texttt{config\_mtx}. Latter one is meant to provide
 flexibility including further substances. How to do so and what files
 can be customizes is shown in chapter \ref{config}.
 
-Protocols of sample preparation and measurement are summarised in the
-following chapters \ref{SamplePrep} and \ref{GCMS}. Workflow-specific
-processing methods applied Chromatof are introduced separately in the
-chapter \ref{mauiproc} and \ref{metmaxproc} including all parameter.
+Workflow-specific processing methods applied in Chromatof are introduced
+separately in the chapter \ref{mauiproc} and \ref{metmaxproc} including
+all parameter as well as a short introduction.
 
 The remaining chapter cover a chapter for frequently asked questions
-(chapter\ref{FAQ}) and the visualisation of all tables (chapter
-\ref{tables}).
+(chapter\ref{FAQ}) that might give you a hint where to search for the
+information you are looking for.
 
-\hypertarget{wf:maui}{\chapter{Workflow for Maui-annotation
-projects}\label{wf:maui}}
+The appendix summarises technical reference material in the form of a
+dictionary of tables (chapter \ref{tables}), protocols for the pSIRM
+workflow \ref{psirm} and a complete distinct chapter listing protocols
+(chapter \ref{protocols}) including standard and sample preparation and
+derivatisation (chapter \ref{SampleExtraction} and \ref{Deriv}) and the
+current setting of the GC-ToF-MS machine (chapter \ref{gcms}).
+
+\section{How to use this
+documentation}\label{how-to-use-this-documentation}
+
+This documentation provides for each level the right starting point.
+Complete newbies are highly suggested to start with one of the two
+tutorials and following the step-by-step descriptions using the example
+datasets. Also if you are using for the first time please go through to
+the chapter once to be aware of all the steps that are required to
+succeed.
+
+Experienced users might be referred to the explanation of the individual
+modules or to the how-to-guides for data processing and the FAQs
+section.
+
+\section{Example datasets and files}\label{example-datasets-and-files}
+
+introduce inst/template folder
+
+\section{\texorpdfstring{\texttt{What\ do\ I\ do\ if\ I\ don\textquotesingle{}t\ find\ the\ answer?}}{What do I do if I don't find the answer?}}\label{what-do-i-do-if-i-dont-find-the-answer}
+
+If you are familiar with github and the create an issue - please head on
+to the gihub repository (github.com/ChrisZasa/MTXQC\_documentation) of
+this documentation and create one or write me a message.
+
+\chapter{Tutorial: Maui-annotation projects}\label{maui}
 
 \section{Read this in case}\label{read-this-in-case}
 
 \begin{itemize}
 \tightlist
 \item
-  you have run a Maui project
+  you have successfully finished the annotation using Maui-SILVIA
 \item
-  exported all required container (see \ref{container})
+  exported all required MAUI container (see \ref{mauiexport})
 \item
-  you have a copy of sequence list and experimental conditions
+  you have a list of your GC-MS sequence and related experimental
+  conditions
 \item
-  you know the extraction procedure
+  you know the extraction procedure of standards and samples
 \end{itemize}
 
-The following article describes briefly how to use MTXQCvX2 in case you
-used Maui for the annotation of your metabolomics project. It does not
-matter if you have performed an experiment including stable isotopes or
-if you just aim for the quantification of a few intermediates.
-
-\section{Quick view}\label{quick-view}
+\section{In a nutshell}\label{nutshellmaui}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Setup a new R-project and copy MTXQC template files and folders
+  Setup a new R-project
 \item
-  Knit with parameter: \texttt{MTXQC\_init.Rmd} and create project
-  folder, e.g., \texttt{psirm\_glucose}
+  Copy all MTXQC template files and folders
+\item
+  \emph{Knit with parameter}: \texttt{MTXQC\_init.Rmd} and create
+  project folder (e.g., \texttt{psirm\_glucose})
 \item
   Copy input files and rename \texttt{ManualQuantTable.tsv}
   (e18205cz.tsv)
 \item
-  Create \texttt{annotation.csv} and \texttt{sample\_extracts.csv} files
+  Create your \texttt{annotation.csv} and \texttt{sample\_extracts.csv}
+  files
 \item
   Define the internal extraction standard
 \item
-  Knit with parameter: \texttt{MTXQC\_ExperimentalSetup.Rmd}
+  \emph{Knit with parameter}: \texttt{MTXQC\_ExperimentalSetup.Rmd}
 \item
-  Knit with parameter: \texttt{MTXQC\_part1.Rmd}
+  \emph{Knit with parameter}: \texttt{MTXQC\_part1.Rmd}
 \item
-  Knit with parameter: \texttt{MTXQC\_part2.Rmd}
+  \emph{Knit with parameter}: \texttt{MTXQC\_part2.Rmd}
 \item
-  If required, proceed with \texttt{MTXQC\_part3.Rmd} for
-  ManualValidation
+  If required, proceed with \texttt{MTXQC\_part3.Rmd} for manual
+  validation of your data
 \end{enumerate}
 
-\section{Input files}\label{input-files}
+\section{\texorpdfstring{Dataset of the tutorial -
+\texttt{tutorial\_single\_maui}}{Dataset of the tutorial - tutorial\_single\_maui}}\label{dataset-of-the-tutorial---tutorial_single_maui}
 
-Three different kind of export functions have been implemented in Maui.
-These functions provide the export of the actual data into \texttt{.csv}
-or \texttt{.tsv} files that are directly usable as input files for
-MTXQCvX2. Please refer to section \ref{mauiexport} how you perform the
-export and which containers have to be exported using what export
-function and where to copy them in \texttt{psirm\_glucose/input/}.
+Copy the dataset \texttt{tutorial\_single\_maui} somewhere local on your
+computer or laptop. The dataset represents the data of the first psirm
+metabolomics experiment in the Kempa Lab. HEK293 cells have been
+cultivated at 21\% oxygen and a range of glucose levels (0.3 - 4.5 g/L
+Glc) and constant glutamine concentration (4 mM) following standard cell
+culture procedures. During the cell harvest cells have been labeled for
+two minutes with uniformly labeled 13C-glucose, three replicates per
+condition.
 
-Certain circumstances might wish you to combine \emph{multiple
-MAUI-projects} into one MTXQC-project. This might be the case when you
-run the same samples in split and splitless mode on the machine or your
-experimental setup has been measured in multiple batches in order to
-avoid derivatisation effects.
+\section{In detail}\label{in-detail}
 
-It is highly recommended to combine the input files derived from a
-different Maui projects beforehand the analysis. In that way you have
-only to work with a single file
-\texttt{CalculationFileData.csv}\footnote{stored in
-  \texttt{psirm\_glucose/output/quant/...}} containing all data of the
-your experiment.
+\subsection{Setup a R-project}\label{setup-a-r-project}
 
-The herein described process provides a quick way how to combine the
-exported files from different Maui projects. The script
-\texttt{combine-sets.R}\footnote{inst/template\_files/\ldots{}}
-automatically saves all combined files into the correct \texttt{input}
-folder. Just update the folder and subfolder names. All the rest has
-been taken care of for you.
+R-projects provide a secure environment to handle your data from the
+processing in MTXQCvX2 until the final reports and analysis. Think about
+it as a big bubble containing and carrying all your data and analysis
+savely from one place to the other undisturbed of the outside changes.
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\begin{itemize}
 \tightlist
 \item
-  Create in the MTXQC-project folder (e.g., \texttt{psirm\_glucose/}) a
-  new folder called \texttt{raw-data}
+  Open R-studio and create a new project following:
+  \texttt{File\ -\textgreater{}\ New\ project\ -\textgreater{}\ New\ Project\ -\textgreater{}\ New\ Directory}
+  and call the directory \texttt{tutorial\_single\_maui} and the
+  preferred subdirectory.
 \item
-  Create a subfolder for each Maui-project in
-  \texttt{psirm\_glucose/raw\_data/...}
-\item
-  Copy into this folder all your Maui-derived input files altogether
-\item
-  Update the parameter of \texttt{combine-sets.R}, meaning folder name
-  definitions, file
-\item
-  Execute the R script
-\item
-  Merged files have been generated and copied into the corresponding
-  folder: \texttt{psirm\_glucose/input-folder/gc/...} or
-  \texttt{psirm\_glucose/input-folder/inc/...}
-\item
-  Copy the renamed \texttt{ManualQuantTable.tsv} files of each Maui
-  project into \texttt{psirm\_glucose/input/quant/...}
-\end{enumerate}
+  I recommend to start each project in a new session (tick the box at
+  the bottom of the dialogue box).
+\end{itemize}
 
-\section{Annotation-file}\label{annotation-file}
+\subsection{Copy MTXQCvX2 template
+files}\label{copy-mtxqcvx2-template-files}
 
-The annotation file relate file names with experimental conditions or
-specify quantification standards in your batch. Two columns -
-\textbf{File and Type} - are obligatory and have to be present in the
-annotation file. In the case of their absence
-\texttt{MTXQCvX\_part1.Rmd} stops processing and shows an error message.
-
-A quick way to generate an annotation file is described below:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\begin{itemize}
 \tightlist
 \item
-  Copy the first row / header of \texttt{quantMassAreaMatrix.csv} file
+  Download the current version of MTXQCvX2 called fluffy adventure
+  \href{github.com/ChrisZasada/fluffy_adventure}{here}
 \item
-  Paste \& transpose the content into a new Excel-File into column A
+  Open and extract the zip-file
 \item
-  Change the first entry: Metabolite -\textgreater{} File
+  Copy all folders and files into your newly created R-project
+  'tutorial\_single\_maui`
+\end{itemize}
+
+\subsection{\texorpdfstring{Process
+\texttt{MTXQC\_init.Rmd}}{Process MTXQC\_init.Rmd}}\label{process-mtxqc_init.rmd}
+
+The module \texttt{MTXQC\_init.Rmd} provides you two important things:
+(1) Check-up package installation (2) Creation of project-folder
+
+The project folder is supposed to provide a tidy structure while data
+processing and analysis and contains several pre-defined folder. Besides
+the following folders: `input', `output' and `figures' you see a
+detailed subfolder structure. You find more details about each folder
+and additional suggestion how to use project-folder in chapter
+\ref{init}.
+
+All you need to do is to process the \texttt{MTXQC\_init.Rmd}. The
+following procedure is how you process all \texttt{.Rmd}-files of
+MTXQCvX2:
+
+\begin{itemize}
+\tightlist
 \item
-  Remove the entry QuantMasses at the very end of the column A
+  Click on the small black triangle next to the ball of yarn
 \item
-  Add the column Type and specify each file either as \textbf{sample} or
-  \textbf{addQ1\_dilution}\footnote{see for further details
-    additionalQuant}
+  Choose \texttt{Knit\ with\ Parameters...}
+\end{itemize}
+
+If the \texttt{.Rmd}-file contains defined parameters a shiny dialogue
+pops up and provides an interactive selection based on the document. In
+the case of \texttt{MTXQC\_init.Rmd} you are asked to define a so-called
+project-folder, e.g., \texttt{psirm\_glucose}.
+
+\begin{itemize}
+\tightlist
 \item
-  Add more columns specifying your experimental conditions, e.g.,
-  Cellline and Treatment\footnote{optimal: two-three parameter, max:
-    four parameter. Consider possible combinations, e.g.,
-    HCT116-control, HCT116-BPTES}
+  Define the name of the project-folder: \texttt{psirm\_glucose}
+\end{itemize}
+
+Check in the files tab of R-Studio if you see the new folder and browse
+through it.
+
+\subsection{Prepare and copy input
+files}\label{prepare-and-copy-input-files}
+
+Several files have to be exported from Maui and copied into the folders
+\texttt{input/gc}, \texttt{input/quant} and \texttt{input/inc} for the
+evaluation of the GC-MS performance, absolute quantification and isotope
+incorporation.
+
+Please follow the detailed instructions in section \ref{mauiexport} if
+you need further information how to perform the export in Maui. For the
+purpose of the tutorial the exported files are already processed and
+copied into the corresponding subfolders of the \texttt{input}-folder.
+
+\subsection{\texorpdfstring{Copy files: \texttt{annotation.csv} and
+\texttt{Sample\_extracts.csv}}{Copy files: annotation.csv and Sample\_extracts.csv}}\label{copy-files-annotation.csv-and-sample_extracts.csv}
+
+Both files contain important information about your metabolomics
+experiment and since these information are highly specific you need to
+create them on your own and save them in \texttt{project-folder/input/}.
+
+Browse to both files in the tutorial dataset, have a look at the content
+and copy both files into \texttt{psirm\_glucose/input}.
+
+The herein shown \emph{annotation file} contains information about the
+eperimental conditions of each sample and measurement file. The columns
+\textbf{File} and \textbf{Type} are mandatory, additional columns
+defining further parameter, like cell line or glucose level, are totally
+customizable to your needs.
+
+The \emph{sample extracts} file specify the nature and volume / weight
+of the sample extracts. The columns \textbf{Extract\_vol} and
+\textbf{Unit} are mandatory here. This file here shows cell extracts
+defined with the unit \emph{count} for specific conditions. Please be
+aware that names of experimental conditions have to match between
+annotation and sample extracts file.
+
+Nevertheless it is not necessarily required to define for each
+combination of conditions a cell count. Please refer FAQs section
+\ref{createannotation} and \ref{createsampleextracts} for further
+information how to create and set up both files from the scretch.
+
+\subsection{Define an internal standard - cinnamic
+acid}\label{define-an-internal-standard---cinnamic-acid}
+
+We have to define the internal extraction standard for each experiment
+in \texttt{config\_mtx/conversion\_metabolite.csv}. Classical pSIRM
+experiments like the one we are using for this tutorial used cinnamic
+acid for tracking variations in experimental handling. This provides
+flexibility in the experimental setup.
+
+\begin{itemize}
+\tightlist
 \item
-  Save the content as \texttt{csv-file} in the
-  \texttt{psirm\_glucose/input/...}
-\end{enumerate}
+  Open the file: 'config\_mtx/conversion\_metabolite.csv`
+\item
+  Scroll down to the entry \texttt{Cinnamic\ acid\ trans-,\ 1TMS}
+\item
+  Define \texttt{InternalStandard} in the column \texttt{Standard}
+\item
+  Save the file and close it
+\end{itemize}
 
-\section{Sample\_extracts-file}\label{sample_extracts-file}
+\subsection{\texorpdfstring{Process
+\texttt{MTXQC\_ExperimentalSetup.csv}}{Process MTXQC\_ExperimentalSetup.csv}}\label{process-mtxqc_experimentalsetup.csv}
 
-The \texttt{sample\_extracts.csv} file is required in order to determine
-automatically absolute quantities in the manner of pmol/1e+6 cells or
-pmol/mg tissue in the \texttt{CalculationFileData.csv}.
+\subsection{\texorpdfstring{Process
+\texttt{MTXQC\_part1.Rmd}}{Process MTXQC\_part1.Rmd}}\label{process-mtxqc_part1.rmd}
 
-This file requires two obligatory columns - \textbf{Extract\_vol} and
-\textbf{Unit}\footnote{Define: count, mg or ul}. Please specify for each
-experimental condition the amount of extracted cells (count), tissue
-(mg) or volume of blood/plasme (ul) in the unit shown in the brackets.\\
-The names of the columns of the experimental conditions have to match up
-with the annotation file. Save the file in the folder
-\texttt{psirm\_glucose/input/...}.
+\subsection{\texorpdfstring{Process
+\texttt{MTXQC\_part2.Rmd}}{Process MTXQC\_part2.Rmd}}\label{process-mtxqc_part2.rmd}
 
-If the defined experimental conditions do not match up with the
-annotation \texttt{MTXQCvX2\_part1.Rmd} exit data processing. A template
-file is saved for review and usage at \texttt{inst/template\_files/...}
-
-\section{Internal Standard}\label{internal-standard}
-
-MTXQCvX2 allows the specification of project-specific internal
-extraction standards. The only thing you need to do is to define the
-corresponding compounds as an internal standard in the
-\texttt{conversion\_metabolite.csv} file. To do so, add
-\texttt{InternalStandard} to the compound in last column
-\texttt{Standard}.
-
-For an classical pSIRM experiment in the Kempa lab we are using cinnamic
-acid. The evaluation of this compound has been integrated in Maui. Peak
-areas of cinnamic acid are exported from a distinct container called
-\texttt{cinAcid}. The exported file has to be renamed to
-\texttt{InternalStandard.csv} though and moved to
-\texttt{psirm\_glucose/input/gc/...}.
-
-If you have used a different compound as an internal extraction standard
-you might need to extract the peak areas of this compound from the Maui
-export file \texttt{quantPeakAreasMatrix.csv} file and save it in the
-folder \texttt{psirm\_glucose/input/gc/InternalStandard.csv},
-respectively. Prerequisite - you have annotated the compound in Maui.
-
-The report of \texttt{MTXQCvX2\_part1.Rmd} includes the defined internal
-standard for each project in a message.
-
-\hypertarget{wf:metmax}{\chapter{Workflow for Metmax-extracted
-projects}\label{wf:metmax}}
+\chapter{Workflow for Metmax-extracted projects}\label{wf:metmax}
 
 \section{You want to follow this
 \ldots{}}\label{you-want-to-follow-this}
@@ -412,7 +480,7 @@ the individual modules and their knitting parameter. The relation of
 knitting parameter, input and output files are described in each
 section.
 
-\section{Quick view}\label{quick-view-1}
+\section{Quick view}\label{quick-view}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -447,7 +515,7 @@ section.
   ManualValidation
 \end{enumerate}
 
-\section{Input files}\label{input-files-1}
+\section{Input files}\label{input-files}
 
 If you need an introduction about how to use metmax - have a look at the
 separate documentation \texttt{Metmax\_intro}.
@@ -455,7 +523,7 @@ separate documentation \texttt{Metmax\_intro}.
 The chapter \ref{part4} \texttt{MTXQCvX\_part4} explains in detail how
 to use this module to generate suitable input files.
 
-\section{Annotation-file}\label{annotation-file-1}
+\section{Annotation-file}\label{annotation-file}
 
 The annotation file relate file names with experimental conditions or
 specify quantification standards in your batch. Two columns -
@@ -490,7 +558,7 @@ A quick way to generate an annotation file is described below:
   \texttt{psirm\_glucose/input/...}
 \end{enumerate}
 
-\section{Sample\_extracts-file}\label{sample_extracts-file-1}
+\section{Sample\_extracts-file}\label{sample_extracts-file}
 
 The \texttt{sample\_extracts.csv} file is required in order to determine
 automatically absolute quantities in the manner of pmol/1e+6 cells or
@@ -574,10 +642,9 @@ folder.
 
 \chapter{MTXQCvX\_part2.Rmd}\label{part2}
 
-\chapter{MTXQCvX\_part3.Rmd}\label{mtxqcvx_part3.rmd}
+\chapter{MTXQCvX\_part3.Rmd}\label{part3}
 
-\chapter{MTXQCvX\_part4.Rmd - Metmax
-parser}\label{mtxqcvx_part4.rmd---metmax-parser}
+\chapter{MTXQCvX\_part4.Rmd - Metmax parser}\label{Metmax}
 
 \section{This section explains \ldots{}}\label{this-section-explains}
 
@@ -596,7 +663,7 @@ parser}\label{mtxqcvx_part4.rmd---metmax-parser}
 This module provides the generation of suitable input files for MTXQCvX2
 based on spreadsheet exported information by tools like metmax.
 
-\section{Input files}\label{input-files-2}
+\section{Input files}\label{input-files-1}
 
 \subsection{Quantification -
 PeakAreas.csv}\label{quantification---peakareas.csv}
@@ -768,221 +835,6 @@ BackupMID & MID value for corresponding Mass.m.z. & 0.8005\\
 \bottomrule
 \end{tabular}
 
-\chapter{Protocols - Sample
-extraction}\label{protocols---sample-extraction}
-
-\section{Cell extracts}\label{cell-extracts}
-
-Materials:
-
-\begin{itemize}
-\tightlist
-\item
-  cell culture dishes (10 cm), max. confluency 75\%
-\item
-  washing buffer (Hepes, NaCl, ph 7.4)
-\item
-  50\% MeOH, ice-cold
-\item
-  2 mg/ml cinnamic acid
-\item
-  chloroform
-\item
-  15 ml falcon tubes
-\item
-  cell lifter
-\end{itemize}
-
-Procedure:
-
-\begin{itemize}
-\tightlist
-\item
-  prepare cell culture dishes accordingly to your experimental
-  conditions
-\item
-  discard cell culture media
-\item
-  add quickly 5 ml of washing buffer, discard it
-\item
-  add very immediately 5 ml ice-cold 50\% MeOH suppl. 2 ug/ul cinnamic
-  acid
-\item
-  detach cells using cell lifter
-\item
-  collect and transfer cell extract into 15 ml falcon
-\item
-  store falcons until further processing on ice
-\item
-  add 1 ml chloroform
-\item
-  incube for 60 min at cold temperatures (4 C) on rotary or thermo
-  shaker
-\item
-  centrifuge at max speed for 10 min, cold temperatures
-\item
-  collect polar and lipid phases into fresh falcons / tubes
-\item
-  dry under vacuum
-\end{itemize}
-
-In order to generate technical backups:
-
-\begin{itemize}
-\tightlist
-\item
-  resuspend dried extracts in 600 ul 20\% MeOH
-\item
-  shake at cold temperature on thermo shaker for 30 min
-\item
-  split volumes into equal parts in fresh eppendorf tubes
-\item
-  dry under vacuum
-\end{itemize}
-
-Suggested cell density: \(2-3e+6\) cells / extract.
-
-\section{Tissue samples}\label{tissue-samples}
-
-Materials:
-
-\begin{itemize}
-\tightlist
-\item
-  Methanol:Chloroform:Water (MCW) in ratio 5:2:1
-\item
-  2 mg/mg cinnamic acid in MeOH
-\item
-  ddH20
-\item
-  eppendorf tubes
-\item
-  tissue lyzer / pulverizer
-\end{itemize}
-
-Procedure:
-
-\begin{itemize}
-\tightlist
-\item
-  snap-freeze tissue samples
-\item
-  pulverize samples
-\item
-  aliquote 50 mg of tissue powder
-\item
-  add 1.5 ml of MCW (suppl. with cinnamic acid final conc. 2 ug/ul)
-\item
-  shake for 60 min on rotary shaker at cold temperature (4 C)
-\item
-  add 0.5 ml ddH20 for phase separation
-\item
-  centrifuge maximum speed, 10 min, cold temperatures
-\item
-  collect polar and lipid phases in fresh vessels
-\item
-  dry under vacuum
-\end{itemize}
-
-\section{Blood samples}\label{blood-samples}
-
-Material:
-
-\begin{itemize}
-\tightlist
-\item
-  Methanol:Chloroform:Water (MCW) in ratio 5:2:1
-\item
-  2 mg/mg cinnamic acid in MeOH
-\item
-  ddH20
-\item
-  eppendorf tubes
-\end{itemize}
-
-Procedure:
-
-\begin{itemize}
-\tightlist
-\item
-  give 20 ul blood / sera directly into 1 ml MCW to avoid lumps
-\item
-  in case of lumps sonicate samples
-\item
-  shake samples at 4 C for 800 rpm for 60 min
-\item
-  add 500 ul ddH20 and vortex shortly
-\item
-  spin down at 4 C at max speed for 10 min
-\item
-  aliquote polar phase into 2-3 times 500 ul in 1.5 ml tubes
-\item
-  aliquote lipid phase 2 times in 100 ul lower in 1.5 ml eppi
-\item
-  dry in SpeedVac (35 C)
-\end{itemize}
-
-\chapter{Protocols - GC-ToF-MS
-measurement}\label{protocols---gc-tof-ms-measurement}
-
-\section{Sample derivatisation}\label{sample-derivatisation}
-
-Materials:
-
-\begin{itemize}
-\tightlist
-\item
-  Methoxamine (MeOx)
-\item
-  Pyridine (open under the hood only!)
-\item
-  MSTFA
-\item
-  Alkane mix (c10-c36) in Hexane
-\item
-  chromacol vials and caps (big, small)
-\end{itemize}
-
-Mixtures:
-
-\begin{itemize}
-\tightlist
-\item
-  Solvent 1: 40 mg MeOx in 1 ml Pyridine
-\item
-  Solvent 2: 10 ul Alkane mix in 1 ml MSTFA
-\end{itemize}
-
-Volumens of both solvents are shown for standard (small vol.)
-procedures.
-
-Procedure:
-
-\begin{itemize}
-\tightlist
-\item
-  make sure samples are completly dry (1 h speed vac)
-\item
-  add 20 ul (10 ul) of solvent 1 / sample
-\item
-  incubate on rotary shaker, 30 C, for 60 min
-\item
-  add 80 ul (25 ul) of solvent 2 / sample
-\item
-  incubaate on rotary shaker, 37 C, for 90 min
-\item
-  centrifuge to spin down insoluble materials
-\item
-  prepare aliquotes three times 28 ul or two times 15 ul (small glass
-  vials)
-\item
-  keep on room temperature until measurement (max. 10 days)
-\end{itemize}
-
-\section{GC-MS measurement}\label{gc-ms-measurement}
-
-needs to be written
-
 \chapter{Data processing - MAUI}\label{mauiproc}
 
 \section{Processing In ChromaToF}\label{processing-in-chromatof}
@@ -1037,98 +889,120 @@ following parameter.
 \item
 \end{itemize}
 
-\section{Maui notes}\label{maui-notes}
+\section{Maui pSIRM workflow}\label{mauipsirm}
 
 \section{Maui exports}\label{mauiexport}
 
-With initiation of a project folder via \texttt{MTXQCvX2\_init.Rmd} you
-created an \texttt{input}-folder containing three subfolders:
-\texttt{gc}, \texttt{inc}, \texttt{quant}. In the following all files
-that should be exported and copied into these folders are described in
-detail.
+\subsection{\texorpdfstring{Subfolder:
+\texttt{input/gc}}{Subfolder: input/gc}}\label{subfolder-inputgc}
 
-\subsection{\texorpdfstring{\texttt{input/gc/...}}{input/gc/...}}\label{inputgc...}
+This folder contains all input files that are required to assess the
+quality of the GC-MS perfomance for the complete GC-MS run. In order to
+validate all four parameter we need to export the following information
+from the Maui-project.
 
-Four input files are exported in order to assess the quality of the
-GC-MS performance of the run. The menue \texttt{Diagnostics} is
-selectable via right click on your Maui project name. Only the cinnamic
-acid peak areas are exported via the function
-\texttt{Export\ Quantification} with right click on the actual
-container.
-
-Exported Files:
+You can perform exports via right click on either (1) the project name
+and the functions provided in the menue \texttt{Diagnostics} or (2) with
+a direct right click on data container, e.g.,
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{Alcane\_intensities.csv} - Diagnostics/Export Alcane
-  intensities
-\item
-  \texttt{InternalStandard.csv} - cinAcid container, Export
-  quantification, rename!
-\item
-  \texttt{MassSum-73.csv} - Diagnostics/QC Mass Sum Export; enter: 73
-  for m/z 73
-\item
-  \texttt{PeakDensities-Chroma.csv} - Diagnostics/ExportPeakDensities
+  Open your Maui-project and export:
 \end{itemize}
-
-\subsection{\texorpdfstring{\texttt{input/quant/...}}{input/quant/...}}\label{inputquant...}
-
-Only one container has to be exported and contains the peak areas of
-each metabolite and measurement. Keep in mind that you should have
-uploaded \texttt{pTop5\ mass\ list} for the correct determination of
-peak areas in case of labeling with stable isotopes.
-
-A further note - Maui performs absolute quantification and stores values
-in the \texttt{samplePeakGroups-QMQ} container. These quantities are
-determined by polynominal regression, and not linear regression.
-
-The file \texttt{ManualQuantTable.tsv} is automatically generated by
-Maui during processing the absolute quantification.
-
-Exported Files:
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{ManualQuantTable.tsv} - location:
-  \texttt{Maui-project/export/QM-AbsoluteQuantification/...}\footnote{Don´t
-    forget to rename it - e.g., e17123cz}
-\item
-  \texttt{quantMassAreasMatrix.csv} - Quantification export of the
-  container \texttt{samplesPeakGroups}
-\end{itemize}
-
-\subsection{\texorpdfstring{\texttt{input/inc/...}}{input/inc/...}}\label{inputinc...}
-
-This exports are only required in case of an experiment including the
-application of stable isotopes. It´s this the case you should have
-performed two things:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Used the optional upload of \texttt{pTop5\ mass\ list}
+  \texttt{Alcane\_intensities.csv}: Diagnostics/Export Alcane
+  intensities
 \item
-  Go through the pSIRM workflow in Maui
+  \texttt{MassSum-73.csv}: Diagnostics/QC Mass Sum Export and define 73
+  for m/z 73
+\item
+  \texttt{PeakDensities-Chroma.csv}: Diagnostics/Export PeakDensities
 \end{enumerate}
-
-Exported Files:
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{DataMatrix.csv} - Export \% Label of container
-  \texttt{pSIRM-samplesPeakGroups}
+  Export the information of the cinnamic acid container with right-click
+  and Export quantification, follow the pop-up dialogues
 \item
-  \texttt{pSIRM\_SpectraData.csv} - pSIRM Spectra Export of container
-  \texttt{pSIRM-samplesPeakGroups}\footnote{Requires the selection of
-    Natural\_MIDs.txt}
+  Use the explorer and open
+  \texttt{.../mauiproject-name/export/Diagnostics} and copy the
+  csv.files into \texttt{input/gc}
+\item
+  Navigate to
+  \texttt{.../mauiproject-name/export/ExportQuantification/defined-folder}
+\item
+  Copy the file \texttt{quantMassAreasMatrix.csv} without applied
+  normalisation and rename it \texttt{InternalStandard.csv}
 \end{itemize}
 
-\chapter{Data Processing - Metmax}\label{metmaxexport}
+\subsection{\texorpdfstring{Subfolder:
+\texttt{input/quant}}{Subfolder: input/quant}}\label{subfolder-inputquant}
+
+Two files have to be copied into this folder in order to perform the
+quantification of metabolites: (1) peak areas of the calibration curves
+and (2) of all samples.
+
+The first file \texttt{ManualQuantTable.tsv} is automatically generated
+during the processing of the absolute quantification in Maui.
+
+\begin{itemize}
+\tightlist
+\item
+  Navigate in the explorer to
+  \texttt{.../mauiproject-name/export/QM-ManualQuantification/}
+\item
+  Copy the file \texttt{ManualQuantTable.tsv}
+\item
+  Rename it with the corresponding batch-id of the GC-MS run (e.g.,
+  e17205cz)
+\end{itemize}
+
+Peak areas for each measurement and metabolite have to be exported in
+Maui:
+
+\begin{itemize}
+\tightlist
+\item
+  Open your Maui-project and export:
+\item
+  Export the information of the samplePeakGroups container with
+  right-click and Export quantification, follow the instructions
+\item
+  Navigate in the explorer to
+  \texttt{.../mauiproject-name/export/ExportQuantification/defined-folder}
+\item
+  Copy the file \texttt{quantMassAreasMatrix.csv} without applied
+  normalisation
+\end{itemize}
+
+\subsection{\texorpdfstring{Subfolder
+\texttt{input/inc}}{Subfolder input/inc}}\label{subfolder-inputinc}
+
+The evaluation of stable isotope incorporation requires two input files
+exported from the container pSIRM-samplesPeakGroups, right click and
+corresponding export function:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{DataMatrix.csv}: Export \% Label
+\item
+  \texttt{pSIRM\_SpectraData.csv}: pSIRM Spectra Export
+\item
+  Navigate in the explorer to
+  \texttt{.../mauiproject-name/export/SpectraExport/defined-folder} and
+  \texttt{xy}
+\item
+  Copy both files, no renaming required
+\end{itemize}
+
+\chapter{Data Processing - Metmax}\label{metmaxproc}
 
 \section{Resampling}\label{resampling-1}
 
@@ -1146,13 +1020,148 @@ Exported Files:
 
 \chapter{Frequently Asked Questions}\label{FAQ}
 
-\section{What are additional quantification
-standards}\label{what-are-additional-quantification-standards}
+\section{How do I create my annotation-file?}\label{createannotation}
 
-\section{How do I extend
-conversion\_metabolite.csv}\label{how-do-i-extend-conversion_metabolite.csv}
+The annotation file relate file names with experimental conditions or
+specify quantification standards in your batch. Two columns -
+\textbf{File and Type} - are obligatory and have to be present in the
+annotation file. In the case of their absence
+\texttt{MTXQCvX\_part1.Rmd} stops processing and shows an error message.
 
-\chapter{Appendix - Tables}\label{tables}
+A quick way to generate an annotation file is described below: 1. Copy
+the first row / header of \texttt{quantMassAreaMatrix.csv} file 2. Paste
+\& transpose the content into a new Excel-File into column A 3. Change
+the first entry: Metabolite -\textgreater{} File 4. Remove the entry
+QuantMasses at the very end of the column A 5. Add the column Type and
+specify each file either as \textbf{sample}, \textbf{Q1\_dilution} or
+\textbf{addQ1\_dilution}\footnote{see for further details
+  additionalQuant} 6. Add more columns specifying your experimental
+conditions, e.g., Cellline and Treatment\footnote{optimal: two to three
+  parameter, at maimumx: four parameter. Consider combinations of
+  parameter, e.g., HCT116-control, HCT116-BPTES} 7. Save the content as
+\texttt{csv-file} in, e.g., \texttt{psirm\_glucose/input/...}
+
+\section{\texorpdfstring{How do I create the file
+\texttt{sample\_extracts.csv}?}{How do I create the file sample\_extracts.csv?}}\label{createsampleextracts}
+
+The \texttt{sample\_extracts.csv} file is required in order to determine
+automatically absolute quantities in the manner of pmol/1e+6 cells or
+pmol/mg tissue in the \texttt{CalculationFileData.csv}.
+
+This file requires two obligatory columns - \textbf{Extract\_vol} and
+\textbf{Unit}\footnote{Define: count, mg or ul}. Please specify for each
+experimental condition the amount of extracted cells (count), tissue
+(mg) or volume of blood/plasme (ul) in the unit shown in the brackets.\\
+The names of the columns of the experimental conditions have to match up
+with the annotation file. Save the file in the folder
+\texttt{psirm\_glucose/input/...}.
+
+If the defined experimental conditions do not match up with the
+annotation \texttt{MTXQCvX2\_part1.Rmd} exit data processing. A template
+file is saved for review and usage at \texttt{inst/template\_files/...}
+
+\section{How do I define an internal extraction standard other than
+cinnamic acid?}\label{definternal}
+
+MTXQCvX2 allows the specification of project-specific internal
+extraction standards. The only thing you need to do is to define the
+corresponding compounds as an internal standard in the
+\texttt{config\_mtx/conversion\_metabolite.csv} file. To do so, add to
+the compound in last column \texttt{Standard} the entry
+\texttt{InternalStandard}.
+
+The definition of an internal standard requires the file
+`InternalStandard.csv' in the folder \texttt{input/gc} since it is used
+for the evaluation of normalisation factors in MTXQC\_part1.
+
+\textbf{Scenario 1} Maui-project and Cinnamic acid
+
+For an classical pSIRM experiment in the Kempa lab we are using cinnamic
+acid. The evaluation of this compound has been integrated into Maui.
+Peak areas of cinnamic acid are exported from the container called
+\texttt{cinAcid}. The exported file\footnote{see section
+  \ref{mauiexports}} has to be renamed to \texttt{InternalStandard.csv}
+though and moved to \texttt{psirm\_glucose/input/gc/...}.
+
+\textbf{Scenario 2} Maui-project and different internal standard
+
+If you have used a different compound as an internal extraction standard
+you might need to extract the peak areas of this compound from the file
+\texttt{quantPeakAreasMatrix.csv} and save it in the folder
+\texttt{psirm\_glucose/input/gc/InternalStandard.csv}, respectively.
+Prerequisite here - you have annotated the compound in your
+Maui-project.
+
+\textbf{Scenario 3} Metmax-project
+
+In the case you used metmax the module \texttt{MTXQC\_part4.Rmd} takes
+care for you of the generation of the \texttt{InternalStandard.csv}
+based on the definition in \texttt{conversion\_metabolite.csv} and
+provided peak areas\footnote{see chapter \ref{Metmax}}. This procedure
+is independent what standard you have defined. It only requires the
+annotation of your compound in chromtof and successful export with
+metmax.
+
+\section{How do I combine multiple MAUI-projects into a single
+MTXQC-project?}\label{multipleproj}
+
+Certain circumstances might wish you to combine \emph{multiple
+MAUI-projects} into one MTXQC-project. This might be the case when you
+run the same samples in split and splitless mode on the machine or your
+experimental setup has been measured in multiple batches in order to
+avoid derivatisation effects.
+
+It is highly recommended to combine the input files derived from a
+different Maui projects beforehand the analysis. In that way you have
+only to work with a single file
+\texttt{CalculationFileData.csv}\footnote{stored in
+  \texttt{psirm\_glucose/output/quant/...}} containing all data of the
+your experiment.
+
+The herein described process provides a quick way how to combine the
+exported files from different Maui projects. The script
+\texttt{combine-sets.R}\footnote{inst/template\_files/\ldots{}}
+automatically saves all combined files into the correct \texttt{input}
+folder. Just update the folder and subfolder names. All the rest has
+been taken care of for you.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Create in the MTXQC-project folder (e.g., \texttt{psirm\_glucose/}) a
+  new folder called \texttt{raw-data}
+\item
+  Create a subfolder for each Maui-project in
+  \texttt{psirm\_glucose/raw\_data/...}
+\item
+  Copy into this folder all your Maui-derived input files altogether
+\item
+  Update the parameter of \texttt{combine-sets.R}, meaning folder name
+  definitions, file
+\item
+  Execute the R script
+\item
+  Merged files have been generated and copied into the corresponding
+  folder: \texttt{psirm\_glucose/input-folder/gc/...} or
+  \texttt{psirm\_glucose/input-folder/inc/...}
+\item
+  Copy the renamed \texttt{ManualQuantTable.tsv} files of each Maui
+  project into \texttt{psirm\_glucose/input/quant/...}
+\end{enumerate}
+
+\section{How do I extend conversion\_metabolite.csv}\label{extendconse}
+
+\section{How do I prepare my data in ChromaToF for manual data
+validation}\label{howmanval}
+
+\section{How do I distinguish between standard and additional
+quantification standards?}\label{quantquant}
+
+\section{How do I integrate additional quantification standards into
+MTXQCvX2}\label{addqadds}
+
+\chapter{Appendix - Dictionary Tables}\label{tables}
 
 \begin{verbatim}
 ## 
@@ -1182,25 +1191,31 @@ tables}{config\_mtx tables}}\label{config_mtx-tables}
 
 \subsubsection{conv\_filenames.csv}\label{app:filenames}
 
+\begin{verbatim}
+## 'data.frame':    10 obs. of  2 variables:
+##  $ AssociatedFile: Factor w/ 10 levels "addQ","alkane_int",..: 4 2 7 8 10 9 5 1 6 3
+##  $ Filename      : Factor w/ 10 levels " incorp_calc_masses.csv",..: 6 4 7 8 10 9 5 3 1 2
+\end{verbatim}
+
 \rowcolors{2}{gray!6}{white}
 
-\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X}
+\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X}
 \hiderowcolors
 \toprule
-Column.name & Description & Value\\
+AssociatedFile & Filename\\
 \midrule
 \showrowcolors
-Metabolite\_manual & Manual defined metabolite name & \#Alanine (2TMS)\\
-Metabolite & Library name of the metabolite & Alanine\_(2TMS)\_BP\_RI:1097\_IDENT:B+C\\
-Metabolite\_short & Short version of library name of the metabolite & Alanine\_(2TMS)\\
-Lettercode & Lettercode version of metabolite name & Ala\_2TMS\\
-Q1\_value & Checked if quant1:1 value available & x\\
+cin\_acid & InternalStandard.csv\\
+alkane\_int & Alcane\_intensities.csv\\
+mz\_73 & MassSum-73.csv\\
+peak\_densities & PeakDensities-Chroma.csv\\
+sample\_area & quantMassAreasMatrix.csv\\
 \addlinespace
-Mass\_Pos & m/z-value corresponding to m\_inc & 118\\
-SE\_sel & Evaluation of the MIDs & x\\
-Q\_sel & Evaluation for absolute quantification & x\\
-nopsirm & Exclusively for absolute quantification & \\
-Standards & Defined as standard & InternalStandard, Alk\\
+pSIRM\_se & pSIRM\_SpectraData.csv\\
+inc & DataMatrix.csv\\
+addQ & additional\_quant1\_values.csv\\
+mass\_li & incorp\_calc\_masses.csv\\
+backups\_mid & mid\_backups.csv\\
 \bottomrule
 \end{tabu}
 
@@ -1274,32 +1289,31 @@ needs of a project.
 \subsubsection{conversion\_metabolite.csv}\label{app:conse}
 
 \begin{verbatim}
-## 'data.frame':    166 obs. of  10 variables:
-##  $ Metabolite_manual: Factor w/ 115 levels "","#2OG","#Adenine (2TMS)",..: 1 1 4 1 1 7 5 6 8 9 ...
-##  $ Metabolite       : Factor w/ 166 levels "Acetoacetic acid_(1MEOX)(1TMS)_MP_RI:1132_BMD",..: 1 2 4 5 7 6 8 9 10 11 ...
-##  $ Metabolite_short : Factor w/ 161 levels "Acetoacetic acid_(1MEOX)(1TMS)",..: 1 2 4 5 7 6 8 9 10 11 ...
-##  $ Lettercode       : Factor w/ 143 levels "2PGA","3PGA",..: 4 5 6 7 13 14 8 9 11 12 ...
-##  $ Q1_value         : Factor w/ 2 levels "","x": 1 1 1 1 2 2 2 2 1 1 ...
-##  $ Mass_Pos         : int  NA NA NA NA NA NA 118 190 249 NA ...
-##  $ SE_sel           : Factor w/ 2 levels "","x": 1 1 1 1 1 1 2 2 2 2 ...
-##  $ Q_sel            : Factor w/ 2 levels "","x": 1 1 2 2 1 1 2 2 2 2 ...
-##  $ nopsirm          : Factor w/ 2 levels "","x": 2 2 1 2 2 2 1 1 1 2 ...
-##  $ Standards        : Factor w/ 3 levels "","Alk","InternalStandard": 1 1 1 1 1 1 1 1 1 1 ...
+## 'data.frame':    10 obs. of  3 variables:
+##  $ Column.name: Factor w/ 10 levels "Lettercode","Mass_Pos",..: 4 3 5 1 8 2 9 7 6 10
+##  $ Description: Factor w/ 10 levels "Checked if quant1:1 value available",..: 9 7 10 6 1 8 4 3 5 2
+##  $ Value      : Factor w/ 8 levels "","#Alanine (2TMS)",..: 2 6 5 4 8 3 8 8 1 7
 \end{verbatim}
 
 \rowcolors{2}{gray!6}{white}
 
-\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedleft}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X}
+\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X}
 \hiderowcolors
 \toprule
-Metabolite\_manual & Metabolite & Metabolite\_short & Lettercode & Q1\_value & Mass\_Pos & SE\_sel & Q\_sel & nopsirm & Standards\\
+Column.name & Description & Value\\
 \midrule
 \showrowcolors
- & Acetoacetic acid\_(1MEOX)(1TMS)\_MP\_RI:1132\_BMD & Acetoacetic acid\_(1MEOX)(1TMS) & Aceto\_1MEOX\_1TMS &  & NA &  &  & x & \\
- & Acetoacetic acid\_(2TMS)\_MP\_RI:1239\_GMDpred & Acetoacetic acid\_(2TMS) & Aceto\_2TMS &  & NA &  &  & x & \\
-\#Adenosine (3TMS) & Adenosine (3TMS)\_noIdent & Adenosine (3TMS) & Adenosine\_3TMS &  & NA &  & x &  & \\
- & Adenosine\_(4TMS)\_MP\_RI:2644\_IDENT:A+B & Adenosine\_(4TMS) & Adenosine\_4TMS &  & NA &  & x & x & \\
- & Alanine\_ beta-\_(2TMS)\_BP\_RI:1188\_IDENT:A+D & Alanine\_ beta-\_(2TMS) & bAla\_2TMS & x & NA &  &  & x & \\
+Metabolite\_manual & Manual defined metabolite name & \#Alanine (2TMS)\\
+Metabolite & Library name of the metabolite & Alanine\_(2TMS)\_BP\_RI:1097\_IDENT:B+C\\
+Metabolite\_short & Short version of library name of the metabolite & Alanine\_(2TMS)\\
+Lettercode & Lettercode version of metabolite name & Ala\_2TMS\\
+Q1\_value & Checked if quant1:1 value available & x\\
+\addlinespace
+Mass\_Pos & m/z-value corresponding to m\_inc & 118\\
+SE\_sel & Evaluation of the MIDs & x\\
+Q\_sel & Evaluation for absolute quantification & x\\
+nopsirm & Exclusively for absolute quantification & \\
+Standards & Defined as standard & InternalStandard, Alk\\
 \bottomrule
 \end{tabu}
 
@@ -1918,7 +1932,7 @@ sum\_files & Number of detected MIDs & 54\\
 
 \subsubsection{MTXQCvX2 part4}\label{mtxqcvx2-part4}
 
-\chapter{pSIRM experiments}\label{psirm}
+\chapter{Appendix - pSIRM experiments}\label{psirm}
 
 The application of stable isotopes provides a powerful tool to track the
 activity of metabolic pathways. the time-dependent and atom-specific
@@ -1958,10 +1972,7 @@ at the time point of the harvest. Later one is useful to plan sample
 extraction and measurement subsequently.
 
 \begin{figure}
-\centering
-\includegraphics{images/psirm_harvest.png}
-\caption{\label{fig:psirmexp}Experimental design of a pSIRM experiment
-distuingishing short and long labeling with stable isotopes.}
+\includegraphics[width=13.14in]{images/psirm_harvest} \caption{Experimental design of a pSIRM experiment distuingishing short and long labeling with stable isotopes.}\label{fig:psirmexp}
 \end{figure}
 
 For adherent cell cultures only: Include for each experimental condition
@@ -2199,79 +2210,9 @@ good starting point for GC-MS measurements.
   DMSO - strong impact on chromatography.
 \end{itemize}
 
-\chapter{GC-MS settings}\label{gcms}
+\chapter{Protocols \& Procedures}\label{protocols}
 
-In the following paragraphs details of GC-MS settings are described in
-detail. The herein described settings have been optimized for cell
-extracts measured in split-mode 1:5 on the instrument Pegasus 4D-C
-GC-ToF-MS in 1D mode equiped with an autosampler Gerstel MPS.
-
-\subsection{Autosampler settings}\label{autosampler-settings}
-
-The table \ref{tab:gerstel} summarises the defined parameter for method
-settings of the Gerstel MPS.
-
-The injector itself is a temperature-regulated system providing the
-advantage of a focused injection of the sample. Gradient
-
-\begin{figure}
-\centering
-\includegraphics{images/cis.PNG}
-\caption{\label{fig:cis}Settings temperature-regulated injection for Gerstel
-MPS}
-\end{figure}
-
-\subsection{Gas chromatography}\label{gas-chromatography}
-
-The most important settings of the GC method are listed below. A
-graphical representation of the gradient in the oven is shown in figure
-\ref{fig:gradient} and corresponding values in table
-\ref{tab:gradient2}.
-
-Flow path:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Inlet: Front
-\item
-  Capillary: GC Oven 50 m, 250 u int. diameter, 0.25 u film thickness,
-  RTX-5 phase
-\item
-  Capillarty: Detector 0.21 m, 250 u int. diameter, 0.25 u film
-  thickness, RTX-5 phase
-\item
-  Detector: TOF
-\end{enumerate}
-
-\begin{figure}
-\centering
-\includegraphics{images/gradient.PNG}
-\caption{\label{fig:gradient}GC gradient - graphical representation. Rate in
-(°C/min), Target temperature in (°C), Duratin in (min).}
-\end{figure}
-
-\begin{table}[t]
-
-\caption{\label{tab:gradient2}GC gradient profile - Rate shown in (K/min), Target Temp in (C), Duration in (min)}
-\centering
-\begin{tabular}{lrr}
-\toprule
-Rate & Target\_Temp & Duration\\
-\midrule
-Initial & 68 & 2\\
-5 & 120 & 0\\
-7 & 200 & 0\\
-12 & 320 & 6\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Mass spectrometer
-settings}\label{mass-spectrometer-settings}
-
-\chapter{Solutions and Materials}\label{mm}
+\section{Materials}\label{materials}
 
 \section{Solutions}\label{solutions}
 
@@ -2389,27 +2330,229 @@ shaped distribution of all alkanes in the chromatogram: lower
 intensities for c10 and c32-36, slowly increasing intensities for the
 alkanes in between.
 
-\section{Materials}\label{materials}
+\section{Idents \& Quant-Standards}\label{standards}
 
-\begin{table}[t]
+has to be written
 
-\caption{\label{tab:chemicals}List of chemicals including company names and catalog number.}
-\centering
-\begin{tabular}{llll}
-\toprule
-Chemical & Catalog.Nb & Company & Storage\\
-\midrule
-Chloroform & 132950-1L & Sigma & RT\\
-Cinnamic acid & C80857  5g & Aldrich & RT\\
-Hexane for HPLC > 97\% (GC) & 34859-1L & Sigma & RT\\
-Methanol & 1060351000 & Merck & RT\\
-Methoxyamine hydrochloride & 226904-5G & Aldrich & RT\\
-\addlinespace
-MSTFA - Methyltrimethylsilyltrifluoracetamide & 701270201 & Macherey-Nagel & 4°C\\
-Pyridine & 270970-100ML & Sigma & RT\\
-\bottomrule
-\end{tabular}
-\end{table}
+\section{Sample Extraction}\label{SampleExtraction}
+
+\subsection{Cell extracts}\label{cell-extracts}
+
+Materials:
+
+\begin{itemize}
+\tightlist
+\item
+  cell culture dishes (10 cm), max. confluency 75\%
+\item
+  washing buffer (Hepes, NaCl, ph 7.4)
+\item
+  50\% MeOH, ice-cold
+\item
+  2 mg/ml cinnamic acid
+\item
+  chloroform
+\item
+  15 ml falcon tubes
+\item
+  cell lifter
+\end{itemize}
+
+Procedure:
+
+\begin{itemize}
+\tightlist
+\item
+  prepare cell culture dishes accordingly to your experimental
+  conditions
+\item
+  discard cell culture media
+\item
+  add quickly 5 ml of washing buffer, discard it
+\item
+  add very immediately 5 ml ice-cold 50\% MeOH suppl. 2 ug/ul cinnamic
+  acid
+\item
+  detach cells using cell lifter
+\item
+  collect and transfer cell extract into 15 ml falcon
+\item
+  store falcons until further processing on ice
+\item
+  add 1 ml chloroform
+\item
+  incube for 60 min at cold temperatures (4 C) on rotary or thermo
+  shaker
+\item
+  centrifuge at max speed for 10 min, cold temperatures
+\item
+  collect polar and lipid phases into fresh falcons / tubes
+\item
+  dry under vacuum
+\end{itemize}
+
+In order to generate technical backups:
+
+\begin{itemize}
+\tightlist
+\item
+  resuspend dried extracts in 600 ul 20\% MeOH
+\item
+  shake at cold temperature on thermo shaker for 30 min
+\item
+  split volumes into equal parts in fresh eppendorf tubes
+\item
+  dry under vacuum
+\end{itemize}
+
+Suggested cell density: \(2-3e+6\) cells / extract.
+
+\subsection{Tissue samples}\label{tissue-samples}
+
+Materials:
+
+\begin{itemize}
+\tightlist
+\item
+  Methanol:Chloroform:Water (MCW) in ratio 5:2:1
+\item
+  2 mg/mg cinnamic acid in MeOH
+\item
+  ddH20
+\item
+  eppendorf tubes
+\item
+  tissue lyzer / pulverizer
+\end{itemize}
+
+Procedure:
+
+\begin{itemize}
+\tightlist
+\item
+  snap-freeze tissue samples
+\item
+  pulverize samples
+\item
+  aliquote 50 mg of tissue powder
+\item
+  add 1.5 ml of MCW (suppl. with cinnamic acid final conc. 2 ug/ul)
+\item
+  shake for 60 min on rotary shaker at cold temperature (4 C)
+\item
+  add 0.5 ml ddH20 for phase separation
+\item
+  centrifuge maximum speed, 10 min, cold temperatures
+\item
+  collect polar and lipid phases in fresh vessels
+\item
+  dry under vacuum
+\end{itemize}
+
+\subsection{Blood samples}\label{blood-samples}
+
+Material:
+
+\begin{itemize}
+\tightlist
+\item
+  Methanol:Chloroform:Water (MCW) in ratio 5:2:1
+\item
+  2 mg/mg cinnamic acid in MeOH
+\item
+  ddH20
+\item
+  eppendorf tubes
+\end{itemize}
+
+Procedure:
+
+\begin{itemize}
+\tightlist
+\item
+  give 20 ul blood / sera directly into 1 ml MCW to avoid lumps
+\item
+  in case of lumps sonicate samples
+\item
+  shake samples at 4 C for 800 rpm for 60 min
+\item
+  add 500 ul ddH20 and vortex shortly
+\item
+  spin down at 4 C at max speed for 10 min
+\item
+  aliquote polar phase into 2-3 times 500 ul in 1.5 ml tubes
+\item
+  aliquote lipid phase 2 times in 100 ul lower in 1.5 ml eppi
+\item
+  dry in SpeedVac (35 C)
+\end{itemize}
+
+\section{Derivatisation for GC-MS}\label{Deriv}
+
+Materials:
+
+\begin{itemize}
+\tightlist
+\item
+  Methoxamine (MeOx)
+\item
+  Pyridine (open under the hood only!)
+\item
+  MSTFA
+\item
+  Alkane mix (c10-c36) in Hexane
+\item
+  chromacol vials and caps (big, small)
+\item
+  samples: extracted and speed-vac dry for min 30 min prior procedure
+\item
+  quant-standards: extracted and speed-vac dry
+\item
+  ident-standards: extraction not required, speed-vac dry
+\end{itemize}
+
+Mixtures:
+
+\begin{itemize}
+\tightlist
+\item
+  Solvent 1: 40 mg MeOx in 1 ml Pyridine
+\item
+  Solvent 2: 10 ul Alkane mix in 1 ml MSTFA
+\end{itemize}
+
+Volumens of both solvents are shown for standard (small vol.)
+procedures.
+
+Procedure:
+
+\begin{itemize}
+\tightlist
+\item
+  make sure samples are completly dry (1 h speed vac)
+\item
+  add 20 ul (10 ul) of solvent 1 / sample
+\item
+  incubate on rotary shaker, 30 C, for 60 min
+\item
+  add 80 ul (25 ul) of solvent 2 / sample
+\item
+  incubaate on rotary shaker, 37 C, for 90 min
+\item
+  centrifuge to spin down insoluble materials
+\item
+  prepare aliquotes three times 28 ul or two times 15 ul (small glass
+  vials)
+\item
+  keep on room temperature until measurement (max. 10 days)
+\end{itemize}
+
+\section{GC-MS settings}\label{gcms}
+
+In the following paragraphs details of GC-MS settings are described in
+detail. The herein described settings have been optimized for cell
+extracts measured in split-mode 1:5 on the instrument Pegasus 4D-C
+GC-ToF-MS in 1D mode equiped with an autosampler Gerstel MPS.
 
 \bibliography{book.bib,packages.bib}
 

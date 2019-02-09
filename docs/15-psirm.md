@@ -1,4 +1,4 @@
-# pSIRM experiments{#psirm}
+# Appendix - pSIRM experiments{#psirm}
 
 The application of stable isotopes provides a powerful tool to track the activity of metabolic pathways.
 the time-dependent and atom-specific routing along a metabolic pathway resolved how substrates like glucose or glutamine are used in order to maintain a certain phenotype and energetic homeostatsis. 
@@ -12,7 +12,7 @@ An *in vitro* pSIRM experiment lasts in total up to three days starting from the
 Choose carefully the _seeding density of you cells_ in the first place. High confluency inducing contact inhibition of cell growth has a strong impact on several cellular processes including the uptake of nutrients. Try to aim for petri dishes with a maximum confluency of 75-80 \%. A pre-experiment including different cell densities for seeding at a number of experimental conditions helps you to get a feeling for the cell growth in general and an expected output of cells at the time point of the harvest. Later one is useful to plan sample extraction and measurement subsequently.
 
 <div class="figure">
-<img src="images/psirm_harvest.png" alt="Experimental design of a pSIRM experiment distuingishing short and long labeling with stable isotopes."  />
+<img src="images/psirm_harvest.png" alt="Experimental design of a pSIRM experiment distuingishing short and long labeling with stable isotopes." width="946" />
 <p class="caption">(\#fig:psirmexp)Experimental design of a pSIRM experiment distuingishing short and long labeling with stable isotopes.</p>
 </div>
 

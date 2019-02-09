@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="10-Metmax.html">
-<link rel="next" href="12-mauiproc.html">
+<link rel="prev" href="2-intro.html">
+<link rel="next" href="4-wf-metmax.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -247,211 +247,102 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="configuration-of-mtxqcvx2---config_mtx..." class="section level1">
-<h1><span class="header-section-number">Chapter 11</span> Configuration of MTXQCvX2 - <code id="config">config_mtx/...</code></h1>
-<p>Herein explained are the customizable tables of the MTXQCvX2 universe.</p>
-<div id="conversion_metabolite.csv" class="section level2">
-<h2><span class="header-section-number">11.1</span> <code>conversion_metabolite.csv</code></h2>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Column.name</th>
-<th align="left">Description</th>
-<th align="left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Metabolite_manual</td>
-<td align="left">Manual defined metabolite name</td>
-<td align="left">#Alanine (2TMS)</td>
-</tr>
-<tr class="even">
-<td align="left">Metabolite</td>
-<td align="left">Library name of the metabolite</td>
-<td align="left">Alanine_(2TMS)_BP_RI:1097_IDENT:B+C</td>
-</tr>
-<tr class="odd">
-<td align="left">Metabolite_short</td>
-<td align="left">Short version of library name of the metabolite</td>
-<td align="left">Alanine_(2TMS)</td>
-</tr>
-<tr class="even">
-<td align="left">Lettercode</td>
-<td align="left">Lettercode version of metabolite name</td>
-<td align="left">Ala_2TMS</td>
-</tr>
-<tr class="odd">
-<td align="left">Q1_value</td>
-<td align="left">Checked if quant1:1 value available</td>
-<td align="left">x</td>
-</tr>
-<tr class="even">
-<td align="left">Mass_Pos</td>
-<td align="left">m/z-value corresponding to m_inc</td>
-<td align="left">118</td>
-</tr>
-<tr class="odd">
-<td align="left">SE_sel</td>
-<td align="left">Evaluation of the MIDs</td>
-<td align="left">x</td>
-</tr>
-<tr class="even">
-<td align="left">Q_sel</td>
-<td align="left">Evaluation for absolute quantification</td>
-<td align="left">x</td>
-</tr>
-<tr class="odd">
-<td align="left">nopsirm</td>
-<td align="left">Exclusively for absolute quantification</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">Standards</td>
-<td align="left">Defined as standard</td>
-<td align="left">InternalStandard, Alk</td>
-</tr>
-</tbody>
-</table>
+<div id="maui" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Tutorial: Maui-annotation projects</h1>
+<div id="read-this-in-case" class="section level2">
+<h2><span class="header-section-number">3.1</span> Read this in case</h2>
+<ul>
+<li>you have successfully finished the annotation using Maui-SILVIA</li>
+<li>exported all required MAUI container (see <a href="12-mauiproc.html#mauiexport">12.3</a>)</li>
+<li>you have a list of your GC-MS sequence and related experimental conditions</li>
+<li>you know the extraction procedure of standards and samples</li>
+</ul>
 </div>
-<div id="letter_pathway_complete.csv" class="section level2">
-<h2><span class="header-section-number">11.2</span> <code>letter_pathway_complete.csv</code></h2>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Column.name</th>
-<th align="left">Description</th>
-<th align="left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Letter_Derivate</td>
-<td align="left">Derivate definition</td>
-<td align="left">Ala</td>
-</tr>
-<tr class="even">
-<td align="left">Lettercode</td>
-<td align="left">Lettercode name of metabolite</td>
-<td align="left">Ala_3TMS</td>
-</tr>
-<tr class="odd">
-<td align="left">Pathway</td>
-<td align="left">Ass.pathway</td>
-<td align="left">aa</td>
-</tr>
-<tr class="even">
-<td align="left">Pathway.1</td>
-<td align="left">Ass. pathway - ordered for heatmap</td>
-<td align="left">5-aa</td>
-</tr>
-<tr class="odd">
-<td align="left">Met_pathway</td>
-<td align="left">Ass. pathway - ordered for heatmap incl. Lettercode</td>
-<td align="left">5-aa_Ala_3TMS</td>
-</tr>
-<tr class="even">
-<td align="left">Subs_class</td>
-<td align="left">Substance class</td>
-<td align="left">aa</td>
-</tr>
-<tr class="odd">
-<td align="left">Met_class</td>
-<td align="left">Substance class incl. Lettercode</td>
-<td align="left">aa_Ala_3TMS</td>
-</tr>
-</tbody>
-</table>
+<div id="nutshellmaui" class="section level2">
+<h2><span class="header-section-number">3.2</span> In a nutshell</h2>
+<ol style="list-style-type: decimal">
+<li>Setup a new R-project</li>
+<li>Copy all MTXQC template files and folders</li>
+<li><em>Knit with parameter</em>: <code>MTXQC_init.Rmd</code> and create project folder (e.g., <code>psirm_glucose</code>)</li>
+<li>Copy input files and rename <code>ManualQuantTable.tsv</code> (e18205cz.tsv)</li>
+<li>Create your <code>annotation.csv</code> and <code>sample_extracts.csv</code> files</li>
+<li>Define the internal extraction standard</li>
+<li><em>Knit with parameter</em>: <code>MTXQC_ExperimentalSetup.Rmd</code></li>
+<li><em>Knit with parameter</em>: <code>MTXQC_part1.Rmd</code></li>
+<li><em>Knit with parameter</em>: <code>MTXQC_part2.Rmd</code></li>
+<li>If required, proceed with <code>MTXQC_part3.Rmd</code> for manual validation of your data</li>
+</ol>
 </div>
-<div id="quant1-values.csv" class="section level2">
-<h2><span class="header-section-number">11.3</span> <code>quant1-values.csv</code></h2>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Column.name</th>
-<th align="left">Description</th>
-<th align="left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Letter_Derivate</td>
-<td align="left">Derivate name of metabolite</td>
-<td align="left">3PGA</td>
-</tr>
-<tr class="even">
-<td align="left">Quant1_v4</td>
-<td align="left">Quantity in (pmol)</td>
-<td align="left">43480</td>
-</tr>
-<tr class="odd">
-<td align="left">Quant1_v3</td>
-<td align="left">Quantity in (pmol)</td>
-<td align="left">43480</td>
-</tr>
-</tbody>
-</table>
+<div id="dataset-of-the-tutorial---tutorial_single_maui" class="section level2">
+<h2><span class="header-section-number">3.3</span> Dataset of the tutorial - <code>tutorial_single_maui</code></h2>
+<p>Copy the dataset <code>tutorial_single_maui</code> somewhere local on your computer or laptop. The dataset represents the data of the first psirm metabolomics experiment in the Kempa Lab. HEK293 cells have been cultivated at 21% oxygen and a range of glucose levels (0.3 - 4.5 g/L Glc) and constant glutamine concentration (4 mM) following standard cell culture procedures. During the cell harvest cells have been labeled for two minutes with uniformly labeled 13C-glucose, three replicates per condition.</p>
 </div>
-<div id="incorporation_calc.csv-mid_backups.csv" class="section level2">
-<h2><span class="header-section-number">11.4</span> <code>incorporation_calc.csv</code> &amp; <code>mid_backups.csv</code></h2>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Column.name</th>
-<th align="left">Description</th>
-<th align="left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Metabolite</td>
-<td align="left">Library name of metabolite</td>
-<td align="left">Alanine_(2TMS)_BP_RI:1097_IDENT:B+C</td>
-</tr>
-<tr class="even">
-<td align="left">Mass_mz</td>
-<td align="left">m/z-value</td>
-<td align="left">116, 118</td>
-</tr>
-<tr class="odd">
-<td align="left">LI_MID</td>
-<td align="left">Definition of mass level</td>
-<td align="left">m0, minc</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Column.name</th>
-<th align="left">Description</th>
-<th align="left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Metabolite</td>
-<td align="left">Library name of metabolite</td>
-<td align="left">Alanine_ beta-_(3TMS)_MP_RI:1435_IDENT:A+D</td>
-</tr>
-<tr class="even">
-<td align="left">Mass.m.z.</td>
-<td align="left">m/z value</td>
-<td align="left">188</td>
-</tr>
-<tr class="odd">
-<td align="left">BackupPeakArea</td>
-<td align="left">Peak area of Backup MID</td>
-<td align="left">4960</td>
-</tr>
-<tr class="even">
-<td align="left">BackupMID</td>
-<td align="left">MID value for corresponding Mass.m.z.</td>
-<td align="left">0.8005</td>
-</tr>
-</tbody>
-</table>
+<div id="in-detail" class="section level2">
+<h2><span class="header-section-number">3.4</span> In detail</h2>
+<div id="setup-a-r-project" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> Setup a R-project</h3>
+<p>R-projects provide a secure environment to handle your data from the processing in MTXQCvX2 until the final reports and analysis. Think about it as a big bubble containing and carrying all your data and analysis savely from one place to the other undisturbed of the outside changes.</p>
+<ul>
+<li>Open R-studio and create a new project following: <code>File -&gt; New project -&gt; New Project -&gt; New Directory</code> and call the directory <code>tutorial_single_maui</code> and the preferred subdirectory.</li>
+<li>I recommend to start each project in a new session (tick the box at the bottom of the dialogue box).</li>
+</ul>
+</div>
+<div id="copy-mtxqcvx2-template-files" class="section level3">
+<h3><span class="header-section-number">3.4.2</span> Copy MTXQCvX2 template files</h3>
+<ul>
+<li>Download the current version of MTXQCvX2 called fluffy adventure <a href="github.com/ChrisZasada/fluffy_adventure">here</a></li>
+<li>Open and extract the zip-file</li>
+<li>Copy all folders and files into your newly created R-project ’tutorial_single_maui`</li>
+</ul>
+</div>
+<div id="process-mtxqc_init.rmd" class="section level3">
+<h3><span class="header-section-number">3.4.3</span> Process <code>MTXQC_init.Rmd</code></h3>
+<p>The module <code>MTXQC_init.Rmd</code> provides you two important things: (1) Check-up package installation (2) Creation of project-folder</p>
+<p>The project folder is supposed to provide a tidy structure while data processing and analysis and contains several pre-defined folder. Besides the following folders: ‘input’, ‘output’ and ‘figures’ you see a detailed subfolder structure. You find more details about each folder and additional suggestion how to use project-folder in chapter <a href="5-init.html#init">5</a>.</p>
+<p>All you need to do is to process the <code>MTXQC_init.Rmd</code>. The following procedure is how you process all <code>.Rmd</code>-files of MTXQCvX2:</p>
+<ul>
+<li>Click on the small black triangle next to the ball of yarn</li>
+<li>Choose <code>Knit with Parameters...</code></li>
+</ul>
+<p>If the <code>.Rmd</code>-file contains defined parameters a shiny dialogue pops up and provides an interactive selection based on the document. In the case of <code>MTXQC_init.Rmd</code> you are asked to define a so-called project-folder, e.g., <code>psirm_glucose</code>.</p>
+<ul>
+<li>Define the name of the project-folder: <code>psirm_glucose</code></li>
+</ul>
+<p>Check in the files tab of R-Studio if you see the new folder and browse through it.</p>
+</div>
+<div id="prepare-and-copy-input-files" class="section level3">
+<h3><span class="header-section-number">3.4.4</span> Prepare and copy input files</h3>
+<p>Several files have to be exported from Maui and copied into the folders <code>input/gc</code>, <code>input/quant</code> and <code>input/inc</code> for the evaluation of the GC-MS performance, absolute quantification and isotope incorporation.</p>
+<p>Please follow the detailed instructions in section <a href="12-mauiproc.html#mauiexport">12.3</a> if you need further information how to perform the export in Maui. For the purpose of the tutorial the exported files are already processed and copied into the corresponding subfolders of the <code>input</code>-folder.</p>
+</div>
+<div id="copy-files-annotation.csv-and-sample_extracts.csv" class="section level3">
+<h3><span class="header-section-number">3.4.5</span> Copy files: <code>annotation.csv</code> and <code>Sample_extracts.csv</code></h3>
+<p>Both files contain important information about your metabolomics experiment and since these information are highly specific you need to create them on your own and save them in <code>project-folder/input/</code>.</p>
+<p>Browse to both files in the tutorial dataset, have a look at the content and copy both files into <code>psirm_glucose/input</code>.</p>
+<p>The herein shown <em>annotation file</em> contains information about the eperimental conditions of each sample and measurement file. The columns <strong>File</strong> and <strong>Type</strong> are mandatory, additional columns defining further parameter, like cell line or glucose level, are totally customizable to your needs.</p>
+<p>The <em>sample extracts</em> file specify the nature and volume / weight of the sample extracts. The columns <strong>Extract_vol</strong> and <strong>Unit</strong> are mandatory here. This file here shows cell extracts defined with the unit <em>count</em> for specific conditions. Please be aware that names of experimental conditions have to match between annotation and sample extracts file.</p>
+<p>Nevertheless it is not necessarily required to define for each combination of conditions a cell count. Please refer FAQs section <a href="14-FAQ.html#createannotation">14.1</a> and <a href="14-FAQ.html#createsampleextracts">14.2</a> for further information how to create and set up both files from the scretch.</p>
+</div>
+<div id="define-an-internal-standard---cinnamic-acid" class="section level3">
+<h3><span class="header-section-number">3.4.6</span> Define an internal standard - cinnamic acid</h3>
+<p>We have to define the internal extraction standard for each experiment in <code>config_mtx/conversion_metabolite.csv</code>. Classical pSIRM experiments like the one we are using for this tutorial used cinnamic acid for tracking variations in experimental handling. This provides flexibility in the experimental setup.</p>
+<ul>
+<li>Open the file: ’config_mtx/conversion_metabolite.csv`</li>
+<li>Scroll down to the entry <code>Cinnamic acid trans-, 1TMS</code></li>
+<li>Define <code>InternalStandard</code> in the column <code>Standard</code></li>
+<li>Save the file and close it</li>
+</ul>
+</div>
+<div id="process-mtxqc_experimentalsetup.csv" class="section level3">
+<h3><span class="header-section-number">3.4.7</span> Process <code>MTXQC_ExperimentalSetup.csv</code></h3>
+</div>
+<div id="process-mtxqc_part1.rmd" class="section level3">
+<h3><span class="header-section-number">3.4.8</span> Process <code>MTXQC_part1.Rmd</code></h3>
+</div>
+<div id="process-mtxqc_part2.rmd" class="section level3">
+<h3><span class="header-section-number">3.4.9</span> Process <code>MTXQC_part2.Rmd</code></h3>
 
+</div>
 </div>
 </div>
             </section>
@@ -459,8 +350,8 @@
           </div>
         </div>
       </div>
-<a href="10-Metmax.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="12-mauiproc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="2-intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="4-wf-metmax.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

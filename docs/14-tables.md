@@ -2,7 +2,7 @@
 always_allow_html: yes
 ---
 
-# Appendix - Tables{#tables}
+# Appendix - Dictionary Tables{#tables}
 
 
 ```
@@ -29,64 +29,60 @@ This chapter shows the structure of all input or output csv-files that are refer
 ### `config_mtx` tables
 
 #### conv_filenames.csv{#app:filenames}
+
+```
+## 'data.frame':	10 obs. of  2 variables:
+##  $ AssociatedFile: Factor w/ 10 levels "addQ","alkane_int",..: 4 2 7 8 10 9 5 1 6 3
+##  $ Filename      : Factor w/ 10 levels " incorp_calc_masses.csv",..: 6 4 7 8 10 9 5 3 1 2
+```
+
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
-   <th style="text-align:left;"> Column.name </th>
-   <th style="text-align:left;"> Description </th>
-   <th style="text-align:left;"> Value </th>
+   <th style="text-align:left;"> AssociatedFile </th>
+   <th style="text-align:left;"> Filename </th>
   </tr>
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> Metabolite_manual </td>
-   <td style="text-align:left;"> Manual defined metabolite name </td>
-   <td style="text-align:left;"> #Alanine (2TMS) </td>
+   <td style="text-align:left;"> cin_acid </td>
+   <td style="text-align:left;"> InternalStandard.csv </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Metabolite </td>
-   <td style="text-align:left;"> Library name of the metabolite </td>
-   <td style="text-align:left;"> Alanine_(2TMS)_BP_RI:1097_IDENT:B+C </td>
+   <td style="text-align:left;"> alkane_int </td>
+   <td style="text-align:left;"> Alcane_intensities.csv </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Metabolite_short </td>
-   <td style="text-align:left;"> Short version of library name of the metabolite </td>
-   <td style="text-align:left;"> Alanine_(2TMS) </td>
+   <td style="text-align:left;"> mz_73 </td>
+   <td style="text-align:left;"> MassSum-73.csv </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Lettercode </td>
-   <td style="text-align:left;"> Lettercode version of metabolite name </td>
-   <td style="text-align:left;"> Ala_2TMS </td>
+   <td style="text-align:left;"> peak_densities </td>
+   <td style="text-align:left;"> PeakDensities-Chroma.csv </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Q1_value </td>
-   <td style="text-align:left;"> Checked if quant1:1 value available </td>
-   <td style="text-align:left;"> x </td>
+   <td style="text-align:left;"> sample_area </td>
+   <td style="text-align:left;"> quantMassAreasMatrix.csv </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Mass_Pos </td>
-   <td style="text-align:left;"> m/z-value corresponding to m_inc </td>
-   <td style="text-align:left;"> 118 </td>
+   <td style="text-align:left;"> pSIRM_se </td>
+   <td style="text-align:left;"> pSIRM_SpectraData.csv </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> SE_sel </td>
-   <td style="text-align:left;"> Evaluation of the MIDs </td>
-   <td style="text-align:left;"> x </td>
+   <td style="text-align:left;"> inc </td>
+   <td style="text-align:left;"> DataMatrix.csv </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Q_sel </td>
-   <td style="text-align:left;"> Evaluation for absolute quantification </td>
-   <td style="text-align:left;"> x </td>
+   <td style="text-align:left;"> addQ </td>
+   <td style="text-align:left;"> additional_quant1_values.csv </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> nopsirm </td>
-   <td style="text-align:left;"> Exclusively for absolute quantification </td>
-   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> mass_li </td>
+   <td style="text-align:left;"> incorp_calc_masses.csv </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Standards </td>
-   <td style="text-align:left;"> Defined as standard </td>
-   <td style="text-align:left;"> InternalStandard, Alk </td>
+   <td style="text-align:left;"> backups_mid </td>
+   <td style="text-align:left;"> mid_backups.csv </td>
   </tr>
 </tbody>
 </table>
@@ -203,94 +199,70 @@ These tables are supposed to be modified in relation to the individual needs of 
 #### conversion_metabolite.csv {#app:conse}
 
 ```
-## 'data.frame':	166 obs. of  10 variables:
-##  $ Metabolite_manual: Factor w/ 115 levels "","#2OG","#Adenine (2TMS)",..: 1 1 4 1 1 7 5 6 8 9 ...
-##  $ Metabolite       : Factor w/ 166 levels "Acetoacetic acid_(1MEOX)(1TMS)_MP_RI:1132_BMD",..: 1 2 4 5 7 6 8 9 10 11 ...
-##  $ Metabolite_short : Factor w/ 161 levels "Acetoacetic acid_(1MEOX)(1TMS)",..: 1 2 4 5 7 6 8 9 10 11 ...
-##  $ Lettercode       : Factor w/ 143 levels "2PGA","3PGA",..: 4 5 6 7 13 14 8 9 11 12 ...
-##  $ Q1_value         : Factor w/ 2 levels "","x": 1 1 1 1 2 2 2 2 1 1 ...
-##  $ Mass_Pos         : int  NA NA NA NA NA NA 118 190 249 NA ...
-##  $ SE_sel           : Factor w/ 2 levels "","x": 1 1 1 1 1 1 2 2 2 2 ...
-##  $ Q_sel            : Factor w/ 2 levels "","x": 1 1 2 2 1 1 2 2 2 2 ...
-##  $ nopsirm          : Factor w/ 2 levels "","x": 2 2 1 2 2 2 1 1 1 2 ...
-##  $ Standards        : Factor w/ 3 levels "","Alk","InternalStandard": 1 1 1 1 1 1 1 1 1 1 ...
+## 'data.frame':	10 obs. of  3 variables:
+##  $ Column.name: Factor w/ 10 levels "Lettercode","Mass_Pos",..: 4 3 5 1 8 2 9 7 6 10
+##  $ Description: Factor w/ 10 levels "Checked if quant1:1 value available",..: 9 7 10 6 1 8 4 3 5 2
+##  $ Value      : Factor w/ 8 levels "","#Alanine (2TMS)",..: 2 6 5 4 8 3 8 8 1 7
 ```
 
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
-   <th style="text-align:left;"> Metabolite_manual </th>
-   <th style="text-align:left;"> Metabolite </th>
-   <th style="text-align:left;"> Metabolite_short </th>
-   <th style="text-align:left;"> Lettercode </th>
-   <th style="text-align:left;"> Q1_value </th>
-   <th style="text-align:right;"> Mass_Pos </th>
-   <th style="text-align:left;"> SE_sel </th>
-   <th style="text-align:left;"> Q_sel </th>
-   <th style="text-align:left;"> nopsirm </th>
-   <th style="text-align:left;"> Standards </th>
+   <th style="text-align:left;"> Column.name </th>
+   <th style="text-align:left;"> Description </th>
+   <th style="text-align:left;"> Value </th>
   </tr>
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;"> Acetoacetic acid_(1MEOX)(1TMS)_MP_RI:1132_BMD </td>
-   <td style="text-align:left;"> Acetoacetic acid_(1MEOX)(1TMS) </td>
-   <td style="text-align:left;"> Aceto_1MEOX_1TMS </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> Metabolite_manual </td>
+   <td style="text-align:left;"> Manual defined metabolite name </td>
+   <td style="text-align:left;"> #Alanine (2TMS) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Metabolite </td>
+   <td style="text-align:left;"> Library name of the metabolite </td>
+   <td style="text-align:left;"> Alanine_(2TMS)_BP_RI:1097_IDENT:B+C </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Metabolite_short </td>
+   <td style="text-align:left;"> Short version of library name of the metabolite </td>
+   <td style="text-align:left;"> Alanine_(2TMS) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Lettercode </td>
+   <td style="text-align:left;"> Lettercode version of metabolite name </td>
+   <td style="text-align:left;"> Ala_2TMS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Q1_value </td>
+   <td style="text-align:left;"> Checked if quant1:1 value available </td>
    <td style="text-align:left;"> x </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mass_Pos </td>
+   <td style="text-align:left;"> m/z-value corresponding to m_inc </td>
+   <td style="text-align:left;"> 118 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SE_sel </td>
+   <td style="text-align:left;"> Evaluation of the MIDs </td>
+   <td style="text-align:left;"> x </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Q_sel </td>
+   <td style="text-align:left;"> Evaluation for absolute quantification </td>
+   <td style="text-align:left;"> x </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nopsirm </td>
+   <td style="text-align:left;"> Exclusively for absolute quantification </td>
    <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;"> Acetoacetic acid_(2TMS)_MP_RI:1239_GMDpred </td>
-   <td style="text-align:left;"> Acetoacetic acid_(2TMS) </td>
-   <td style="text-align:left;"> Aceto_2TMS </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;"> x </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> #Adenosine (3TMS) </td>
-   <td style="text-align:left;"> Adenosine (3TMS)_noIdent </td>
-   <td style="text-align:left;"> Adenosine (3TMS) </td>
-   <td style="text-align:left;"> Adenosine_3TMS </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;"> x </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;"> Adenosine_(4TMS)_MP_RI:2644_IDENT:A+B </td>
-   <td style="text-align:left;"> Adenosine_(4TMS) </td>
-   <td style="text-align:left;"> Adenosine_4TMS </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;"> x </td>
-   <td style="text-align:left;"> x </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;"> Alanine_ beta-_(2TMS)_BP_RI:1188_IDENT:A+D </td>
-   <td style="text-align:left;"> Alanine_ beta-_(2TMS) </td>
-   <td style="text-align:left;"> bAla_2TMS </td>
-   <td style="text-align:left;"> x </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;"> x </td>
-   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> Standards </td>
+   <td style="text-align:left;"> Defined as standard </td>
+   <td style="text-align:left;"> InternalStandard, Alk </td>
   </tr>
 </tbody>
 </table>

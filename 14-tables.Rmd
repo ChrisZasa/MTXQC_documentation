@@ -1,0 +1,343 @@
+---
+always_allow_html: yes
+---
+
+# Appendix - Dictionary Tables{#tables}
+
+```{r test_tables, echo=FALSE}
+source("example/R/fcn_documentation.R")
+
+library(kableExtra)
+library(dplyr)
+
+options(kableExtra.html.bsTable = T)
+
+```
+
+This chapter shows the structure of all input or output csv-files that are referenced throughout the documentation. Please refer to the chapters for more detailed explanations.
+
+
+## MTXQC base tables
+### `config_mtx` tables
+
+#### conv_filenames.csv{#app:filenames}
+```{r cm01, echo=FALSE}
+c1 = appendix_print("example/config_files/conv_filenames.csv")
+c1 %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+
+# c01 = appendix_print("example/tables/config_conse.csv")
+# c01 %>%
+#    kable(escape = TRUE, booktabs = TRUE ) %>%
+#    kable_styling(c("striped", "condensed"), 
+#                  latex_options = "striped", 
+#                  full_width = TRUE)
+
+```
+
+#### conv_filesnames_manVal.csv{#app:filenamesManVal}
+```{r cm02, echo=FALSE}
+c2 = appendix_print("example/config_files/conv_filenames_manVal.csv", 5)
+c2 %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+#### DEPRICATED FILE: MQ_correction.csv
+
+Not in use anymore since fluffy adventure!
+
+```{r cm03, echo=FALSE}
+c3 = appendix_print("example/config_files/MQ_correction.csv")
+c3 %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+
+### `config_files` tables
+
+These tables are supposed to be modified in relation to the individual needs of a project.
+
+#### conversion_metabolite.csv {#app:conse}
+```{r cf_01, echo=FALSE}
+t1 = appendix_print(path_def = "example/tables/config_conse.csv")
+
+t1 %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+#### letter_pathway_complete.csv{#app:pathway}
+```{r cf_02, echo=FALSE}
+t2 = appendix_print("example/config_mtx/letter_pathway_complete.csv", 4)
+t2 %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+#### incorp_calc_masses.csv{#app:incorp}
+```{r cf_03, echo=FALSE}
+t3 = appendix_print("example/config_mtx/incorp_calc_masses.csv", 5)
+t3 %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+
+```
+
+#### quant1_values.csv{#app:quant1}
+```{r cf_04, echo=FALSE}
+t4 = appendix_print("example/config_mtx/quant1_values.csv", 5)
+t4 %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+#### mid_backups.csv{#app:midbackup}
+```{r cf_05, echo=FALSE}
+t5 = appendix_print("example/config_mtx/mid_backups.csv", 10)
+t5 %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+## Input data
+### MAUI derived tables
+
+
+
+
+### Metmax derived tables
+
+
+
+## Output data
+
+### Experimental Setup
+
+
+
+### MTXQCvX2 part1
+
+#### `output/gc/...`{#o_gc}
+##### `HM_GC_values.csv` \& `qcmetric_xy.csv`
+
+MTXQC exports a file summarising quality factors for each of the four parameter evaluating the GC performance. A summary representing the values illustrated in the heatmap are shown in table [`HM_GC_values.csv`](\@ref(tab:o_hm_gc)), individual exports for each metric in table [`qcmetric_xy.csv`](\@ref(tab:o_gc_metric)).
+
+```{r o_hm_gc, echo=FALSE}
+
+t = appendix_print("example/tables/output_HM_gc.csv")
+t %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+```{r o_gc_metric, echo=FALSE}
+
+t = appendix_print("example/tables/output_HM_gc.csv")
+t %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+
+##### `IntStandard_normfactors.csv` \& `IntStandard_stats.csv`
+
+```{r o_is_normfactors, echo=FALSE}
+
+t = appendix_print("example/tables/output_isnormfactors.csv")
+t %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+```{r o_is_normstats, echo=FALSE}
+
+t = appendix_print("example/tables/output_is_stats.csv", 5)
+t %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+
+##### `Min_Annotation.csv` \& `SumArea_stats.csv`
+
+```{r o_soa, echo=FALSE}
+
+t = appendix_print("example/tables/output_gc_sumarea.csv", 5)
+t %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+```{r o_minann, echo=FALSE}
+
+t = appendix_print("example/tables/output_minann.csv", 5)
+t %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+##### `mz73_data.csv`
+
+```{r o_mzz, echo=FALSE}
+
+t = appendix_print("example/tables/output_mz72.csv", 5)
+t %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+#### `output/quant/...`{#o_quant}
+
+##### `calcheck_linearity.csv`
+
+```{r o_calcheck, echo=FALSE}
+
+t = appendix_print("example/tables/quant_calcheck.csv",5)
+t %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+##### `CalculationFileData.csv`{#CalcFileData}
+
+This is porbably the most important file that is generated by running `MTXQCvX2_part1.Rmd`. It summarises all quality factors, experimental data and determined quantities of your experiment. This file provides the input for `MTXQCvX2_part2-PostProcessing.Rmd`.
+
+```{r o_calcfiledata, echo=FALSE}
+
+t = appendix_print("example/tables/output_quant_calculationfiledata.csv", 10)
+t %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+##### `HeatMap_Quant_pTop5.csv`
+
+```{r o_hm_quant, echo=FALSE}
+
+t = appendix_print("example/tables/output_hm_quant.csv", 5)
+t %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+##### `pTop5_Calibration_Samples_lincheck.csv`
+
+```{r o_quant_lincheck, echo=FALSE}
+
+t = appendix_print("example/tables/output_quant_lincheck.csv", TRUE)
+t %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+##### `top5_CalibrationInfo_unique.csv`
+
+```{r o_quant_info, echo=FALSE}
+t = appendix_print("example/tables/output_quant_calibrationInfo.csv",5)
+t %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+##### `top5_QMQcurveInfo.csv`
+
+```{r o_quant_qmq, echo=FALSE}
+t = appendix_print("example/tables/output_quant_qmq.csv")
+t %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+#### `output/inc/...`{#o_inc}
+
+##### `HeatMap_Incorporation.csv`
+
+```{r o_inc_hm, echo=FALSE}
+t = appendix_print("example/tables/output_inc_hm.csv", 5)
+knitr::kable(t, booktabs = TRUE)
+```
+
+##### `SE_calculation_NAscore.csv`
+
+```{r o_inc_calc, echo=FALSE}
+t = appendix_print("example/tables/output_inc_SEcalc.csv", 5)
+t %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+##### `SE_classification.csv`
+
+```{r o_inc_class, echo=FALSE}
+t = appendix_print("example/tables/output_inc_SEclass.csv", 5)
+t %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+##### `SE_validation.csv`
+
+```{r o_inc_eval, echo=FALSE}
+t = appendix_print("example/tables/output_inc_SEval.csv", 5)
+t %>%
+   kable(escape = TRUE, booktabs = TRUE ) %>%
+   kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
+```
+
+
+
+#### MTXQCvX2 part3
+
+
+#### MTXQCvX2 part4

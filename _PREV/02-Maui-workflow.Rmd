@@ -1,0 +1,119 @@
+# Tutorial: Maui-annotation projects{#maui}
+
+## Read this in case
+
+- you have successfully finished the annotation using Maui-SILVIA
+- exported all required MAUI container (see \@ref(mauiexport))
+- you have a list of your GC-MS sequence and related experimental conditions
+- you know the extraction procedure of standards and samples
+
+## In a nutshell{#nutshellmaui}
+
+1. Setup a new R-project 
+2. Copy all MTXQC template files and folders
+3. *Knit with parameter*: `MTXQC_init.Rmd` and create project folder (e.g., `psirm_glucose`)
+4. Copy input files and rename `ManualQuantTable.tsv` (e18205cz.tsv) 
+5. Create your `annotation.csv` and `sample_extracts.csv` files
+6. Define the internal extraction standard
+7. *Knit with parameter*: `MTXQC_ExperimentalSetup.Rmd` 
+8. *Knit with parameter*: `MTXQC_part1.Rmd` 
+9. *Knit with parameter*: `MTXQC_part2.Rmd` 
+10. If required, proceed with `MTXQC_part3.Rmd` for manual validation of your data
+
+## Dataset of the tutorial - `tutorial_single_maui`
+
+Copy the dataset `tutorial_single_maui` somewhere local on your computer or laptop. The dataset represents the data of the first psirm metabolomics experiment in the Kempa Lab. HEK293 cells have been cultivated at 21\% oxygen and a range of glucose levels (0.3 - 4.5 g/L Glc) and constant glutamine concentration (4 mM) following standard cell culture procedures. During the cell harvest cells have been labeled for two minutes with uniformly labeled 13C-glucose, three replicates per condition.
+
+
+## In detail
+
+### Setup a R-project
+
+R-projects provide a secure environment to handle your data from the processing in MTXQCvX2 until the final reports and analysis. Think about it as a big bubble containing and carrying all your data and analysis savely from one place to the other undisturbed of the outside changes.
+
+* Open R-studio and create a new project following: `File -> New project -> New Project -> New Directory` and call the directory `tutorial_single_maui` and the preferred subdirectory. 
+* I recommend to start each project in a new session (tick the box at the bottom of the dialogue box).
+
+### Copy MTXQCvX2 template files
+
+* Download the current version of MTXQCvX2 called fluffy adventure [here](github.com/ChrisZasada/fluffy_adventure)
+* Open and extract the zip-file
+* Copy all folders and files into your newly created R-project 'tutorial_single_maui`
+
+### Process `MTXQC_init.Rmd`
+
+The module `MTXQC_init.Rmd` provides you two important things: (1) a proper structure inside your MTXQC-project and (2) a comprehensive check-up if all required packages are installed and in the case they are missing takes care of the installation of those.
+
+All you need to do is to process the `MTXQC_init.Rmd` defining a project-folder. The project folder is going to contain all input and output files.
+
+* Click on the small black triangle next to the ball of yarn
+* Choose `Knit with Parameters...`
+* Define the name of the project-folder: `psirm_glucose`
+
+Check in the files tab of R-Studio if you see the new folder an browse trough it. You find there the following folders: 'input', 'output' and 'figures' with a detailed subfolder structure.
+
+### Copy / prepare input files
+
+#### Subfolder: `input/gc`
+
+This folder contains all input files that are required to assess the quality of the GC-MS perfomance for the complete GC-MS run. In order to validate all four parameter we need to export the following information from the Maui-project.
+
+You can perform exports via right click on either the project name and the functions provided in the menue `Diagnostics` or direct righ click on data container, e.g., 
+
+* Open your Maui-project and export:
+  1. Alcane_intensities.csv: Diagnostics/Export Alcane intensities
+  2. MassSum-73.csv: Diagnostics/QC Mass Sum Export and define 73 for m/z 73
+  3. PeakDensities-Chroma.csv - Diagnostics/Export PeakDensities
+* Export the information of the cinnamic acid 
+
+
+
+
+* Collect all required input files and copy them into the following subfolders of the folder `input/`.
+* Rename the file `ManualQuantTable.tsv` with the corresponding Batch-Id of your GC-MS run (e.g., e17205cz)
+
+A detailed explanation which containers have to be exported using what export function is summarised in section \@ref(mauiexports) or in the table below
+
+
+
+
+
+
+
+Three different kind of export functions have been implemented in Maui. These functions provide the export of the actual data into `.csv` or `.tsv` files that are directly usable as input files for MTXQCvX2. 
+Please refer to section \@ref(mauiexport) how you perform the export and which containers have to be exported using what export function and where to copy them in `psirm_glucose/input/`.
+
+
+
+## Annotation-file
+
+The annotation file relate file names with experimental conditions or specify quantification standards in your batch. Two columns - **File and Type** - are obligatory and have to be present in the annotation file. In the case of their absence `MTXQCvX_part1.Rmd` stops processing and shows an error message.
+
+A quick way to generate an annotation file is described below:
+
+1. Copy the first row / header of `quantMassAreaMatrix.csv` file
+2. Paste & transpose the content into a new Excel-File into column A
+3. Change the first entry: Metabolite -> File
+4. Remove the entry QuantMasses at the very end of the column A
+5. Add the column Type and specify each file either as **sample** or **addQ1_dilution**^[see for further details additionalQuant]
+6. Add more columns specifying your experimental conditions, e.g., Cellline and Treatment^[optimal: two-three parameter, max: four parameter. Consider possible combinations, e.g., HCT116-control, HCT116-BPTES]
+7. Save the content as `csv-file` in the `psirm_glucose/input/...`
+
+## Sample_extracts-file
+
+The `sample_extracts.csv` file is required in order to determine automatically absolute quantities in the manner of pmol/1e+6 cells or pmol/mg tissue in the `CalculationFileData.csv`.
+
+This file requires two obligatory columns - **Extract_vol** and **Unit**^[Define: count, mg or ul]. Please specify for each experimental condition the amount of extracted cells (count), tissue (mg) or volume of blood/plasme (ul) in the unit shown in the brackets.  
+The names of the columns of the experimental conditions have to match up with the annotation file. Save the file in the folder `psirm_glucose/input/...`. 
+
+If the defined experimental conditions do not match up with the annotation `MTXQCvX2_part1.Rmd` exit data processing. A template file is saved for review and usage at `inst/template_files/...` 
+
+## Internal Standard
+
+MTXQCvX2 allows the specification of project-specific internal extraction standards. The only thing you need to do is to define the corresponding compounds as an internal standard in the `conversion_metabolite.csv` file. To do so, add `InternalStandard` to the compound in last column `Standard`.
+
+For an classical pSIRM experiment in the Kempa lab we are using cinnamic acid. The evaluation of this compound has been integrated in Maui. Peak areas of cinnamic acid are exported from a distinct container called `cinAcid`. The exported file has to be renamed to `InternalStandard.csv` though and moved to `psirm_glucose/input/gc/...`.
+
+If you have used a different compound as an internal extraction standard you might need to extract the peak areas of this compound from the Maui export file `quantPeakAreasMatrix.csv` file and save it in the folder `psirm_glucose/input/gc/InternalStandard.csv`, respectively. Prerequisite - you have annotated the compound in Maui.
+
+The report of `MTXQCvX2_part1.Rmd` includes the defined internal standard for each project in a message.
