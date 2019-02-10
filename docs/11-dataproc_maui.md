@@ -1,45 +1,44 @@
 # Data processing - MAUI{#mauiproc}
 
+*Please refer to the OneNote summary how to process GC-MS files for a pSIRM experiment with Maui. 
+This part of the documentation is still under construction.*
+
 ## Processing In ChromaToF
 
-Create a new folder in ChromaToF Pegasus Acquired Samples and import your files.
-The processing of files for Maui-assisted annotation is a two step process. 
-Therefore two data processing methods have to be set up and applied to all files. 
+<!-- Create a new folder in ChromaToF Pegasus Acquired Samples and import your files. -->
+<!-- The processing of files for Maui-assisted annotation is a two step process.  -->
+<!-- Therefore two data processing methods have to be set up and applied to all files.  -->
 
-### Resampling
+<!-- ### Resampling -->
 
-Resampling is commonly applied and results into a data transformation enabling an improved detection of low abundant peaks and a reduction of noise. (Maybe include an example?)
+<!-- Resampling is commonly applied and results into a data transformation enabling an improved detection of low abundant peaks and a reduction of noise. (Maybe include an example?) -->
 
-The processing methods requires to tick `Export of ...`. Subsequently, you are asked to define an output folder and the following paramter:
+<!-- The processing methods requires to tick `Export of ...`. Subsequently, you are asked to define an output folder and the following paramter: -->
 
-- Reduction rate: 4
-- Beginning to end of the file
-- `.peg`-files
+<!-- - Reduction rate: 4 -->
+<!-- - Beginning to end of the file -->
+<!-- - `.peg`-files -->
 
-### Combo-export (`.cdf` \& `.csv`)
+<!-- ### Combo-export (`.cdf` \& `.csv`) -->
 
-Re-import the generated `.peg`-files into a subfolder and apply the following data processing method.
+<!-- Re-import the generated `.peg`-files into a subfolder and apply the following data processing method. -->
 
-Activate the box `asddasd` and define for both file types the following parameter.
+<!-- Activate the box `asddasd` and define for both file types the following parameter. -->
 
-`.cdf`-file:
+<!-- `.cdf`-file: -->
 
-- export directory
-- 
-
-
-`.csv`-file:
-
-- export directory
-- 
+<!-- - export directory -->
+<!-- -  -->
 
 
+<!-- `.csv`-file: -->
 
-                      
+<!-- - export directory -->
+<!-- -  -->
 
 ## Maui pSIRM workflow{#mauipsirm}
 
-
+*see note abote*
 
 ## Maui exports{#mauiexport}
 ### Subfolder: `input/gc`

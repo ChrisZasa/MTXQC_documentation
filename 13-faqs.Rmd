@@ -9,13 +9,14 @@ If you do not find an answer to your question - please create an issue directly 
 The annotation file relate file names with experimental conditions or specify quantification standards in your batch. Two columns - **File and Type** - are obligatory and have to be present in the annotation file. In the case of their absence `MTXQCvX_part1.Rmd` stops processing and shows an error message.
 
 A quick way to generate an annotation file is described below:
-1. Copy the first row / header of `quantMassAreaMatrix.csv` file
-2. Paste & transpose the content into a new Excel-File into column A
-3. Change the first entry: Metabolite -> File
-4. Remove the entry QuantMasses at the very end of the column A
-5. Add the column Type and specify each file either as **sample**, **Q1_dilution** or **addQ1_dilution**^[see for further details additionalQuant]
-6. Add more columns specifying your experimental conditions, e.g., Cellline and Treatment^[optimal: two to three parameter, at maimumx: four parameter. Consider combinations of parameter, e.g., HCT116-control, HCT116-BPTES]
-7. Save the content as `csv-file` in, e.g., `psirm_glucose/input/...`
+
+  1. Copy the first row / header of `quantMassAreaMatrix.csv` file
+  2. Paste & transpose the content into a new Excel-File into column A
+  3. Change the first entry: Metabolite -> File
+  4. Remove the entry QuantMasses at the very end of the column A
+  5. Add the column Type and specify each file either as **sample**, **Q1_dilution** or **addQ1_dilution**^[see for further details additionalQuant]
+  6. Add more columns specifying your experimental conditions, e.g., Cellline and Treatment^[optimal: two to three parameter, at maimumx: four parameter. Consider combinations of parameter, e.g., HCT116-control, HCT116-BPTES]
+  7. Save the content as `csv-file` in, e.g., `psirm_glucose/input/...`
 
 ## How do I create the file `sample_extracts.csv`?{#createsampleextracts}
 
@@ -24,7 +25,7 @@ The `sample_extracts.csv` file is required in order to determine automatically a
 This file requires two obligatory columns - **Extract_vol** and **Unit**^[Define: count, mg or ul]. Please specify for each experimental condition the amount of extracted cells (count), tissue (mg) or volume of blood/plasme (ul) in the unit shown in the brackets.  
 The names of the columns of the experimental conditions have to match up with the annotation file. Save the file in the folder `psirm_glucose/input/...`. 
 
-If the defined experimental conditions do not match up with the annotation `MTXQCvX2_part1.Rmd` exit data processing. A template file is saved for review and usage at `inst/template_files/...` 
+If the defined experimental conditions do not match up with the annotation `MTXQC_part1.Rmd` exit data processing. A template file is saved for review and usage at `inst/template_files/...` 
 
 ## How do I define an internal extraction standard other than cinnamic acid?{#definternal}
 
@@ -44,7 +45,6 @@ If you have used a different compound as an internal extraction standard you mig
 
 In the case you used metmax the module `MTXQC_part4.Rmd` takes care for you of the generation of the `InternalStandard.csv` based on the definition in `conversion_metabolite.csv` and provided peak areas^[see chapter \@ref(Metmax)]. 
 This procedure is independent what standard you have defined. It only requires the annotation of your compound in chromtof and successful export with metmax.
-
 
 ## How do I combine multiple MAUI-projects into a single MTXQC-project?{#multipleproj}
 
@@ -96,9 +96,6 @@ Define the couple of m/z-values for your compound:
 In case you want to define more than one pair of m/z-values have a look at the defined TCA-cycle intermediates.
 
 ** `mid_backups.csv`
-
-
-
 
 
 ## How do I prepare my data in ChromaToF for manual data validation{#howmanval-chroma}

@@ -5,7 +5,7 @@
 List of parameter:
 
   * **Definition of the project-folder:** psirm_glucose (text)
-  * **Type of data:** maui, metmax 
-  * **Manual validated data:** none, PeakArea, Incorporation, both
+  * **Type of data :** maui, metmax 
+  * **Manual validated data :** none, PeakArea, Incorporation, both
 
 ## Text

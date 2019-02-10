@@ -13,13 +13,6 @@ This chapter shows the structure of all input or output csv-files that are refer
 ### `config_files` tables
 
 #### conv_filenames.csv{#filenames}
-
-```
-## 'data.frame':	10 obs. of  2 variables:
-##  $ AssociatedFile: Factor w/ 10 levels "addQ","alkane_int",..: 4 2 7 8 10 9 5 1 6 3
-##  $ Filename      : Factor w/ 10 levels " incorp_calc_masses.csv",..: 6 4 7 8 10 9 5 3 1 2
-```
-
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -72,13 +65,6 @@ This chapter shows the structure of all input or output csv-files that are refer
 </table>
 
 #### conv_filesnames_manVal.csv{#filenamesManVal}
-
-```
-## 'data.frame':	3 obs. of  2 variables:
-##  $ AssociatedFile: Factor w/ 3 levels "inc","pSIRM_se",..: 3 2 1
-##  $ Filename      : Factor w/ 3 levels "DataMatrix_manVal.csv",..: 3 2 1
-```
-
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -122,14 +108,6 @@ This chapter shows the structure of all input or output csv-files that are refer
 These tables are supposed to be modified in relation to the individual needs of a project.
 
 #### conversion_metabolite.csv {#app:conse}
-
-```
-## 'data.frame':	10 obs. of  3 variables:
-##  $ Column.name: Factor w/ 10 levels "Lettercode","Mass_Pos",..: 4 3 5 1 8 2 9 7 6 10
-##  $ Description: Factor w/ 10 levels "Checked if quant1:1 value available",..: 9 7 10 6 1 8 4 3 5 2
-##  $ Value      : Factor w/ 8 levels "","#Alanine (2TMS)",..: 2 6 5 4 8 3 8 8 1 7
-```
-
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -193,18 +171,6 @@ These tables are supposed to be modified in relation to the individual needs of 
 </table>
 
 #### letter_pathway_complete.csv{#app:pathway}
-
-```
-## 'data.frame':	100 obs. of  7 variables:
-##  $ Letter_Derivate: Factor w/ 69 levels "2HG","2OG","3PGA",..: 1 2 3 4 5 5 6 6 7 8 ...
-##  $ Lettercode     : Factor w/ 100 levels "2HG","2OG","3PGA",..: 1 2 3 4 6 5 8 7 9 10 ...
-##  $ Pathway        : Factor w/ 9 levels "aa","glut","glyc",..: 2 9 3 4 5 5 1 1 1 1 ...
-##  $ Pathway.1      : Factor w/ 9 levels "1-glyc","2-tca",..: 3 2 1 7 9 9 5 5 5 5 ...
-##  $ Met_pathway    : Factor w/ 97 levels "1-glyc_DHAP_BP",..: 28 21 17 91 96 96 35 34 36 37 ...
-##  $ Subs_class     : Factor w/ 11 levels "aa","amino sugar",..: 6 6 8 3 4 4 1 1 1 1 ...
-##  $ Met_class      : Factor w/ 97 levels "aa_Ala_2TMS",..: 55 56 83 43 46 46 2 1 3 4 ...
-```
-
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -258,14 +224,6 @@ These tables are supposed to be modified in relation to the individual needs of 
 </table>
 
 #### incorp_calc_masses.csv{#app:incorp}
-
-```
-## 'data.frame':	90 obs. of  3 variables:
-##  $ Metabolite: Factor w/ 45 levels "Alanine_(2TMS)_BP_RI:1097_IDENT:B+C",..: 1 1 2 2 3 3 4 4 5 5 ...
-##  $ Mass_mz   : int  116 118 188 190 245 249 273 275 273 276 ...
-##  $ LI_MID    : Factor w/ 2 levels "m0","minc": 1 2 1 2 1 2 1 2 1 2 ...
-```
-
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -304,14 +262,6 @@ These tables are supposed to be modified in relation to the individual needs of 
 </table>
 
 #### quant1_values.csv{#app:quant1}
-
-```
-## 'data.frame':	70 obs. of  3 variables:
-##  $ Letter_Derivate: Factor w/ 70 levels "2HG","2OG","3PGA",..: 1 2 3 4 5 6 7 8 9 10 ...
-##  $ Quant1_v4      : int  57270 34220 43480 7400 18710 134700 11480 22710 15030 11220 ...
-##  $ Quant1_v3      : int  57270 34220 43480 7400 18710 134700 11480 22710 15030 11220 ...
-```
-
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -350,15 +300,6 @@ These tables are supposed to be modified in relation to the individual needs of 
 </table>
 
 #### mid_backups.csv{#app:midbackup}
-
-```
-## 'data.frame':	224 obs. of  4 variables:
-##  $ Metabolite    : Factor w/ 38 levels "Alanine_ beta-_(3TMS)_MP_RI:1435_IDENT:A+D",..: 1 1 1 1 2 2 2 2 3 3 ...
-##  $ Mass.m.z.     : int  188 189 190 191 116 117 118 119 188 189 ...
-##  $ BackupPeakArea: int  4960 876 307 53 2616179 323019 99834 19759 4960 876 ...
-##  $ BackupMID     : num  0.8005 0.1414 0.0495 0.0086 0.8553 ...
-```
-
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -455,14 +396,6 @@ These tables are supposed to be modified in relation to the individual needs of 
 
 MTXQC exports a file summarising quality factors for each of the four parameter evaluating the GC performance. A summary representing the values illustrated in the heatmap are shown in table [`HM_GC_values.csv`](\@ref(tab:o_hm_gc)), individual exports for each metric in table [`qcmetric_xy.csv`](\@ref(tab:o_gc_metric)).
 
-
-```
-## 'data.frame':	3 obs. of  3 variables:
-##  $ Column.name: Factor w/ 3 levels "Batch_Id","qc_metric",..: 1 2 3
-##  $ Description: Factor w/ 3 levels "Batch-Id","Class of QC metric",..: 1 3 2
-##  $ Value      : Factor w/ 3 levels "0.937254457",..: 3 1 2
-```
-
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -489,14 +422,6 @@ MTXQC exports a file summarising quality factors for each of the four parameter 
   </tr>
 </tbody>
 </table>
-
-
-```
-## 'data.frame':	3 obs. of  3 variables:
-##  $ Column.name: Factor w/ 3 levels "Batch_Id","qc_metric",..: 1 2 3
-##  $ Description: Factor w/ 3 levels "Batch-Id","Class of QC metric",..: 1 3 2
-##  $ Value      : Factor w/ 3 levels "0.937254457",..: 3 1 2
-```
 
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
@@ -526,14 +451,6 @@ MTXQC exports a file summarising quality factors for each of the four parameter 
 </table>
 
 ##### `IntStandard_normfactors.csv` \& `IntStandard_stats.csv`
-
-
-```
-## 'data.frame':	5 obs. of  3 variables:
-##  $ Column.name: Factor w/ 5 levels "Batch_Id","File",..: 2 5 1 4 3
-##  $ Description: Factor w/ 5 levels "Bacth-Id","Determined normalisation factor",..: 4 5 1 2 3
-##  $ Value      : Factor w/ 5 levels "0.837457514",..: 4 2 3 1 5
-```
 
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
@@ -571,14 +488,6 @@ MTXQC exports a file summarising quality factors for each of the four parameter 
   </tr>
 </tbody>
 </table>
-
-
-```
-## 'data.frame':	8 obs. of  3 variables:
-##  $ Column.name: Factor w/ 8 levels "Batch_Id","File",..: 2 7 1 4 3 6 5 8
-##  $ Description: Factor w/ 8 levels "Batch-Id","Evaluation regarding QC",..: 3 7 1 5 2 6 4 8
-##  $ Value      : Factor w/ 8 levels "0.837457514",..: 7 5 6 1 8 4 2 3
-```
 
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
@@ -620,14 +529,6 @@ MTXQC exports a file summarising quality factors for each of the four parameter 
 
 ##### `Min_Annotation.csv` \& `SumArea_stats.csv`
 
-
-```
-## 'data.frame':	9 obs. of  3 variables:
-##  $ Column.name: Factor w/ 9 levels "area_fac","Batch_Id",..: 3 2 6 9 7 4 8 1 5
-##  $ Description: Factor w/ 9 levels "Extracted Batch-Id derived from file name",..: 2 1 6 8 9 3 7 4 5
-##  $ Value      : Factor w/ 9 levels "1.296568521",..: 9 8 2 6 3 5 4 1 7
-```
-
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -664,14 +565,6 @@ MTXQC exports a file summarising quality factors for each of the four parameter 
   </tr>
 </tbody>
 </table>
-
-
-```
-## 'data.frame':	2 obs. of  3 variables:
-##  $ Column.name: Factor w/ 2 levels "Batch_Id","n_50": 1 2
-##  $ Description: Factor w/ 2 levels "Batch-Id","Number corresponding to fifty percent of the maximum number of annotated peaks per file": 1 2
-##  $ Value      : Factor w/ 2 levels "53.5","e18274ba": 2 1
-```
 
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
@@ -718,14 +611,6 @@ MTXQC exports a file summarising quality factors for each of the four parameter 
 
 ##### `mz73_data.csv`
 
-
-```
-## 'data.frame':	7 obs. of  3 variables:
-##  $ Column.name: Factor w/ 7 levels "Batch_Id","File",..: 2 1 3 6 4 7 5
-##  $ Description: Factor w/ 7 levels "Batch-ID","File name",..: 2 1 3 6 4 7 5
-##  $ Value      : Factor w/ 7 levels "0.002407244",..: 7 6 3 2 4 5 1
-```
-
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -767,14 +652,6 @@ MTXQC exports a file summarising quality factors for each of the four parameter 
 
 ##### `calcheck_linearity.csv`
 
-
-```
-## 'data.frame':	21 obs. of  3 variables:
-##  $ Column.name: Factor w/ 21 levels "adj_r_squared",..: 9 2 4 17 14 21 10 11 7 16 ...
-##  $ Description: Factor w/ 21 levels "","Adjusted Rsquare value of linear regression of the calibration curve",..: 8 3 7 5 21 13 16 19 14 18 ...
-##  $ Value      : Factor w/ 18 levels "","-898.3400476",..: 11 12 13 6 7 16 3 10 9 17 ...
-```
-
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -815,15 +692,6 @@ MTXQC exports a file summarising quality factors for each of the four parameter 
 ##### `CalculationFileData.csv`{#CalcFileData}
 
 This is porbably the most important file that is generated by running `MTXQCvX2_part1.Rmd`. It summarises all quality factors, experimental data and determined quantities of your experiment. This file provides the input for `MTXQCvX2_part2-PostProcessing.Rmd`.
-
-
-```
-## 'data.frame':	43 obs. of  4 variables:
-##  $ Column.name: Factor w/ 43 levels "absconc","adj_r_squared",..: 4 6 9 13 36 41 42 12 43 23 ...
-##  $ Class      : Factor w/ 9 levels "AnnExp","AnnExtract",..: 1 1 1 1 1 1 1 2 2 3 ...
-##  $ Description: Factor w/ 41 levels "Absolute quantity in pmol",..: 3 14 14 16 6 14 40 7 9 18 ...
-##  $ Value      : Factor w/ 37 levels "","#Glycerol-3-phosphate (4TMS)",..: 27 24 25 28 1 3 34 18 26 29 ...
-```
 
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
@@ -900,14 +768,6 @@ This is porbably the most important file that is generated by running `MTXQCvX2_
 
 ##### `HeatMap_Quant_pTop5.csv`
 
-
-```
-## 'data.frame':	5 obs. of  3 variables:
-##  $ Column.name: Factor w/ 5 levels "Batch_Id","Lettercode",..: 2 1 3 4 5
-##  $ Description: Factor w/ 5 levels "Batch-Id","Library name of metabolite",..: 4 1 2 3 5
-##  $ Value      : Factor w/ 5 levels "0.996053496",..: 2 4 3 5 1
-```
-
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -947,14 +807,6 @@ This is porbably the most important file that is generated by running `MTXQCvX2_
 
 ##### `pTop5_Calibration_Samples_lincheck.csv`
 
-
-```
-## 'data.frame':	7 obs. of  3 variables:
-##  $ Column.name: Factor w/ 7 levels "Batch_Id","count",..: 4 3 1 5 2 7 6
-##  $ Description: Factor w/ 7 levels "Batch-Id","Evaluation of peak area in relation to calibration curve if available",..: 6 2 1 5 4 7 3
-##  $ Value      : Factor w/ 5 levels "1","3PGA","51",..: 2 5 4 NA 3 3 1
-```
-
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -973,14 +825,6 @@ This is porbably the most important file that is generated by running `MTXQCvX2_
 </table>
 
 ##### `top5_CalibrationInfo_unique.csv`
-
-
-```
-## 'data.frame':	8 obs. of  3 variables:
-##  $ Column.name: Factor w/ 8 levels "adj_r_squared",..: 6 5 2 7 1 4 8 3
-##  $ Description: Factor w/ 8 levels "Adjsuted Rsquare of calibration curve",..: 6 5 2 7 1 4 8 3
-##  $ Value      : Factor w/ 8 levels "0.000194064",..: 6 5 7 8 2 4 1 3
-```
 
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
@@ -1020,14 +864,6 @@ This is porbably the most important file that is generated by running `MTXQCvX2_
 </table>
 
 ##### `top5_QMQcurveInfo.csv`
-
-
-```
-## 'data.frame':	15 obs. of  3 variables:
-##  $ Column.name: Factor w/ 15 levels "adj_r_squared",..: 8 7 14 10 2 5 3 4 13 11 ...
-##  $ Description: Factor w/ 15 levels "Adjusted Rsquare of calibration curve",..: 8 5 13 9 2 6 4 3 12 14 ...
-##  $ Value      : Factor w/ 13 levels "0.000194064",..: 9 9 7 11 12 2 6 4 13 10 ...
-```
 
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
@@ -1120,14 +956,6 @@ This is porbably the most important file that is generated by running `MTXQCvX2_
 
 ##### `HeatMap_Incorporation.csv`
 
-
-```
-## 'data.frame':	4 obs. of  3 variables:
-##  $ Column.name: Factor w/ 4 levels "Batch_Id","Lettercode",..: 2 1 3 4
-##  $ Description: Factor w/ 4 levels "Batch-Id","Lettercode name of metabolite",..: 2 1 3 4
-##  $ Value      : Factor w/ 4 levels "0.740740741",..: 2 3 4 1
-```
-
 <table>
  <thead>
   <tr>
@@ -1173,14 +1001,6 @@ This is porbably the most important file that is generated by running `MTXQCvX2_
 
 ##### `SE_calculation_NAscore.csv`
 
-
-```
-## 'data.frame':	5 obs. of  3 variables:
-##  $ Column.name: Factor w/ 5 levels "Batch_Id","fracr_prop",..: 3 1 5 4 2
-##  $ Description: Factor w/ 5 levels "Batch-Id","Class of NA-value",..: 4 1 2 5 3
-##  $ Value      : Factor w/ 5 levels "0","0.851851852",..: 4 5 1 3 2
-```
-
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -1220,14 +1040,6 @@ This is porbably the most important file that is generated by running `MTXQCvX2_
 
 ##### `SE_classification.csv`
 
-
-```
-## 'data.frame':	9 obs. of  3 variables:
-##  $ Column.name: Factor w/ 9 levels "Batch_Id","count_score",..: 4 1 3 8 7 5 6 9 2
-##  $ Description: Factor w/ 6 levels "_expl_","Batch-Id",..: 4 2 3 1 1 1 1 6 5
-##  $ Value      : Factor w/ 9 levels "1861","2.30897367",..: 4 6 7 3 1 2 9 5 8
-```
-
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -1266,14 +1078,6 @@ This is porbably the most important file that is generated by running `MTXQCvX2_
 </table>
 
 ##### `SE_validation.csv`
-
-
-```
-## 'data.frame':	6 obs. of  3 variables:
-##  $ Column.name: Factor w/ 6 levels "Batch_Id","count_score",..: 3 1 2 4 6 5
-##  $ Description: Factor w/ 6 levels "Batch-Id","Evaluation of MID",..: 3 1 2 5 4 6
-##  $ Value      : Factor w/ 5 levels "1","54","Cit",..: 3 4 5 2 2 1
-```
 
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>

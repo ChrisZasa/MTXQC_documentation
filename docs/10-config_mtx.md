@@ -12,14 +12,6 @@ Herein explained are the customizable tables of the MTXQCvX2 universe.
 ## `conversion_metabolite.csv`
 
 
-
-```
-## 'data.frame':	10 obs. of  3 variables:
-##  $ Column.name: Factor w/ 10 levels "Lettercode","Mass_Pos",..: 4 3 5 1 8 2 9 7 6 10
-##  $ Description: Factor w/ 10 levels "Checked if quant1:1 value available",..: 9 7 10 6 1 8 4 3 5 2
-##  $ Value      : Factor w/ 8 levels "","#Alanine (2TMS)",..: 2 6 5 4 8 3 8 8 1 7
-```
-
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -34,19 +26,56 @@ Herein explained are the customizable tables of the MTXQCvX2 universe.
    <td style="text-align:left;"> Manual defined metabolite name </td>
    <td style="text-align:left;"> #Alanine (2TMS) </td>
   </tr>
+  <tr>
+   <td style="text-align:left;"> Metabolite </td>
+   <td style="text-align:left;"> Library name of the metabolite </td>
+   <td style="text-align:left;"> Alanine_(2TMS)_BP_RI:1097_IDENT:B+C </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Metabolite_short </td>
+   <td style="text-align:left;"> Short version of library name of the metabolite </td>
+   <td style="text-align:left;"> Alanine_(2TMS) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Lettercode </td>
+   <td style="text-align:left;"> Lettercode version of metabolite name </td>
+   <td style="text-align:left;"> Ala_2TMS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Q1_value </td>
+   <td style="text-align:left;"> Checked if quant1:1 value available </td>
+   <td style="text-align:left;"> x </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mass_Pos </td>
+   <td style="text-align:left;"> m/z-value corresponding to m_inc </td>
+   <td style="text-align:left;"> 118 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SE_sel </td>
+   <td style="text-align:left;"> Evaluation of the MIDs </td>
+   <td style="text-align:left;"> x </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Q_sel </td>
+   <td style="text-align:left;"> Evaluation for absolute quantification </td>
+   <td style="text-align:left;"> x </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nopsirm </td>
+   <td style="text-align:left;"> Exclusively for absolute quantification </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Standards </td>
+   <td style="text-align:left;"> Defined as standard </td>
+   <td style="text-align:left;"> InternalStandard, Alk </td>
+  </tr>
 </tbody>
 </table>
 
 
 ## `letter_pathway_complete.csv`
-
-
-```
-## 'data.frame':	7 obs. of  3 variables:
-##  $ Column.name: Factor w/ 7 levels "Letter_Derivate",..: 1 2 5 6 4 7 3
-##  $ Description: Factor w/ 7 levels "Ass. pathway - ordered for heatmap",..: 4 5 3 1 2 6 7
-##  $ Value      : Factor w/ 6 levels "5-aa","5-aa_Ala_3TMS",..: 5 6 3 1 2 3 4
-```
 
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
@@ -62,18 +91,40 @@ Herein explained are the customizable tables of the MTXQCvX2 universe.
    <td style="text-align:left;"> Derivate definition </td>
    <td style="text-align:left;"> Ala </td>
   </tr>
+  <tr>
+   <td style="text-align:left;"> Lettercode </td>
+   <td style="text-align:left;"> Lettercode name of metabolite </td>
+   <td style="text-align:left;"> Ala_3TMS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Pathway </td>
+   <td style="text-align:left;"> Ass.pathway </td>
+   <td style="text-align:left;"> aa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Pathway.1 </td>
+   <td style="text-align:left;"> Ass. pathway - ordered for heatmap </td>
+   <td style="text-align:left;"> 5-aa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Met_pathway </td>
+   <td style="text-align:left;"> Ass. pathway - ordered for heatmap incl. Lettercode </td>
+   <td style="text-align:left;"> 5-aa_Ala_3TMS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Subs_class </td>
+   <td style="text-align:left;"> Substance class </td>
+   <td style="text-align:left;"> aa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Met_class </td>
+   <td style="text-align:left;"> Substance class incl. Lettercode </td>
+   <td style="text-align:left;"> aa_Ala_3TMS </td>
+  </tr>
 </tbody>
 </table>
 
 ## `quant1-values.csv`
-
-
-```
-## 'data.frame':	3 obs. of  3 variables:
-##  $ Column.name: Factor w/ 3 levels "Letter_Derivate",..: 1 3 2
-##  $ Description: Factor w/ 2 levels "Derivate name of metabolite",..: 1 2 2
-##  $ Value      : Factor w/ 2 levels "3PGA","43480": 1 2 2
-```
 
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
@@ -89,18 +140,20 @@ Herein explained are the customizable tables of the MTXQCvX2 universe.
    <td style="text-align:left;"> Derivate name of metabolite </td>
    <td style="text-align:left;"> 3PGA </td>
   </tr>
+  <tr>
+   <td style="text-align:left;"> Quant1_v4 </td>
+   <td style="text-align:left;"> Quantity in (pmol) </td>
+   <td style="text-align:left;"> 43480 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Quant1_v3 </td>
+   <td style="text-align:left;"> Quantity in (pmol) </td>
+   <td style="text-align:left;"> 43480 </td>
+  </tr>
 </tbody>
 </table>
 
 ## `incorporation_calc.csv` 
-
-
-```
-## 'data.frame':	3 obs. of  3 variables:
-##  $ Column.name: Factor w/ 3 levels "LI_MID","Mass_mz",..: 3 2 1
-##  $ Description: Factor w/ 3 levels "Definition of mass level",..: 2 3 1
-##  $ Value      : Factor w/ 3 levels "116, 118","Alanine_(2TMS)_BP_RI:1097_IDENT:B+C",..: 2 1 3
-```
 
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
@@ -116,18 +169,20 @@ Herein explained are the customizable tables of the MTXQCvX2 universe.
    <td style="text-align:left;"> Library name of metabolite </td>
    <td style="text-align:left;"> Alanine_(2TMS)_BP_RI:1097_IDENT:B+C </td>
   </tr>
+  <tr>
+   <td style="text-align:left;"> Mass_mz </td>
+   <td style="text-align:left;"> m/z-value </td>
+   <td style="text-align:left;"> 116, 118 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> LI_MID </td>
+   <td style="text-align:left;"> Definition of mass level </td>
+   <td style="text-align:left;"> m0, minc </td>
+  </tr>
 </tbody>
 </table>
 
 ## `mid_backups.csv`
-
-
-```
-## 'data.frame':	4 obs. of  3 variables:
-##  $ Column.name: Factor w/ 4 levels "BackupMID","BackupPeakArea",..: 4 3 2 1
-##  $ Description: Factor w/ 4 levels "Library name of metabolite",..: 1 2 4 3
-##  $ Value      : Factor w/ 4 levels "0.8005","188",..: 4 2 3 1
-```
 
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
@@ -142,6 +197,21 @@ Herein explained are the customizable tables of the MTXQCvX2 universe.
    <td style="text-align:left;"> Metabolite </td>
    <td style="text-align:left;"> Library name of metabolite </td>
    <td style="text-align:left;"> Alanine_ beta-_(3TMS)_MP_RI:1435_IDENT:A+D </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mass.m.z. </td>
+   <td style="text-align:left;"> m/z value </td>
+   <td style="text-align:left;"> 188 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BackupPeakArea </td>
+   <td style="text-align:left;"> Peak area of Backup MID </td>
+   <td style="text-align:left;"> 4960 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BackupMID </td>
+   <td style="text-align:left;"> MID value for corresponding Mass.m.z. </td>
+   <td style="text-align:left;"> 0.8005 </td>
   </tr>
 </tbody>
 </table>

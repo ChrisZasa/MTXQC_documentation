@@ -16,14 +16,6 @@ List of parameter:
 
 
 
-
-```
-## 'data.frame':	10 obs. of  3 variables:
-##  $ Folder        : Factor w/ 4 levels "","figure","input",..: 2 3 1 1 1 1 4 1 1 1
-##  $ subfolder     : Factor w/ 7 levels "","add_quant",..: 1 2 4 5 7 6 4 5 7 3
-##  $ Used.in.module: Factor w/ 5 levels "Figure export of MTXQC_part1",..: 1 2 2 2 2 3 4 4 4 5
-```
-
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>

@@ -21,6 +21,8 @@ options(kableExtra.html.bsTable = T)
 
 ## Reference search
 
+
+
 ## Export for Metmax
 
 ## Data extraction with Metmax{#metmax-dataextr}

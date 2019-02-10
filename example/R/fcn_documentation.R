@@ -18,7 +18,7 @@ appendix_print <- function(path_def, top_n = NULL, ...) {
   
   if (!is.null(top_n)) {
     temp_return = temp1[1:top_n,]
-    str(temp1)
+    #str(temp1)
     
     # temp1 %>%
     # kable(escape = TRUE, booktabs = TRUE ) %>%
@@ -26,7 +26,7 @@ appendix_print <- function(path_def, top_n = NULL, ...) {
     #                 latex_options = "striped", 
     #                 full_width = TRUE)
   } else {
-    str(temp1)
+    # str(temp1)
     temp_return = temp1
   }
   
