@@ -1,4 +1,20 @@
-# Configuration of MTXQCvX2 - `config_mtx/...`{#config}
+---
+always_allow_html: yes
+---
+
+
+```{r test_tables, echo=FALSE, message=FALSE}
+source("example/R/fcn_documentation.R")
+
+library(kableExtra)
+library(dplyr)
+library(magrittr)
+
+options(kableExtra.html.bsTable = T)
+
+```
+
+# Customization of MTXQCvX2{#config}
 
 Herein explained are the customizable tables of the MTXQCvX2 universe.
 
@@ -6,8 +22,13 @@ Herein explained are the customizable tables of the MTXQCvX2 universe.
 
 
 ```{r con_se, echo=FALSE}
-data = read.csv("example/tables/config_conse.csv", TRUE)
-knitr::kable(data, booktabs = TRUE)
+data = appendix_print("example/tables/config_conse.csv", TRUE)
+
+data %>%
+  kable(escape = TRUE, booktabs = TRUE) %>%
+  kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
 ```
 
 
@@ -15,8 +36,12 @@ knitr::kable(data, booktabs = TRUE)
 
 ```{r metprofile, echo=FALSE}
 
-data = read.csv("example/tables/config_metprofile.csv", TRUE)
-knitr::kable(data, booktabs = TRUE)
+data = appendix_print("example/tables/config_metprofile.csv", TRUE)
+data %>%
+  kable(escape = TRUE, booktabs = TRUE) %>%
+  kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
 
 ```
 
@@ -24,24 +49,41 @@ knitr::kable(data, booktabs = TRUE)
 
 ```{r quant1, echo=FALSE}
 
-data = read.csv("example/tables/config_quant1.csv", TRUE)
-knitr::kable(data, booktabs = TRUE)
+data = appendix_print("example/tables/config_quant1.csv", TRUE)
+
+data %>%
+  kable(escape = TRUE, booktabs = TRUE) %>%
+  kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
 
 ```
 
-## `incorporation_calc.csv` \& `mid_backups.csv`
+## `incorporation_calc.csv` 
 
 ```{r inccalc, echo=FALSE}
 
-data = read.csv("example/tables/config_inccalc.csv", TRUE)
-knitr::kable(data, booktabs = TRUE)
+data = appendix_print("example/tables/config_inccalc.csv", TRUE)
+
+data %>%
+  kable(escape = TRUE, booktabs = TRUE) %>%
+  kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
 
 ```
 
+## `mid_backups.csv`
+
 ```{r backup, echo=FALSE}
 
-data = read.csv("example/tables/config_backup.csv", TRUE)
-knitr::kable(data, booktabs = TRUE)
+data = appendix_print("example/tables/config_backup.csv", TRUE)
+
+data %>%
+  kable(escape = TRUE, booktabs = TRUE) %>%
+  kable_styling(c("striped", "condensed"), 
+                 latex_options = "striped", 
+                 full_width = TRUE)
 
 ```
 

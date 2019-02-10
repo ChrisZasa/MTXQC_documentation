@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="2-intro.html">
-<link rel="next" href="4-wf-metmax.html">
+<link rel="next" href="4-metmax.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -51,6 +51,43 @@
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 
 
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -92,16 +129,20 @@
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="3-maui.html"><a href="3-maui.html#at-the-end"><i class="fa fa-check"></i><b>3.5</b> At the end…</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html"><i class="fa fa-check"></i><b>4</b> Workflow for Metmax-extracted projects</a><ul>
-<li class="chapter" data-level="4.1" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#you-want-to-follow-this"><i class="fa fa-check"></i><b>4.1</b> You want to follow this …</a></li>
-<li class="chapter" data-level="4.2" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#introduction"><i class="fa fa-check"></i><b>4.2</b> Introduction</a></li>
-<li class="chapter" data-level="4.3" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#quick-view"><i class="fa fa-check"></i><b>4.3</b> Quick view</a></li>
-<li class="chapter" data-level="4.4" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#input-files"><i class="fa fa-check"></i><b>4.4</b> Input files</a></li>
-<li class="chapter" data-level="4.5" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#annotation-file"><i class="fa fa-check"></i><b>4.5</b> Annotation-file</a></li>
-<li class="chapter" data-level="4.6" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#sample_extracts-file"><i class="fa fa-check"></i><b>4.6</b> Sample_extracts-file</a></li>
-<li class="chapter" data-level="4.7" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#update-metabolite-names-in-conversion_metabolite.csv"><i class="fa fa-check"></i><b>4.7</b> Update metabolite names in <code>conversion_metabolite.csv</code></a><ul>
-<li class="chapter" data-level="4.7.1" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#match-your-annotation-with-library-names"><i class="fa fa-check"></i><b>4.7.1</b> Match your annotation with library names</a></li>
-<li class="chapter" data-level="4.7.2" data-path="4-wf-metmax.html"><a href="4-wf-metmax.html#define-your-internal-standards-and-alkanes"><i class="fa fa-check"></i><b>4.7.2</b> Define your internal standards and alkanes</a></li>
+<li class="chapter" data-level="4" data-path="4-metmax.html"><a href="4-metmax.html"><i class="fa fa-check"></i><b>4</b> Tutorial: MTXQCvX2 for for Metmax-extracted projects</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-metmax.html"><a href="4-metmax.html#prerequisites-1"><i class="fa fa-check"></i><b>4.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="4.2" data-path="4-metmax.html"><a href="4-metmax.html#in-a-nutshell"><i class="fa fa-check"></i><b>4.2</b> In a nutshell</a></li>
+<li class="chapter" data-level="4.3" data-path="4-metmax.html"><a href="4-metmax.html#tutorial-dataset"><i class="fa fa-check"></i><b>4.3</b> Tutorial dataset</a></li>
+<li class="chapter" data-level="4.4" data-path="4-metmax.html"><a href="4-metmax.html#in-detail"><i class="fa fa-check"></i><b>4.4</b> In detail</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="4-metmax.html"><a href="4-metmax.html#copy-mtxqcvx2-template-files-1"><i class="fa fa-check"></i><b>4.4.1</b> Copy MTXQCvX2 template files</a></li>
+<li class="chapter" data-level="4.4.2" data-path="4-metmax.html"><a href="4-metmax.html#process-mtxqc_init.rmd-1"><i class="fa fa-check"></i><b>4.4.2</b> Process <code>MTXQC_init.Rmd</code></a></li>
+<li class="chapter" data-level="4.4.3" data-path="4-metmax.html"><a href="4-metmax.html#process-mtxqc_part4"><i class="fa fa-check"></i><b>4.4.3</b> Process MTXQC_part4</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="4-metmax.html"><a href="4-metmax.html#annotation-file"><i class="fa fa-check"></i><b>4.5</b> Annotation-file</a></li>
+<li class="chapter" data-level="4.6" data-path="4-metmax.html"><a href="4-metmax.html#sample_extracts-file"><i class="fa fa-check"></i><b>4.6</b> Sample_extracts-file</a></li>
+<li class="chapter" data-level="4.7" data-path="4-metmax.html"><a href="4-metmax.html#update-metabolite-names-in-conversion_metabolite.csv"><i class="fa fa-check"></i><b>4.7</b> Update metabolite names in <code>conversion_metabolite.csv</code></a><ul>
+<li class="chapter" data-level="4.7.1" data-path="4-metmax.html"><a href="4-metmax.html#match-your-annotation-with-library-names"><i class="fa fa-check"></i><b>4.7.1</b> Match your annotation with library names</a></li>
+<li class="chapter" data-level="4.7.2" data-path="4-metmax.html"><a href="4-metmax.html#define-your-internal-standards-and-alkanes"><i class="fa fa-check"></i><b>4.7.2</b> Define your internal standards and alkanes</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="5-init.html"><a href="5-init.html"><i class="fa fa-check"></i><b>5</b> MTXQCvX2_init</a><ul>
@@ -113,26 +154,27 @@
 </ul></li>
 <li class="chapter" data-level="7" data-path="7-part1.html"><a href="7-part1.html"><i class="fa fa-check"></i><b>7</b> MTXQCvX_part1.Rmd</a><ul>
 <li class="chapter" data-level="7.1" data-path="7-part1.html"><a href="7-part1.html#knit-with-parameter-2"><i class="fa fa-check"></i><b>7.1</b> Knit with parameter</a></li>
+<li class="chapter" data-level="7.2" data-path="7-part1.html"><a href="7-part1.html#text-1"><i class="fa fa-check"></i><b>7.2</b> Text</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="8-part2.html"><a href="8-part2.html"><i class="fa fa-check"></i><b>8</b> MTXQCvX_part2.Rmd</a><ul>
 <li class="chapter" data-level="8.1" data-path="8-part2.html"><a href="8-part2.html#knit-with-parameter-3"><i class="fa fa-check"></i><b>8.1</b> Knit with parameter</a></li>
 <li class="chapter" data-level="8.2" data-path="8-part2.html"><a href="8-part2.html#in-more-detail---processing-parameter"><i class="fa fa-check"></i><b>8.2</b> In more detail - processing parameter</a></li>
 <li class="chapter" data-level="8.3" data-path="8-part2.html"><a href="8-part2.html#notes"><i class="fa fa-check"></i><b>8.3</b> Notes</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-part3.html"><a href="9-part3.html"><i class="fa fa-check"></i><b>9</b> MTXQCvX_part3.Rmd</a></li>
+<li class="chapter" data-level="9" data-path="9-part3.html"><a href="9-part3.html"><i class="fa fa-check"></i><b>9</b> MTXQCvX_part3.Rmd</a><ul>
+<li class="chapter" data-level="9.1" data-path="9-part3.html"><a href="9-part3.html#knit-with-parameter-4"><i class="fa fa-check"></i><b>9.1</b> Knit with parameter</a></li>
+<li class="chapter" data-level="9.2" data-path="9-part3.html"><a href="9-part3.html#text-2"><i class="fa fa-check"></i><b>9.2</b> Text</a></li>
+</ul></li>
 <li class="chapter" data-level="10" data-path="10-Metmax.html"><a href="10-Metmax.html"><i class="fa fa-check"></i><b>10</b> MTXQCvX_part4.Rmd - Metmax parser</a><ul>
-<li class="chapter" data-level="10.1" data-path="10-Metmax.html"><a href="10-Metmax.html#this-section-explains"><i class="fa fa-check"></i><b>10.1</b> This section explains …</a></li>
-<li class="chapter" data-level="10.2" data-path="10-Metmax.html"><a href="10-Metmax.html#input-files-1"><i class="fa fa-check"></i><b>10.2</b> Input files</a><ul>
-<li class="chapter" data-level="10.2.1" data-path="10-Metmax.html"><a href="10-Metmax.html#quantification---peakareas.csv"><i class="fa fa-check"></i><b>10.2.1</b> Quantification - PeakAreas.csv</a></li>
-<li class="chapter" data-level="10.2.2" data-path="10-Metmax.html"><a href="10-Metmax.html#isotope-incorporation---mids.csv"><i class="fa fa-check"></i><b>10.2.2</b> Isotope incorporation - MIDs.csv</a></li>
-<li class="chapter" data-level="10.2.3" data-path="10-Metmax.html"><a href="10-Metmax.html#derivatisation-efficiency---mz73.csv"><i class="fa fa-check"></i><b>10.2.3</b> Derivatisation efficiency - mz73.csv</a></li>
+<li class="chapter" data-level="10.1" data-path="10-Metmax.html"><a href="10-Metmax.html#knit-with-parameter-5"><i class="fa fa-check"></i><b>10.1</b> Knit with parameter</a></li>
+<li class="chapter" data-level="10.2" data-path="10-Metmax.html"><a href="10-Metmax.html#text-3"><i class="fa fa-check"></i><b>10.2</b> Text</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="11-configuration-of-mtxqcvx2-config-mtx-.html"><a href="11-configuration-of-mtxqcvx2-config-mtx-.html"><i class="fa fa-check"></i><b>11</b> Configuration of MTXQCvX2 - <code id="config">config_mtx/...</code></a><ul>
-<li class="chapter" data-level="11.1" data-path="11-configuration-of-mtxqcvx2-config-mtx-.html"><a href="11-configuration-of-mtxqcvx2-config-mtx-.html#conversion_metabolite.csv"><i class="fa fa-check"></i><b>11.1</b> <code>conversion_metabolite.csv</code></a></li>
-<li class="chapter" data-level="11.2" data-path="11-configuration-of-mtxqcvx2-config-mtx-.html"><a href="11-configuration-of-mtxqcvx2-config-mtx-.html#letter_pathway_complete.csv"><i class="fa fa-check"></i><b>11.2</b> <code>letter_pathway_complete.csv</code></a></li>
-<li class="chapter" data-level="11.3" data-path="11-configuration-of-mtxqcvx2-config-mtx-.html"><a href="11-configuration-of-mtxqcvx2-config-mtx-.html#quant1-values.csv"><i class="fa fa-check"></i><b>11.3</b> <code>quant1-values.csv</code></a></li>
-<li class="chapter" data-level="11.4" data-path="11-configuration-of-mtxqcvx2-config-mtx-.html"><a href="11-configuration-of-mtxqcvx2-config-mtx-.html#incorporation_calc.csv-mid_backups.csv"><i class="fa fa-check"></i><b>11.4</b> <code>incorporation_calc.csv</code> &amp; <code>mid_backups.csv</code></a></li>
+<li class="chapter" data-level="11" data-path="11-config.html"><a href="11-config.html"><i class="fa fa-check"></i><b>11</b> Customization of MTXQCvX2</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-config.html"><a href="11-config.html#conversion_metabolite.csv"><i class="fa fa-check"></i><b>11.1</b> <code>conversion_metabolite.csv</code></a></li>
+<li class="chapter" data-level="11.2" data-path="11-config.html"><a href="11-config.html#letter_pathway_complete.csv"><i class="fa fa-check"></i><b>11.2</b> <code>letter_pathway_complete.csv</code></a></li>
+<li class="chapter" data-level="11.3" data-path="11-config.html"><a href="11-config.html#quant1-values.csv"><i class="fa fa-check"></i><b>11.3</b> <code>quant1-values.csv</code></a></li>
+<li class="chapter" data-level="11.4" data-path="11-config.html"><a href="11-config.html#incorporation_calc.csv"><i class="fa fa-check"></i><b>11.4</b> <code>incorporation_calc.csv</code></a></li>
+<li class="chapter" data-level="11.5" data-path="11-config.html"><a href="11-config.html#mid_backups.csv"><i class="fa fa-check"></i><b>11.5</b> <code>mid_backups.csv</code></a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="12-mauiproc.html"><a href="12-mauiproc.html"><i class="fa fa-check"></i><b>12</b> Data processing - MAUI</a><ul>
 <li class="chapter" data-level="12.1" data-path="12-mauiproc.html"><a href="12-mauiproc.html#processing-in-chromatof"><i class="fa fa-check"></i><b>12.1</b> Processing In ChromaToF</a><ul>
@@ -151,9 +193,10 @@
 <li class="chapter" data-level="13.2" data-path="13-metmaxproc.html"><a href="13-metmaxproc.html#d-basic"><i class="fa fa-check"></i><b>13.2</b> 1D-basic</a></li>
 <li class="chapter" data-level="13.3" data-path="13-metmaxproc.html"><a href="13-metmaxproc.html#reference-search"><i class="fa fa-check"></i><b>13.3</b> Reference search</a></li>
 <li class="chapter" data-level="13.4" data-path="13-metmaxproc.html"><a href="13-metmaxproc.html#export-for-metmax"><i class="fa fa-check"></i><b>13.4</b> Export for Metmax</a></li>
-<li class="chapter" data-level="13.5" data-path="13-metmaxproc.html"><a href="13-metmaxproc.html#data-extraction-with-metmax"><i class="fa fa-check"></i><b>13.5</b> Data extraction with Metmax</a><ul>
-<li class="chapter" data-level="13.5.1" data-path="13-metmaxproc.html"><a href="13-metmaxproc.html#peak-areas"><i class="fa fa-check"></i><b>13.5.1</b> Peak areas</a></li>
-<li class="chapter" data-level="13.5.2" data-path="13-metmaxproc.html"><a href="13-metmaxproc.html#mids"><i class="fa fa-check"></i><b>13.5.2</b> MIDs</a></li>
+<li class="chapter" data-level="13.5" data-path="13-metmaxproc.html"><a href="13-metmaxproc.html#metmax-dataextr"><i class="fa fa-check"></i><b>13.5</b> Data extraction with Metmax</a><ul>
+<li class="chapter" data-level="13.5.1" data-path="13-metmaxproc.html"><a href="13-metmaxproc.html#quantification---peakareas.csv"><i class="fa fa-check"></i><b>13.5.1</b> Quantification - PeakAreas.csv</a></li>
+<li class="chapter" data-level="13.5.2" data-path="13-metmaxproc.html"><a href="13-metmaxproc.html#isotope-incorporation---mids.csv"><i class="fa fa-check"></i><b>13.5.2</b> Isotope incorporation - MIDs.csv</a></li>
+<li class="chapter" data-level="13.5.3" data-path="13-metmaxproc.html"><a href="13-metmaxproc.html#derivatisation-efficiency---mz73.csv"><i class="fa fa-check"></i><b>13.5.3</b> Derivatisation efficiency - mz73.csv</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="14-FAQ.html"><a href="14-FAQ.html"><i class="fa fa-check"></i><b>14</b> Frequently Asked Questions</a><ul>
@@ -170,12 +213,11 @@
 </ul></li>
 <li class="chapter" data-level="15" data-path="15-tables.html"><a href="15-tables.html"><i class="fa fa-check"></i><b>15</b> Appendix - Dictionary Tables</a><ul>
 <li class="chapter" data-level="15.1" data-path="15-tables.html"><a href="15-tables.html#mtxqc-base-tables"><i class="fa fa-check"></i><b>15.1</b> MTXQC base tables</a><ul>
-<li class="chapter" data-level="15.1.1" data-path="15-tables.html"><a href="15-tables.html#config_mtx-tables"><i class="fa fa-check"></i><b>15.1.1</b> <code>config_mtx</code> tables</a><ul>
-<li class="chapter" data-level="15.1.1.1" data-path="15-tables.html"><a href="15-tables.html#app:filenames"><i class="fa fa-check"></i><b>15.1.1.1</b> conv_filenames.csv</a></li>
-<li class="chapter" data-level="15.1.1.2" data-path="15-tables.html"><a href="15-tables.html#app:filenamesManVal"><i class="fa fa-check"></i><b>15.1.1.2</b> conv_filesnames_manVal.csv</a></li>
-<li class="chapter" data-level="15.1.1.3" data-path="15-tables.html"><a href="15-tables.html#depricated-file-mq_correction.csv"><i class="fa fa-check"></i><b>15.1.1.3</b> DEPRICATED FILE: MQ_correction.csv</a></li>
+<li class="chapter" data-level="15.1.1" data-path="15-tables.html"><a href="15-tables.html#config_files-tables"><i class="fa fa-check"></i><b>15.1.1</b> <code>config_files</code> tables</a><ul>
+<li class="chapter" data-level="15.1.1.1" data-path="15-tables.html"><a href="15-tables.html#filenames"><i class="fa fa-check"></i><b>15.1.1.1</b> conv_filenames.csv</a></li>
+<li class="chapter" data-level="15.1.1.2" data-path="15-tables.html"><a href="15-tables.html#filenamesManVal"><i class="fa fa-check"></i><b>15.1.1.2</b> conv_filesnames_manVal.csv</a></li>
 </ul></li>
-<li class="chapter" data-level="15.1.2" data-path="15-tables.html"><a href="15-tables.html#config_files-tables"><i class="fa fa-check"></i><b>15.1.2</b> <code>config_files</code> tables</a><ul>
+<li class="chapter" data-level="15.1.2" data-path="15-tables.html"><a href="15-tables.html#config_mtx-tables"><i class="fa fa-check"></i><b>15.1.2</b> <code>config_mtx</code> tables</a><ul>
 <li class="chapter" data-level="15.1.2.1" data-path="15-tables.html"><a href="15-tables.html#app:conse"><i class="fa fa-check"></i><b>15.1.2.1</b> conversion_metabolite.csv</a></li>
 <li class="chapter" data-level="15.1.2.2" data-path="15-tables.html"><a href="15-tables.html#app:pathway"><i class="fa fa-check"></i><b>15.1.2.2</b> letter_pathway_complete.csv</a></li>
 <li class="chapter" data-level="15.1.2.3" data-path="15-tables.html"><a href="15-tables.html#app:incorp"><i class="fa fa-check"></i><b>15.1.2.3</b> incorp_calc_masses.csv</a></li>
@@ -214,6 +256,8 @@
 <li class="chapter" data-level="15.3.2.5" data-path="15-tables.html"><a href="15-tables.html#mtxqcvx2-part4"><i class="fa fa-check"></i><b>15.3.2.5</b> MTXQCvX2 part4</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="15.4" data-path="15-tables.html"><a href="15-tables.html#files-for-maui-processing"><i class="fa fa-check"></i><b>15.4</b> Files for Maui-processing</a></li>
+<li class="chapter" data-level="15.5" data-path="15-tables.html"><a href="15-tables.html#files-for-metmax-processing"><i class="fa fa-check"></i><b>15.5</b> Files for Metmax-processing</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="16-psirm.html"><a href="16-psirm.html"><i class="fa fa-check"></i><b>16</b> Appendix - pSIRM experiments</a><ul>
 <li class="chapter" data-level="16.1" data-path="16-psirm.html"><a href="16-psirm.html#experimental-design"><i class="fa fa-check"></i><b>16.1</b> Experimental design</a></li>
@@ -267,7 +311,7 @@
 <h2><span class="header-section-number">3.1</span> Prerequisites</h2>
 <ul>
 <li>You have successfully finished the annotation using Maui-SILVIA</li>
-<li>Exported all required MAUI container (see section <a href="12-mauiproc.html#mauiexport">12.3</a>)</li>
+<li>You have exported all required MAUI container (see section <a href="12-mauiproc.html#mauiexport">12.3</a>)</li>
 <li>You have a list of your GC-MS sequence and related experimental conditions</li>
 <li>You know the extraction procedure of your standards and samples</li>
 </ul>
@@ -289,7 +333,7 @@
 </div>
 <div id="dataset-of-the-tutorial---tutorial_single_maui" class="section level2">
 <h2><span class="header-section-number">3.3</span> Dataset of the tutorial - <code>tutorial_single_maui</code></h2>
-<p>Copy the dataset <code>tutorial_single_maui</code> somewhere local on your computer or laptop. The dataset represents the data of the first psirm metabolomics experiment in the Kempa Lab. HEK293 cells have been cultivated at 21% oxygen and a range of glucose levels (0.3 - 4.5 g/L Glc) and constant glutamine concentration (4 mM) following standard cell culture procedures. During the cell harvest cells have been labeled for two minutes with uniformly labeled 13C-glucose, three replicates per condition.</p>
+<!-- Copy the dataset `tutorial_single_maui` somewhere local on your computer or laptop. The dataset represents the data of the first psirm metabolomics experiment in the Kempa Lab. HEK293 cells have been cultivated at 21\% oxygen and a range of glucose levels (0.3 - 4.5 g/L Glc) and constant glutamine concentration (4 mM) following standard cell culture procedures. During the cell harvest cells have been labeled for two minutes with uniformly labeled 13C-glucose, three replicates per condition. -->
 </div>
 <div id="indetail-maui" class="section level2">
 <h2><span class="header-section-number">3.4</span> In detail</h2>
@@ -304,42 +348,47 @@
 <div id="copy-mtxqcvx2-template-files" class="section level3">
 <h3><span class="header-section-number">3.4.2</span> Copy MTXQCvX2 template files</h3>
 <ul>
-<li>Download the current version of MTXQCvX2 called fluffy adventure <a href="github.com/ChrisZasada/fluffy_adventure">here</a></li>
-<li>Open and extract the zip-file</li>
-<li>Copy all folders and files into your newly created R-project ’tutorial_single_maui`</li>
+<li>Download the current version of MTXQCvX2 called fluffy adventure<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></li>
+<li>Open and extract the zip-folder</li>
+<li>Copy all folders and files into your R-project ’tutorial_single_maui`</li>
 </ul>
 </div>
 <div id="process-mtxqc_init.rmd" class="section level3">
 <h3><span class="header-section-number">3.4.3</span> Process <code>MTXQC_init.Rmd</code></h3>
-<p>The module <code>MTXQC_init.Rmd</code> provides you two important things: (1) Check-up package installation (2) Creation of project-folder</p>
+<p>The module <code>MTXQC_init.Rmd</code> performs two important steps: 1. Check-up package installation 2. Creation of project-folder</p>
 <p>The project folder is supposed to provide a tidy structure while data processing and analysis and contains several pre-defined folder. Besides the following folders: ‘input’, ‘output’ and ‘figures’ you see a detailed subfolder structure. You find more details about each folder and additional suggestion how to use project-folder in chapter <a href="5-init.html#init">5</a>.</p>
 <p>All you need to do is to process the <code>MTXQC_init.Rmd</code>. The following procedure is how you process all <code>.Rmd</code>-files of MTXQCvX2:</p>
 <ul>
-<li>Click on the small black triangle next to the ball of yarn</li>
+<li>Click on the small black triangle next to the ball of yarn in the R-Studio toolbar</li>
 <li>Choose <code>Knit with Parameters...</code></li>
 </ul>
 <p>If the <code>.Rmd</code>-file contains defined parameters a shiny dialogue pops up and provides an interactive selection based on the document. In the case of <code>MTXQC_init.Rmd</code> you are asked to define a so-called project-folder, e.g., <code>psirm_glucose</code>.</p>
 <ul>
-<li>Define the name of the project-folder: <code>psirm_glucose</code></li>
+<li><strong>Define the name of the project-folder:</strong> psirm_glucose</li>
 </ul>
-<p>Check in the files tab of R-Studio if you see the new folder and browse through it.</p>
+<p>Check in the files tab of R-Studio, browse through it and get familiar with the structure. This is the home of your metabolomics projects data analysis.</p>
 </div>
 <div id="prepare-and-copy-input-files" class="section level3">
 <h3><span class="header-section-number">3.4.4</span> Prepare and copy input files</h3>
 <p>Several files have to be exported from Maui and copied into the folders <code>input/gc</code>, <code>input/quant</code> and <code>input/inc</code> for the evaluation of the GC-MS performance, absolute quantification and isotope incorporation.</p>
-<p>Please follow the detailed instructions in section <a href="12-mauiproc.html#mauiexport">12.3</a> if you need further information how to perform the export in Maui. For the purpose of the tutorial the exported files are already processed and copied into the corresponding subfolders of the <code>input</code>-folder.</p>
+<p>Please follow the detailed instructions in section <a href="12-mauiproc.html#mauiexport">12.3</a> if you need further information how to perform the export in Maui. For the purpose of the tutorial the exported files are already processed and provided in tutorial dataset <code>input</code>-folder. Select each file and copy it to the correct location inside your R-project.</p>
 </div>
 <div id="copy-files-annotation.csv-and-sample_extracts.csv" class="section level3">
 <h3><span class="header-section-number">3.4.5</span> Copy files: <code>annotation.csv</code> and <code>Sample_extracts.csv</code></h3>
 <p>Both files contain important information about your metabolomics experiment and since these information are highly specific you need to create them on your own and save them in <code>project-folder/input/</code>.</p>
 <p>Browse to both files in the tutorial dataset, have a look at the content and copy both files into <code>psirm_glucose/input</code>.</p>
-<p>The herein shown <em>annotation file</em> contains information about the eperimental conditions of each sample and measurement file. The columns <strong>File</strong> and <strong>Type</strong> are mandatory, additional columns defining further parameter, like cell line or glucose level, are totally customizable to your needs.</p>
-<p>The <em>sample extracts</em> file specify the nature and volume / weight of the sample extracts. The columns <strong>Extract_vol</strong> and <strong>Unit</strong> are mandatory here. This file here shows cell extracts defined with the unit <em>count</em> for specific conditions. Please be aware that names of experimental conditions have to match between annotation and sample extracts file.</p>
+<p><strong>The annotation file</strong></p>
+<p>The herein shown <em>annotation file</em> contains information about the eperimental conditions of each sample and measurement file. The columns <strong>File</strong> and <strong>Type</strong> are mandatory and the minimum content of an annotation file. Additional columns defining further conditions, like cell line or glucose level, are totally customizable to your preferences.</p>
+<p>Though, I suggest to set up a maximum of four parameter. If your project requires more try to create combinations. Later on this helps to visualise your data using MTXQC_part2. The number of parameters is limited by the availabily of diagram axes, facets and paper size. Subsequently written individual reports are independent of this and conditions could be split and extended without any limitations.</p>
+<p><strong>The sample extrats file</strong></p>
+<p>The <em>sample extracts</em> file specify the nature and volume / weight of the sample extracts. The columns <strong>Extract_vol</strong> and <strong>Unit</strong> (count, mg or ul) are mandatory here.</p>
+<p>The minimal file contains these two columns with at least one row / entry, e.g. <span class="math inline">\(1.5e+6\)</span> &amp; count. This would result into the association of <span class="math inline">\(1.5e+6\)</span> cells to each file.</p>
+<p>This file here in this tutorial shows cell extracts defined with the unit <em>count</em> for specific conditions. Please be aware that names of experimental conditions have to match between annotation and sample extracts file.</p>
 <p>Nevertheless it is not necessarily required to define for each combination of conditions a cell count. Please refer FAQs section <a href="14-FAQ.html#createannotation">14.1</a> and <a href="14-FAQ.html#createsampleextracts">14.2</a> for further information how to create and set up both files from the scretch.</p>
 </div>
 <div id="define-an-internal-standard---cinnamic-acid" class="section level3">
 <h3><span class="header-section-number">3.4.6</span> Define an internal standard - cinnamic acid</h3>
-<p>We have to define the internal extraction standard for each experiment in the file <code>config_mtx/conversion_metabolite.csv</code>. Classical pSIRM experiments like the one we are using for this tutorial used cinnamic acid for tracking variations in experimental sample handling.</p>
+<p>The tutorials dataset contains data derived from a classical pSIRM experiment. This includes that the experimentalist supplemented the extraction solvent with an internal extraction standard - cinnamic acid. All that we have to do is to check if this compound has been defined as <code>InternalStandard</code> in the file <code>config_mtx/conversion_metabolite.csv</code>.</p>
 <p>To do so:</p>
 <ul>
 <li>Open the file: ’config_mtx/conversion_metabolite.csv`</li>
@@ -347,50 +396,51 @@
 <li>Verify that <code>InternalStandard</code> is defined in the column <code>Standard</code></li>
 <li>Save the file and close it</li>
 </ul>
+<p>Read the section <a href="#defineinternal"><strong>??</strong></a> how to proceed in case you want to define a different compound as internal standard.</p>
 </div>
 <div id="process-mtxqc_experimentalsetup.csv" class="section level3">
 <h3><span class="header-section-number">3.4.7</span> Process <code>MTXQC_ExperimentalSetup.csv</code></h3>
 <p>We are ready now to start processing the second module of the MTXQCvX2 called the Experimental Setup. In order to faciliate automated data processing throughout MTXQC files and parameters have to be defined beforehand for each project-folder.</p>
-<p>Defined parameters are saved in the file <code>MTXQC_params.csv</code> inside the project-folder for future reference enabling to move the project-folder independently of the remaining MTXQC-files. A huge advantage for debugging and sharing your project<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p>Defined parameters are saved in the file <code>MTXQC_params.csv</code> inside the project-folder for future reference enabling to move the project-folder independently of the remaining MTXQC-files. A huge advantage for debugging and sharing your project<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
 <p>Define the following parameter:</p>
 <ul>
-<li>Define project-folder: psirm_glucose</li>
-<li>Define input-format: maui</li>
-<li>Name of annotation file: annotation.csv</li>
-<li>Name of sample extracts file: sample_extracts.csv</li>
-<li>Type of experiment: pSIRM</li>
-<li>Applied 13C-substrates: glc</li>
-<li>Internal standard: check</li>
-<li>Type of samples: cell extracts</li>
-<li>Additional calibration curves: no</li>
-<li>Integrate add. calibration curves: no</li>
-<li>Quantification standards: Quant1_v3</li>
-<li>Volume polar phase of Quants: 500</li>
-<li>Technical replicates<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>: no</li>
+<li><strong>Define project-folder:</strong> psirm_glucose</li>
+<li><strong>Define input-format:</strong> maui</li>
+<li>**Name of annotation <a href="file:**" class="uri">file:**</a> annotation.csv</li>
+<li>**Name of sample extracts <a href="file:**" class="uri">file:**</a> sample_extracts.csv</li>
+<li><strong>Type of experiment:</strong> pSIRM</li>
+<li><strong>Applied 13C-substrates:</strong> glc</li>
+<li><strong>Internal standard:</strong> check</li>
+<li><strong>Type of samples:</strong> cell extracts</li>
+<li><strong>Additional calibration curves:</strong> no</li>
+<li><strong>Integrate add. calibration curves:</strong> no</li>
+<li><strong>Quantification standards:</strong> Quant1_v3</li>
+<li><strong>Volume polar phase of Quants:</strong> 500</li>
+<li><strong>Technical replicates:</strong><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> no</li>
 </ul>
-<p>Confirm the parameter and file definition and wait a moment. Check if you can find the file <code>MTXQC_params.csv</code>and also <code>Maui_params.csv</code>. Latter one is automatically generated by selecting maui project as input format. <code>Maui_params.csv</code> contains the information of the pre-defined file names containing all required input data.</p>
-<p>Have a look at the produced pdf-file and check the comments and messages. Throughout MTXQCvX2 messages inform about (1) successfull data imports, (2) fatal errors causing an automatic stop of data processing and (3) warning pointing towards things that should be checked before moving to the next step.</p>
+<p>Confirm the parameter and file definition and wait a moment. Check if you can find the file <code>MTXQC_params.csv</code> and also <code>Maui_params.csv</code>. Latter one is automatically generated by selecting maui project as input format. <code>Maui_params.csv</code> contains the information of the pre-defined file names containing all required input data.</p>
+<p>Have a look at the produced pdf-file and check the comments and messages. Throughout MTXQCvX2 messages inform about: * Successfull data imports * Fatal errors causing an automatic stop of data processing and * Warnings pointing towards things that should be checked before moving to the next step.</p>
 </div>
 <div id="process-mtxqc_part1.rmd" class="section level3">
 <h3><span class="header-section-number">3.4.8</span> Process <code>MTXQC_part1.Rmd</code></h3>
-<p>Since we have defined all required input parameter the main document is ready to run after the definition of only three parameter:</p>
+<p>Since we have defined all required input parameter the main module is ready to run after the definition of only three parameter:</p>
 <ul>
-<li>Definition of the project-folder: psirm_glucose</li>
-<li>Type of data: maui</li>
-<li>Manual validated data<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></li>
+<li><strong>Definition of the project-folder:</strong> psirm_glucose</li>
+<li>**Type of <a href="data:**" class="uri">data:**</a> maui</li>
+<li>**Manual validated <a href="data:**" class="uri">data:**</a> none</li>
 </ul>
 <p>Also here, scroll carefully through the generated pdf-file and have a look at the messages. If all works out it doesn’t matter, but it might help to know what should be written if you end up with an error message instead of.</p>
 <p>Each generated graphic is going to be explained in detail in chapter <a href="7-part1.html#part1">7</a>. For now please refer to my phd thesis <span class="citation">(Zasada <a href="#ref-Zasada2017">2017</a>)</span>.</p>
 <p>All quality metrices are visualised on the last page of the report split into two heatmaps:</p>
 <ul>
-<li>GC-performance: orange, across all measurements</li>
-<li>Quantification &amp; isotope incorporation: blue, for each intermediate</li>
+<li>GC-performance (orange): across all measurements</li>
+<li>Quantification &amp; isotope incorporation (blue): for each intermediate individually, but across all exp. conditions</li>
 </ul>
 <p>Besides the generation of the MTXQC_part1 report several <code>csv-files</code> are exported into the output folder summarising statistics of all quality control metrices. The content of each file is summarised in the dictionary of tables (chapter <a href="15-tables.html#tables">15</a>).</p>
 <p>The most important file <code>CalculationFileData.csv</code> summarises all experimental conditions, normalisation factors as well as information about calibration curve parameter and derived quantities. You find this file here - <code>project-folder/output/quant/</code>.</p>
-<p>It is worth to open this file in a program of your choice and check for a selected intermediate the content. Wrong assignments of conditions in the annotation or sample extracts-file might cause duplication of values, easily to identify if exactly the same peak areas, so the same file, appears multiple times in this file.</p>
-<p><code>CalculationFileData.csv</code> is all about the absolute quantities and data normalisation. Why does it not contain information about isotope incorporation you might ask. Well, depending on the experimental setup you might follow different ways how to combine both entities. Furthermore <code>MTXQC_part1</code> is not about doing any processing of the data in the sense of analysis or statistics.<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></p>
-<p>The next module has been set up to give you a first quick report about the content of your data performing basic post processing steps.</p>
+<p>It is worth to open this file in a program of your choice and check for a selected intermediate the content. Wrong assignments of conditions in the annotation or sample extracts-file might cause duplication of values, easily to identify if exactly the same peak areas, so the same file, appears multiple times.</p>
+<p><code>CalculationFileData.csv</code> is all about the absolute quantities and data normalisation. Why does it not contain information about isotope incorporation you might ask. Well, depending on the experimental setup you might follow different ways how to combine both entities. Furthermore <code>MTXQC_part1</code> is not about doing any processing of the data in the sense of analysis or statistics<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>. It is supposed to assess the quality meaning the evaluation of the mass isotopomer distributions (MIDs) that are the basis for the calculation of the isotope incorporation.</p>
+<p>The next module has been set up to give you a first quick report about the content of your data performing basic post processing steps inclduing the statistics part.</p>
 </div>
 <div id="process-mtxqc_part2.rmd" class="section level3">
 <h3><span class="header-section-number">3.4.9</span> Process <code>MTXQC_part2.Rmd</code></h3>
@@ -399,15 +449,16 @@
 <p>All kind of outputs (graphics, statistics) are saved at <code>output/quant/...</code> into a day-specific folder<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>, meaning if you repeat the same analysis several times a day the content is replaced with each run<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>. Simply modify the folder name to avoid this behaviour. If you go on with your analysis the next or another day a new folder is created.</p>
 <p>Go and process this module with the following parameter:</p>
 <ul>
-<li>Project-folder: psirm_glucose</li>
-<li>Tpye of analysis: stringent</li>
-<li>Internal standard: QC<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a></li>
-<li>Quantitative value: InstStd_Conc_pmio<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a></li>
-<li>par1: time</li>
-<li>par2: substrate</li>
-<li>par3: whatelse</li>
-<li>updated: none</li>
-<li>pre-defined color scheme: choose yourself</li>
+<li><strong>Project-folder:</strong> psirm_glucose</li>
+<li><strong>Type of analysis:</strong> stringent</li>
+<li><strong>Internal standard:</strong> QC<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a></li>
+<li><strong>Quantitative value:</strong> InstStd_Conc_pmio<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a></li>
+<li><strong>par1:</strong> time</li>
+<li><strong>par2:</strong> substrate</li>
+<li><strong>par3:</strong> whatelse</li>
+<li><strong>par4:</strong> none</li>
+<li><strong>updated:</strong> none</li>
+<li><strong>pre-defined color scheme:</strong> choose yourself</li>
 </ul>
 <p>Feel free to add further plots at the end of this report if required or define your project specific color code at the beginning of the document.</p>
 <p>I recommend to use the output of <code>MTXQC_part2.Rmd</code> as a kind of overall visualisation of the data. Specific questions might be addressed in smaller reports using the output-files of <code>MTXQC_part2.Rmd</code>.</p>
@@ -416,9 +467,9 @@
 </div>
 <div id="at-the-end" class="section level2">
 <h2><span class="header-section-number">3.5</span> At the end…</h2>
-<p>So far you have used MTXQCvX2 to generate two reports: (1) one summarising the quality of the generated data and (2) a first statistical overview about the content of your data. With this the tutorial ends and refers to the plenty of detailed information scattered in a number of additional chapters of this documentation.</p>
-<p>The FAQ section tries to guide you through more specific settings and introduces you to the flexibility of MTXQCvX2.</p>
-<p>Since every metabolomics experiment has it’s own purpose and reasoning I want to point out, that MTXQCvX2 does not want to provide a magical tool giving the perfect solution for everyone. It rather tries to provide a common platform for discussions, information exchange and inspiration by reducing the time that has to be spend on “the boring part of research”. There is no limit to make MTXQC your own perfect tool writing your own reports and extensions.</p>
+<p>So far you have used MTXQCvX2 to generate two reports: 1. one summarising the quality of the generated data and 2. a first statistical overview about the content of your data.</p>
+<p>With this the tutorial ends and refers to the plenty of detailed information scattered in a number of additional chapters of this documentation. The FAQ section tries to guide you through more specific settings and introduces you to the flexibility of MTXQCvX2.</p>
+<p>Since every metabolomics experiment has it’s own purpose and reasoning I want to point out, that MTXQCvX2 does not want to provide a magical tool giving the perfect solution for everyone. It rather tries to provide a common platform for discussions, information exchange and inspiration by reducing the time that has to be spend on “the boring part of research”. There is no limit to make MTXQC your own perfect tool writing your own reports and extensions. Feel free and hoepfully motivated to share your report as a template with your colleagues.</p>
 
 </div>
 </div>
@@ -431,10 +482,10 @@
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>Just zip-file the project-folder and send it via mail.<a href="3-maui.html#fnref1">↩</a></p></li>
-<li id="fn2"><p>Also called backups<a href="3-maui.html#fnref2">↩</a></p></li>
-<li id="fn3"><p>Explained in detail in chapter <a href="9-part3.html#part3">9</a> and section <a href="#howmanval"><strong>??</strong></a><a href="3-maui.html#fnref3">↩</a></p></li>
-<li id="fn4"><p>Quality metrices are a different pair of shoe here and are not data per se<a href="3-maui.html#fnref4">↩</a></p></li>
+<li id="fn1"><p>github.com/ChrisZasada/fluffy_adventure<a href="3-maui.html#fnref1">↩</a></p></li>
+<li id="fn2"><p>Just zip-file the project-folder and send it via mail.<a href="3-maui.html#fnref2">↩</a></p></li>
+<li id="fn3"><p>Also called backups<a href="3-maui.html#fnref3">↩</a></p></li>
+<li id="fn4"><p>Quality metrices are a different pair of shoes here and are not data per se<a href="3-maui.html#fnref4">↩</a></p></li>
 <li id="fn5"><p>Called: Date_PostProcessing_AnalysisParam_QuantitativeValue<a href="3-maui.html#fnref5">↩</a></p></li>
 <li id="fn6"><p>Same thing for the generated pdf-report so I recommend to move it into the post processing folder for future reference<a href="3-maui.html#fnref6">↩</a></p></li>
 <li id="fn7"><p>meaning, that all the internal standard has to be within a defined range of variation, files with higher variation are excluded from the analysis<a href="3-maui.html#fnref7">↩</a></p></li>
@@ -447,7 +498,7 @@
         </div>
       </div>
 <a href="2-intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="4-wf-metmax.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="4-metmax.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

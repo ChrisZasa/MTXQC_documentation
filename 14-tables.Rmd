@@ -18,9 +18,9 @@ This chapter shows the structure of all input or output csv-files that are refer
 
 
 ## MTXQC base tables
-### `config_mtx` tables
+### `config_files` tables
 
-#### conv_filenames.csv{#app:filenames}
+#### conv_filenames.csv{#filenames}
 ```{r cm01, echo=FALSE}
 c1 = appendix_print("example/config_files/conv_filenames.csv")
 c1 %>%
@@ -29,16 +29,9 @@ c1 %>%
                  latex_options = "striped", 
                  full_width = TRUE)
 
-# c01 = appendix_print("example/tables/config_conse.csv")
-# c01 %>%
-#    kable(escape = TRUE, booktabs = TRUE ) %>%
-#    kable_styling(c("striped", "condensed"), 
-#                  latex_options = "striped", 
-#                  full_width = TRUE)
-
 ```
 
-#### conv_filesnames_manVal.csv{#app:filenamesManVal}
+#### conv_filesnames_manVal.csv{#filenamesManVal}
 ```{r cm02, echo=FALSE}
 c2 = appendix_print("example/config_files/conv_filenames_manVal.csv", 5)
 c2 %>%
@@ -48,21 +41,8 @@ c2 %>%
                  full_width = TRUE)
 ```
 
-#### DEPRICATED FILE: MQ_correction.csv
 
-Not in use anymore since fluffy adventure!
-
-```{r cm03, echo=FALSE}
-c3 = appendix_print("example/config_files/MQ_correction.csv")
-c3 %>%
-   kable(escape = TRUE, booktabs = TRUE ) %>%
-   kable_styling(c("striped", "condensed"), 
-                 latex_options = "striped", 
-                 full_width = TRUE)
-```
-
-
-### `config_files` tables
+### `config_mtx` tables
 
 These tables are supposed to be modified in relation to the individual needs of a project.
 
@@ -160,7 +140,6 @@ t %>%
                  latex_options = "striped", 
                  full_width = TRUE)
 ```
-
 
 ##### `IntStandard_normfactors.csv` \& `IntStandard_stats.csv`
 
@@ -336,8 +315,12 @@ t %>%
 ```
 
 
-
 #### MTXQCvX2 part3
 
 
 #### MTXQCvX2 part4
+
+## Files for Maui-processing
+
+
+## Files for Metmax-processing

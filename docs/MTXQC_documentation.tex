@@ -31,6 +31,46 @@
 \urlstyle{same}  % don't use monospace font for urls
 \usepackage{natbib}
 \bibliographystyle{apalike}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
 \usepackage{longtable,booktabs}
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -183,17 +223,17 @@ extracting required information and creating corresponding files
 
 MTXQCvX2 contains a suite of modules is optimized to process GC-MS
 derived data and processed either in Maui or Chromatof/Metmax. Workflows
-for both approaches are introduced with step-by-step instructions in
-chapter @\ref(maui) and @\ref(metmax).
+for both approaches are introduced with step-by-step tutorials in
+chapter \ref{maui} and \ref{metmax}.
 
-Subsequently each MTXQCvX2 module (chapter \ref{ExpSetup} -
-\ref{Metmax}) is introduced in greater detail including a input / output
-files and processing parameter.
+Subsequently each MTXQCvX2 module is introduced in greater detail
+including the list of processing parameter (chapter \ref{ExpSetup} -
+\ref{Metmax}).
 
 The configuration of MTXQCvX2 has been split into two categories - (1) a
 general configuration \texttt{config\_files} and (2) metabolomics
 specific parameters \texttt{config\_mtx}. Latter one is meant to provide
-flexibility including further substances. How to do so and what files
+flexibility to adapt MTXQCvX2 to your needs. How to do so and what files
 can be customizes is shown in chapter \ref{config}.
 
 Workflow-specific processing methods applied in Chromatof are introduced
@@ -233,7 +273,8 @@ introduce inst/template folder
 
 If you are familiar with github and the create an issue - please head on
 to the gihub repository (github.com/ChrisZasa/MTXQC\_documentation) of
-this documentation and create one or write me a message.
+this documentation and create one or write me a message
+(christin.zasada{[}at{]}mdc-berlin.de).
 
 \chapter{Tutorial: MTXQCvX2 for Maui-projects}\label{maui}
 
@@ -244,7 +285,8 @@ this documentation and create one or write me a message.
 \item
   You have successfully finished the annotation using Maui-SILVIA
 \item
-  Exported all required MAUI container (see section \ref{mauiexport})
+  You have exported all required MAUI container (see section
+  \ref{mauiexport})
 \item
   You have a list of your GC-MS sequence and related experimental
   conditions
@@ -286,15 +328,6 @@ this documentation and create one or write me a message.
 \section{\texorpdfstring{Dataset of the tutorial -
 \texttt{tutorial\_single\_maui}}{Dataset of the tutorial - tutorial\_single\_maui}}\label{dataset-of-the-tutorial---tutorial_single_maui}
 
-Copy the dataset \texttt{tutorial\_single\_maui} somewhere local on your
-computer or laptop. The dataset represents the data of the first psirm
-metabolomics experiment in the Kempa Lab. HEK293 cells have been
-cultivated at 21\% oxygen and a range of glucose levels (0.3 - 4.5 g/L
-Glc) and constant glutamine concentration (4 mM) following standard cell
-culture procedures. During the cell harvest cells have been labeled for
-two minutes with uniformly labeled 13C-glucose, three replicates per
-condition.
-
 \section{In detail}\label{indetail-maui}
 
 \subsection{Create a R-project}\label{create-a-r-project}
@@ -322,20 +355,20 @@ files}\label{copy-mtxqcvx2-template-files}
 \begin{itemize}
 \tightlist
 \item
-  Download the current version of MTXQCvX2 called fluffy adventure
-  \href{github.com/ChrisZasada/fluffy_adventure}{here}
+  Download the current version of MTXQCvX2 called fluffy
+  adventure\footnote{github.com/ChrisZasada/fluffy\_adventure}
 \item
-  Open and extract the zip-file
+  Open and extract the zip-folder
 \item
-  Copy all folders and files into your newly created R-project
+  Copy all folders and files into your R-project
   'tutorial\_single\_maui`
 \end{itemize}
 
 \subsection{\texorpdfstring{Process
 \texttt{MTXQC\_init.Rmd}}{Process MTXQC\_init.Rmd}}\label{process-mtxqc_init.rmd}
 
-The module \texttt{MTXQC\_init.Rmd} provides you two important things:
-(1) Check-up package installation (2) Creation of project-folder
+The module \texttt{MTXQC\_init.Rmd} performs two important steps: 1.
+Check-up package installation 2. Creation of project-folder
 
 The project folder is supposed to provide a tidy structure while data
 processing and analysis and contains several pre-defined folder. Besides
@@ -351,7 +384,8 @@ MTXQCvX2:
 \begin{itemize}
 \tightlist
 \item
-  Click on the small black triangle next to the ball of yarn
+  Click on the small black triangle next to the ball of yarn in the
+  R-Studio toolbar
 \item
   Choose \texttt{Knit\ with\ Parameters...}
 \end{itemize}
@@ -364,11 +398,12 @@ project-folder, e.g., \texttt{psirm\_glucose}.
 \begin{itemize}
 \tightlist
 \item
-  Define the name of the project-folder: \texttt{psirm\_glucose}
+  \textbf{Define the name of the project-folder:} psirm\_glucose
 \end{itemize}
 
-Check in the files tab of R-Studio if you see the new folder and browse
-through it.
+Check in the files tab of R-Studio, browse through it and get familiar
+with the structure. This is the home of your metabolomics projects data
+analysis.
 
 \subsection{Prepare and copy input
 files}\label{prepare-and-copy-input-files}
@@ -381,7 +416,8 @@ incorporation.
 Please follow the detailed instructions in section \ref{mauiexport} if
 you need further information how to perform the export in Maui. For the
 purpose of the tutorial the exported files are already processed and
-copied into the corresponding subfolders of the \texttt{input}-folder.
+provided in tutorial dataset \texttt{input}-folder. Select each file and
+copy it to the correct location inside your R-project.
 
 \subsection{\texorpdfstring{Copy files: \texttt{annotation.csv} and
 \texttt{Sample\_extracts.csv}}{Copy files: annotation.csv and Sample\_extracts.csv}}\label{copy-files-annotation.csv-and-sample_extracts.csv}
@@ -393,18 +429,36 @@ create them on your own and save them in \texttt{project-folder/input/}.
 Browse to both files in the tutorial dataset, have a look at the content
 and copy both files into \texttt{psirm\_glucose/input}.
 
+\textbf{The annotation file}
+
 The herein shown \emph{annotation file} contains information about the
 eperimental conditions of each sample and measurement file. The columns
-\textbf{File} and \textbf{Type} are mandatory, additional columns
-defining further parameter, like cell line or glucose level, are totally
-customizable to your needs.
+\textbf{File} and \textbf{Type} are mandatory and the minimum content of
+an annotation file. Additional columns defining further conditions, like
+cell line or glucose level, are totally customizable to your
+preferences.
+
+Though, I suggest to set up a maximum of four parameter. If your project
+requires more try to create combinations. Later on this helps to
+visualise your data using MTXQC\_part2. The number of parameters is
+limited by the availabily of diagram axes, facets and paper size.
+Subsequently written individual reports are independent of this and
+conditions could be split and extended without any limitations.
+
+\textbf{The sample extrats file}
 
 The \emph{sample extracts} file specify the nature and volume / weight
 of the sample extracts. The columns \textbf{Extract\_vol} and
-\textbf{Unit} are mandatory here. This file here shows cell extracts
-defined with the unit \emph{count} for specific conditions. Please be
-aware that names of experimental conditions have to match between
-annotation and sample extracts file.
+\textbf{Unit} (count, mg or ul) are mandatory here.
+
+The minimal file contains these two columns with at least one row /
+entry, e.g. \(1.5e+6\) \& count. This would result into the association
+of \(1.5e+6\) cells to each file.
+
+This file here in this tutorial shows cell extracts defined with the
+unit \emph{count} for specific conditions. Please be aware that names of
+experimental conditions have to match between annotation and sample
+extracts file.
 
 Nevertheless it is not necessarily required to define for each
 combination of conditions a cell count. Please refer FAQs section
@@ -414,10 +468,12 @@ information how to create and set up both files from the scretch.
 \subsection{Define an internal standard - cinnamic
 acid}\label{define-an-internal-standard---cinnamic-acid}
 
-We have to define the internal extraction standard for each experiment
-in the file \texttt{config\_mtx/conversion\_metabolite.csv}. Classical
-pSIRM experiments like the one we are using for this tutorial used
-cinnamic acid for tracking variations in experimental sample handling.
+The tutorials dataset contains data derived from a classical pSIRM
+experiment. This includes that the experimentalist supplemented the
+extraction solvent with an internal extraction standard - cinnamic acid.
+All that we have to do is to check if this compound has been defined as
+\texttt{InternalStandard} in the file
+\texttt{config\_mtx/conversion\_metabolite.csv}.
 
 To do so:
 
@@ -433,6 +489,9 @@ To do so:
 \item
   Save the file and close it
 \end{itemize}
+
+Read the section \ref{defineinternal} how to proceed in case you want to
+define a different compound as internal standard.
 
 \subsection{\texorpdfstring{Process
 \texttt{MTXQC\_ExperimentalSetup.csv}}{Process MTXQC\_ExperimentalSetup.csv}}\label{process-mtxqc_experimentalsetup.csv}
@@ -453,61 +512,60 @@ Define the following parameter:
 \begin{itemize}
 \tightlist
 \item
-  Define project-folder: psirm\_glucose
+  \textbf{Define project-folder:} psirm\_glucose
 \item
-  Define input-format: maui
+  \textbf{Define input-format:} maui
 \item
-  Name of annotation file: annotation.csv
+  **Name of annotation \url{file:**} annotation.csv
 \item
-  Name of sample extracts file: sample\_extracts.csv
+  **Name of sample extracts \url{file:**} sample\_extracts.csv
 \item
-  Type of experiment: pSIRM
+  \textbf{Type of experiment:} pSIRM
 \item
-  Applied 13C-substrates: glc
+  \textbf{Applied 13C-substrates:} glc
 \item
-  Internal standard: check
+  \textbf{Internal standard:} check
 \item
-  Type of samples: cell extracts
+  \textbf{Type of samples:} cell extracts
 \item
-  Additional calibration curves: no
+  \textbf{Additional calibration curves:} no
 \item
-  Integrate add. calibration curves: no
+  \textbf{Integrate add. calibration curves:} no
 \item
-  Quantification standards: Quant1\_v3
+  \textbf{Quantification standards:} Quant1\_v3
 \item
-  Volume polar phase of Quants: 500
+  \textbf{Volume polar phase of Quants:} 500
 \item
-  Technical replicates\footnote{Also called backups}: no
+  \textbf{Technical replicates:}\footnote{Also called backups} no
 \end{itemize}
 
 Confirm the parameter and file definition and wait a moment. Check if
-you can find the file \texttt{MTXQC\_params.csv}and also
+you can find the file \texttt{MTXQC\_params.csv} and also
 \texttt{Maui\_params.csv}. Latter one is automatically generated by
 selecting maui project as input format. \texttt{Maui\_params.csv}
 contains the information of the pre-defined file names containing all
 required input data.
 
 Have a look at the produced pdf-file and check the comments and
-messages. Throughout MTXQCvX2 messages inform about (1) successfull data
-imports, (2) fatal errors causing an automatic stop of data processing
-and (3) warning pointing towards things that should be checked before
-moving to the next step.
+messages. Throughout MTXQCvX2 messages inform about: * Successfull data
+imports * Fatal errors causing an automatic stop of data processing and
+* Warnings pointing towards things that should be checked before moving
+to the next step.
 
 \subsection{\texorpdfstring{Process
 \texttt{MTXQC\_part1.Rmd}}{Process MTXQC\_part1.Rmd}}\label{process-mtxqc_part1.rmd}
 
-Since we have defined all required input parameter the main document is
+Since we have defined all required input parameter the main module is
 ready to run after the definition of only three parameter:
 
 \begin{itemize}
 \tightlist
 \item
-  Definition of the project-folder: psirm\_glucose
+  \textbf{Definition of the project-folder:} psirm\_glucose
 \item
-  Type of data: maui
+  **Type of \url{data:**} maui
 \item
-  Manual validated data\footnote{Explained in detail in chapter
-    \ref{part3} and section \ref{howmanval}}
+  **Manual validated \url{data:**} none
 \end{itemize}
 
 Also here, scroll carefully through the generated pdf-file and have a
@@ -524,9 +582,10 @@ into two heatmaps:
 \begin{itemize}
 \tightlist
 \item
-  GC-performance: orange, across all measurements
+  GC-performance (orange): across all measurements
 \item
-  Quantification \& isotope incorporation: blue, for each intermediate
+  Quantification \& isotope incorporation (blue): for each intermediate
+  individually, but across all exp. conditions
 \end{itemize}
 
 Besides the generation of the MTXQC\_part1 report several
@@ -543,18 +602,22 @@ It is worth to open this file in a program of your choice and check for
 a selected intermediate the content. Wrong assignments of conditions in
 the annotation or sample extracts-file might cause duplication of
 values, easily to identify if exactly the same peak areas, so the same
-file, appears multiple times in this file.
+file, appears multiple times.
 
 \texttt{CalculationFileData.csv} is all about the absolute quantities
 and data normalisation. Why does it not contain information about
 isotope incorporation you might ask. Well, depending on the experimental
 setup you might follow different ways how to combine both entities.
 Furthermore \texttt{MTXQC\_part1} is not about doing any processing of
-the data in the sense of analysis or statistics.\footnote{Quality
-  metrices are a different pair of shoe here and are not data per se}
+the data in the sense of analysis or statistics\footnote{Quality
+  metrices are a different pair of shoes here and are not data per se}.
+It is supposed to assess the quality meaning the evaluation of the mass
+isotopomer distributions (MIDs) that are the basis for the calculation
+of the isotope incorporation.
 
 The next module has been set up to give you a first quick report about
-the content of your data performing basic post processing steps.
+the content of your data performing basic post processing steps
+inclduing the statistics part.
 
 \subsection{\texorpdfstring{Process
 \texttt{MTXQC\_part2.Rmd}}{Process MTXQC\_part2.Rmd}}\label{process-mtxqc_part2.rmd}
@@ -584,27 +647,29 @@ Go and process this module with the following parameter:
 \begin{itemize}
 \tightlist
 \item
-  Project-folder: psirm\_glucose
+  \textbf{Project-folder:} psirm\_glucose
 \item
-  Tpye of analysis: stringent
+  \textbf{Type of analysis:} stringent
 \item
-  Internal standard: QC\footnote{meaning, that all the internal standard
-    has to be within a defined range of variation, files with higher
-    variation are excluded from the analysis}
+  \textbf{Internal standard:} QC\footnote{meaning, that all the internal
+    standard has to be within a defined range of variation, files with
+    higher variation are excluded from the analysis}
 \item
-  Quantitative value: InstStd\_Conc\_pmio\footnote{Translated:
+  \textbf{Quantitative value:} InstStd\_Conc\_pmio\footnote{Translated:
     Normalised (regarding the internal standard) quantities in
     (pmol/1e+6 cells)}
 \item
-  par1: time
+  \textbf{par1:} time
 \item
-  par2: substrate
+  \textbf{par2:} substrate
 \item
-  par3: whatelse
+  \textbf{par3:} whatelse
 \item
-  updated: none
+  \textbf{par4:} none
 \item
-  pre-defined color scheme: choose yourself
+  \textbf{updated:} none
+\item
+  \textbf{pre-defined color scheme:} choose yourself
 \end{itemize}
 
 Feel free to add further plots at the end of this report if required or
@@ -621,14 +686,14 @@ validation of distinct intermediates might be useful.
 
 \section{At the end\ldots{}}\label{at-the-end}
 
-So far you have used MTXQCvX2 to generate two reports: (1) one
-summarising the quality of the generated data and (2) a first
-statistical overview about the content of your data. With this the
-tutorial ends and refers to the plenty of detailed information scattered
-in a number of additional chapters of this documentation.
+So far you have used MTXQCvX2 to generate two reports: 1. one
+summarising the quality of the generated data and 2. a first statistical
+overview about the content of your data.
 
-The FAQ section tries to guide you through more specific settings and
-introduces you to the flexibility of MTXQCvX2.
+With this the tutorial ends and refers to the plenty of detailed
+information scattered in a number of additional chapters of this
+documentation. The FAQ section tries to guide you through more specific
+settings and introduces you to the flexibility of MTXQCvX2.
 
 Since every metabolomics experiment has it's own purpose and reasoning I
 want to point out, that MTXQCvX2 does not want to provide a magical tool
@@ -636,95 +701,143 @@ giving the perfect solution for everyone. It rather tries to provide a
 common platform for discussions, information exchange and inspiration by
 reducing the time that has to be spend on ``the boring part of
 research''. There is no limit to make MTXQC your own perfect tool
-writing your own reports and extensions.
+writing your own reports and extensions. Feel free and hoepfully
+motivated to share your report as a template with your colleagues.
 
-\chapter{Workflow for Metmax-extracted projects}\label{wf:metmax}
+\chapter{Tutorial: MTXQCvX2 for for Metmax-extracted
+projects}\label{metmax}
 
-\section{You want to follow this
-\ldots{}}\label{you-want-to-follow-this}
+\section{Prerequisites}\label{prerequisites-1}
 
 \begin{itemize}
 \tightlist
 \item
-  in case you have measured samples and quantification standards by
-  GC-MS
+  You have processed and annotated your intermediates in ChromaToF
 \item
-  performed the annotation of intermediates in ChromaToF or vendor
-  software
+  You have defined the correct quantification masses in the reference
+  search
 \item
-  exported all information into \texttt{.txt} files
+  You have exported the data in \texttt{.txt} files
 \item
-  used metmax to extract peak areas / mass isotopomer distributions
-  (MIDs)
+  You have used metmax\footnote{\url{http://gmd.mpimp-golm.mpg.de/apps/metmax/default.htm}}
+  to extract the data (see chapter \ref{metmaxproc})
 \end{itemize}
 
-\section{Introduction}\label{introduction}
-
-This document describes how to use MTXQCvX2 in combination with
-metmax\footnote{\url{http://gmd.mpimp-golm.mpg.de/apps/metmax/default.htm}}.
-
-Historically, MTXQCvX2 has been developed and optimized for Maui-derived
-input files. The \texttt{MTXQCvX2-part4.Rmd} functions as a converter of
-metmax-derived files in order to create suitable input formats for
-\texttt{MTXQCvX-part1.Rmd}.
-
-This module could also be used to convert tables derived from other
-programs as long as they are stick with the herein described table
-formats. Mandatory columns are referenced in the text for each kind of
-input file.
-
-The general workflow of the NMTXQCvX2 project is briefly shown below in
-quick view. More detailed instructions are summarised in the following
-paragraphs.
-
-For more detailed explanations about the individual input parameter for
-each module of MTXQCvX2 please proceed to read the documentation about
-the individual modules and their knitting parameter. The relation of
-knitting parameter, input and output files are described in each
-section.
-
-\section{Quick view}\label{quick-view}
+\section{In a nutshell}\label{in-a-nutshell}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Generate input files: run \texttt{MTXQC\_part4.Rmd}\footnote{read here
-    the instructions}
+  Setup a new R-project
 \item
-  Setup R-project and copy MTXQC-files
+  Copy MTXQCvX2 files
 \item
-  Knit with parameter: \texttt{MTXQC\_init.Rmd}
+  \emph{Knit with parameter:} \texttt{MTXQC\_part4.Rmd}
+\item
+  \emph{Knit with parameter:} \texttt{MTXQC\_init.Rmd}
 \item
   Copy input files into corresponding folders
 \item
-  Create annotation.csv and sample\_extracts.csv files\footnote{Details
-    further down this document}
+  Create annotation.csv and sample\_extracts.csv files (see section
+  @ref() \& @ref())
 \item
-  Update metabolite names in
-  \texttt{conversion\_metabolite.csv}\footnote{Column:
-    Metabolite\_manual}
+  Modify metabolite names in \texttt{conversion\_metabolite.csv} column
+  \textbf{Metabolite\_manual}
 \item
-  Define the internal standard and/or alkanes\footnote{Also in
-    conversion\_metabolite.csv; see below paragraph Standards}
+  Define the internal standard and/or alkanes in
+  conversion\_metabolite.csv (see section \ref{definternal} \&
+  \ref(defalkanes))
 \item
-  Knit with parameter: \texttt{MTXQC\_ExperimentalSetup.Rmd}
+  \emph{Knit with parameter:} \texttt{MTXQC\_ExperimentalSetup.Rmd}
 \item
-  Knit with parameter: \texttt{MTXQC\_part1.Rmd}
+  \emph{Knit with parameter:} \texttt{MTXQC\_part1.Rmd}
 \item
-  Knit with parameter: \texttt{MTXQC\_part2.Rmd}
+  \emph{Knit with parameter:} \texttt{MTXQC\_part2.Rmd}
 \item
   If required - proceed with \texttt{MTXQC\_part3.Rmd} for
   ManualValidation
 \end{enumerate}
 
-\section{Input files}\label{input-files}
+\section{Tutorial dataset}\label{tutorial-dataset}
 
-If you need an introduction about how to use metmax - have a look at the
-separate documentation \texttt{Metmax\_intro}.
+\section{In detail}\label{in-detail}
 
-The chapter \ref{part4} \texttt{MTXQCvX\_part4} explains in detail how
-to use this module to generate suitable input files.
+R-projects provide a secure environment to handle your data from the
+processing in MTXQCvX2 until the final reports and analysis. Think about
+it as a big bubble containing and carrying all your data and analysis
+savely from one place to the other undisturbed of the outside changes.
+
+\begin{itemize}
+\tightlist
+\item
+  Open R-studio and create a new project following:
+  \texttt{File\ -\textgreater{}\ New\ project\ -\textgreater{}\ New\ Project\ -\textgreater{}\ New\ Directory}
+\item
+  Call the directory \texttt{tutorial\_metmax} and the preferred
+  subdirectory.
+\item
+  I recommend to start each project in a new session (tick the box at
+  the bottom of the dialogue box).
+\end{itemize}
+
+\subsection{Copy MTXQCvX2 template
+files}\label{copy-mtxqcvx2-template-files-1}
+
+\begin{itemize}
+\tightlist
+\item
+  Download the current version of MTXQCvX2 called fluffy
+  adventure\footnote{github.com/ChrisZasada/fluffy\_adventure}
+\item
+  Open and extract the zip-folder
+\item
+  Copy all folders and files into your R-project
+  \texttt{tutorial\_metmax}
+\end{itemize}
+
+\subsection{\texorpdfstring{Process
+\texttt{MTXQC\_init.Rmd}}{Process MTXQC\_init.Rmd}}\label{process-mtxqc_init.rmd-1}
+
+The module \texttt{MTXQC\_init.Rmd} performs two important steps: 1.
+Check-up package installation 2. Creation of project-folder
+
+The project folder is supposed to provide a tidy structure while data
+processing and analysis and contains several pre-defined folder. Besides
+the following folders: \texttt{input}, \texttt{output} and `figures´ you
+see a detailed subfolder structure. You find more details about each
+folder and additional suggestion how to use project-folder in chapter
+\ref{init}.
+
+All you need to do is to process the \texttt{MTXQC\_init.Rmd}. The
+following procedure is how you process all \texttt{.Rmd}-files of
+MTXQCvX2:
+
+\begin{itemize}
+\tightlist
+\item
+  Click on the small black triangle next to the ball of yarn in the
+  R-Studio toolbar
+\item
+  Choose \texttt{Knit\ with\ Parameters...}
+\end{itemize}
+
+If the \texttt{.Rmd}-file contains defined parameters a shiny dialogue
+pops up and provides an interactive selection based on the document. In
+the case of \texttt{MTXQC\_init.Rmd} you are asked to define a so-called
+project-folder.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Define the name of the project-folder:} qtx\_london
+\end{itemize}
+
+Check in the files tab of R-Studio, browse through it and get familiar
+with the structure. This is the home of your metabolomics projects data
+analysis.
+
+\subsection{Process MTXQC\_part4}\label{process-mtxqc_part4}
 
 \section{Annotation-file}\label{annotation-file}
 
@@ -891,7 +1004,7 @@ List of parameter:
 \begin{itemize}
 \tightlist
 \item
-  **Define project-folder:* psirm\_glucose (text)
+  \textbf{Define project-folder:} psirm\_glucose (text)
 \item
   \textbf{Define input-format:} maui, metmax
 \item
@@ -936,6 +1049,8 @@ List of parameter:
 \item
   **Manual validated \url{data:**} none, PeakArea, Incorporation, both
 \end{itemize}
+
+\section{Text}\label{text-1}
 
 \chapter{MTXQCvX\_part2.Rmd}\label{part2}
 
@@ -1027,196 +1142,160 @@ parameter}\label{in-more-detail---processing-parameter}
 
 \chapter{MTXQCvX\_part3.Rmd}\label{part3}
 
-\chapter{MTXQCvX\_part4.Rmd - Metmax parser}\label{Metmax}
+\section{Knit with parameter}\label{knit-with-parameter-4}
 
-\section{This section explains \ldots{}}\label{this-section-explains}
+List of parameter:
 
 \begin{itemize}
 \tightlist
 \item
-  what MTXQCvX\_part4.Rmd does
+  \textbf{Project folder:} (text)
 \item
-  how do input files need to look like
+  \textbf{Output folder for MTXQC\_part3:} (text)
 \item
-  which files are generated
+  \textbf{Prepare data for man. validation:} none, PeakArea,
+  Incorporation
 \item
-  what the distinct checkboxes mean
+  \textbf{Evaluate data from man. validation:} none, PeakArea,
+  Incorporation
+\item
+  \textbf{Input format:} maui, metmax
 \end{itemize}
 
-This module provides the generation of suitable input files for MTXQCvX2
-based on spreadsheet exported information by tools like metmax.
+\section{Text}\label{text-2}
 
-\section{Input files}\label{input-files-1}
+\chapter{MTXQCvX\_part4.Rmd - Metmax parser}\label{Metmax}
 
-\subsection{Quantification -
-PeakAreas.csv}\label{quantification---peakareas.csv}
+\section{Knit with parameter}\label{knit-with-parameter-5}
 
-In order to perform absolute quantification of
+List of parameter:
 
-You need a file containing all extracted peak areas for each metabolite
-and file\footnote{Tools/Options/Retention analysis, Parameter: Area}.
-The header of metmax-extracted files looks like shown below (see table
-1). Please, remember to delete the second header row, representing the
-column loads for each file before saving as csv-file. Otherwise you end
-up with weird imported dataframes in R. Quantification masses have to be
-updated while processing in ChromaToF prior the export of the data e.g.,
-with a reference search\footnote{See \texttt{vignette/ReferenceSearch}}
-or using statistical compare. pSIRM experiments require the definition
-of pTop5 masses\footnote{Extended list of quant masses considering
-  isotope incorporation} instead of top5 masses in the reference in
-order to take into account the shift of intensities induced by the
-application of stable isotopes\footnote{Mandatory columns: name, mass,
-  files}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Project folder:} (text)
+\end{itemize}
 
-\begin{tabular}{l|r|r|r|r|r|r}
-\hline
-name & mass & ri & row.load & file\_1 & file\_2 & file\_x\\
-\hline
-Lac & 219 & 1051 & 0.76 & 15423 & 135444 & 465486\\
-\hline
-Pyr & 174 & 1042 & 0.65 & 56978 & 46888 & 4354544\\
-\hline
-Cit & 273 & 1805 & 0.99 & 1326 & 23321 & 132121\\
-\hline
-\end{tabular}
+\section{Text}\label{text-3}
 
-MTXQCvX\_part4 takes care of the formatting and correct column names of
-the peak areas file and saves it\footnote{\texttt{input/quant/quantMassAreasMatrix.csv}}.
-MTXQCvX\_part4 generates also the file
-PeakDensities-Chroma.csv\footnote{\texttt{input/gc/PeakDensities-Chroma.csv}},
-in case you have selected the option to include sum of area
-normalisation while knitting this module.
-
-\subsection[Isotope incorporation - MIDs.csv]{\texorpdfstring{Isotope
-incorporation - MIDs.csv\footnote{Required for
-  \texttt{calculation\ isotope\ incorporation}}}{Isotope incorporation - MIDs.csv}}\label{isotope-incorporation---mids.csv}
-
-In order to determine the incorporation of stable isotopes MTXQCvX2
-requires as an input the mass isotopomer distributions (MIDs) for each
-intermediate and measurement\footnote{Tools/Options/Isotope
-  concentrator; Parameter: IntensityOfMass}. Fragments for each
-intermediate have to be pre-defined in metmax at
-Tools/Options/metabolite masses. They can be imported\footnote{\texttt{inst/template\_files/MetMax\_MIDs.txt}}
-or manually specified each by each. An example of the metmax output is
-shown in table 2. The output has to be saved as csv-file, including the
-deletion of the partial row \texttt{column.load}, respectively\footnote{Mandatory
-  columns: name, mass, files}.
-
-\begin{tabular}{l|r|r|r|r|r|r}
-\hline
-name & mass & ri & row.load & file\_1 & file\_2 & file\_x\\
-\hline
-Lac & 219 & 1051 & 0.85 & 31026 & 5165829 & 5829\\
-\hline
-Lac & 220 & 1051 & 0.85 & 3607 & 662277 & 277\\
-\hline
-Lac & 221 & 1051 & 0.85 & 1222 & 111481 & 81\\
-\hline
-Lac & 222 & 1051 & 0.85 & 188 & 1003494 & 10023\\
-\hline
-Lac & 223 & 1051 & 0.85 & 0 & 33542 & 342\\
-\hline
-\end{tabular}
-
-MTXQCvX\_part4 calculates the stable isotope incorporation and exports
-DataMatrix.csv as well as pSIRM\_SpectraData.csv\footnote{\texttt{input/inc/DataMatrix}
-  \& \texttt{pSIRM\_SpectraData.csv}}. The mathematics behind are
-outlined in \citep{Pietzke2014}
-
-\textbf{Important}: Extracted MIDs have to match with defined mass
-couples for each metabolite in MTXQCvX2\footnote{\texttt{config\_mtx/incorpo\_calc\_masses.csv}}.
-Please refer for more details to \texttt{vignettes/config\_mtx-files}.
-
-\subsection[Derivatisation efficiency -
-mz73.csv]{\texorpdfstring{Derivatisation efficiency - mz73.csv\footnote{Required
-  for: \texttt{sum\ of\ area\ normalisation}}}{Derivatisation efficiency - mz73.csv}}\label{derivatisation-efficiency---mz73.csv}
-
-The extraction of intensities for the ion \(m/z\) 73 works analogous to
-the extraction of MIDs\footnote{Tools/Options/Isotope concentrator;
-  Parameter: IntensityOfMass}. Mass ranges have to be defined for each
-intermediate for the mass 73 by defining starting and end mass with 73.
-MTXQCvX\_part4 generates the file MassSum-73.csv\footnote{\texttt{input/gc/MassSum-73.csv}}.
-Check \texttt{inst\textbackslash{}template\_files\textbackslash{}} for
-reference. Hopefully soon a new metmax button extracting specific
-intensities across the batch.
-
-\chapter{\texorpdfstring{Configuration of MTXQCvX2 -
-\texttt{config\_mtx/...}}{Configuration of MTXQCvX2 - config\_mtx/...}}\label{configuration-of-mtxqcvx2---config_mtx...}
+\chapter{Customization of MTXQCvX2}\label{config}
 
 Herein explained are the customizable tables of the MTXQCvX2 universe.
 
 \section{\texorpdfstring{\texttt{conversion\_metabolite.csv}}{conversion\_metabolite.csv}}\label{conversion_metabolite.csv}
 
-\begin{tabular}{lll}
+\begin{verbatim}
+## 'data.frame':    10 obs. of  3 variables:
+##  $ Column.name: Factor w/ 10 levels "Lettercode","Mass_Pos",..: 4 3 5 1 8 2 9 7 6 10
+##  $ Description: Factor w/ 10 levels "Checked if quant1:1 value available",..: 9 7 10 6 1 8 4 3 5 2
+##  $ Value      : Factor w/ 8 levels "","#Alanine (2TMS)",..: 2 6 5 4 8 3 8 8 1 7
+\end{verbatim}
+
+\rowcolors{2}{gray!6}{white}
+
+\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X}
+\hiderowcolors
 \toprule
 Column.name & Description & Value\\
 \midrule
+\showrowcolors
 Metabolite\_manual & Manual defined metabolite name & \#Alanine (2TMS)\\
-Metabolite & Library name of the metabolite & Alanine\_(2TMS)\_BP\_RI:1097\_IDENT:B+C\\
-Metabolite\_short & Short version of library name of the metabolite & Alanine\_(2TMS)\\
-Lettercode & Lettercode version of metabolite name & Ala\_2TMS\\
-Q1\_value & Checked if quant1:1 value available & x\\
-\addlinespace
-Mass\_Pos & m/z-value corresponding to m\_inc & 118\\
-SE\_sel & Evaluation of the MIDs & x\\
-Q\_sel & Evaluation for absolute quantification & x\\
-nopsirm & Exclusively for absolute quantification & \\
-Standards & Defined as standard & InternalStandard, Alk\\
 \bottomrule
-\end{tabular}
+\end{tabu}
+
+\rowcolors{2}{white}{white}
 
 \section{\texorpdfstring{\texttt{letter\_pathway\_complete.csv}}{letter\_pathway\_complete.csv}}\label{letter_pathway_complete.csv}
 
-\begin{tabular}{lll}
+\begin{verbatim}
+## 'data.frame':    7 obs. of  3 variables:
+##  $ Column.name: Factor w/ 7 levels "Letter_Derivate",..: 1 2 5 6 4 7 3
+##  $ Description: Factor w/ 7 levels "Ass. pathway - ordered for heatmap",..: 4 5 3 1 2 6 7
+##  $ Value      : Factor w/ 6 levels "5-aa","5-aa_Ala_3TMS",..: 5 6 3 1 2 3 4
+\end{verbatim}
+
+\rowcolors{2}{gray!6}{white}
+
+\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X}
+\hiderowcolors
 \toprule
 Column.name & Description & Value\\
 \midrule
+\showrowcolors
 Letter\_Derivate & Derivate definition & Ala\\
-Lettercode & Lettercode name of metabolite & Ala\_3TMS\\
-Pathway & Ass.pathway & aa\\
-Pathway.1 & Ass. pathway - ordered for heatmap & 5-aa\\
-Met\_pathway & Ass. pathway - ordered for heatmap incl. Lettercode & 5-aa\_Ala\_3TMS\\
-\addlinespace
-Subs\_class & Substance class & aa\\
-Met\_class & Substance class incl. Lettercode & aa\_Ala\_3TMS\\
 \bottomrule
-\end{tabular}
+\end{tabu}
+
+\rowcolors{2}{white}{white}
 
 \section{\texorpdfstring{\texttt{quant1-values.csv}}{quant1-values.csv}}\label{quant1-values.csv}
 
-\begin{tabular}{lll}
+\begin{verbatim}
+## 'data.frame':    3 obs. of  3 variables:
+##  $ Column.name: Factor w/ 3 levels "Letter_Derivate",..: 1 3 2
+##  $ Description: Factor w/ 2 levels "Derivate name of metabolite",..: 1 2 2
+##  $ Value      : Factor w/ 2 levels "3PGA","43480": 1 2 2
+\end{verbatim}
+
+\rowcolors{2}{gray!6}{white}
+
+\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X}
+\hiderowcolors
 \toprule
 Column.name & Description & Value\\
 \midrule
+\showrowcolors
 Letter\_Derivate & Derivate name of metabolite & 3PGA\\
-Quant1\_v4 & Quantity in (pmol) & 43480\\
-Quant1\_v3 & Quantity in (pmol) & 43480\\
 \bottomrule
-\end{tabular}
+\end{tabu}
 
-\section{\texorpdfstring{\texttt{incorporation\_calc.csv} \&
-\texttt{mid\_backups.csv}}{incorporation\_calc.csv \& mid\_backups.csv}}\label{incorporation_calc.csv-mid_backups.csv}
+\rowcolors{2}{white}{white}
 
-\begin{tabular}{lll}
+\section{\texorpdfstring{\texttt{incorporation\_calc.csv}}{incorporation\_calc.csv}}\label{incorporation_calc.csv}
+
+\begin{verbatim}
+## 'data.frame':    3 obs. of  3 variables:
+##  $ Column.name: Factor w/ 3 levels "LI_MID","Mass_mz",..: 3 2 1
+##  $ Description: Factor w/ 3 levels "Definition of mass level",..: 2 3 1
+##  $ Value      : Factor w/ 3 levels "116, 118","Alanine_(2TMS)_BP_RI:1097_IDENT:B+C",..: 2 1 3
+\end{verbatim}
+
+\rowcolors{2}{gray!6}{white}
+
+\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X}
+\hiderowcolors
 \toprule
 Column.name & Description & Value\\
 \midrule
+\showrowcolors
 Metabolite & Library name of metabolite & Alanine\_(2TMS)\_BP\_RI:1097\_IDENT:B+C\\
-Mass\_mz & m/z-value & 116, 118\\
-LI\_MID & Definition of mass level & m0, minc\\
 \bottomrule
-\end{tabular}
+\end{tabu}
 
-\begin{tabular}{lll}
+\rowcolors{2}{white}{white}
+
+\section{\texorpdfstring{\texttt{mid\_backups.csv}}{mid\_backups.csv}}\label{mid_backups.csv}
+
+\begin{verbatim}
+## 'data.frame':    4 obs. of  3 variables:
+##  $ Column.name: Factor w/ 4 levels "BackupMID","BackupPeakArea",..: 4 3 2 1
+##  $ Description: Factor w/ 4 levels "Library name of metabolite",..: 1 2 4 3
+##  $ Value      : Factor w/ 4 levels "0.8005","188",..: 4 2 3 1
+\end{verbatim}
+
+\rowcolors{2}{gray!6}{white}
+
+\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X}
+\hiderowcolors
 \toprule
 Column.name & Description & Value\\
 \midrule
+\showrowcolors
 Metabolite & Library name of metabolite & Alanine\_ beta-\_(3TMS)\_MP\_RI:1435\_IDENT:A+D\\
-Mass.m.z. & m/z value & 188\\
-BackupPeakArea & Peak area of Backup MID & 4960\\
-BackupMID & MID value for corresponding Mass.m.z. & 0.8005\\
 \bottomrule
-\end{tabular}
+\end{tabu}
+
+\rowcolors{2}{white}{white}
 
 \chapter{Data processing - MAUI}\label{mauiproc}
 
@@ -1385,6 +1464,39 @@ corresponding export function:
   Copy both files, no renaming required
 \end{itemize}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{source}\NormalTok{(}\StringTok{"example/R/fcn_documentation.R"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(kableExtra)}
+\KeywordTok{library}\NormalTok{(dplyr)}
+\KeywordTok{library}\NormalTok{(magrittr)}
+
+\KeywordTok{options}\NormalTok{(}\DataTypeTok{kableExtra.html.bsTable =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
 \chapter{Data Processing - Metmax}\label{metmaxproc}
 
 \section{Resampling}\label{resampling-1}
@@ -1395,11 +1507,112 @@ corresponding export function:
 
 \section{Export for Metmax}\label{export-for-metmax}
 
-\section{Data extraction with Metmax}\label{data-extraction-with-metmax}
+\section{Data extraction with Metmax}\label{metmax-dataextr}
 
-\subsection{Peak areas}\label{peak-areas}
+\subsection[Quantification -
+PeakAreas.csv]{\texorpdfstring{Quantification - PeakAreas.csv\footnote{Required
+  for: all parameter, just not
+  \texttt{calculation\ stable\ isotope\ incorporation}}}{Quantification - PeakAreas.csv}}\label{quantification---peakareas.csv}
 
-\subsection{MIDs}\label{mids}
+In order to perform absolute quantification you need a file containing
+all extracted peak areas for each metabolite and file\footnote{Tools/Options/Retention
+  analysis, Parameter: Area}. The header of metmax-extracted files looks
+like shown below (see table 1). Please, remember to delete the second
+header row, representing the column loads for each file before saving as
+csv-file. Otherwise you end up with weird imported dataframes in R.
+
+Quantification masses have to be updated while processing in ChromaToF
+prior the export of the data e.g., with a reference search (see section
+\ref{refsearch}{]} or using statistical compare. pSIRM experiments
+require the definition of pTop5 masses; an extended list of quant masses
+considering isotope incorporation instead of top5 masses in the
+reference in order to take into account the shift of intensities induced
+by the application of stable isotopes\footnote{Mandatory columns: name,
+  mass, files} (see \emph{somewhere}).
+
+\rowcolors{2}{gray!6}{white}
+
+\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedleft}X>{\raggedleft}X>{\raggedleft}X>{\raggedleft}X>{\raggedleft}X>{\raggedleft}X}
+\hiderowcolors
+\toprule
+name & mass & ri & row.load & file\_1 & file\_2 & file\_x\\
+\midrule
+\showrowcolors
+Lac & 219 & 1051 & 0.76 & 15423 & 135444 & 465486\\
+Pyr & 174 & 1042 & 0.65 & 56978 & 46888 & 4354544\\
+Cit & 273 & 1805 & 0.99 & 1326 & 23321 & 132121\\
+\bottomrule
+\end{tabu}
+
+\rowcolors{2}{white}{white}
+
+MTXQC\_part4 takes care of the formatting and correct column names of
+the peak areas file and saves it in
+\texttt{input/quant/quantMassAreasMatrix.csv}. MTXQC\_part4 generates
+also the file PeakDensities-Chroma.csv and saves it in
+\texttt{input/gc/PeakDensities-Chroma.csv} in case you have selected the
+option to include sum of area normalisation while knitting this module.
+
+\subsection[Isotope incorporation - MIDs.csv]{\texorpdfstring{Isotope
+incorporation - MIDs.csv\footnote{Required for
+  \texttt{calculation\ isotope\ incorporation}}}{Isotope incorporation - MIDs.csv}}\label{isotope-incorporation---mids.csv}
+
+In order to determine the incorporation of stable isotopes MTXQCvX2
+requires as an input the mass isotopomer distributions (MIDs) for each
+intermediate and measurement\footnote{Metmax: Tools/Options/Isotope
+  concentrator; Parameter: IntensityOfMass}. Fragments for each
+intermediate have to be pre-defined in metmax in the menue
+Tools/Options/metabolite masses.
+
+You can import a prepared list (have a look at
+\texttt{inst/template\_files/MetMax\_MIDs.txt}) or specify each entry
+manually. An example of the metmax output is shown in table 2. The
+output has to be saved as csv-file, including the deletion of the
+partial row \texttt{column.load}, respectively\footnote{Mandatory
+  columns: name, mass, files}.
+
+\rowcolors{2}{gray!6}{white}
+
+\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedleft}X>{\raggedleft}X>{\raggedleft}X>{\raggedleft}X>{\raggedleft}X>{\raggedleft}X}
+\hiderowcolors
+\toprule
+name & mass & ri & row.load & file\_1 & file\_2 & file\_x\\
+\midrule
+\showrowcolors
+Lac & 219 & 1051 & 0.85 & 31026 & 5165829 & 5829\\
+Lac & 220 & 1051 & 0.85 & 3607 & 662277 & 277\\
+Lac & 221 & 1051 & 0.85 & 1222 & 111481 & 81\\
+Lac & 222 & 1051 & 0.85 & 188 & 1003494 & 10023\\
+Lac & 223 & 1051 & 0.85 & 0 & 33542 & 342\\
+\bottomrule
+\end{tabu}
+
+\rowcolors{2}{white}{white}
+
+MTXQCvX\_part4 calculates the stable isotope incorporation and exports
+DataMatrix.csv as well as pSIRM\_SpectraData.csv saved in
+\texttt{input/inc/DataMatrix} \& \texttt{pSIRM\_SpectraData.csv},
+respectively. The mathematics behind are outlined in \citep{Pietzke2014}
+
+\textbf{Important:} Extracted MIDs have to match with defined mass
+couples for each metabolite in MTXQCvX2 defined in
+\texttt{config\_mtx/incorpo\_calc\_masses.csv}. Please refer for more
+details in chapter \ref{config}.
+
+\subsection[Derivatisation efficiency -
+mz73.csv]{\texorpdfstring{Derivatisation efficiency - mz73.csv\footnote{Required
+  for: \texttt{sum\ of\ area\ normalisation}}}{Derivatisation efficiency - mz73.csv}}\label{derivatisation-efficiency---mz73.csv}
+
+The extraction of intensities for the ion \(m/z 73\) works analogous to
+the extraction of MIDs\footnote{Tools/Options/Isotope concentrator;
+  Parameter: IntensityOfMass}.
+
+Mass ranges have to be defined for each intermediate for the mass 73 by
+defining starting and end mass with 73. MTXQCvX\_part4 generates the
+file and saves it in \texttt{input/gc/MassSum-73.csv}. Check
+\texttt{inst\textbackslash{}template\_files\textbackslash{}} for
+reference. Hopefully soon a new metmax button extracting specific
+intensities across the batch.
 
 \chapter{Frequently Asked Questions}\label{FAQ}
 
@@ -1628,10 +1841,10 @@ chapters for more detailed explanations.
 
 \section{MTXQC base tables}\label{mtxqc-base-tables}
 
-\subsection{\texorpdfstring{\texttt{config\_mtx}
-tables}{config\_mtx tables}}\label{config_mtx-tables}
+\subsection{\texorpdfstring{\texttt{config\_files}
+tables}{config\_files tables}}\label{config_files-tables}
 
-\subsubsection{conv\_filenames.csv}\label{app:filenames}
+\subsubsection{conv\_filenames.csv}\label{filenames}
 
 \begin{verbatim}
 ## 'data.frame':    10 obs. of  2 variables:
@@ -1663,7 +1876,7 @@ backups\_mid & mid\_backups.csv\\
 
 \rowcolors{2}{white}{white}
 
-\subsubsection{conv\_filesnames\_manVal.csv}\label{app:filenamesManVal}
+\subsubsection{conv\_filesnames\_manVal.csv}\label{filenamesManVal}
 
 \begin{verbatim}
 ## 'data.frame':    3 obs. of  2 variables:
@@ -1689,41 +1902,8 @@ NA.1 & NA & NA\\
 
 \rowcolors{2}{white}{white}
 
-\subsubsection{DEPRICATED FILE:
-MQ\_correction.csv}\label{depricated-file-mq_correction.csv}
-
-Not in use anymore since fluffy adventure!
-
-\begin{verbatim}
-## 'data.frame':    7 obs. of  3 variables:
-##  $ Metabolite  : Factor w/ 7 levels "Alanine_(2TMS)_BP_RI:1097_IDENT:B+C",..: 1 2 3 6 7 4 5
-##  $ Cor_factor  : num  12 12 6.33 11.82 2.41 ...
-##  $ Target_value: num  134695 134695 83259 388544 65154 ...
-\end{verbatim}
-
-\rowcolors{2}{gray!6}{white}
-
-\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedleft}X>{\raggedleft}X}
-\hiderowcolors
-\toprule
-Metabolite & Cor\_factor & Target\_value\\
-\midrule
-\showrowcolors
-Alanine\_(2TMS)\_BP\_RI:1097\_IDENT:B+C & 12.00 & 134695.25\\
-Alanine\_(3TMS)\_MP\_RI:1367\_IDENT:B+C & 12.00 & 134695.25\\
-Fructose\_(1MEOX)(5TMS)\_BP\_RI:1872\_IDENT:B+C & 6.33 & 83259.33\\
-Glucose\_(1MEOX)(5TMS)\_MP\_RI:1886\_IDENT:B+D & 11.82 & 388543.52\\
-Glycerol\_(3TMS)\_MP\_RI:1280\_IDENT:C+D & 2.41 & 65153.65\\
-\addlinespace
-Fructose\_(1MEOX)(5TMS)\_MP\_RI:1862\_IDENT:B+C & 6.33 & 83259.33\\
-Glucose\_(1MEOX)(5TMS)\_BP\_RI:1904\_IDENT:B+D & 11.82 & 388543.52\\
-\bottomrule
-\end{tabu}
-
-\rowcolors{2}{white}{white}
-
-\subsection{\texorpdfstring{\texttt{config\_files}
-tables}{config\_files tables}}\label{config_files-tables}
+\subsection{\texorpdfstring{\texttt{config\_mtx}
+tables}{config\_mtx tables}}\label{config_mtx-tables}
 
 These tables are supposed to be modified in relation to the individual
 needs of a project.
@@ -2373,6 +2553,10 @@ sum\_files & Number of detected MIDs & 54\\
 \subsubsection{MTXQCvX2 part3}\label{mtxqcvx2-part3}
 
 \subsubsection{MTXQCvX2 part4}\label{mtxqcvx2-part4}
+
+\section{Files for Maui-processing}\label{files-for-maui-processing}
+
+\section{Files for Metmax-processing}\label{files-for-metmax-processing}
 
 \chapter{Appendix - pSIRM experiments}\label{psirm}
 

@@ -11,11 +11,11 @@ The tool has been set up to support the in-lab developed workflow for quantitati
 Nevertheless MTXQCvX2 includes a module in order to integrate all kind of data provided in spreadsheet-format, e.g., derived from metmax, extracting required information and creating corresponding files (MTXQCvX2_part4).
 
 ## Structure
-MTXQCvX2 contains a suite of modules is optimized to process GC-MS derived data and processed either in Maui or Chromatof/Metmax. Workflows for both approaches are introduced with step-by-step instructions in chapter @\ref(maui) and @\ref(metmax).
+MTXQCvX2 contains a suite of modules is optimized to process GC-MS derived data and processed either in Maui or Chromatof/Metmax. Workflows for both approaches are introduced with step-by-step tutorials in chapter \@ref(maui) and \@ref(metmax).
 
-Subsequently each MTXQCvX2 module (chapter \@ref(ExpSetup) - \@ref(Metmax)) is introduced in greater detail including a input / output files and processing parameter.
+Subsequently each MTXQCvX2 module is introduced in greater detail including the list of processing parameter (chapter \@ref(ExpSetup) - \@ref(Metmax)).
 
-The configuration of MTXQCvX2 has been split into two categories - (1) a general configuration `config_files` and (2) metabolomics specific parameters `config_mtx`. Latter one is meant to provide flexibility including further substances. How to do so and what files can be customizes is shown in chapter \@ref(config).
+The configuration of MTXQCvX2 has been split into two categories - (1) a general configuration `config_files` and (2) metabolomics specific parameters `config_mtx`. Latter one is meant to provide flexibility to adapt MTXQCvX2 to your needs. How to do so and what files can be customizes is shown in chapter \@ref(config).
 
 Workflow-specific processing methods applied in Chromatof are introduced separately in the chapter \@ref(mauiproc) and \@ref(metmaxproc) including all parameter as well as a short introduction.
 
@@ -35,7 +35,7 @@ introduce inst/template folder
 
 ## `What do I do if I don't find the answer?`
 
-If you are familiar with github and the create an issue - please head on to the gihub repository (github.com/ChrisZasa/MTXQC_documentation) of this documentation and create one or write me a message. 
+If you are familiar with github and the create an issue - please head on to the gihub repository (github.com/ChrisZasa/MTXQC_documentation) of this documentation and create one or write me a message (christin.zasada[at]mdc-berlin.de). 
 
 
 

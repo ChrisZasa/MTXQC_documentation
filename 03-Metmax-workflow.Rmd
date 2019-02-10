@@ -1,43 +1,67 @@
-# Workflow for Metmax-extracted projects{#wf:metmax}
+# Tutorial: MTXQCvX2 for for Metmax-extracted projects{#metmax}
 
-## You want to follow this ...
+## Prerequisites
 
-- in case you have measured samples and quantification standards by GC-MS
-- performed the annotation of intermediates in ChromaToF or vendor software
-- exported all information into `.txt` files
-- used metmax to extract peak areas / mass isotopomer distributions (MIDs)
+- You have processed and annotated your intermediates in ChromaToF
+- You have defined the correct quantification masses in the reference search
+- You have exported the data in `.txt` files
+- You have used metmax^[http://gmd.mpimp-golm.mpg.de/apps/metmax/default.htm] to extract the data (see chapter \@ref(metmaxproc))
+
+## In a nutshell
  
-## Introduction
+1. Setup a new R-project
+2. Copy MTXQCvX2 files
+3. *Knit with parameter:* `MTXQC_part4.Rmd`
+4. *Knit with parameter:* `MTXQC_init.Rmd`
+5. Copy input files into corresponding folders
+6. Create annotation.csv and sample_extracts.csv files (see section \@ref() \& \@ref())
+7. Modify metabolite names in `conversion_metabolite.csv` column **Metabolite_manual**
+8. Define the internal standard and/or alkanes in conversion_metabolite.csv (see section \@ref(definternal) \& \ref(defalkanes))
+9. *Knit with parameter:* `MTXQC_ExperimentalSetup.Rmd`
+10. *Knit with parameter:* `MTXQC_part1.Rmd`
+11. *Knit with parameter:* `MTXQC_part2.Rmd`
+12. If required - proceed with `MTXQC_part3.Rmd` for ManualValidation
 
-This document describes how to use MTXQCvX2 in combination with metmax^[http://gmd.mpimp-golm.mpg.de/apps/metmax/default.htm].
+## Tutorial dataset
 
-Historically, MTXQCvX2 has been developed and optimized for Maui-derived input files. The `MTXQCvX2-part4.Rmd` functions as a converter of metmax-derived files in order to create suitable input formats for `MTXQCvX-part1.Rmd`. 
 
-This module could also be used to convert tables derived from other programs as long as they are stick with the herein described table formats. Mandatory columns are referenced in the text for each kind of input file.
+## In detail
+R-projects provide a secure environment to handle your data from the processing in MTXQCvX2 until the final reports and analysis. Think about it as a big bubble containing and carrying all your data and analysis savely from one place to the other undisturbed of the outside changes.
 
-The general workflow of the NMTXQCvX2 project is briefly shown below in quick view. More detailed instructions are summarised in the following paragraphs. 
+  * Open R-studio and create a new project following: `File -> New project -> New Project -> New Directory`
+  * Call the directory `tutorial_metmax` and the preferred subdirectory. 
+  * I recommend to start each project in a new session (tick the box at the bottom of the dialogue box).
 
-For more detailed explanations about the individual input parameter for each module of MTXQCvX2 please proceed to read the documentation about the individual modules and their knitting parameter. The relation of knitting parameter, input and output files are described in each section.
+### Copy MTXQCvX2 template files
 
-## Quick view
+* Download the current version of MTXQCvX2 called fluffy adventure^[github.com/ChrisZasada/fluffy_adventure]
+* Open and extract the zip-folder
+* Copy all folders and files into your R-project `tutorial_metmax`
 
-1. Generate input files: run `MTXQC_part4.Rmd`^[read here the instructions]
-2. Setup R-project and copy MTXQC-files
-3. Knit with parameter: `MTXQC_init.Rmd`
-4. Copy input files into corresponding folders
-5. Create annotation.csv and sample_extracts.csv files^[Details further down this document]
-6. Update metabolite names in `conversion_metabolite.csv`^[Column: Metabolite_manual]
-7. Define the internal standard and/or alkanes^[Also in conversion_metabolite.csv; see below paragraph Standards]
-8. Knit with parameter: `MTXQC_ExperimentalSetup.Rmd`
-9. Knit with parameter: `MTXQC_part1.Rmd`
-10. Knit with parameter: `MTXQC_part2.Rmd`
-11. If required - proceed with `MTXQC_part3.Rmd` for ManualValidation
+### Process `MTXQC_init.Rmd`
 
-## Input files
+The module `MTXQC_init.Rmd` performs two important steps: 
+  1. Check-up package installation
+  2. Creation of project-folder
+  
+The project folder is supposed to provide a tidy structure while data processing and analysis and contains several pre-defined folder. Besides the following folders: `input`, `output` and `figures´ you see a detailed subfolder structure. You find more details about each folder and additional suggestion how to use project-folder in chapter \@ref(init). 
 
-If you need an introduction about how to use metmax - have a look at the separate documentation `Metmax_intro`.
+All you need to do is to process the `MTXQC_init.Rmd`. The following procedure is how you process all `.Rmd`-files of MTXQCvX2:
 
-The chapter \@ref(part4) `MTXQCvX_part4` explains in detail how to use this module to generate suitable input files. 
+  * Click on the small black triangle next to the ball of yarn in the R-Studio toolbar
+  * Choose `Knit with Parameters...`
+  
+If the `.Rmd`-file contains defined parameters a shiny dialogue pops up and provides an interactive selection based on the document. In the case of `MTXQC_init.Rmd` you are asked to define a so-called project-folder.
+
+  * **Define the name of the project-folder:** qtx_london
+
+Check in the files tab of R-Studio, browse through it and get familiar with the structure. This is the home of your metabolomics projects data analysis.
+
+### Process MTXQC_part4
+
+
+
+
 
 ## Annotation-file
 

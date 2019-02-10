@@ -1,4 +1,11 @@
-# Configuration of MTXQCvX2 - `config_mtx/...`{#config}
+---
+always_allow_html: yes
+---
+
+
+
+
+# Customization of MTXQCvX2{#config}
 
 Herein explained are the customizable tables of the MTXQCvX2 universe.
 
@@ -6,57 +13,137 @@ Herein explained are the customizable tables of the MTXQCvX2 universe.
 
 
 
-Column.name         Description                                       Value                               
-------------------  ------------------------------------------------  ------------------------------------
-Metabolite_manual   Manual defined metabolite name                    #Alanine (2TMS)                     
-Metabolite          Library name of the metabolite                    Alanine_(2TMS)_BP_RI:1097_IDENT:B+C 
-Metabolite_short    Short version of library name of the metabolite   Alanine_(2TMS)                      
-Lettercode          Lettercode version of metabolite name             Ala_2TMS                            
-Q1_value            Checked if quant1:1 value available               x                                   
-Mass_Pos            m/z-value corresponding to m_inc                  118                                 
-SE_sel              Evaluation of the MIDs                            x                                   
-Q_sel               Evaluation for absolute quantification            x                                   
-nopsirm             Exclusively for absolute quantification                                               
-Standards           Defined as standard                               InternalStandard, Alk               
+```
+## 'data.frame':	10 obs. of  3 variables:
+##  $ Column.name: Factor w/ 10 levels "Lettercode","Mass_Pos",..: 4 3 5 1 8 2 9 7 6 10
+##  $ Description: Factor w/ 10 levels "Checked if quant1:1 value available",..: 9 7 10 6 1 8 4 3 5 2
+##  $ Value      : Factor w/ 8 levels "","#Alanine (2TMS)",..: 2 6 5 4 8 3 8 8 1 7
+```
+
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Column.name </th>
+   <th style="text-align:left;"> Description </th>
+   <th style="text-align:left;"> Value </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Metabolite_manual </td>
+   <td style="text-align:left;"> Manual defined metabolite name </td>
+   <td style="text-align:left;"> #Alanine (2TMS) </td>
+  </tr>
+</tbody>
+</table>
 
 
 ## `letter_pathway_complete.csv`
 
 
-Column.name       Description                                           Value         
-----------------  ----------------------------------------------------  --------------
-Letter_Derivate   Derivate definition                                   Ala           
-Lettercode        Lettercode name of metabolite                         Ala_3TMS      
-Pathway           Ass.pathway                                           aa            
-Pathway.1         Ass. pathway - ordered for heatmap                    5-aa          
-Met_pathway       Ass. pathway - ordered for heatmap incl. Lettercode   5-aa_Ala_3TMS 
-Subs_class        Substance class                                       aa            
-Met_class         Substance class incl. Lettercode                      aa_Ala_3TMS   
+```
+## 'data.frame':	7 obs. of  3 variables:
+##  $ Column.name: Factor w/ 7 levels "Letter_Derivate",..: 1 2 5 6 4 7 3
+##  $ Description: Factor w/ 7 levels "Ass. pathway - ordered for heatmap",..: 4 5 3 1 2 6 7
+##  $ Value      : Factor w/ 6 levels "5-aa","5-aa_Ala_3TMS",..: 5 6 3 1 2 3 4
+```
+
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Column.name </th>
+   <th style="text-align:left;"> Description </th>
+   <th style="text-align:left;"> Value </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Letter_Derivate </td>
+   <td style="text-align:left;"> Derivate definition </td>
+   <td style="text-align:left;"> Ala </td>
+  </tr>
+</tbody>
+</table>
 
 ## `quant1-values.csv`
 
 
-Column.name       Description                   Value 
-----------------  ----------------------------  ------
-Letter_Derivate   Derivate name of metabolite   3PGA  
-Quant1_v4         Quantity in (pmol)            43480 
-Quant1_v3         Quantity in (pmol)            43480 
+```
+## 'data.frame':	3 obs. of  3 variables:
+##  $ Column.name: Factor w/ 3 levels "Letter_Derivate",..: 1 3 2
+##  $ Description: Factor w/ 2 levels "Derivate name of metabolite",..: 1 2 2
+##  $ Value      : Factor w/ 2 levels "3PGA","43480": 1 2 2
+```
 
-## `incorporation_calc.csv` \& `mid_backups.csv`
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Column.name </th>
+   <th style="text-align:left;"> Description </th>
+   <th style="text-align:left;"> Value </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Letter_Derivate </td>
+   <td style="text-align:left;"> Derivate name of metabolite </td>
+   <td style="text-align:left;"> 3PGA </td>
+  </tr>
+</tbody>
+</table>
+
+## `incorporation_calc.csv` 
 
 
-Column.name   Description                  Value                               
-------------  ---------------------------  ------------------------------------
-Metabolite    Library name of metabolite   Alanine_(2TMS)_BP_RI:1097_IDENT:B+C 
-Mass_mz       m/z-value                    116, 118                            
-LI_MID        Definition of mass level     m0, minc                            
+```
+## 'data.frame':	3 obs. of  3 variables:
+##  $ Column.name: Factor w/ 3 levels "LI_MID","Mass_mz",..: 3 2 1
+##  $ Description: Factor w/ 3 levels "Definition of mass level",..: 2 3 1
+##  $ Value      : Factor w/ 3 levels "116, 118","Alanine_(2TMS)_BP_RI:1097_IDENT:B+C",..: 2 1 3
+```
+
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Column.name </th>
+   <th style="text-align:left;"> Description </th>
+   <th style="text-align:left;"> Value </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Metabolite </td>
+   <td style="text-align:left;"> Library name of metabolite </td>
+   <td style="text-align:left;"> Alanine_(2TMS)_BP_RI:1097_IDENT:B+C </td>
+  </tr>
+</tbody>
+</table>
+
+## `mid_backups.csv`
 
 
-Column.name      Description                             Value                                      
----------------  --------------------------------------  -------------------------------------------
-Metabolite       Library name of metabolite              Alanine_ beta-_(3TMS)_MP_RI:1435_IDENT:A+D 
-Mass.m.z.        m/z value                               188                                        
-BackupPeakArea   Peak area of Backup MID                 4960                                       
-BackupMID        MID value for corresponding Mass.m.z.   0.8005                                     
+```
+## 'data.frame':	4 obs. of  3 variables:
+##  $ Column.name: Factor w/ 4 levels "BackupMID","BackupPeakArea",..: 4 3 2 1
+##  $ Description: Factor w/ 4 levels "Library name of metabolite",..: 1 2 4 3
+##  $ Value      : Factor w/ 4 levels "0.8005","188",..: 4 2 3 1
+```
+
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Column.name </th>
+   <th style="text-align:left;"> Description </th>
+   <th style="text-align:left;"> Value </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Metabolite </td>
+   <td style="text-align:left;"> Library name of metabolite </td>
+   <td style="text-align:left;"> Alanine_ beta-_(3TMS)_MP_RI:1435_IDENT:A+D </td>
+  </tr>
+</tbody>
+</table>
 
 

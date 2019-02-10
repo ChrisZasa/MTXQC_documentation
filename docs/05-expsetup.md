@@ -4,7 +4,7 @@
 
 List of parameter:
 
-  * **Define project-folder:* psirm_glucose (text)
+  * **Define project-folder:** psirm_glucose (text)
   * **Define input-format:** maui, metmax
   * **Name of annotation file:** annotation.csv (text)
   * **Name of sample extracts file:** sample_extracts.csv (text)

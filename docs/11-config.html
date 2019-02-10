@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="4-metmax.html">
-<link rel="next" href="6-ExpSetup.html">
+<link rel="prev" href="10-Metmax.html">
+<link rel="next" href="12-mauiproc.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -305,137 +305,179 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="init" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> MTXQCvX2_init</h1>
-<div id="knit-with-parameter" class="section level2">
-<h2><span class="header-section-number">5.1</span> Knit with parameter</h2>
-<p>List of parameter:</p>
-<ul>
-<li><strong>Definition of the project-folder:</strong> psirm_glucose (text)</li>
-</ul>
-</div>
-<div id="text" class="section level2">
-<h2><span class="header-section-number">5.2</span> Text</h2>
-<p><code>MTXQCvX2_init.Rmd</code> - why and how to use it. Advantages of the project folder.</p>
+<div id="config" class="section level1">
+<h1><span class="header-section-number">Chapter 11</span> Customization of MTXQCvX2</h1>
+<p>Herein explained are the customizable tables of the MTXQCvX2 universe.</p>
+<div id="conversion_metabolite.csv" class="section level2">
+<h2><span class="header-section-number">11.1</span> <code>conversion_metabolite.csv</code></h2>
 <pre><code>## &#39;data.frame&#39;:    10 obs. of  3 variables:
-##  $ Folder        : Factor w/ 4 levels &quot;&quot;,&quot;figure&quot;,&quot;input&quot;,..: 2 3 1 1 1 1 4 1 1 1
-##  $ subfolder     : Factor w/ 7 levels &quot;&quot;,&quot;add_quant&quot;,..: 1 2 4 5 7 6 4 5 7 3
-##  $ Used.in.module: Factor w/ 5 levels &quot;Figure export of MTXQC_part1&quot;,..: 1 2 2 2 2 3 4 4 4 5</code></pre>
+##  $ Column.name: Factor w/ 10 levels &quot;Lettercode&quot;,&quot;Mass_Pos&quot;,..: 4 3 5 1 8 2 9 7 6 10
+##  $ Description: Factor w/ 10 levels &quot;Checked if quant1:1 value available&quot;,..: 9 7 10 6 1 8 4 3 5 2
+##  $ Value      : Factor w/ 8 levels &quot;&quot;,&quot;#Alanine (2TMS)&quot;,..: 2 6 5 4 8 3 8 8 1 7</code></pre>
 <table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
-Folder
+Column.name
 </th>
 <th style="text-align:left;">
-subfolder
+Description
 </th>
 <th style="text-align:left;">
-Used.in.module
+Value
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left;">
-figure
+Metabolite_manual
 </td>
 <td style="text-align:left;">
+Manual defined metabolite name
 </td>
 <td style="text-align:left;">
-Figure export of MTXQC_part1
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-input
-</td>
-<td style="text-align:left;">
-add_quant
-</td>
-<td style="text-align:left;">
-Input for MTXQC_part1
+#Alanine (2TMS)
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+<div id="letter_pathway_complete.csv" class="section level2">
+<h2><span class="header-section-number">11.2</span> <code>letter_pathway_complete.csv</code></h2>
+<pre><code>## &#39;data.frame&#39;:    7 obs. of  3 variables:
+##  $ Column.name: Factor w/ 7 levels &quot;Letter_Derivate&quot;,..: 1 2 5 6 4 7 3
+##  $ Description: Factor w/ 7 levels &quot;Ass. pathway - ordered for heatmap&quot;,..: 4 5 3 1 2 6 7
+##  $ Value      : Factor w/ 6 levels &quot;5-aa&quot;,&quot;5-aa_Ala_3TMS&quot;,..: 5 6 3 1 2 3 4</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align:left;">
+Letter_Derivate
 </td>
 <td style="text-align:left;">
-gc
+Derivate definition
 </td>
 <td style="text-align:left;">
-Input for MTXQC_part1
+Ala
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+<div id="quant1-values.csv" class="section level2">
+<h2><span class="header-section-number">11.3</span> <code>quant1-values.csv</code></h2>
+<pre><code>## &#39;data.frame&#39;:    3 obs. of  3 variables:
+##  $ Column.name: Factor w/ 3 levels &quot;Letter_Derivate&quot;,..: 1 3 2
+##  $ Description: Factor w/ 2 levels &quot;Derivate name of metabolite&quot;,..: 1 2 2
+##  $ Value      : Factor w/ 2 levels &quot;3PGA&quot;,&quot;43480&quot;: 1 2 2</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align:left;">
+Letter_Derivate
 </td>
 <td style="text-align:left;">
-inc
+Derivate name of metabolite
 </td>
 <td style="text-align:left;">
-Input for MTXQC_part1
+3PGA
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+<div id="incorporation_calc.csv" class="section level2">
+<h2><span class="header-section-number">11.4</span> <code>incorporation_calc.csv</code></h2>
+<pre><code>## &#39;data.frame&#39;:    3 obs. of  3 variables:
+##  $ Column.name: Factor w/ 3 levels &quot;LI_MID&quot;,&quot;Mass_mz&quot;,..: 3 2 1
+##  $ Description: Factor w/ 3 levels &quot;Definition of mass level&quot;,..: 2 3 1
+##  $ Value      : Factor w/ 3 levels &quot;116, 118&quot;,&quot;Alanine_(2TMS)_BP_RI:1097_IDENT:B+C&quot;,..: 2 1 3</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align:left;">
+Metabolite
 </td>
 <td style="text-align:left;">
-quant
+Library name of metabolite
 </td>
 <td style="text-align:left;">
-Input for MTXQC_part1
+Alanine_(2TMS)_BP_RI:1097_IDENT:B+C
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+<div id="mid_backups.csv" class="section level2">
+<h2><span class="header-section-number">11.5</span> <code>mid_backups.csv</code></h2>
+<pre><code>## &#39;data.frame&#39;:    4 obs. of  3 variables:
+##  $ Column.name: Factor w/ 4 levels &quot;BackupMID&quot;,&quot;BackupPeakArea&quot;,..: 4 3 2 1
+##  $ Description: Factor w/ 4 levels &quot;Library name of metabolite&quot;,..: 1 2 4 3
+##  $ Value      : Factor w/ 4 levels &quot;0.8005&quot;,&quot;188&quot;,..: 4 2 3 1</code></pre>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
 <tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-metmax
-</td>
-<td style="text-align:left;">
-Input for MTXQC_part4
-</td>
+<th style="text-align:left;">
+Column.name
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Value
+</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align:left;">
-output
+Metabolite
 </td>
 <td style="text-align:left;">
-gc
+Library name of metabolite
 </td>
 <td style="text-align:left;">
-Output for MTXQC_part1
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-inc
-</td>
-<td style="text-align:left;">
-Output for MTXQC_part1
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-quant
-</td>
-<td style="text-align:left;">
-Output for MTXQC_part1
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Date_PostProcessing_xy
-</td>
-<td style="text-align:left;">
-Output for MTXQC_part2
+Alanine_ beta-_(3TMS)_MP_RI:1435_IDENT:A+D
 </td>
 </tr>
 </tbody>
@@ -448,8 +490,8 @@ Output for MTXQC_part2
           </div>
         </div>
       </div>
-<a href="4-metmax.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="6-ExpSetup.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="10-Metmax.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="12-mauiproc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
