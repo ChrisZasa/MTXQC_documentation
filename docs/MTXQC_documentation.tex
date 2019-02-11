@@ -31,46 +31,6 @@
 \urlstyle{same}  % don't use monospace font for urls
 \usepackage{natbib}
 \bibliographystyle{apalike}
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
 \usepackage{longtable,booktabs}
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -125,7 +85,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-02-10}
+    \date{2019-02-11}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -1682,12 +1642,6 @@ corresponding export function:
   Copy both files, no renaming required
 \end{itemize}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{source}\NormalTok{(}\StringTok{"example/R/fcn_documentation.R"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
 \begin{verbatim}
 ## 
 ## Attaching package: 'dplyr'
@@ -1705,25 +1659,278 @@ corresponding export function:
 ##     intersect, setdiff, setequal, union
 \end{verbatim}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(kableExtra)}
-\KeywordTok{library}\NormalTok{(dplyr)}
-\KeywordTok{library}\NormalTok{(magrittr)}
+\chapter{Data Processing for Metmax}\label{metmaxproc}
 
-\KeywordTok{options}\NormalTok{(}\DataTypeTok{kableExtra.html.bsTable =}\NormalTok{ T)}
-\end{Highlighting}
-\end{Shaded}
+The following steps are done in ChromaToF on the raw data exported from
+the machine. I highly recommend to create a local copy of your data and
+then import it into ChromaToF. ChromaToF is not the fastest software and
+the server doesn't help for sure with that.
 
-\chapter{Data Processing - Metmax}\label{metmaxproc}
+For each data processing (DP) method you need to define tasks by
+checking boxes at the top of the window. With each ticked box the
+related parameter that can be modified are listed below that list of
+tasks. So always remeber to scroll down, and after setting parameters,
+scroll up and check your ticks another time.
 
-\section{Resampling}\label{resampling}
+In general you first adjust the choice of DP method first and apply it
+subsequently - choose one file, right click and choose \emph{Process
+data}. Select all files and the DP method.
 
-\section{1D-basic}\label{d-basic}
+\section{Import data into ChromaToF}\label{import-data-into-chromatof}
+
+Create a new project folder in the menu \texttt{Acquired\ Samples} and
+rename it, e.g., with the date and project name. Click on the folder to
+activate it.
+
+Now you can move down a window, just right click somewhere in this
+window and choose \emph{Import data}. Select your \texttt{.SMP} files
+and wait until ChromaToF is done.
+
+\section{DP - Resampling}\label{dp---resampling}
+
+Resampling is commonly applied and results into a data transformation
+enabling an improved detection of low abundant peaks and a reduction of
+noise. (Maybe include an example?)
+
+The processing methods requires to tick the task
+\texttt{Export\ data\ file}. Subsequently, you are asked to define an
+output folder and the following paramter:
+
+\begin{itemize}
+\tightlist
+\item
+  Reduction rate: 4
+\item
+  From the beginning to end of the file
+\item
+  \texttt{.peg}-files
+\end{itemize}
+
+In the next step the generated files have to be re-imported into a
+subfolder in \texttt{Acquired\ Samples} in ChromaToF.
+
+\begin{itemize}
+\tightlist
+\item
+  Create subfolder called \texttt{resample} in ChromaToF
+\item
+  Right-click file window below
+\item
+  Import \texttt{.peg}-files
+\end{itemize}
+
+\section{DP - 1D-basic}\label{dp---1d-basic}
+
+Please check the following task in ChromaToF
+\texttt{Data\ Processing\ (DP)\ Methods}:
+
+\begin{itemize}
+\tightlist
+\item
+  Baseline
+\item
+  Peak Find
+\item
+  Library Search
+\item
+  Calculate Area / Height
+\item
+  Retention Index Method
+\end{itemize}
+
+\textbf{Baseline}
+
+\begin{itemize}
+\tightlist
+\item
+  enter baseline tracking from \texttt{start\ of\ the\ run} until
+  \texttt{end\ of\ run}
+\item
+  baseline offset 1
+\item
+  number of data points for smoothing: auto
+\end{itemize}
+
+\textbf{Peak Find}
+
+\begin{itemize}
+\tightlist
+\item
+  peak width: 4
+\item
+  maximum number of unknown peaks to find: 600
+\item
+  S/N: 50.0
+\item
+  library identity: normal
+\item
+  library search mode: forward
+\item
+  number of library hits returned: 10
+\item
+  min. molecular weigth allowed: 0
+\item
+  max. molecular weight allowed: 1500
+\item
+  mass threshold: 0
+\item
+  min. similarity match: 0
+\item
+  Add libraries: gmd-merged-kempa
+\end{itemize}
+
+\textbf{Calculate Area / Height}
+
+\begin{itemize}
+\tightlist
+\item
+  enter mass to use: U
+\end{itemize}
+
+\textbf{Retention Index Method}
+
+\begin{itemize}
+\tightlist
+\item
+  choose your retention index method
+\end{itemize}
+
+\subsection{Create the Retention Index Method}\label{createri}
+
+Before proceeding with applying processing method you need to prepare
+the Retention Index Method.
+
+Create a new Retention Index Method:
+
+\begin{itemize}
+\tightlist
+\item
+  Scroll down in the main menu and click on Retention Index Methods
+\item
+  Right click on the white in the window below
+\item
+  Select new
+\item
+  Rename it
+\end{itemize}
+
+This creates an empty table in the main window. Use the blue plus sign
+and add nine rows. If you cannot click on the plus, make sure you
+clicked the name of the retention indey method before.
+
+Adjust the entries the following way:
+
+\begin{itemize}
+\tightlist
+\item
+  Change names from 1..9: \#c10, \#c12, \#c15, \#c17, \#c19, \#c22,
+  \#c28, \#c32, \#c36
+\item
+  Retention Index is equal to the product of number of carbons and 100
+  (RI of \#c10 is 1000)
+\item
+  Verification Mass: 85
+\end{itemize}
+
+Go back to your measurements and select a wash run. Select the alkane
+masses, normally saved in shortcut B, and collect the retention times.
+Add these values in the retention index method. All done, select the
+retention index method in data processing methods.
+
+Run the processing method \texttt{1D-basic} over all your files.
 
 \section{Reference search}\label{reference-search}
 
+\subsection{Create a reference in
+ChromaToF}\label{create-a-reference-in-chromatof}
+
+\subsection{Process your reference
+search}\label{process-your-reference-search}
+
+Check the task and following parameter:
+
+\begin{itemize}
+\item
+  Apply Reference(s):
+
+  \begin{itemize}
+  \tightlist
+  \item
+    S/N: 10 - 50
+  \item
+    Mass Threshold: 0
+  \item
+    Add the references
+  \end{itemize}
+\end{itemize}
+
+\textbf{Very important} Always scroll up and check the ticked tasks
+again. \textbf{Always\ldots{} and really always} when you change the
+reference ChromaToF checks the PeakFind option for you. But this we
+definitely do not want since the basic processing just pre-annotated all
+peaks that were detected and identifiable. If you forget to uncheck the
+box only the compounds listed in your reference are annotated, all other
+annotations are replaced with unknown and a number.
+
 \section{Export for Metmax}\label{export-for-metmax}
+
+Check tasks in `data processing methods:
+
+\begin{itemize}
+\tightlist
+\item
+  Export peak information ASCII CSV format
+
+  \begin{itemize}
+  \tightlist
+  \item
+    define the directory where files should be saved
+  \item
+    field separator: TAB
+  \item
+    filter: choose all but not \textbf{Not Founds}
+  \item
+    sort by: Name, ascending
+  \item
+    exportet information:
+  \item
+    Name
+  \item
+    Concerns
+  \item
+    Quant Masses
+  \item
+    Area
+  \item
+    Expected Ion Ratio 1
+  \item
+    Calibration
+  \item
+    Match
+  \item
+    Quant S/N
+  \item
+    Similarity
+  \item
+    Type
+  \item
+    Concentration
+  \item
+    Sample Concentration
+  \item
+    1st Dimension Time (s)
+  \item
+    Retention Index
+  \item
+    R.T. (s)
+  \item
+    Reverse
+  \item
+    Conc. Units
+  \item
+    2nd Dimension Time (s)
+  \end{itemize}
+\end{itemize}
 
 \section{Data extraction with Metmax}\label{metmax-dataextr}
 
@@ -1734,10 +1941,12 @@ PeakAreas.csv]{\texorpdfstring{Quantification - PeakAreas.csv\footnote{Required
 
 In order to perform absolute quantification you need a file containing
 all extracted peak areas for each metabolite and file\footnote{Tools/Options/Retention
-  analysis, Parameter: Area}. The header of metmax-extracted files looks
-like shown below (see table 1). Please, remember to delete the second
-header row, representing the column loads for each file before saving as
-csv-file. Otherwise you end up with weird imported dataframes in R.
+  analysis, Parameter: Area}.
+
+The header of metmax-extracted files looks like shown below (see table
+1). Please, remember to delete the second header row, representing the
+column loads for each file before saving as csv-file. Otherwise you end
+up with weird imported dataframes in R.
 
 Quantification masses have to be updated while processing in ChromaToF
 prior the export of the data e.g., with a reference search (see section
@@ -1766,10 +1975,11 @@ Cit & 273 & 1805 & 0.99 & 1326 & 23321 & 132121\\
 
 MTXQC\_part4 takes care of the formatting and correct column names of
 the peak areas file and saves it in
-\texttt{input/quant/quantMassAreasMatrix.csv}. MTXQC\_part4 generates
-also the file PeakDensities-Chroma.csv and saves it in
-\texttt{input/gc/PeakDensities-Chroma.csv} in case you have selected the
-option to include sum of area normalisation while knitting this module.
+\texttt{input/quant/quantMassAreasMatrix.csv}.\\
+MTXQC\_part4 generates also the file PeakDensities-Chroma.csv and saves
+it in \texttt{input/gc/PeakDensities-Chroma.csv} in case you have
+selected the option to include sum of area normalisation while knitting
+this module.
 
 \subsection[Isotope incorporation - MIDs.csv]{\texorpdfstring{Isotope
 incorporation - MIDs.csv\footnote{Required for
@@ -1807,7 +2017,7 @@ Lac & 223 & 1051 & 0.85 & 0 & 33542 & 342\\
 
 \rowcolors{2}{white}{white}
 
-MTXQCvX\_part4 calculates the stable isotope incorporation and exports
+MTXQC\_part4 calculates the stable isotope incorporation and exports
 DataMatrix.csv as well as pSIRM\_SpectraData.csv saved in
 \texttt{input/inc/DataMatrix} \& \texttt{pSIRM\_SpectraData.csv},
 respectively. The mathematics behind are outlined in \citep{Pietzke2014}
@@ -1826,8 +2036,8 @@ the extraction of MIDs\footnote{Tools/Options/Isotope concentrator;
   Parameter: IntensityOfMass}.
 
 Mass ranges have to be defined for each intermediate for the mass 73 by
-defining starting and end mass with 73. MTXQCvX\_part4 generates the
-file and saves it in \texttt{input/gc/MassSum-73.csv}. Check
+defining starting and end mass with 73. MTXQC\_part4 generates the file
+and saves it in \texttt{input/gc/MassSum-73.csv}. Check
 \texttt{inst\textbackslash{}template\_files\textbackslash{}} for
 reference. Hopefully soon a new metmax button extracting specific
 intensities across the batch.
