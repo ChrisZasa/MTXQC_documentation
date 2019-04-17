@@ -50,7 +50,6 @@ In the next step the generated files have to be re-imported into a subfolder in 
   * Import `.peg`-files
 
 
-
 ## DP - 1D-basic
 
 Please check the following task in ChromaToF `Data Processing (DP) Methods`:
@@ -60,7 +59,6 @@ Please check the following task in ChromaToF `Data Processing (DP) Methods`:
   * Library Search
   * Calculate Area / Height
   * Retention Index Method
-
 
 **Baseline**
 
@@ -105,7 +103,7 @@ This creates an empty table in the main window. Use the blue plus sign and add n
 
 Adjust the entries the following way:
 
-  * Change names from 1..9: #c10, #c12, #c15, #c17, #c19, #c22, #c28, #c32, #c36
+  * Change names: #c10, #c12, #c15, #c17, #c19, #c22, #c28, #c32, #c36
   * Retention Index is equal to the product of number of carbons and 100 (RI of #c10 is 1000)
   * Verification Mass: 85
   
@@ -116,6 +114,7 @@ Run the processing method `1D-basic` over all your files.
 
 ## Reference search
 ### Create a reference in ChromaToF
+
 
 
 ### Process your reference search

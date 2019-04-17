@@ -1,7 +1,7 @@
 --- 
 title: "MTXQCvX2 documentation"
 author: "Christin Zasada"
-date: "2019-02-11"
+date: "2019-04-17"
 github-repo: chriszasa/MTXQC_documentation
 site: bookdown::bookdown_site
 documentclass: book

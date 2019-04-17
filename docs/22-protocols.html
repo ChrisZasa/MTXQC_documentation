@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 2 Introduction MTXQCvX documentation | MTXQCvX2 documentation</title>
+  <title>Chapter 22 Appendix - Protocols | MTXQCvX2 documentation</title>
   <meta name="description" content="This is the offical documentation for the MTXQCvX2 toolbox.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 2 Introduction MTXQCvX documentation | MTXQCvX2 documentation" />
+  <meta property="og:title" content="Chapter 22 Appendix - Protocols | MTXQCvX2 documentation" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="chriszasa/MTXQC_documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Introduction MTXQCvX documentation | MTXQCvX2 documentation" />
+  <meta name="twitter:title" content="Chapter 22 Appendix - Protocols | MTXQCvX2 documentation" />
   
   <meta name="twitter:description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="3-maui.html">
+<link rel="prev" href="21-psirm.html">
+<link rel="next" href="23-tables.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -380,41 +380,250 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Introduction MTXQCvX documentation</h1>
-<p>This documentation introduces to you how to use MTXQCvX2 in order to run a first straight-forward data analysis of your metabolomics experiment. The underling experimental and mathematical concepts have been introduced for the pulsed stable isotope resolved metabolomics (pSIRM) approach published in <span class="citation">(Pietzke et al. <a href="#ref-Pietzke2014">2014</a>)</span>.</p>
-<p>This documentation shows you how to use MTXQCvX2 in order to assess the quality of your GC-MS derived data, perform the determination of calibration curves and absolute quantification. It furthermore provides you two normalisation strategies and the calculation of quantities in, e.g., pmol/1e+6 cells or pmol/mg tissue.</p>
-<p>MTXQCvX2 does also enable the calculation of stable isotopic incorporation and the evaluation of the underlying data, the mass isotopomer distributions (MIDs).</p>
-<p>The tool has been set up to support the in-lab developed workflow for quantitative metabolomics experiments using the in-house developed software Maui for the annotation of data. MTXQCvX2 bridges the gap between quality control and first data post-processing / analysis of GC-MS derived data (MTXQCvX2_part1, MTXQCvX2_part2).</p>
-<p>Nevertheless MTXQCvX2 includes a module in order to integrate all kind of data provided in spreadsheet-format, e.g., derived from metmax, extracting required information and creating corresponding files (MTXQCvX2_part4).</p>
-<div id="structure" class="section level2">
-<h2><span class="header-section-number">2.1</span> Structure</h2>
-<p>MTXQCvX2 contains a suite of modules is optimized to process GC-MS derived data and processed either in Maui or Chromatof/Metmax. Workflows for both approaches are introduced with step-by-step tutorials in chapter <a href="3-maui.html#maui">3</a> and <a href="4-metmax.html#metmax">4</a>.</p>
-<p>Subsequently each MTXQCvX2 module is introduced in greater detail including the list of processing parameter (chapter <a href="6-ExpSetup.html#ExpSetup">6</a> - <a href="10-Metmax.html#Metmax">10</a>).</p>
-<p>The configuration of MTXQCvX2 has been split into two categories - (1) a general configuration <code>config_files</code> and (2) metabolomics specific parameters <code>config_mtx</code>. Latter one is meant to provide flexibility to adapt MTXQCvX2 to your needs. How to do so and what files can be customizes is shown in chapter <a href="11-config.html#config">11</a>.</p>
-<p>Workflow-specific processing methods applied in Chromatof are introduced separately in the chapter <a href="12-mauiproc.html#mauiproc">12</a> and <a href="14-metmaxproc.html#metmaxproc">14</a> including all parameter as well as a short introduction.</p>
-<p>The remaining chapter cover a chapter for frequently asked questions (chapter<a href="17-FAQ.html#FAQ">17</a>) that might give you a hint where to search for the information you are looking for.</p>
-<p>The appendix summarises technical reference material in the form of a dictionary of tables (chapter <a href="19-tables.html#tables">19</a>), protocols for the pSIRM workflow <a href="21-psirm.html#psirm">21</a> and a complete distinct chapter listing protocols (chapter <a href="22-protocols.html#protocols">22</a>) including standard and sample preparation and derivatisation (chapter <a href="22-protocols.html#SampleExtraction">22.4</a> and <a href="22-protocols.html#Deriv">22.5</a>) and the current setting of the GC-ToF-MS machine (chapter <a href="22-protocols.html#gcms">22.6</a>).</p>
+<div id="protocols" class="section level1">
+<h1><span class="header-section-number">Chapter 22</span> Appendix - Protocols</h1>
+<div id="materials" class="section level2">
+<h2><span class="header-section-number">22.1</span> Materials</h2>
 </div>
-<div id="how-to-use-this-documentation" class="section level2">
-<h2><span class="header-section-number">2.2</span> How to use this documentation</h2>
-<p>This documentation provides for each level the right starting point. Complete newbies are highly suggested to start with one of the two tutorials and following the step-by-step descriptions using the example datasets. Also if you are using for the first time please go through to the chapter once to be aware of all the steps that are required to succeed.</p>
-<p>Experienced users might be referred to the explanation of the individual modules or to the how-to-guides for data processing and the FAQs section.</p>
+<div id="solutions" class="section level2">
+<h2><span class="header-section-number">22.2</span> Solutions</h2>
+<div id="washingbuffer" class="section level3">
+<h3><span class="header-section-number">22.2.1</span> Label buffer</h3>
+<p>Materials:</p>
+<ul>
+<li>ddH2O (500 ml)</li>
+<li>140 mM NaCl (4.1 g)</li>
+<li>5 mM Hepes (0.569 g)</li>
+<li>pH calibration 7.4</li>
+</ul>
+<p>Procedure:</p>
+<ul>
+<li>Weigh the correct amounts of Hepes and NaCl</li>
+<li>Resolve in a glas bottle with 450 ml of water</li>
+<li>Stir carefully</li>
+<li>Check and adjust pH</li>
+<li>Adjust volumes to 500 ml</li>
+</ul>
 </div>
-<div id="example-datasets-and-files" class="section level2">
-<h2><span class="header-section-number">2.3</span> Example datasets and files</h2>
-<p>introduce inst/template folder</p>
+<div id="mcw" class="section level3">
+<h3><span class="header-section-number">22.2.2</span> MCW</h3>
+<p>Materials:</p>
+<ul>
+<li>Methanol</li>
+<li>Chloroform</li>
+<li>ddH2O</li>
+<li>Cinnamic acid stock in MeOH (2 mg/ml): final conc. 2 ug/ml</li>
+</ul>
+<p>Procedure:</p>
+<ul>
+<li>Mix the solvents in the ratio of volumes - Methanol:Chlorofom:Water – 5:2:1</li>
+<li>Supplement cinnamic acid stock 1:1000</li>
+<li>Store at -25°C</li>
+</ul>
 </div>
-<div id="what-do-i-do-if-i-dont-find-the-answer" class="section level2">
-<h2><span class="header-section-number">2.4</span> <code>What do I do if I don't find the answer?</code></h2>
-<p>If you are familiar with github and the create an issue - please head on to the gihub repository (github.com/ChrisZasa/MTXQC_documentation) of this documentation and create one or write me a message (christin.zasada[at]mdc-berlin.de).</p>
+<div id="alkanemix" class="section level3">
+<h3><span class="header-section-number">22.2.3</span> Alkane-Mix</h3>
+<p>Materials:</p>
+<ul>
+<li>Hexane</li>
+<li>Alkanes: c10, c12, c15, c17, c19, c22, c28, c32, c36</li>
+<li>Thermo mixer</li>
+<li>Glass vials and caps</li>
+</ul>
+<p>Procedure:</p>
+<ul>
+<li>Prepare stock solutions in hexane:</li>
+<li>c10 - c17 (liquid): 25 ul/ml</li>
+<li>c19 - c32: 20 mg/ml</li>
+<li>c36: two-times 15 mg/1.5 ml</li>
+<li>Warm up alkane stocks in thermo mixer 40°C</li>
+<li>Prepare a text mixture in equal amounts, e.g., 50 ul each, but use twice the volume of c36</li>
+<li>Mix test mixture with MSTFA: 10 ul / 1 ml MSTFA</li>
+<li>Check alkane profile by GC-MS</li>
+<li>If required: adjust volumes and re-test or create larger volume of zour mixture for aliquots</li>
+<li>Store aiquots in glass vials, close well and store at 4°C</li>
+<li>For usage: gently warm up glass vials at 30 C on thermo mixer for 10 min and vortex before adding it to the MSTFA</li>
+</ul>
+<p>Adjust the volumes of the alkane stocks in order to create a curve shaped distribution of all alkanes in the chromatogram: lower intensities for c10 and c32-36, slowly increasing intensities for the alkanes in between.</p>
+</div>
+</div>
+<div id="standards" class="section level2">
+<h2><span class="header-section-number">22.3</span> Idents &amp; Quant-Standards</h2>
+<p>has to be written</p>
+</div>
+<div id="SampleExtraction" class="section level2">
+<h2><span class="header-section-number">22.4</span> Sample Extraction</h2>
+<div id="cell-extracts-1" class="section level3">
+<h3><span class="header-section-number">22.4.1</span> Cell extracts</h3>
+<p>Materials:</p>
+<ul>
+<li>cell culture dishes (10 cm), max. confluency 75%</li>
+<li>washing buffer (Hepes, NaCl, ph 7.4)</li>
+<li>50% MeOH, ice-cold</li>
+<li>2 mg/ml cinnamic acid</li>
+<li>chloroform</li>
+<li>15 ml falcon tubes</li>
+<li>cell lifter</li>
+</ul>
+<p>Procedure:</p>
+<ul>
+<li>prepare cell culture dishes accordingly to your experimental conditions</li>
+<li>discard cell culture media</li>
+<li>add quickly 5 ml of washing buffer, discard it</li>
+<li>add very immediately 5 ml ice-cold 50% MeOH suppl. 2 ug/ul cinnamic acid</li>
+<li>detach cells using cell lifter</li>
+<li>collect and transfer cell extract into 15 ml falcon</li>
+<li>store falcons until further processing on ice</li>
+<li>add 1 ml chloroform</li>
+<li>incube for 60 min at cold temperatures (4 C) on rotary or thermo shaker</li>
+<li>centrifuge at max speed for 10 min, cold temperatures</li>
+<li>collect polar and lipid phases into fresh falcons / tubes</li>
+<li>dry under vacuum</li>
+</ul>
+<p>In order to generate technical backups:</p>
+<ul>
+<li>resuspend dried extracts in 600 ul 20% MeOH</li>
+<li>shake at cold temperature on thermo shaker for 30 min</li>
+<li>split volumes into equal parts in fresh eppendorf tubes</li>
+<li>dry under vacuum</li>
+</ul>
+<p>Suggested cell density: <span class="math inline">\(2-3e+6\)</span> cells / extract.</p>
+</div>
+<div id="tissue-samples-1" class="section level3">
+<h3><span class="header-section-number">22.4.2</span> Tissue samples</h3>
+<p>Materials:</p>
+<ul>
+<li>Methanol:Chloroform:Water (MCW) in ratio 5:2:1</li>
+<li>2 mg/mg cinnamic acid in MeOH</li>
+<li>ddH20</li>
+<li>eppendorf tubes</li>
+<li>tissue lyzer / pulverizer</li>
+</ul>
+<p>Procedure:</p>
+<ul>
+<li>snap-freeze tissue samples</li>
+<li>pulverize samples</li>
+<li>aliquote 50 mg of tissue powder</li>
+<li>add 1.5 ml of MCW (suppl. with cinnamic acid final conc. 2 ug/ul)</li>
+<li>shake for 60 min on rotary shaker at cold temperature (4 C)</li>
+<li>add 0.5 ml ddH20 for phase separation</li>
+<li>centrifuge maximum speed, 10 min, cold temperatures</li>
+<li>collect polar and lipid phases in fresh vessels</li>
+<li>dry under vacuum</li>
+</ul>
+</div>
+<div id="blood-samples-1" class="section level3">
+<h3><span class="header-section-number">22.4.3</span> Blood samples</h3>
+<p>Material:</p>
+<ul>
+<li>Methanol:Chloroform:Water (MCW) in ratio 5:2:1</li>
+<li>2 mg/mg cinnamic acid in MeOH</li>
+<li>ddH20</li>
+<li>eppendorf tubes</li>
+</ul>
+<p>Procedure:</p>
+<ul>
+<li>give 20 ul blood / sera directly into 1 ml MCW to avoid lumps</li>
+<li>in case of lumps sonicate samples</li>
+<li>shake samples at 4 C for 800 rpm for 60 min</li>
+<li>add 500 ul ddH20 and vortex shortly</li>
+<li>spin down at 4 C at max speed for 10 min</li>
+<li>aliquote polar phase into 2-3 times 500 ul in 1.5 ml tubes</li>
+<li>aliquote lipid phase 2 times in 100 ul lower in 1.5 ml eppi</li>
+<li>dry in SpeedVac (35 C)</li>
+</ul>
+</div>
+</div>
+<div id="Deriv" class="section level2">
+<h2><span class="header-section-number">22.5</span> Derivatisation for GC-MS</h2>
+<p>Materials:</p>
+<ul>
+<li>Methoxamine (MeOx)</li>
+<li>Pyridine (open under the hood only!)</li>
+<li>MSTFA</li>
+<li>Alkane mix (c10-c36) in Hexane</li>
+<li>chromacol vials and caps (big, small)</li>
+<li>samples: extracted and speed-vac dry for min 30 min prior procedure</li>
+<li>quant-standards: extracted and speed-vac dry</li>
+<li>ident-standards: extraction not required, speed-vac dry</li>
+</ul>
+<p>Mixtures:</p>
+<ul>
+<li>Solvent 1: 40 mg MeOx in 1 ml Pyridine</li>
+<li>Solvent 2: 10 ul Alkane mix in 1 ml MSTFA</li>
+</ul>
+<p>Volumens of both solvents are shown for standard (small vol.) procedures.</p>
+<p>Procedure:</p>
+<ul>
+<li>make sure samples are completly dry (1 h speed vac)</li>
+<li>add 20 ul (10 ul) of solvent 1 / sample</li>
+<li>incubate on rotary shaker, 30 C, for 60 min</li>
+<li>add 80 ul (25 ul) of solvent 2 / sample</li>
+<li>incubaate on rotary shaker, 37 C, for 90 min</li>
+<li>centrifuge to spin down insoluble materials</li>
+<li>prepare aliquotes three times 28 ul or two times 15 ul (small glass vials)</li>
+<li>keep on room temperature until measurement (max. 10 days)</li>
+</ul>
+</div>
+<div id="gcms" class="section level2">
+<h2><span class="header-section-number">22.6</span> GC-MS settings</h2>
+<p>In the following paragraphs details of GC-MS settings are described in detail. The herein described settings have been optimized for cell extracts measured in split-mode 1:5 on the instrument Pegasus 4D-C GC-ToF-MS in 1D mode equiped with an autosampler Gerstel MPS.</p>
+<!-- ### Autosampler settings -->
+<!-- The table \@ref(tab:gerstel) summarises the defined parameter for method settings of the Gerstel MPS. -->
+<!-- ```{r gerstel, echo=FALSE} -->
+<!-- library(magrittr) -->
+<!-- library(kableExtra) -->
+<!-- mps = read.csv("example/tables/mps_settings.csv", TRUE) -->
+<!-- #knitr::kable(mps, booktabs = TRUE, caption = "Parameter of Gerstel MPS settings") -->
+<!-- #  -->
+<!-- # knitr::kable(mps, booktabs = TRUE, caption = "Parameter of Gerstel MPS settings") %>% -->
+<!-- #    kable_styling() %>% -->
+<!-- #    group_rows(index = c("System" = 3,  -->
+<!-- #                        "MPS Liq. Inj." = 15, -->
+<!-- #                         "MPS Rinse" = 8)) -->
+<!-- ``` -->
+<!-- The injector itself is a temperature-regulated system providing the advantage of a focused injection of the sample. Gradient  -->
+<!-- ```{r cis, fig.cap="Settings temperature-regulated injection for Gerstel MPS", echo=FALSE, fig.width=6} -->
+<!-- knitr::include_graphics("images/cis.PNG") -->
+<!-- ``` -->
+<!-- ### Gas chromatography -->
+<!-- The most important settings of the GC method are listed below. A graphical representation of the gradient in the oven is shown in figure \@ref(fig:gradient) and corresponding values in table \@ref(tab:gradient2). -->
+<!-- Flow path: -->
+<!-- 1. Inlet: Front -->
+<!-- 2. Capillary: GC Oven 50 m, 250 u int. diameter, 0.25 u film thickness, RTX-5 phase -->
+<!-- 3. Capillarty: Detector 0.21 m, 250 u int. diameter, 0.25 u film thickness, RTX-5 phase -->
+<!-- 4. Detector: TOF -->
+<!-- ```{r gc, echo=FALSE} -->
+<!-- mps = read.csv("example/tables/gc_settings.csv", TRUE) -->
+<!-- #knitr::kable(mps, booktabs = TRUE, caption = "Parameter of Gerstel MPS settings") -->
+<!-- #  -->
+<!-- # knitr::kable(mps, booktabs = TRUE, caption = "Parameter of Gerstel MPS settings") %>% -->
+<!-- #    kable_styling() %>% -->
+<!-- #    group_rows(index = c("System" = 2,  -->
+<!-- #                        "Front Inlet" = 5, -->
+<!-- #                         "Oven" = 3)) -->
+<!-- ``` -->
+<!-- ```{r gradient, echo=FALSE, fig.cap="GC gradient - graphical representation. Rate in (&deg;C/min), Target temperature in (&deg;C), Duratin in (min)."} -->
+<!-- knitr::include_graphics("images/gradient.PNG") -->
+<!-- ``` -->
+<!-- ```{r gradient2, echo=FALSE} -->
+<!-- grad = data.frame(Rate = c("Initial", 5, 7, 12), -->
+<!--                   Target_Temp = c(68, 120, 200, 320), -->
+<!--                   Duration = c( 2, 0, 0, 6)) -->
+<!-- kable(grad, booktabs = TRUE, caption = "GC gradient profile - Rate shown in (K/min), Target Temp in (C), Duration in (min)") -->
+<!-- ``` -->
+<!-- ### Mass spectrometer settings -->
+<!-- ```{r ms, echo=FALSE} -->
+<!-- mps = read.csv("example/tables/ms_setting.csv", TRUE) -->
+<!-- #knitr::kable(mps, booktabs = TRUE, caption = "Parameter of Gerstel MPS settings") -->
+<!-- # #  -->
+<!-- # knitr::kable(mps, booktabs = TRUE, caption = "Parameter of Gerstel MPS settings") %>% -->
+<!-- #    kable_styling() %>% -->
+<!-- #    group_rows(index = c("Filament" = 4,  -->
+<!-- #                        "Mass detection" = 7, -->
+<!-- #                         "Ion source" = 3)) -->
+<!-- ``` -->
 
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Pietzke2014">
-<p>Pietzke, Matthias, Christin Zasada, Susann Mudrich, and Stefan Kempa. 2014. “Decoding the Dynamics of Cellular Metabolism and the Action of 3-Bromopyruvate and 2-Deoxyglucose Using Pulsed Stable Isotope-Resolved Metabolomics.” <em>Cancer &amp; Metabolism</em> 2 (1): 9. doi:<a href="https://doi.org/10.1186/2049-3002-2-9">10.1186/2049-3002-2-9</a>.</p>
 </div>
 </div>
             </section>
@@ -422,8 +631,8 @@
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="3-maui.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="21-psirm.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="23-tables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

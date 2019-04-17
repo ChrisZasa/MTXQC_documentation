@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 2 Introduction MTXQCvX documentation | MTXQCvX2 documentation</title>
+  <title>Chapter 18 Data Processing - Metmax | MTXQCvX2 documentation</title>
   <meta name="description" content="This is the offical documentation for the MTXQCvX2 toolbox.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 2 Introduction MTXQCvX documentation | MTXQCvX2 documentation" />
+  <meta property="og:title" content="Chapter 18 Data Processing - Metmax | MTXQCvX2 documentation" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="chriszasa/MTXQC_documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Introduction MTXQCvX documentation | MTXQCvX2 documentation" />
+  <meta name="twitter:title" content="Chapter 18 Data Processing - Metmax | MTXQCvX2 documentation" />
   
   <meta name="twitter:description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="3-maui.html">
+<link rel="prev" href="17-FAQ.html">
+<link rel="next" href="19-tables.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -380,41 +380,29 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Introduction MTXQCvX documentation</h1>
-<p>This documentation introduces to you how to use MTXQCvX2 in order to run a first straight-forward data analysis of your metabolomics experiment. The underling experimental and mathematical concepts have been introduced for the pulsed stable isotope resolved metabolomics (pSIRM) approach published in <span class="citation">(Pietzke et al. <a href="#ref-Pietzke2014">2014</a>)</span>.</p>
-<p>This documentation shows you how to use MTXQCvX2 in order to assess the quality of your GC-MS derived data, perform the determination of calibration curves and absolute quantification. It furthermore provides you two normalisation strategies and the calculation of quantities in, e.g., pmol/1e+6 cells or pmol/mg tissue.</p>
-<p>MTXQCvX2 does also enable the calculation of stable isotopic incorporation and the evaluation of the underlying data, the mass isotopomer distributions (MIDs).</p>
-<p>The tool has been set up to support the in-lab developed workflow for quantitative metabolomics experiments using the in-house developed software Maui for the annotation of data. MTXQCvX2 bridges the gap between quality control and first data post-processing / analysis of GC-MS derived data (MTXQCvX2_part1, MTXQCvX2_part2).</p>
-<p>Nevertheless MTXQCvX2 includes a module in order to integrate all kind of data provided in spreadsheet-format, e.g., derived from metmax, extracting required information and creating corresponding files (MTXQCvX2_part4).</p>
-<div id="structure" class="section level2">
-<h2><span class="header-section-number">2.1</span> Structure</h2>
-<p>MTXQCvX2 contains a suite of modules is optimized to process GC-MS derived data and processed either in Maui or Chromatof/Metmax. Workflows for both approaches are introduced with step-by-step tutorials in chapter <a href="3-maui.html#maui">3</a> and <a href="4-metmax.html#metmax">4</a>.</p>
-<p>Subsequently each MTXQCvX2 module is introduced in greater detail including the list of processing parameter (chapter <a href="6-ExpSetup.html#ExpSetup">6</a> - <a href="10-Metmax.html#Metmax">10</a>).</p>
-<p>The configuration of MTXQCvX2 has been split into two categories - (1) a general configuration <code>config_files</code> and (2) metabolomics specific parameters <code>config_mtx</code>. Latter one is meant to provide flexibility to adapt MTXQCvX2 to your needs. How to do so and what files can be customizes is shown in chapter <a href="11-config.html#config">11</a>.</p>
-<p>Workflow-specific processing methods applied in Chromatof are introduced separately in the chapter <a href="12-mauiproc.html#mauiproc">12</a> and <a href="14-metmaxproc.html#metmaxproc">14</a> including all parameter as well as a short introduction.</p>
-<p>The remaining chapter cover a chapter for frequently asked questions (chapter<a href="17-FAQ.html#FAQ">17</a>) that might give you a hint where to search for the information you are looking for.</p>
-<p>The appendix summarises technical reference material in the form of a dictionary of tables (chapter <a href="19-tables.html#tables">19</a>), protocols for the pSIRM workflow <a href="21-psirm.html#psirm">21</a> and a complete distinct chapter listing protocols (chapter <a href="22-protocols.html#protocols">22</a>) including standard and sample preparation and derivatisation (chapter <a href="22-protocols.html#SampleExtraction">22.4</a> and <a href="22-protocols.html#Deriv">22.5</a>) and the current setting of the GC-ToF-MS machine (chapter <a href="22-protocols.html#gcms">22.6</a>).</p>
+<div id="metmaxexport" class="section level1">
+<h1><span class="header-section-number">Chapter 18</span> Data Processing - Metmax</h1>
+<div id="resampling-1" class="section level2">
+<h2><span class="header-section-number">18.1</span> Resampling</h2>
 </div>
-<div id="how-to-use-this-documentation" class="section level2">
-<h2><span class="header-section-number">2.2</span> How to use this documentation</h2>
-<p>This documentation provides for each level the right starting point. Complete newbies are highly suggested to start with one of the two tutorials and following the step-by-step descriptions using the example datasets. Also if you are using for the first time please go through to the chapter once to be aware of all the steps that are required to succeed.</p>
-<p>Experienced users might be referred to the explanation of the individual modules or to the how-to-guides for data processing and the FAQs section.</p>
+<div id="d-basic" class="section level2">
+<h2><span class="header-section-number">18.2</span> 1D-basic</h2>
 </div>
-<div id="example-datasets-and-files" class="section level2">
-<h2><span class="header-section-number">2.3</span> Example datasets and files</h2>
-<p>introduce inst/template folder</p>
+<div id="reference-search-1" class="section level2">
+<h2><span class="header-section-number">18.3</span> Reference search</h2>
 </div>
-<div id="what-do-i-do-if-i-dont-find-the-answer" class="section level2">
-<h2><span class="header-section-number">2.4</span> <code>What do I do if I don't find the answer?</code></h2>
-<p>If you are familiar with github and the create an issue - please head on to the gihub repository (github.com/ChrisZasa/MTXQC_documentation) of this documentation and create one or write me a message (christin.zasada[at]mdc-berlin.de).</p>
+<div id="export-for-metmax-1" class="section level2">
+<h2><span class="header-section-number">18.4</span> Export for Metmax</h2>
+</div>
+<div id="data-extraction-with-metmax" class="section level2">
+<h2><span class="header-section-number">18.5</span> Data extraction with Metmax</h2>
+<div id="peak-areas" class="section level3">
+<h3><span class="header-section-number">18.5.1</span> Peak areas</h3>
+</div>
+<div id="mids" class="section level3">
+<h3><span class="header-section-number">18.5.2</span> MIDs</h3>
 
 </div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Pietzke2014">
-<p>Pietzke, Matthias, Christin Zasada, Susann Mudrich, and Stefan Kempa. 2014. “Decoding the Dynamics of Cellular Metabolism and the Action of 3-Bromopyruvate and 2-Deoxyglucose Using Pulsed Stable Isotope-Resolved Metabolomics.” <em>Cancer &amp; Metabolism</em> 2 (1): 9. doi:<a href="https://doi.org/10.1186/2049-3002-2-9">10.1186/2049-3002-2-9</a>.</p>
 </div>
 </div>
             </section>
@@ -422,8 +410,8 @@
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="3-maui.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="17-FAQ.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="19-tables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,4 +1,4 @@
-# Appendix - pSIRM experiments{#psirm}
+# pSIRM experiments{#psirm}
 
 The application of stable isotopes provides a powerful tool to track the activity of metabolic pathways.
 the time-dependent and atom-specific routing along a metabolic pathway resolved how substrates like glucose or glutamine are used in order to maintain a certain phenotype and energetic homeostatsis. 

@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 2 Introduction MTXQCvX documentation | MTXQCvX2 documentation</title>
+  <title>Chapter 14 Data Processing for Metmax | MTXQCvX2 documentation</title>
   <meta name="description" content="This is the offical documentation for the MTXQCvX2 toolbox.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 2 Introduction MTXQCvX documentation | MTXQCvX2 documentation" />
+  <meta property="og:title" content="Chapter 14 Data Processing for Metmax | MTXQCvX2 documentation" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="chriszasa/MTXQC_documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Introduction MTXQCvX documentation | MTXQCvX2 documentation" />
+  <meta name="twitter:title" content="Chapter 14 Data Processing for Metmax | MTXQCvX2 documentation" />
   
   <meta name="twitter:description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="3-maui.html">
+<link rel="prev" href="13-protocols-sample-extraction.html">
+<link rel="next" href="15-protocols-gc-tof-ms-measurement.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -380,35 +380,407 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Introduction MTXQCvX documentation</h1>
-<p>This documentation introduces to you how to use MTXQCvX2 in order to run a first straight-forward data analysis of your metabolomics experiment. The underling experimental and mathematical concepts have been introduced for the pulsed stable isotope resolved metabolomics (pSIRM) approach published in <span class="citation">(Pietzke et al. <a href="#ref-Pietzke2014">2014</a>)</span>.</p>
-<p>This documentation shows you how to use MTXQCvX2 in order to assess the quality of your GC-MS derived data, perform the determination of calibration curves and absolute quantification. It furthermore provides you two normalisation strategies and the calculation of quantities in, e.g., pmol/1e+6 cells or pmol/mg tissue.</p>
-<p>MTXQCvX2 does also enable the calculation of stable isotopic incorporation and the evaluation of the underlying data, the mass isotopomer distributions (MIDs).</p>
-<p>The tool has been set up to support the in-lab developed workflow for quantitative metabolomics experiments using the in-house developed software Maui for the annotation of data. MTXQCvX2 bridges the gap between quality control and first data post-processing / analysis of GC-MS derived data (MTXQCvX2_part1, MTXQCvX2_part2).</p>
-<p>Nevertheless MTXQCvX2 includes a module in order to integrate all kind of data provided in spreadsheet-format, e.g., derived from metmax, extracting required information and creating corresponding files (MTXQCvX2_part4).</p>
-<div id="structure" class="section level2">
-<h2><span class="header-section-number">2.1</span> Structure</h2>
-<p>MTXQCvX2 contains a suite of modules is optimized to process GC-MS derived data and processed either in Maui or Chromatof/Metmax. Workflows for both approaches are introduced with step-by-step tutorials in chapter <a href="3-maui.html#maui">3</a> and <a href="4-metmax.html#metmax">4</a>.</p>
-<p>Subsequently each MTXQCvX2 module is introduced in greater detail including the list of processing parameter (chapter <a href="6-ExpSetup.html#ExpSetup">6</a> - <a href="10-Metmax.html#Metmax">10</a>).</p>
-<p>The configuration of MTXQCvX2 has been split into two categories - (1) a general configuration <code>config_files</code> and (2) metabolomics specific parameters <code>config_mtx</code>. Latter one is meant to provide flexibility to adapt MTXQCvX2 to your needs. How to do so and what files can be customizes is shown in chapter <a href="11-config.html#config">11</a>.</p>
-<p>Workflow-specific processing methods applied in Chromatof are introduced separately in the chapter <a href="12-mauiproc.html#mauiproc">12</a> and <a href="14-metmaxproc.html#metmaxproc">14</a> including all parameter as well as a short introduction.</p>
-<p>The remaining chapter cover a chapter for frequently asked questions (chapter<a href="17-FAQ.html#FAQ">17</a>) that might give you a hint where to search for the information you are looking for.</p>
-<p>The appendix summarises technical reference material in the form of a dictionary of tables (chapter <a href="19-tables.html#tables">19</a>), protocols for the pSIRM workflow <a href="21-psirm.html#psirm">21</a> and a complete distinct chapter listing protocols (chapter <a href="22-protocols.html#protocols">22</a>) including standard and sample preparation and derivatisation (chapter <a href="22-protocols.html#SampleExtraction">22.4</a> and <a href="22-protocols.html#Deriv">22.5</a>) and the current setting of the GC-ToF-MS machine (chapter <a href="22-protocols.html#gcms">22.6</a>).</p>
+<div id="metmaxproc" class="section level1">
+<h1><span class="header-section-number">Chapter 14</span> Data Processing for Metmax</h1>
+<p>The following steps are done in ChromaToF on the raw data exported from the machine. I highly recommend to create a local copy of your data and then import it into ChromaToF. ChromaToF is not the fastest software and the server doesn’t help for sure with that.</p>
+<p>For each data processing (DP) method you need to define tasks by checking boxes at the top of the window. With each ticked box the related parameter that can be modified are listed below that list of tasks. So always remeber to scroll down, and after setting parameters, scroll up and check your ticks another time.</p>
+<p>In general you first adjust the choice of DP method first and apply it subsequently - choose one file, right click and choose <em>Process data</em>. Select all files and the DP method.</p>
+<div id="import-data-into-chromatof" class="section level2">
+<h2><span class="header-section-number">14.1</span> Import data into ChromaToF</h2>
+<p>Create a new project folder in the menu <code>Acquired Samples</code> and rename it, e.g., with the date and project name. Click on the folder to activate it.</p>
+<p>Now you can move down a window, just right click somewhere in this window and choose <em>Import data</em>. Select your <code>.SMP</code> files and wait until ChromaToF is done.</p>
 </div>
-<div id="how-to-use-this-documentation" class="section level2">
-<h2><span class="header-section-number">2.2</span> How to use this documentation</h2>
-<p>This documentation provides for each level the right starting point. Complete newbies are highly suggested to start with one of the two tutorials and following the step-by-step descriptions using the example datasets. Also if you are using for the first time please go through to the chapter once to be aware of all the steps that are required to succeed.</p>
-<p>Experienced users might be referred to the explanation of the individual modules or to the how-to-guides for data processing and the FAQs section.</p>
+<div id="dp---resampling" class="section level2">
+<h2><span class="header-section-number">14.2</span> DP - Resampling</h2>
+<p>Resampling is commonly applied and results into a data transformation enabling an improved detection of low abundant peaks and a reduction of noise. (Maybe include an example?)</p>
+<p>The processing methods requires to tick the task <code>Export data file</code>. Subsequently, you are asked to define an output folder and the following paramter:</p>
+<ul>
+<li>Reduction rate: 4</li>
+<li>From the beginning to end of the file</li>
+<li><code>.peg</code>-files</li>
+</ul>
+<p>In the next step the generated files have to be re-imported into a subfolder in <code>Acquired Samples</code> in ChromaToF.</p>
+<ul>
+<li>Create subfolder called <code>resample</code> in ChromaToF</li>
+<li>Right-click file window below</li>
+<li>Import <code>.peg</code>-files</li>
+</ul>
 </div>
-<div id="example-datasets-and-files" class="section level2">
-<h2><span class="header-section-number">2.3</span> Example datasets and files</h2>
-<p>introduce inst/template folder</p>
+<div id="dp---1d-basic" class="section level2">
+<h2><span class="header-section-number">14.3</span> DP - 1D-basic</h2>
+<p>Please check the following task in ChromaToF <code>Data Processing (DP) Methods</code>:</p>
+<ul>
+<li>Baseline</li>
+<li>Peak Find</li>
+<li>Library Search</li>
+<li>Calculate Area / Height</li>
+<li>Retention Index Method</li>
+</ul>
+<p><strong>Baseline</strong></p>
+<ul>
+<li>enter baseline tracking from <code>start of the run</code> until <code>end of run</code></li>
+<li>baseline offset 1</li>
+<li>number of data points for smoothing: auto</li>
+</ul>
+<p><strong>Peak Find</strong></p>
+<ul>
+<li>peak width: 4</li>
+<li>maximum number of unknown peaks to find: 600</li>
+<li>S/N: 50.0</li>
+<li>library identity: normal</li>
+<li>library search mode: forward</li>
+<li>number of library hits returned: 10</li>
+<li>min. molecular weigth allowed: 0</li>
+<li>max. molecular weight allowed: 1500</li>
+<li>mass threshold: 0</li>
+<li>min. similarity match: 0</li>
+<li>Add libraries: gmd-merged-kempa</li>
+</ul>
+<p><strong>Calculate Area / Height</strong></p>
+<ul>
+<li>enter mass to use: U</li>
+</ul>
+<p><strong>Retention Index Method</strong></p>
+<ul>
+<li>choose your retention index method</li>
+</ul>
+<div id="createri" class="section level3">
+<h3><span class="header-section-number">14.3.1</span> Create the Retention Index Method</h3>
+<p>Before proceeding with applying processing method you need to prepare the Retention Index Method.</p>
+<p>Create a new Retention Index Method:</p>
+<ul>
+<li>Scroll down in the main menu and click on Retention Index Methods</li>
+<li>Right click on the white in the window below</li>
+<li>Select new</li>
+<li>Rename it</li>
+</ul>
+<p>This creates an empty table in the main window. Use the blue plus sign and add nine rows. If you cannot click on the plus, make sure you clicked the name of the retention indey method before.</p>
+<p>Adjust the entries the following way:</p>
+<ul>
+<li>Change names: #c10, #c12, #c15, #c17, #c19, #c22, #c28, #c32, #c36</li>
+<li>Retention Index is equal to the product of number of carbons and 100 (RI of #c10 is 1000)</li>
+<li>Verification Mass: 85</li>
+</ul>
+<p>Go back to your measurements and select a wash run. Select the alkane masses, normally saved in shortcut B, and collect the retention times. Add these values in the retention index method. All done, select the retention index method in data processing methods.</p>
+<p>Run the processing method <code>1D-basic</code> over all your files.</p>
 </div>
-<div id="what-do-i-do-if-i-dont-find-the-answer" class="section level2">
-<h2><span class="header-section-number">2.4</span> <code>What do I do if I don't find the answer?</code></h2>
-<p>If you are familiar with github and the create an issue - please head on to the gihub repository (github.com/ChrisZasa/MTXQC_documentation) of this documentation and create one or write me a message (christin.zasada[at]mdc-berlin.de).</p>
+</div>
+<div id="reference-search" class="section level2">
+<h2><span class="header-section-number">14.4</span> Reference search</h2>
+<div id="create-a-reference-in-chromatof" class="section level3">
+<h3><span class="header-section-number">14.4.1</span> Create a reference in ChromaToF</h3>
+</div>
+<div id="process-your-reference-search" class="section level3">
+<h3><span class="header-section-number">14.4.2</span> Process your reference search</h3>
+<p>Check the task and following parameter:</p>
+<ul>
+<li><p>Apply Reference(s):</p>
+<ul>
+<li>S/N: 10 - 50</li>
+<li>Mass Threshold: 0</li>
+<li>Add the references</li>
+</ul></li>
+</ul>
+<p><strong>Very important</strong> Always scroll up and check the ticked tasks again. <strong>Always… and really always</strong> when you change the reference ChromaToF checks the PeakFind option for you. But this we definitely do not want since the basic processing just pre-annotated all peaks that were detected and identifiable. If you forget to uncheck the box only the compounds listed in your reference are annotated, all other annotations are replaced with unknown and a number.</p>
+</div>
+</div>
+<div id="export-for-metmax" class="section level2">
+<h2><span class="header-section-number">14.5</span> Export for Metmax</h2>
+<p>Check tasks in `data processing methods:</p>
+<ul>
+<li>Export peak information ASCII CSV format
+<ul>
+<li>define the directory where files should be saved</li>
+<li>field separator: TAB</li>
+<li>filter: choose all but not <strong>Not Founds</strong></li>
+<li>sort by: Name, ascending</li>
+<li>exportet information:</li>
+<li>Name</li>
+<li>Concerns</li>
+<li>Quant Masses</li>
+<li>Area</li>
+<li>Expected Ion Ratio 1</li>
+<li>Calibration</li>
+<li>Match</li>
+<li>Quant S/N</li>
+<li>Similarity</li>
+<li>Type</li>
+<li>Concentration</li>
+<li>Sample Concentration</li>
+<li>1st Dimension Time (s)</li>
+<li>Retention Index</li>
+<li>R.T. (s)</li>
+<li>Reverse</li>
+<li>Conc. Units</li>
+<li>2nd Dimension Time (s)</li>
+</ul></li>
+</ul>
+</div>
+<div id="metmax-dataextr" class="section level2">
+<h2><span class="header-section-number">14.6</span> Data extraction with Metmax</h2>
+<div id="quantification---peakareas.csv" class="section level3">
+<h3><span class="header-section-number">14.6.1</span> Quantification - PeakAreas.csv<a href="#fn24" class="footnoteRef" id="fnref24"><sup>24</sup></a></h3>
+<p>In order to perform absolute quantification you need a file containing all extracted peak areas for each metabolite and file<a href="#fn25" class="footnoteRef" id="fnref25"><sup>25</sup></a>.</p>
+<p>The header of metmax-extracted files looks like shown below (see table 1). Please, remember to delete the second header row, representing the column loads for each file before saving as csv-file. Otherwise you end up with weird imported dataframes in R.</p>
+<p>Quantification masses have to be updated while processing in ChromaToF prior the export of the data e.g., with a reference search (see section <a href="#refsearch"><strong>??</strong></a>] or using statistical compare. pSIRM experiments require the definition of pTop5 masses; an extended list of quant masses considering isotope incorporation instead of top5 masses in the reference in order to take into account the shift of intensities induced by the application of stable isotopes<a href="#fn26" class="footnoteRef" id="fnref26"><sup>26</sup></a> (see <em>somewhere</em>).</p>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+name
+</th>
+<th style="text-align:right;">
+mass
+</th>
+<th style="text-align:right;">
+ri
+</th>
+<th style="text-align:right;">
+row.load
+</th>
+<th style="text-align:right;">
+file_1
+</th>
+<th style="text-align:right;">
+file_2
+</th>
+<th style="text-align:right;">
+file_x
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Lac
+</td>
+<td style="text-align:right;">
+219
+</td>
+<td style="text-align:right;">
+1051
+</td>
+<td style="text-align:right;">
+0.76
+</td>
+<td style="text-align:right;">
+15423
+</td>
+<td style="text-align:right;">
+135444
+</td>
+<td style="text-align:right;">
+465486
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pyr
+</td>
+<td style="text-align:right;">
+174
+</td>
+<td style="text-align:right;">
+1042
+</td>
+<td style="text-align:right;">
+0.65
+</td>
+<td style="text-align:right;">
+56978
+</td>
+<td style="text-align:right;">
+46888
+</td>
+<td style="text-align:right;">
+4354544
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cit
+</td>
+<td style="text-align:right;">
+273
+</td>
+<td style="text-align:right;">
+1805
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+<td style="text-align:right;">
+1326
+</td>
+<td style="text-align:right;">
+23321
+</td>
+<td style="text-align:right;">
+132121
+</td>
+</tr>
+</tbody>
+</table>
+<p>MTXQC_part4 takes care of the formatting and correct column names of the peak areas file and saves it in <code>input/quant/quantMassAreasMatrix.csv</code>.<br />
+MTXQC_part4 generates also the file PeakDensities-Chroma.csv and saves it in <code>input/gc/PeakDensities-Chroma.csv</code> in case you have selected the option to include sum of area normalisation while knitting this module.</p>
+</div>
+<div id="isotope-incorporation---mids.csv" class="section level3">
+<h3><span class="header-section-number">14.6.2</span> Isotope incorporation - MIDs.csv<a href="#fn27" class="footnoteRef" id="fnref27"><sup>27</sup></a></h3>
+<p>In order to determine the incorporation of stable isotopes MTXQCvX2 requires as an input the mass isotopomer distributions (MIDs) for each intermediate and measurement<a href="#fn28" class="footnoteRef" id="fnref28"><sup>28</sup></a>. Fragments for each intermediate have to be pre-defined in metmax in the menue Tools/Options/metabolite masses.</p>
+<p>You can import a prepared list (have a look at <code>inst/template_files/MetMax_MIDs.txt</code>) or specify each entry manually. An example of the metmax output is shown in table 2. The output has to be saved as csv-file, including the deletion of the partial row <code>column.load</code>, respectively<a href="#fn29" class="footnoteRef" id="fnref29"><sup>29</sup></a>.</p>
+<table class="table table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+name
+</th>
+<th style="text-align:right;">
+mass
+</th>
+<th style="text-align:right;">
+ri
+</th>
+<th style="text-align:right;">
+row.load
+</th>
+<th style="text-align:right;">
+file_1
+</th>
+<th style="text-align:right;">
+file_2
+</th>
+<th style="text-align:right;">
+file_x
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Lac
+</td>
+<td style="text-align:right;">
+219
+</td>
+<td style="text-align:right;">
+1051
+</td>
+<td style="text-align:right;">
+0.85
+</td>
+<td style="text-align:right;">
+31026
+</td>
+<td style="text-align:right;">
+5165829
+</td>
+<td style="text-align:right;">
+5829
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lac
+</td>
+<td style="text-align:right;">
+220
+</td>
+<td style="text-align:right;">
+1051
+</td>
+<td style="text-align:right;">
+0.85
+</td>
+<td style="text-align:right;">
+3607
+</td>
+<td style="text-align:right;">
+662277
+</td>
+<td style="text-align:right;">
+277
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lac
+</td>
+<td style="text-align:right;">
+221
+</td>
+<td style="text-align:right;">
+1051
+</td>
+<td style="text-align:right;">
+0.85
+</td>
+<td style="text-align:right;">
+1222
+</td>
+<td style="text-align:right;">
+111481
+</td>
+<td style="text-align:right;">
+81
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lac
+</td>
+<td style="text-align:right;">
+222
+</td>
+<td style="text-align:right;">
+1051
+</td>
+<td style="text-align:right;">
+0.85
+</td>
+<td style="text-align:right;">
+188
+</td>
+<td style="text-align:right;">
+1003494
+</td>
+<td style="text-align:right;">
+10023
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lac
+</td>
+<td style="text-align:right;">
+223
+</td>
+<td style="text-align:right;">
+1051
+</td>
+<td style="text-align:right;">
+0.85
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+33542
+</td>
+<td style="text-align:right;">
+342
+</td>
+</tr>
+</tbody>
+</table>
+<p>MTXQC_part4 calculates the stable isotope incorporation and exports DataMatrix.csv as well as pSIRM_SpectraData.csv saved in <code>input/inc/DataMatrix</code> &amp; <code>pSIRM_SpectraData.csv</code>, respectively. The mathematics behind are outlined in <span class="citation">(Pietzke et al. <a href="#ref-Pietzke2014">2014</a>)</span></p>
+<p><strong>Important:</strong> Extracted MIDs have to match with defined mass couples for each metabolite in MTXQCvX2 defined in <code>config_mtx/incorpo_calc_masses.csv</code>. Please refer for more details in chapter <a href="11-config.html#config">11</a>.</p>
+</div>
+<div id="derivatisation-efficiency---mz73.csv" class="section level3">
+<h3><span class="header-section-number">14.6.3</span> Derivatisation efficiency - mz73.csv<a href="#fn30" class="footnoteRef" id="fnref30"><sup>30</sup></a></h3>
+<p>The extraction of intensities for the ion <span class="math inline">\(m/z 73\)</span> works analogous to the extraction of MIDs<a href="#fn31" class="footnoteRef" id="fnref31"><sup>31</sup></a>.</p>
+<p>Mass ranges have to be defined for each intermediate for the mass 73 by defining starting and end mass with 73. MTXQC_part4 generates the file and saves it in <code>input/gc/MassSum-73.csv</code>. Check <code>inst\template_files\</code> for reference. Hopefully soon a new metmax button extracting specific intensities across the batch.</p>
 
+</div>
 </div>
 </div>
 <h3>References</h3>
@@ -417,13 +789,26 @@
 <p>Pietzke, Matthias, Christin Zasada, Susann Mudrich, and Stefan Kempa. 2014. “Decoding the Dynamics of Cellular Metabolism and the Action of 3-Bromopyruvate and 2-Deoxyglucose Using Pulsed Stable Isotope-Resolved Metabolomics.” <em>Cancer &amp; Metabolism</em> 2 (1): 9. doi:<a href="https://doi.org/10.1186/2049-3002-2-9">10.1186/2049-3002-2-9</a>.</p>
 </div>
 </div>
+<div class="footnotes">
+<hr />
+<ol start="24">
+<li id="fn24"><p>Required for: all parameter, just not <code>calculation stable isotope incorporation</code><a href="14-metmaxproc.html#fnref24">↩</a></p></li>
+<li id="fn25"><p>Tools/Options/Retention analysis, Parameter: Area<a href="14-metmaxproc.html#fnref25">↩</a></p></li>
+<li id="fn26"><p>Mandatory columns: name, mass, files<a href="14-metmaxproc.html#fnref26">↩</a></p></li>
+<li id="fn27"><p>Required for <code>calculation isotope incorporation</code><a href="14-metmaxproc.html#fnref27">↩</a></p></li>
+<li id="fn28"><p>Metmax: Tools/Options/Isotope concentrator; Parameter: IntensityOfMass<a href="14-metmaxproc.html#fnref28">↩</a></p></li>
+<li id="fn29"><p>Mandatory columns: name, mass, files<a href="14-metmaxproc.html#fnref29">↩</a></p></li>
+<li id="fn30"><p>Required for: <code>sum of area normalisation</code><a href="14-metmaxproc.html#fnref30">↩</a></p></li>
+<li id="fn31"><p>Tools/Options/Isotope concentrator; Parameter: IntensityOfMass<a href="14-metmaxproc.html#fnref31">↩</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="3-maui.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="13-protocols-sample-extraction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="15-protocols-gc-tof-ms-measurement.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
