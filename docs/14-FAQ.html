@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 14 Frequently Asked Questions | MTXQCvX2 documentation</title>
-  <meta name="description" content="This is the offical documentation for the MTXQCvX2 toolbox.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 14 Frequently Asked Questions | MTXQCvX2 documentation" />
   <meta property="og:type" content="book" />
@@ -22,14 +21,14 @@
   <meta name="twitter:description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
   
 
-<meta name="author" content="Christin Zasada">
+<meta name="author" content="Christin Zasada" />
 
 
-<meta name="date" content="2019-04-17">
+<meta name="date" content="2019-07-21" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="13-metmaxproc.html">
@@ -269,7 +268,7 @@
 <li class="chapter" data-level="20.1.2" data-path="17-protocols.html"><a href="17-protocols.html#mcw"><i class="fa fa-check"></i><b>20.1.2</b> MCW</a></li>
 <li class="chapter" data-level="20.1.3" data-path="17-protocols.html"><a href="17-protocols.html#alkanemix"><i class="fa fa-check"></i><b>20.1.3</b> Alkane-Mix</a></li>
 </ul></li>
-<li class="chapter" data-level="20.2" data-path="17-protocols.html"><a href="17-protocols.html#materials"><i class="fa fa-check"></i><b>20.2</b> Materials</a></li>
+<li class="chapter" data-level="20.2" data-path="20-mm.html"><a href="20-mm.html#materials-1"><i class="fa fa-check"></i><b>20.2</b> Materials</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -295,7 +294,7 @@
 <div id="FAQ" class="section level1">
 <h1><span class="header-section-number">Chapter 14</span> Frequently Asked Questions</h1>
 <p>Please keep in mind that thorughout this section the project-folder is referred as ‘psirm_glucose’.</p>
-<p>If you do not find an answer to your question - please create an issue directly in the github repository<a href="#fn32" class="footnoteRef" id="fnref32"><sup>32</sup></a> or write an e-mail.</p>
+<p>If you do not find an answer to your question - please create an issue directly in the github repository<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a> or write an e-mail.</p>
 <div id="createannotation" class="section level2">
 <h2><span class="header-section-number">14.1</span> How do I create my annotation-file?</h2>
 <p>The annotation file relate file names with experimental conditions or specify quantification standards in your batch. Two columns - <strong>File and Type</strong> - are obligatory and have to be present in the annotation file. In the case of their absence <code>MTXQCvX_part1.Rmd</code> stops processing and shows an error message.</p>
@@ -305,15 +304,15 @@
 <li>Paste &amp; transpose the content into a new Excel-File into column A</li>
 <li>Change the first entry: Metabolite -&gt; File</li>
 <li>Remove the entry QuantMasses at the very end of the column A</li>
-<li>Add the column Type and specify each file either as <strong>sample</strong>, <strong>Q1_dilution</strong> or <strong>addQ1_dilution</strong><a href="#fn33" class="footnoteRef" id="fnref33"><sup>33</sup></a></li>
-<li>Add more columns specifying your experimental conditions, e.g., Cellline and Treatment<a href="#fn34" class="footnoteRef" id="fnref34"><sup>34</sup></a></li>
+<li>Add the column Type and specify each file either as <strong>sample</strong>, <strong>Q1_dilution</strong> or <strong>addQ1_dilution</strong><a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a></li>
+<li>Add more columns specifying your experimental conditions, e.g., Cellline and Treatment<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a></li>
 <li>Save the content as <code>csv-file</code> in, e.g., <code>psirm_glucose/input/...</code></li>
 </ol>
 </div>
 <div id="createsampleextracts" class="section level2">
 <h2><span class="header-section-number">14.2</span> How do I create the file <code>sample_extracts.csv</code>?</h2>
 <p>The <code>sample_extracts.csv</code> file is required in order to determine automatically absolute quantities in the manner of pmol/1e+6 cells or pmol/mg tissue in the <code>CalculationFileData.csv</code>.</p>
-<p>This file requires two obligatory columns - <strong>Extract_vol</strong> and <strong>Unit</strong><a href="#fn35" class="footnoteRef" id="fnref35"><sup>35</sup></a>. Please specify for each experimental condition the amount of extracted cells (count), tissue (mg) or volume of blood/plasme (ul) in the unit shown in the brackets.<br />
+<p>This file requires two obligatory columns - <strong>Extract_vol</strong> and <strong>Unit</strong><a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>. Please specify for each experimental condition the amount of extracted cells (count), tissue (mg) or volume of blood/plasme (ul) in the unit shown in the brackets.<br />
 The names of the columns of the experimental conditions have to match up with the annotation file. Save the file in the folder <code>psirm_glucose/input/...</code>.</p>
 <p>If the defined experimental conditions do not match up with the annotation <code>MTXQC_part1.Rmd</code> exit data processing. A template file is saved for review and usage at <code>inst/template_files/...</code></p>
 </div>
@@ -322,17 +321,18 @@ The names of the columns of the experimental conditions have to match up with th
 <p>MTXQCvX2 allows the specification of project-specific internal extraction standards. The only thing you need to do is to define the corresponding compounds as an internal standard in the <code>config_mtx/conversion_metabolite.csv</code> file. To do so, add to the compound in last column <code>Standard</code> the entry <code>InternalStandard</code>.</p>
 <p>The definition of an internal standard requires the file ‘InternalStandard.csv’ in the folder <code>input/gc</code> since it is used for the evaluation of normalisation factors in MTXQC_part1.</p>
 <p><strong>Scenario 1</strong> Maui-project and Cinnamic acid</p>
-<p>For an classical pSIRM experiment in the Kempa lab we are using cinnamic acid. The evaluation of this compound has been integrated into Maui. Peak areas of cinnamic acid are exported from the container called <code>cinAcid</code>. The exported file<a href="#fn36" class="footnoteRef" id="fnref36"><sup>36</sup></a> has to be renamed to <code>InternalStandard.csv</code> though and moved to <code>psirm_glucose/input/gc/...</code>.</p>
+<p>For an classical pSIRM experiment in the Kempa lab we are using cinnamic acid. The evaluation of this compound has been integrated into Maui. Peak areas of cinnamic acid are exported from the container called <code>cinAcid</code>. The exported file<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a> has to be renamed to <code>InternalStandard.csv</code> though and moved to <code>psirm_glucose/input/gc/...</code>.</p>
 <p><strong>Scenario 2</strong> Maui-project and different internal standard</p>
 <p>If you have used a different compound as an internal extraction standard you might need to extract the peak areas of this compound from the file <code>quantPeakAreasMatrix.csv</code> and save it in the folder <code>psirm_glucose/input/gc/InternalStandard.csv</code>, respectively. Prerequisite here - you have annotated the compound in your Maui-project.</p>
 <p><strong>Scenario 3</strong> Metmax-project</p>
-<p>In the case you used metmax the module <code>MTXQC_part4.Rmd</code> takes care for you of the generation of the <code>InternalStandard.csv</code> based on the definition in <code>conversion_metabolite.csv</code> and provided peak areas<a href="#fn37" class="footnoteRef" id="fnref37"><sup>37</sup></a>. This procedure is independent what standard you have defined. It only requires the annotation of your compound in chromtof and successful export with metmax.</p>
+<p>In the case you used metmax the module <code>MTXQC_part4.Rmd</code> takes care for you of the generation of the <code>InternalStandard.csv</code> based on the definition in <code>conversion_metabolite.csv</code> and provided peak areas<a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a>.
+This procedure is independent what standard you have defined. It only requires the annotation of your compound in chromtof and successful export with metmax.</p>
 </div>
 <div id="multipleproj" class="section level2">
 <h2><span class="header-section-number">14.4</span> How do I combine multiple MAUI-projects into a single MTXQC-project?</h2>
 <p>Certain circumstances might wish you to combine <em>multiple MAUI-projects</em> into one MTXQC-project. This might be the case when you run the same samples in split and splitless mode on the machine or your experimental setup has been measured in multiple batches in order to avoid derivatisation effects.</p>
-<p>It is highly recommended to combine the input files derived from a different Maui projects beforehand the analysis. In that way you have only to work with a single file <code>CalculationFileData.csv</code><a href="#fn38" class="footnoteRef" id="fnref38"><sup>38</sup></a> containing all data of the your experiment.</p>
-<p>The herein described process provides a quick way how to combine the exported files from different Maui projects. The script <code>combine-sets.R</code><a href="#fn39" class="footnoteRef" id="fnref39"><sup>39</sup></a> automatically saves all combined files into the correct <code>input</code> folder. Just update the folder and subfolder names. All the rest has been taken care of for you.</p>
+<p>It is highly recommended to combine the input files derived from a different Maui projects beforehand the analysis. In that way you have only to work with a single file <code>CalculationFileData.csv</code><a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a> containing all data of the your experiment.</p>
+<p>The herein described process provides a quick way how to combine the exported files from different Maui projects. The script <code>combine-sets.R</code><a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a> automatically saves all combined files into the correct <code>input</code> folder. Just update the folder and subfolder names. All the rest has been taken care of for you.</p>
 <ol style="list-style-type: decimal">
 <li>Create in the MTXQC-project folder (e.g., <code>psirm_glucose/</code>) a new folder called <code>raw-data</code></li>
 <li>Create a subfolder for each Maui-project in <code>psirm_glucose/raw_data/...</code></li>
@@ -345,28 +345,34 @@ The names of the columns of the experimental conditions have to match up with th
 </div>
 <div id="extendconse" class="section level2">
 <h2><span class="header-section-number">14.5</span> How do I extend conversion_metabolite.csv</h2>
-<p>At a certain point you might want to add a compound or derivate that is not part of the current setup of metabolites. For simplicity we assume you want to add an intermediate for quantitative and isotope incorporation<a href="#fn40" class="footnoteRef" id="fnref40"><sup>40</sup></a>.</p>
+<p>At a certain point you might want to add a compound or derivate that is not part of the current setup of metabolites. For simplicity we assume you want to add an intermediate for quantitative and isotope incorporation<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>.</p>
 <p>In order to include this new compound you need to add information to the following files in <code>config_mtx</code>:</p>
 <ul>
-<li><code>conversion_metabolite.csv</code></li>
+<li><code>conversion_metabolite.csv</code>
+<ul>
 <li><code>letter_pathway_complete.csv</code></li>
 <li><code>incorp_calc_masses.csv</code></li>
 <li><code>mid_backups.csv</code></li>
+</ul></li>
 </ul>
 <p>If you desire the absolute quantification of this new compound you most probably need to either: (1) include the compound in quant-standards or (2) measure additional quantification standards. Please read sections <a href="14-FAQ.html#quantquant">14.8</a>, @ref(#quantind) and <a href="14-FAQ.html#addqadds">14.10</a> how to proceed.</p>
 <p><strong><code>conversion_metabolite.csv</code></strong></p>
 <ul>
-<li>Define the three variations - Metabolite, Metaboite_short, Lettercode - of the compound name by analogy with the present list (text)</li>
+<li>Define the three variations - Metabolite, Metaboite_short, Lettercode - of the compound name by analogy with the present list (text)
+<ul>
 <li>Q1_value: check only if this compound is part of a quantification mix (x)</li>
 <li>Mass_Pos: define the m/z-value reflecting the shift of intensity in case of the incorporation of stable isotopes (numeric)</li>
 <li>SE_sel: check only if MID exports are available (x)</li>
 <li>Q_sel:</li>
 <li>nopsirm: check if this compound should not considered for isotope inc. (x)</li>
 <li>Standards: define as <em>InternalStandard</em> if applicable</li>
+</ul></li>
 </ul>
 <p>** <code>letter_pathway_complete.csv</code></p>
 <p>** <code>ìncorp_calc_masses.csv</code></p>
-<p>Define the couple of m/z-values for your compound: - m0 - mono-isotopic mass/charge value and - minc - mass/charge value reflecting shift of intensities</p>
+<p>Define the couple of m/z-values for your compound:
+- m0 - mono-isotopic mass/charge value and
+- minc - mass/charge value reflecting shift of intensities</p>
 <p>In case you want to define more than one pair of m/z-values have a look at the defined TCA-cycle intermediates.</p>
 <p>** <code>mid_backups.csv</code></p>
 </div>
@@ -390,15 +396,15 @@ The names of the columns of the experimental conditions have to match up with th
 <div class="footnotes">
 <hr />
 <ol start="32">
-<li id="fn32"><p>check <a href="https://www.github.com/ChrisZasa/MTXQC_documentation/" class="uri">https://www.github.com/ChrisZasa/MTXQC_documentation/</a><a href="14-FAQ.html#fnref32">↩</a></p></li>
-<li id="fn33"><p>see for further details additionalQuant<a href="14-FAQ.html#fnref33">↩</a></p></li>
-<li id="fn34"><p>optimal: two to three parameter, at maimumx: four parameter. Consider combinations of parameter, e.g., HCT116-control, HCT116-BPTES<a href="14-FAQ.html#fnref34">↩</a></p></li>
-<li id="fn35"><p>Define: count, mg or ul<a href="14-FAQ.html#fnref35">↩</a></p></li>
-<li id="fn36"><p>see section <a href="#mauiexports"><strong>??</strong></a><a href="14-FAQ.html#fnref36">↩</a></p></li>
-<li id="fn37"><p>see chapter <a href="10-Metmax.html#Metmax">10</a><a href="14-FAQ.html#fnref37">↩</a></p></li>
-<li id="fn38"><p>stored in <code>psirm_glucose/output/quant/...</code><a href="14-FAQ.html#fnref38">↩</a></p></li>
-<li id="fn39"><p>inst/template_files/…<a href="14-FAQ.html#fnref39">↩</a></p></li>
-<li id="fn40"><p>Just skip this if this is not required<a href="14-FAQ.html#fnref40">↩</a></p></li>
+<li id="fn32"><p>check <a href="https://www.github.com/ChrisZasa/MTXQC_documentation/" class="uri">https://www.github.com/ChrisZasa/MTXQC_documentation/</a><a href="14-FAQ.html#fnref32" class="footnote-back">↩</a></p></li>
+<li id="fn33"><p>see for further details additionalQuant<a href="14-FAQ.html#fnref33" class="footnote-back">↩</a></p></li>
+<li id="fn34"><p>optimal: two to three parameter, at maimumx: four parameter. Consider combinations of parameter, e.g., HCT116-control, HCT116-BPTES<a href="14-FAQ.html#fnref34" class="footnote-back">↩</a></p></li>
+<li id="fn35"><p>Define: count, mg or ul<a href="14-FAQ.html#fnref35" class="footnote-back">↩</a></p></li>
+<li id="fn36"><p>see section <a href="#mauiexports"><strong>??</strong></a><a href="14-FAQ.html#fnref36" class="footnote-back">↩</a></p></li>
+<li id="fn37"><p>see chapter <a href="10-Metmax.html#Metmax">10</a><a href="14-FAQ.html#fnref37" class="footnote-back">↩</a></p></li>
+<li id="fn38"><p>stored in <code>psirm_glucose/output/quant/...</code><a href="14-FAQ.html#fnref38" class="footnote-back">↩</a></p></li>
+<li id="fn39"><p>inst/template_files/…<a href="14-FAQ.html#fnref39" class="footnote-back">↩</a></p></li>
+<li id="fn40"><p>Just skip this if this is not required<a href="14-FAQ.html#fnref40" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -459,7 +465,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

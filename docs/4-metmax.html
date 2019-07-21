@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Tutorial: MTXQCvX2 for for Metmax-extracted projects | MTXQCvX2 documentation</title>
-  <meta name="description" content="This is the offical documentation for the MTXQCvX2 toolbox.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Tutorial: MTXQCvX2 for for Metmax-extracted projects | MTXQCvX2 documentation" />
   <meta property="og:type" content="book" />
@@ -22,14 +21,14 @@
   <meta name="twitter:description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
   
 
-<meta name="author" content="Christin Zasada">
+<meta name="author" content="Christin Zasada" />
 
 
-<meta name="date" content="2019-04-17">
+<meta name="date" content="2019-07-21" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="3-maui.html">
@@ -269,7 +268,7 @@
 <li class="chapter" data-level="20.1.2" data-path="17-protocols.html"><a href="17-protocols.html#mcw"><i class="fa fa-check"></i><b>20.1.2</b> MCW</a></li>
 <li class="chapter" data-level="20.1.3" data-path="17-protocols.html"><a href="17-protocols.html#alkanemix"><i class="fa fa-check"></i><b>20.1.3</b> Alkane-Mix</a></li>
 </ul></li>
-<li class="chapter" data-level="20.2" data-path="17-protocols.html"><a href="17-protocols.html#materials"><i class="fa fa-check"></i><b>20.2</b> Materials</a></li>
+<li class="chapter" data-level="20.2" data-path="20-mm.html"><a href="20-mm.html#materials-1"><i class="fa fa-check"></i><b>20.2</b> Materials</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -300,7 +299,7 @@
 <li>You have processed and annotated your intermediates in ChromaToF</li>
 <li>You have defined the correct quantification masses in the reference search</li>
 <li>You have exported the data in <code>.txt</code> files</li>
-<li>You have used metmax<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a> to extract the data (see chapter <a href="13-metmaxproc.html#metmaxproc">13</a>)</li>
+<li>You have used metmax<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> to extract the data (see chapter <a href="13-metmaxproc.html#metmaxproc">13</a>)</li>
 </ul>
 </div>
 <div id="in-a-nutshell" class="section level2">
@@ -338,14 +337,16 @@
 <div id="copy-mtxqcvx2-template-files-1" class="section level3">
 <h3><span class="header-section-number">4.4.2</span> Copy MTXQCvX2 template files</h3>
 <ul>
-<li>Download the current version of MTXQCvX2 called fluffy adventure<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a></li>
+<li>Download the current version of MTXQCvX2 called fluffy adventure<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></li>
 <li>Open and extract the zip-folder</li>
 <li>Copy all folders and files into your R-project <code>tutorial</code></li>
 </ul>
 </div>
 <div id="process-mtxqc_init.rmd-1" class="section level3">
 <h3><span class="header-section-number">4.4.3</span> Process <code>MTXQC_init.Rmd</code></h3>
-<p>The module <code>MTXQC_init.Rmd</code> performs two important steps: 1. Check-up package installation 2. Creation of project-folder</p>
+<p>The module <code>MTXQC_init.Rmd</code> performs two important steps:
+1. Check-up package installation
+2. Creation of project-folder</p>
 <p>The project folder is supposed to provide a tidy structure while data processing and analysis and contains several pre-defined folder. Besides the following folders: <code>input</code>, <code>output</code> and `figures´ you see a detailed subfolder structure. You find more details about each folder and additional suggestion how to use project-folder in chapter <a href="5-init.html#init">5</a>.</p>
 <p>All you need to do is to process the <code>MTXQC_init.Rmd</code>. The following procedure is how you process all <code>.Rmd</code>-files of MTXQCvX2:</p>
 <ul>
@@ -389,7 +390,8 @@
 <li>Open the file <code>conversion_metabolite.csv</code> and your peak area matrix file</li>
 <li>Update the column ‘Metabolite_manual’ with the choosen names</li>
 </ul>
-<p>I suggest to use always a similar format, e.g. <code>#Alanine_3TMS</code>. In case of the presence of main- (MP) and byproducts (BP) use: Metabolite_Derivate_MP/BP, e.g., Glucose_(1MEOX)(5TMS)_MP. In that way names keep short, easy to remember and effeciently setup in all other files like the metmax import list to extract the MIDs<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a> for each intermediate.</p>
+<p>I suggest to use always a similar format, e.g. <code>#Alanine_3TMS</code>. In case of the presence of main- (MP) and byproducts (BP) use: Metabolite_Derivate_MP/BP, e.g., Glucose_(1MEOX)(5TMS)_MP.
+In that way names keep short, easy to remember and effeciently setup in all other files like the metmax import list to extract the MIDs<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> for each intermediate.</p>
 </div>
 <div id="define-the-internal-standard-and-alkanes-in-config_mtxconversion_metabolites.csv" class="section level3">
 <h3><span class="header-section-number">4.4.7</span> Define the internal standard and alkanes in <code>config_mtx/conversion_metabolites.csv</code></h3>
@@ -406,14 +408,15 @@
 </div>
 <div id="process-mtxqc_experimentalsetup.csv-1" class="section level3">
 <h3><span class="header-section-number">4.4.8</span> Process <code>MTXQC_ExperimentalSetup.csv</code></h3>
-<p>We are ready now to start processing the second module of the MTXQCvX2 called the Experimental Setup. In order to faciliate automated data processing throughout MTXQC files and parameters have to be defined beforehand for each project-folder.</p>
-<p>Defined parameters are saved in the file <code>MTXQC_params.csv</code> inside the project-folder for future reference enabling to move the project-folder independently of the remaining MTXQC-files. A huge advantage for debugging and sharing your project<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a></p>
+<p>We are ready now to start processing the second module of the MTXQCvX2 called the Experimental Setup.
+In order to faciliate automated data processing throughout MTXQC files and parameters have to be defined beforehand for each project-folder.</p>
+<p>Defined parameters are saved in the file <code>MTXQC_params.csv</code> inside the project-folder for future reference enabling to move the project-folder independently of the remaining MTXQC-files. A huge advantage for debugging and sharing your project<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a></p>
 <p>Define the following parameter:</p>
 <ul>
 <li><strong>Define project-folder:</strong> t_metmax</li>
 <li><strong>Define input-format:</strong> metmax</li>
-<li>**Name of annotation <a href="file:**" class="uri">file:**</a> annotation.csv</li>
-<li>**Name of sample extracts <a href="file:**" class="uri">file:**</a> sample_extracts.csv</li>
+<li><strong>Name of annotation file:</strong> annotation.csv</li>
+<li><strong>Name of sample extracts file:</strong> sample_extracts.csv</li>
 <li><strong>Type of experiment:</strong> pSIRM</li>
 <li><strong>Applied 13C-substrates:</strong> glc</li>
 <li><strong>Internal standard:</strong> check</li>
@@ -422,10 +425,13 @@
 <li><strong>Integrate add. calibration curves:</strong> no</li>
 <li><strong>Quantification standards:</strong> Quant1_v4</li>
 <li><strong>Volume polar phase of Quants:</strong> 500</li>
-<li><strong>Technical replicates:</strong><a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a> 2</li>
+<li><strong>Technical replicates:</strong><a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> 2</li>
 </ul>
 <p>Confirm the parameter and file definition and wait a moment. Check if you can find the file <code>MTXQC_params.csv</code>.</p>
-<p>Have a look at the produced pdf-file and check the comments and messages. Throughout MTXQCvX2 messages inform about: * Successfull data imports * Fatal errors causing an automatic stop of data processing and * Warnings pointing towards things that should be checked before moving to the next step.</p>
+<p>Have a look at the produced pdf-file and check the comments and messages. Throughout MTXQCvX2 messages inform about:
+* Successfull data imports
+* Fatal errors causing an automatic stop of data processing and
+* Warnings pointing towards things that should be checked before moving to the next step.</p>
 </div>
 <div id="process-mtxqc_part4.rmd" class="section level3">
 <h3><span class="header-section-number">4.4.9</span> Process <code>MTXQC_part4.Rmd</code></h3>
@@ -438,7 +444,7 @@
 <li><strong>Generate file for internal standard:</strong> (check)</li>
 <li><strong>Generate file for alkanes:</strong> (check)</li>
 <li><strong>Generate file for sum of area normalisation:</strong> (check)</li>
-<li>**Generate ManualQuantTable and samples <a href="file:**" class="uri">file:**</a> (check)</li>
+<li><strong>Generate ManualQuantTable and samples file:</strong> (check)</li>
 <li><strong>Determine isotope incorporation:</strong> (check)</li>
 </ul>
 <p>After the successfull processing you should find the parameter file <code>Metmax_params.csv</code> inside your project folder, as well as all files in their correct <code>input-folders</code>.</p>
@@ -449,8 +455,8 @@
 <p>Since we have defined all required input parameter the main module is ready to run after the definition of only three parameter:</p>
 <ul>
 <li><strong>Definition of the project-folder:</strong> t_metmax</li>
-<li>**Type of <a href="data:**" class="uri">data:**</a> metmax</li>
-<li>**Manual validated <a href="data:**" class="uri">data:**</a> none</li>
+<li><strong>Type of data:</strong> metmax</li>
+<li><strong>Manual validated data:</strong> none</li>
 </ul>
 <p>Also here, scroll carefully through the generated pdf-file and have a look at the messages. If all works out it doesn’t matter, but it might help to know what should be written if you end up with an error message instead of.</p>
 <p>Each generated graphic is going to be explained in detail in chapter <a href="7-part1.html#part1">7</a>. For now please refer to my phd thesis <span class="citation">(Zasada <a href="#ref-Zasada2017">2017</a>)</span>.</p>
@@ -462,20 +468,20 @@
 <p>Besides the generation of the MTXQC_part1 report several <code>csv-files</code> are exported into the output folder summarising statistics of all quality control metrices. The content of each file is summarised in the dictionary of tables (chapter <a href="15-tables.html#tables">15</a>).</p>
 <p>The most important file <code>CalculationFileData.csv</code> summarises all experimental conditions, normalisation factors as well as information about calibration curve parameter and derived quantities. You find this file here - <code>project-folder/output/quant/</code>.</p>
 <p>It is worth to open this file in a program of your choice and check for a selected intermediate the content. Wrong assignments of conditions in the annotation or sample extracts-file might cause duplication of values, easily to identify if exactly the same peak areas, so the same file, appears multiple times.</p>
-<p><code>CalculationFileData.csv</code> is all about the absolute quantities and data normalisation. Why does it not contain information about isotope incorporation you might ask. Well, depending on the experimental setup you might follow different ways how to combine both entities. Furthermore <code>MTXQC_part1.Rmd</code> is not about doing any processing of the data in the sense of analysis or statistics<a href="#fn14" class="footnoteRef" id="fnref14"><sup>14</sup></a>. It is supposed to assess the quality meaning the evaluation of the mass isotopomer distributions (MIDs) that are the basis for the calculation of the isotope incorporation.</p>
+<p><code>CalculationFileData.csv</code> is all about the absolute quantities and data normalisation. Why does it not contain information about isotope incorporation you might ask. Well, depending on the experimental setup you might follow different ways how to combine both entities. Furthermore <code>MTXQC_part1.Rmd</code> is not about doing any processing of the data in the sense of analysis or statistics<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>. It is supposed to assess the quality meaning the evaluation of the mass isotopomer distributions (MIDs) that are the basis for the calculation of the isotope incorporation.</p>
 <p>The next module has been set up to give you a first quick report about the content of your data performing basic post processing steps inclduing the statistics part.</p>
 </div>
 <div id="process-mtxqc_part2.rmd-1" class="section level3">
 <h3><span class="header-section-number">4.4.11</span> Process <code>MTXQC_part2.Rmd</code></h3>
 <p>This module aims to provide you a quick overview of your data. It generates, based on your parameter definition while processing this file, statistics of quantities for each intermediate as well as isotope incorporation and 13C-labeled quantities.</p>
 <p>A senseful association of your experimental parameter might provide you even ready-to-show plots for a presentation or report. Different color schemes are in place to meet your personal taste - play a bit and find your favorite ;).</p>
-<p>All kind of outputs (graphics, statistics) are saved at <code>output/quant/...</code> into a day-specific folder<a href="#fn15" class="footnoteRef" id="fnref15"><sup>15</sup></a>, meaning if you repeat the same analysis several times a day the content is replaced with each run<a href="#fn16" class="footnoteRef" id="fnref16"><sup>16</sup></a>. Simply modify the folder name to avoid this behaviour. If you go on with your analysis the next or another day a new folder is created.</p>
+<p>All kind of outputs (graphics, statistics) are saved at <code>output/quant/...</code> into a day-specific folder<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>, meaning if you repeat the same analysis several times a day the content is replaced with each run<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>. Simply modify the folder name to avoid this behaviour. If you go on with your analysis the next or another day a new folder is created.</p>
 <p>Go and process this module with the following parameter:</p>
 <ul>
 <li><strong>Project-folder:</strong> t_metmax</li>
 <li><strong>Type of analysis:</strong> less_stringent</li>
-<li><strong>Internal standard:</strong> QC<a href="#fn17" class="footnoteRef" id="fnref17"><sup>17</sup></a></li>
-<li><strong>Quantitative value:</strong> InstStd_Conc_pmio<a href="#fn18" class="footnoteRef" id="fnref18"><sup>18</sup></a></li>
+<li><strong>Internal standard:</strong> QC<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a></li>
+<li><strong>Quantitative value:</strong> InstStd_Conc_pmio<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a></li>
 <li><strong>par1:</strong> Time</li>
 <li><strong>par2:</strong> CL</li>
 <li><strong>par3:</strong> none</li>
@@ -490,8 +496,11 @@
 </div>
 <div id="at-the-end-1" class="section level2">
 <h2><span class="header-section-number">4.5</span> At the end…</h2>
-<p>So far you have used MTXQCvX2 to generate two reports: 1. one summarising the quality of the generated data and 2. a first statistical overview about the content of your data.</p>
-<p>With this the tutorial ends and refers to the plenty of detailed information scattered in a number of additional chapters of this documentation. The FAQ section tries to guide you through more specific settings and introduces you to the flexibility of MTXQCvX2.</p>
+<p>So far you have used MTXQCvX2 to generate two reports:
+1. one summarising the quality of the generated data and
+2. a first statistical overview about the content of your data.</p>
+<p>With this the tutorial ends and refers to the plenty of detailed information scattered in a number of additional chapters of this documentation.
+The FAQ section tries to guide you through more specific settings and introduces you to the flexibility of MTXQCvX2.</p>
 <p>Since every metabolomics experiment has it’s own purpose and reasoning I want to point out, that MTXQCvX2 does not want to provide a magical tool giving the perfect solution for everyone. It rather tries to provide a common platform for discussions, information exchange and inspiration by reducing the time that has to be spend on “the boring part of research”. There is no limit to make MTXQC your own perfect tool writing your own reports and extensions. Feel free and hoepfully motivated to share your report as a template with your colleagues.</p>
 
 </div>
@@ -505,16 +514,16 @@
 <div class="footnotes">
 <hr />
 <ol start="9">
-<li id="fn9"><p><a href="http://gmd.mpimp-golm.mpg.de/apps/metmax/default.htm" class="uri">http://gmd.mpimp-golm.mpg.de/apps/metmax/default.htm</a><a href="4-metmax.html#fnref9">↩</a></p></li>
-<li id="fn10"><p>github.com/ChrisZasada/fluffy_adventure<a href="4-metmax.html#fnref10">↩</a></p></li>
-<li id="fn11"><p>Mass isotopomer distribution<a href="4-metmax.html#fnref11">↩</a></p></li>
-<li id="fn12"><p>Just zip-file the project-folder and send it via mail.<a href="4-metmax.html#fnref12">↩</a></p></li>
-<li id="fn13"><p>Also called backups<a href="4-metmax.html#fnref13">↩</a></p></li>
-<li id="fn14"><p>Quality metrices are a different pair of shoes here and are not data per se<a href="4-metmax.html#fnref14">↩</a></p></li>
-<li id="fn15"><p>Called: Date_PostProcessing_AnalysisParam_QuantitativeValue<a href="4-metmax.html#fnref15">↩</a></p></li>
-<li id="fn16"><p>Same thing for the generated pdf-report so I recommend to move it into the post processing folder for future reference<a href="4-metmax.html#fnref16">↩</a></p></li>
-<li id="fn17"><p>meaning, that all the internal standard has to be within a defined range of variation, files with higher variation are excluded from the analysis<a href="4-metmax.html#fnref17">↩</a></p></li>
-<li id="fn18"><p>Translated: Normalised (regarding the internal standard) quantities in (pmol/1e+6 cells)<a href="4-metmax.html#fnref18">↩</a></p></li>
+<li id="fn9"><p><a href="http://gmd.mpimp-golm.mpg.de/apps/metmax/default.htm" class="uri">http://gmd.mpimp-golm.mpg.de/apps/metmax/default.htm</a><a href="4-metmax.html#fnref9" class="footnote-back">↩</a></p></li>
+<li id="fn10"><p>github.com/ChrisZasada/fluffy_adventure<a href="4-metmax.html#fnref10" class="footnote-back">↩</a></p></li>
+<li id="fn11"><p>Mass isotopomer distribution<a href="4-metmax.html#fnref11" class="footnote-back">↩</a></p></li>
+<li id="fn12"><p>Just zip-file the project-folder and send it via mail.<a href="4-metmax.html#fnref12" class="footnote-back">↩</a></p></li>
+<li id="fn13"><p>Also called backups<a href="4-metmax.html#fnref13" class="footnote-back">↩</a></p></li>
+<li id="fn14"><p>Quality metrices are a different pair of shoes here and are not data per se<a href="4-metmax.html#fnref14" class="footnote-back">↩</a></p></li>
+<li id="fn15"><p>Called: Date_PostProcessing_AnalysisParam_QuantitativeValue<a href="4-metmax.html#fnref15" class="footnote-back">↩</a></p></li>
+<li id="fn16"><p>Same thing for the generated pdf-report so I recommend to move it into the post processing folder for future reference<a href="4-metmax.html#fnref16" class="footnote-back">↩</a></p></li>
+<li id="fn17"><p>meaning, that all the internal standard has to be within a defined range of variation, files with higher variation are excluded from the analysis<a href="4-metmax.html#fnref17" class="footnote-back">↩</a></p></li>
+<li id="fn18"><p>Translated: Normalised (regarding the internal standard) quantities in (pmol/1e+6 cells)<a href="4-metmax.html#fnref18" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -575,7 +584,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

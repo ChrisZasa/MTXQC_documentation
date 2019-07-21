@@ -9,6 +9,12 @@ always_allow_html: yes
 ```
 
 ```
+## The following object is masked from 'package:kableExtra':
+## 
+##     group_rows
+```
+
+```
 ## The following objects are masked from 'package:stats':
 ## 
 ##     filter, lag

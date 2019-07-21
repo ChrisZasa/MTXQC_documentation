@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Tutorial: MTXQCvX2 for Maui-projects | MTXQCvX2 documentation</title>
-  <meta name="description" content="This is the offical documentation for the MTXQCvX2 toolbox.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Tutorial: MTXQCvX2 for Maui-projects | MTXQCvX2 documentation" />
   <meta property="og:type" content="book" />
@@ -22,14 +21,14 @@
   <meta name="twitter:description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
   
 
-<meta name="author" content="Christin Zasada">
+<meta name="author" content="Christin Zasada" />
 
 
-<meta name="date" content="2019-04-17">
+<meta name="date" content="2019-07-21" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="2-intro.html">
@@ -269,7 +268,7 @@
 <li class="chapter" data-level="20.1.2" data-path="17-protocols.html"><a href="17-protocols.html#mcw"><i class="fa fa-check"></i><b>20.1.2</b> MCW</a></li>
 <li class="chapter" data-level="20.1.3" data-path="17-protocols.html"><a href="17-protocols.html#alkanemix"><i class="fa fa-check"></i><b>20.1.3</b> Alkane-Mix</a></li>
 </ul></li>
-<li class="chapter" data-level="20.2" data-path="17-protocols.html"><a href="17-protocols.html#materials"><i class="fa fa-check"></i><b>20.2</b> Materials</a></li>
+<li class="chapter" data-level="20.2" data-path="20-mm.html"><a href="20-mm.html#materials-1"><i class="fa fa-check"></i><b>20.2</b> Materials</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -335,14 +334,16 @@
 <div id="copy-mtxqcvx2-template-files" class="section level3">
 <h3><span class="header-section-number">3.4.2</span> Copy MTXQCvX2 template files</h3>
 <ul>
-<li>Download the current version of MTXQCvX2 called fluffy adventure<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></li>
+<li>Download the current version of MTXQCvX2 called fluffy adventure<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></li>
 <li>Open and extract the zip-folder</li>
 <li>Copy all folders and files into your R-project ’tutorial_single_maui`</li>
 </ul>
 </div>
 <div id="process-mtxqc_init.rmd" class="section level3">
 <h3><span class="header-section-number">3.4.3</span> Process <code>MTXQC_init.Rmd</code></h3>
-<p>The module <code>MTXQC_init.Rmd</code> performs two important steps: 1. Check-up package installation 2. Creation of project-folder</p>
+<p>The module <code>MTXQC_init.Rmd</code> performs two important steps:
+1. Check-up package installation
+2. Creation of project-folder</p>
 <p>The project folder is supposed to provide a tidy structure while data processing and analysis and contains several pre-defined folder. Besides the following folders: ‘input’, ‘output’ and ‘figures’ you see a detailed subfolder structure. You find more details about each folder and additional suggestion how to use project-folder in chapter <a href="5-init.html#init">5</a>.</p>
 <p>All you need to do is to process the <code>MTXQC_init.Rmd</code>. The following procedure is how you process all <code>.Rmd</code>-files of MTXQCvX2:</p>
 <ul>
@@ -358,7 +359,8 @@
 <div id="prepare-and-copy-input-files" class="section level3">
 <h3><span class="header-section-number">3.4.4</span> Prepare and copy input files</h3>
 <p>Several files have to be exported from Maui and copied into the folders <code>input/gc</code>, <code>input/quant</code> and <code>input/inc</code> for the evaluation of the GC-MS performance, absolute quantification and isotope incorporation.</p>
-<p>Please follow the detailed instructions in section <a href="12-mauiproc.html#mauiexport">12.3</a> if you need further information how to perform the export in Maui. For the purpose of the tutorial the exported files are already processed and provided in tutorial dataset <code>input</code>-folder. Select each file and copy it to the correct location inside your R-project.</p>
+<p>Please follow the detailed instructions in section <a href="12-mauiproc.html#mauiexport">12.3</a> if you need further information how to perform the export in Maui. For the purpose of the tutorial the exported files are already processed and provided in tutorial dataset <code>input</code>-folder.
+Select each file and copy it to the correct location inside your R-project.</p>
 </div>
 <div id="copy-files-annotation.csv-and-sample_extracts.csv" class="section level3">
 <h3><span class="header-section-number">3.4.5</span> Copy files: <code>annotation.csv</code> and <code>Sample_extracts.csv</code></h3>
@@ -375,7 +377,8 @@
 </div>
 <div id="define-an-internal-standard---cinnamic-acid" class="section level3">
 <h3><span class="header-section-number">3.4.6</span> Define an internal standard - cinnamic acid</h3>
-<p>The tutorials dataset contains data derived from a classical pSIRM experiment. This includes that the experimentalist supplemented the extraction solvent with an internal extraction standard - cinnamic acid. All that we have to do is to check if this compound has been defined as <code>InternalStandard</code> in the file <code>config_mtx/conversion_metabolite.csv</code>.</p>
+<p>The tutorials dataset contains data derived from a classical pSIRM experiment. This includes that the experimentalist supplemented the extraction solvent with an internal extraction standard - cinnamic acid.
+All that we have to do is to check if this compound has been defined as <code>InternalStandard</code> in the file <code>config_mtx/conversion_metabolite.csv</code>.</p>
 <p>To do so:</p>
 <ul>
 <li>Open the file: ’config_mtx/conversion_metabolite.csv`</li>
@@ -387,14 +390,15 @@
 </div>
 <div id="process-mtxqc_experimentalsetup.csv" class="section level3">
 <h3><span class="header-section-number">3.4.7</span> Process <code>MTXQC_ExperimentalSetup.csv</code></h3>
-<p>We are ready now to start processing the second module of the MTXQCvX2 called the Experimental Setup. In order to faciliate automated data processing throughout MTXQC files and parameters have to be defined beforehand for each project-folder.</p>
-<p>Defined parameters are saved in the file <code>MTXQC_params.csv</code> inside the project-folder for future reference enabling to move the project-folder independently of the remaining MTXQC-files. A huge advantage for debugging and sharing your project<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<p>We are ready now to start processing the second module of the MTXQCvX2 called the Experimental Setup.
+In order to faciliate automated data processing throughout MTXQC files and parameters have to be defined beforehand for each project-folder.</p>
+<p>Defined parameters are saved in the file <code>MTXQC_params.csv</code> inside the project-folder for future reference enabling to move the project-folder independently of the remaining MTXQC-files. A huge advantage for debugging and sharing your project<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 <p>Define the following parameter:</p>
 <ul>
 <li><strong>Define project-folder:</strong> psirm_glucose</li>
 <li><strong>Define input-format:</strong> maui</li>
-<li>**Name of annotation <a href="file:**" class="uri">file:**</a> annotation.csv</li>
-<li>**Name of sample extracts <a href="file:**" class="uri">file:**</a> sample_extracts.csv</li>
+<li><strong>Name of annotation file:</strong> annotation.csv</li>
+<li><strong>Name of sample extracts file:</strong> sample_extracts.csv</li>
 <li><strong>Type of experiment:</strong> pSIRM</li>
 <li><strong>Applied 13C-substrates:</strong> glc</li>
 <li><strong>Internal standard:</strong> check</li>
@@ -403,18 +407,21 @@
 <li><strong>Integrate add. calibration curves:</strong> no</li>
 <li><strong>Quantification standards:</strong> Quant1_v3</li>
 <li><strong>Volume polar phase of Quants:</strong> 500</li>
-<li><strong>Technical replicates:</strong><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> no</li>
+<li><strong>Technical replicates:</strong><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> no</li>
 </ul>
 <p>Confirm the parameter and file definition and wait a moment. Check if you can find the file <code>MTXQC_params.csv</code> and also <code>Maui_params.csv</code>. Latter one is automatically generated by selecting maui project as input format. <code>Maui_params.csv</code> contains the information of the pre-defined file names containing all required input data.</p>
-<p>Have a look at the produced pdf-file and check the comments and messages. Throughout MTXQCvX2 messages inform about: * Successfull data imports * Fatal errors causing an automatic stop of data processing and * Warnings pointing towards things that should be checked before moving to the next step.</p>
+<p>Have a look at the produced pdf-file and check the comments and messages. Throughout MTXQCvX2 messages inform about:
+* Successfull data imports
+* Fatal errors causing an automatic stop of data processing and
+* Warnings pointing towards things that should be checked before moving to the next step.</p>
 </div>
 <div id="process-mtxqc_part1.rmd" class="section level3">
 <h3><span class="header-section-number">3.4.8</span> Process <code>MTXQC_part1.Rmd</code></h3>
 <p>Since we have defined all required input parameter the main module is ready to run after the definition of only three parameter:</p>
 <ul>
 <li><strong>Definition of the project-folder:</strong> psirm_glucose</li>
-<li>**Type of <a href="data:**" class="uri">data:**</a> maui</li>
-<li>**Manual validated <a href="data:**" class="uri">data:**</a> none</li>
+<li><strong>Type of data:</strong> maui</li>
+<li><strong>Manual validated data:</strong> none</li>
 </ul>
 <p>Also here, scroll carefully through the generated pdf-file and have a look at the messages. If all works out it doesn’t matter, but it might help to know what should be written if you end up with an error message instead of.</p>
 <p>Each generated graphic is going to be explained in detail in chapter <a href="7-part1.html#part1">7</a>. For now please refer to my phd thesis <span class="citation">(Zasada <a href="#ref-Zasada2017">2017</a>)</span>.</p>
@@ -426,20 +433,20 @@
 <p>Besides the generation of the MTXQC_part1 report several <code>csv-files</code> are exported into the output folder summarising statistics of all quality control metrices. The content of each file is summarised in the dictionary of tables (chapter <a href="15-tables.html#tables">15</a>).</p>
 <p>The most important file <code>CalculationFileData.csv</code> summarises all experimental conditions, normalisation factors as well as information about calibration curve parameter and derived quantities. You find this file here - <code>project-folder/output/quant/</code>.</p>
 <p>It is worth to open this file in a program of your choice and check for a selected intermediate the content. Wrong assignments of conditions in the annotation or sample extracts-file might cause duplication of values, easily to identify if exactly the same peak areas, so the same file, appears multiple times.</p>
-<p><code>CalculationFileData.csv</code> is all about the absolute quantities and data normalisation. Why does it not contain information about isotope incorporation you might ask. Well, depending on the experimental setup you might follow different ways how to combine both entities. Furthermore <code>MTXQC_part1</code> is not about doing any processing of the data in the sense of analysis or statistics<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>. It is supposed to assess the quality meaning the evaluation of the mass isotopomer distributions (MIDs) that are the basis for the calculation of the isotope incorporation.</p>
+<p><code>CalculationFileData.csv</code> is all about the absolute quantities and data normalisation. Why does it not contain information about isotope incorporation you might ask. Well, depending on the experimental setup you might follow different ways how to combine both entities. Furthermore <code>MTXQC_part1</code> is not about doing any processing of the data in the sense of analysis or statistics<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. It is supposed to assess the quality meaning the evaluation of the mass isotopomer distributions (MIDs) that are the basis for the calculation of the isotope incorporation.</p>
 <p>The next module has been set up to give you a first quick report about the content of your data performing basic post processing steps inclduing the statistics part.</p>
 </div>
 <div id="process-mtxqc_part2.rmd" class="section level3">
 <h3><span class="header-section-number">3.4.9</span> Process <code>MTXQC_part2.Rmd</code></h3>
 <p>This module aims to provide you a quick overview of your data. It generates, based on your parameter definition while processing this file, statistics of quantities for each intermediate as well as isotope incorporation and 13C-labeled quantities.</p>
 <p>A senseful association of your experimental parameter might provide you even ready-to-show plots for a presentation or report. Different color schemes are in place to meet your personal taste - play a bit and find your favorite ;).</p>
-<p>All kind of outputs (graphics, statistics) are saved at <code>output/quant/...</code> into a day-specific folder<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>, meaning if you repeat the same analysis several times a day the content is replaced with each run<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>. Simply modify the folder name to avoid this behaviour. If you go on with your analysis the next or another day a new folder is created.</p>
+<p>All kind of outputs (graphics, statistics) are saved at <code>output/quant/...</code> into a day-specific folder<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>, meaning if you repeat the same analysis several times a day the content is replaced with each run<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>. Simply modify the folder name to avoid this behaviour. If you go on with your analysis the next or another day a new folder is created.</p>
 <p>Go and process this module with the following parameter:</p>
 <ul>
 <li><strong>Project-folder:</strong> psirm_glucose</li>
 <li><strong>Type of analysis:</strong> stringent</li>
-<li><strong>Internal standard:</strong> QC<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a></li>
-<li><strong>Quantitative value:</strong> InstStd_Conc_pmio<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a></li>
+<li><strong>Internal standard:</strong> QC<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></li>
+<li><strong>Quantitative value:</strong> InstStd_Conc_pmio<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></li>
 <li><strong>par1:</strong> time</li>
 <li><strong>par2:</strong> substrate</li>
 <li><strong>par3:</strong> whatelse</li>
@@ -454,8 +461,11 @@
 </div>
 <div id="at-the-end" class="section level2">
 <h2><span class="header-section-number">3.5</span> At the end…</h2>
-<p>So far you have used MTXQCvX2 to generate two reports: 1. one summarising the quality of the generated data and 2. a first statistical overview about the content of your data.</p>
-<p>With this the tutorial ends and refers to the plenty of detailed information scattered in a number of additional chapters of this documentation. The FAQ section tries to guide you through more specific settings and introduces you to the flexibility of MTXQCvX2.</p>
+<p>So far you have used MTXQCvX2 to generate two reports:
+1. one summarising the quality of the generated data and
+2. a first statistical overview about the content of your data.</p>
+<p>With this the tutorial ends and refers to the plenty of detailed information scattered in a number of additional chapters of this documentation.
+The FAQ section tries to guide you through more specific settings and introduces you to the flexibility of MTXQCvX2.</p>
 <p>Since every metabolomics experiment has it’s own purpose and reasoning I want to point out, that MTXQCvX2 does not want to provide a magical tool giving the perfect solution for everyone. It rather tries to provide a common platform for discussions, information exchange and inspiration by reducing the time that has to be spend on “the boring part of research”. There is no limit to make MTXQC your own perfect tool writing your own reports and extensions. Feel free and hoepfully motivated to share your report as a template with your colleagues.</p>
 
 </div>
@@ -469,14 +479,14 @@
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>github.com/ChrisZasada/fluffy_adventure<a href="3-maui.html#fnref1">↩</a></p></li>
-<li id="fn2"><p>Just zip-file the project-folder and send it via mail.<a href="3-maui.html#fnref2">↩</a></p></li>
-<li id="fn3"><p>Also called backups<a href="3-maui.html#fnref3">↩</a></p></li>
-<li id="fn4"><p>Quality metrices are a different pair of shoes here and are not data per se<a href="3-maui.html#fnref4">↩</a></p></li>
-<li id="fn5"><p>Called: Date_PostProcessing_AnalysisParam_QuantitativeValue<a href="3-maui.html#fnref5">↩</a></p></li>
-<li id="fn6"><p>Same thing for the generated pdf-report so I recommend to move it into the post processing folder for future reference<a href="3-maui.html#fnref6">↩</a></p></li>
-<li id="fn7"><p>meaning, that all the internal standard has to be within a defined range of variation, files with higher variation are excluded from the analysis<a href="3-maui.html#fnref7">↩</a></p></li>
-<li id="fn8"><p>Translated: Normalised (regarding the internal standard) quantities in (pmol/1e+6 cells)<a href="3-maui.html#fnref8">↩</a></p></li>
+<li id="fn1"><p>github.com/ChrisZasada/fluffy_adventure<a href="3-maui.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Just zip-file the project-folder and send it via mail.<a href="3-maui.html#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>Also called backups<a href="3-maui.html#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>Quality metrices are a different pair of shoes here and are not data per se<a href="3-maui.html#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>Called: Date_PostProcessing_AnalysisParam_QuantitativeValue<a href="3-maui.html#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>Same thing for the generated pdf-report so I recommend to move it into the post processing folder for future reference<a href="3-maui.html#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>meaning, that all the internal standard has to be within a defined range of variation, files with higher variation are excluded from the analysis<a href="3-maui.html#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn8"><p>Translated: Normalised (regarding the internal standard) quantities in (pmol/1e+6 cells)<a href="3-maui.html#fnref8" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -537,7 +547,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

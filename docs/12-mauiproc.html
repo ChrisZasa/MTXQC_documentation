@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 12 Data processing - MAUI | MTXQCvX2 documentation</title>
-  <meta name="description" content="This is the offical documentation for the MTXQCvX2 toolbox.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 12 Data processing - MAUI | MTXQCvX2 documentation" />
   <meta property="og:type" content="book" />
@@ -22,14 +21,14 @@
   <meta name="twitter:description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
   
 
-<meta name="author" content="Christin Zasada">
+<meta name="author" content="Christin Zasada" />
 
 
-<meta name="date" content="2019-04-17">
+<meta name="date" content="2019-07-21" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="11-config.html">
@@ -269,7 +268,7 @@
 <li class="chapter" data-level="20.1.2" data-path="17-protocols.html"><a href="17-protocols.html#mcw"><i class="fa fa-check"></i><b>20.1.2</b> MCW</a></li>
 <li class="chapter" data-level="20.1.3" data-path="17-protocols.html"><a href="17-protocols.html#alkanemix"><i class="fa fa-check"></i><b>20.1.3</b> Alkane-Mix</a></li>
 </ul></li>
-<li class="chapter" data-level="20.2" data-path="17-protocols.html"><a href="17-protocols.html#materials"><i class="fa fa-check"></i><b>20.2</b> Materials</a></li>
+<li class="chapter" data-level="20.2" data-path="20-mm.html"><a href="20-mm.html#materials-1"><i class="fa fa-check"></i><b>20.2</b> Materials</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -294,7 +293,8 @@
             <section class="normal" id="section-">
 <div id="mauiproc" class="section level1">
 <h1><span class="header-section-number">Chapter 12</span> Data processing - MAUI</h1>
-<p><em>Please refer to the OneNote summary how to process GC-MS files for a pSIRM experiment with Maui. This part of the documentation is still under construction.</em></p>
+<p><em>Please refer to the OneNote summary how to process GC-MS files for a pSIRM experiment with Maui.
+This part of the documentation is still under construction.</em></p>
 <div id="processing-in-chromatof" class="section level2">
 <h2><span class="header-section-number">12.1</span> Processing In ChromaToF</h2>
 <!-- Create a new folder in ChromaToF Pegasus Acquired Samples and import your files. -->
@@ -327,14 +327,12 @@
 <p>This folder contains all input files that are required to assess the quality of the GC-MS perfomance for the complete GC-MS run. In order to validate all four parameter we need to export the following information from the Maui-project.</p>
 <p>You can perform exports via right click on either (1) the project name and the functions provided in the menue <code>Diagnostics</code> or (2) with a direct right click on data container, e.g.,</p>
 <ul>
-<li>Open your Maui-project and export:</li>
-</ul>
+<li>Open your Maui-project and export:
 <ol style="list-style-type: decimal">
 <li><code>Alcane_intensities.csv</code>: Diagnostics/Export Alcane intensities</li>
 <li><code>MassSum-73.csv</code>: Diagnostics/QC Mass Sum Export and define 73 for m/z 73</li>
 <li><code>PeakDensities-Chroma.csv</code>: Diagnostics/Export PeakDensities</li>
-</ol>
-<ul>
+</ol></li>
 <li>Export the information of the cinnamic acid container with right-click and Export quantification, follow the pop-up dialogues</li>
 <li>Use the explorer and open <code>.../mauiproject-name/export/Diagnostics</code> and copy the csv.files into <code>input/gc</code></li>
 <li>Navigate to <code>.../mauiproject-name/export/ExportQuantification/defined-folder</code></li>
@@ -346,30 +344,39 @@
 <p>Two files have to be copied into this folder in order to perform the quantification of metabolites: (1) peak areas of the calibration curves and (2) of all samples.</p>
 <p>The first file <code>ManualQuantTable.tsv</code> is automatically generated during the processing of the absolute quantification in Maui.</p>
 <ul>
-<li>Navigate in the explorer to <code>.../mauiproject-name/export/QM-ManualQuantification/</code></li>
+<li>Navigate in the explorer to <code>.../mauiproject-name/export/QM-ManualQuantification/</code>
+<ul>
 <li>Copy the file <code>ManualQuantTable.tsv</code></li>
 <li>Rename it with the corresponding batch-id of the GC-MS run (e.g., e17205cz)</li>
+</ul></li>
 </ul>
 <p>Peak areas for each measurement and metabolite have to be exported in Maui:</p>
 <ul>
-<li>Open your Maui-project and export:</li>
+<li>Open your Maui-project and export:
+<ul>
 <li>Export the information of the samplePeakGroups container with right-click and Export quantification, follow the instructions</li>
 <li>Navigate in the explorer to <code>.../mauiproject-name/export/ExportQuantification/defined-folder</code></li>
 <li>Copy the file <code>quantMassAreasMatrix.csv</code> without applied normalisation</li>
+</ul></li>
 </ul>
 </div>
 <div id="subfolder-inputinc" class="section level3">
 <h3><span class="header-section-number">12.3.3</span> Subfolder <code>input/inc</code></h3>
 <p>The evaluation of stable isotope incorporation requires two input files exported from the container pSIRM-samplesPeakGroups, right click and corresponding export function:</p>
 <ul>
-<li><code>DataMatrix.csv</code>: Export % Label</li>
+<li><code>DataMatrix.csv</code>: Export % Label
+<ul>
 <li><code>pSIRM_SpectraData.csv</code>: pSIRM Spectra Export</li>
 <li>Navigate in the explorer to <code>.../mauiproject-name/export/SpectraExport/defined-folder</code> and <code>xy</code></li>
 <li>Copy both files, no renaming required</li>
+</ul></li>
 </ul>
 
 <pre><code>## 
 ## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:kableExtra&#39;:
+## 
+##     group_rows</code></pre>
 <pre><code>## The following objects are masked from &#39;package:stats&#39;:
 ## 
 ##     filter, lag</code></pre>
@@ -437,7 +444,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
