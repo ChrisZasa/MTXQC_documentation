@@ -1,7 +1,7 @@
 # MTXQC documentation
 
 This is the documentation how to use MTXQC based on R Markdown and bookdown.
-Please download the pdf-file shown in the file list above.
+Feedback and contributions are more then welcome.
 
 Best regards
 Christin Zasada
