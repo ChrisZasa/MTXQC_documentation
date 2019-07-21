@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Tutorial: MTXQCvX2 for for Metmax-extracted projects | MTXQCvX2 documentation</title>
+  <title>Chapter 17 pSIRM experiments | MTXQCvX2 documentation</title>
   <meta name="description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
   <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Tutorial: MTXQCvX2 for for Metmax-extracted projects | MTXQCvX2 documentation" />
+  <meta property="og:title" content="Chapter 17 pSIRM experiments | MTXQCvX2 documentation" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="chriszasa/MTXQC_documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Tutorial: MTXQCvX2 for for Metmax-extracted projects | MTXQCvX2 documentation" />
+  <meta name="twitter:title" content="Chapter 17 pSIRM experiments | MTXQCvX2 documentation" />
   
   <meta name="twitter:description" content="This is the offical documentation for the MTXQCvX2 toolbox." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="3-maui.html">
-<link rel="next" href="5-init.html">
+<link rel="prev" href="16-protocols.html">
+<link rel="next" href="18-gcms.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -288,239 +288,178 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="metmax" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Tutorial: MTXQCvX2 for for Metmax-extracted projects</h1>
-<div id="prerequisites-1" class="section level2">
-<h2><span class="header-section-number">4.1</span> Prerequisites</h2>
-<ul>
-<li>You have processed and annotated your intermediates in ChromaToF</li>
-<li>You have defined the correct quantification masses in the reference search</li>
-<li>You have exported the data in <code>.txt</code> files</li>
-<li>You have used metmax<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> to extract the data (see chapter <a href="13-metmaxproc.html#metmaxproc">13</a>)</li>
-</ul>
+<div id="psirm" class="section level1">
+<h1><span class="header-section-number">Chapter 17</span> pSIRM experiments</h1>
+<p>The application of stable isotopes provides a powerful tool to track the activity of metabolic pathways.
+the time-dependent and atom-specific routing along a metabolic pathway resolved how substrates like glucose or glutamine are used in order to maintain a certain phenotype and energetic homeostatsis.</p>
+<p>We developed an approach called pulsed stable isotope resolved metabolomics (pSIRM) enabling the quantitative evaluation of metabolite pool sizes and incorporation of stable isotopes, e.g., <span class="math inline">\(^{13}C_6\)</span>-glucose. A thoughtful setup of the experimental design including the applied substrates and carefull experimental handling are prerequisites for a successful pSIRM experiment. Essential aspects are collected in the below paragraphs along with a number of usefull tweaks.</p>
+<div id="experimental-design" class="section level2">
+<h2><span class="header-section-number">17.1</span> Experimental design</h2>
+<p>An <em>in vitro</em> pSIRM experiment lasts in total up to three days starting from the cell seeding at day zero. Further along the way up to two media changes should be included until the application of stable isotopes and harvesting the cells maintaining the continouse availability of nutrients and avoiding the accumulation of waste products (Figure (fig:psirm)). The media change four hours prior the harvest is set up in order to give cells time to recover from the mechanical stress of the media change. At the time point of harvest cells should be in a perfect happily state regarding metabolic environment and stress.</p>
+<p>Choose carefully the <em>seeding density of you cells</em> in the first place. High confluency inducing contact inhibition of cell growth has a strong impact on several cellular processes including the uptake of nutrients. Try to aim for petri dishes with a maximum confluency of 75-80 %. A pre-experiment including different cell densities for seeding at a number of experimental conditions helps you to get a feeling for the cell growth in general and an expected output of cells at the time point of the harvest. Later one is useful to plan sample extraction and measurement subsequently.</p>
+<div class="figure"><span id="fig:psirmexp"></span>
+<img src="images/psirm_harvest.png" alt="Experimental design of a pSIRM experiment distuingishing short and long labeling with stable isotopes."  />
+<p class="caption">
+Figure 17.1: Experimental design of a pSIRM experiment distuingishing short and long labeling with stable isotopes.
+</p>
 </div>
-<div id="in-a-nutshell" class="section level2">
-<h2><span class="header-section-number">4.2</span> In a nutshell</h2>
+<p>For adherent cell cultures only: Include for each experimental condition an additional petri dish that is solely used to determine the cell count at the time point of your harvest. This additional plate ensures a correct determination of absolute quantities and might reduce variation of pool sizes in the statistical analysis<a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>. Think carefully about control conditions and include cell culture dishes that are not labeled. These dishes function as a control for your labeling procedure and the natural abundance of isotopes.</p>
+</div>
+<div id="experimental-procedures" class="section level2">
+<h2><span class="header-section-number">17.2</span> Experimental procedures</h2>
+<p>There is a slight difference in the protocols for <a href="17-psirm.html#psirm:adherent">adherent</a> and <a href="17-psirm.html#psirm:suspension">suspension</a> cells. Please read instructions and footnotes carefully.</p>
+<p>Short<a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a> and long term labeling procured differ only in the applied solvents during the labeling - either label buffer (<a href="16-protocols.html#washingbuffer">LB</a>) only or a combination of full label medium (LM) and label buffer (LB). Latter one is applied in order to remove extracellular metabolites of the media. Both label buffer and media contain the major nutrients / stable isotopes to keep the main substrates at constant supply at all times (Table <a href="17-psirm.html#tab:solvent">17.1</a>). During the application of stable isotopes longer than a few minutes cells might sense the absence of further intermediates provided during standard cell culture procedure and and adjust their metabolic program accordingly.</p>
+<table>
+<caption>
+<span id="tab:solvent">Table 17.1: </span>Solvent composition of Full label medium (LM) and label buffer (BF) for a pSIRM experiment labeling with 13C-glucose.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Solvent
+</th>
+<th style="text-align:left;">
+Base
+</th>
+<th style="text-align:left;">
+Carbon.source
+</th>
+<th style="text-align:left;">
+Supplements
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Full label medium (LM)
+</td>
+<td style="text-align:left;">
+DMEM, without glucose, glutamine, pyruvate
+</td>
+<td style="text-align:left;">
+13C-Glc (2.5 g/L)
+12C-Gln (2 mM)
+</td>
+<td style="text-align:left;">
+small molecules
+(inhibitor, antibiotics)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Label buffer (LB)
+</td>
+<td style="text-align:left;">
+HEPES (5 mM), NaCl (140 mM), pH 7.4
+</td>
+<td style="text-align:left;">
+13C-Glc (2.5 g/L)
+12C-Gln (2 mM)
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+</tbody>
+</table>
+<p>The quality of your data later heavily relies on the exact handling of the cells and a <em>consistent timing</em> throughout the pSIRM experiment. Especially the step removing the LB and quenching the cells should be a matter of a tenth of seconds rather than seconds. It is of great value to perform the cell harvest with a second person.</p>
+</div>
+<div id="protocol-psirm" class="section level2">
+<h2><span class="header-section-number">17.3</span> Protocol pSIRM</h2>
+<div id="psirm:adherent" class="section level3">
+<h3><span class="header-section-number">17.3.1</span> Adherent cell cultures</h3>
+<p>The herein described protocols are detailed explanations how to perform a pSIRM cell harvest for long term label application.
+If you want to label for less than 2 minutes omit solely <em>omit steps 6-8</em>.</p>
+<p>Materials:</p>
+<ul>
+<li>Cell culture dishes, max. confluency 80 %</li>
+<li>Labeling media (LM) supplemented with substrates (5 ml / dish)<a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a></li>
+<li>Label buffer (LB) supplemented with substrates (5 ml / dish)</li>
+<li>Ice-cold 50 % MeOH supplemented with 2 ug/ul cinnamic acid</li>
+<li>2x 5 ml pipette and tips<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a></li>
+<li>Beaker</li>
+<li>Ice</li>
+<li>15 ml falcons (chloroform resistant)</li>
+<li>Cell lifter</li>
+<li>Biological waste bin next to your bench</li>
+</ul>
+<p>Procedure:</p>
 <ol style="list-style-type: decimal">
-<li>Setup a new R-project</li>
-<li>Copy MTXQCvX2 files</li>
-<li><em>Knit with parameter:</em> <code>MTXQC_init.Rmd</code></li>
-<li>Copy input files extracted with Metmax into <code>input/metmax/</code></li>
-<li>Generate annotation and sample extracts file (see section <a href="14-FAQ.html#createannotation">14.1</a> &amp; <a href="14-FAQ.html#createsampleextracts">14.2</a>)</li>
-<li>Modify metabolite names in <code>conversion_metabolite.csv</code> column <strong>Metabolite_manual</strong></li>
-<li>Define the internal standard and/or alkanes in conversion_metabolite.csv (see section <a href="14-FAQ.html#definternal">14.3</a> &amp; (defalkanes))</li>
-<li><em>Knit with parameter:</em> <code>MTXQC_ExperimentalSetup</code></li>
-<li><em>Knit with parameter:</em> <code>MTXQC_part4.Rmd</code></li>
-<li><em>Knit with parameter:</em> <code>MTXQC_part1.Rmd</code></li>
-<li><em>Knit with parameter:</em> <code>MTXQC_part2.Rmd</code></li>
-<li>If required - proceed with <code>MTXQC_part3.Rmd</code> for ManualValidation</li>
+<li>Pre-warm LB and LM in the water bath</li>
+<li>Take a number of petri dishes (condition-wise including all biol. replicates)</li>
+<li>Discard cell culture media</li>
+<li>Carefully add <em>long term labeling</em> LM OR <em>short term labeling</em>: LB</li>
+<li>Incubate cells on the bench or in an incubator</li>
+<li>Discard LM (beaker)</li>
+<li>Add immediatly 5 ml of LB</li>
+<li>Rotate dish once in order to cover complete surface</li>
+<li>Meanwhile 2nd person get prepared with 5 ml ice-cold MeOH</li>
+<li>Discard LB into beaker and <em>immediatly</em> 2nd person quenches with ice-cold MeOH</li>
+<li>Collect cell extracts using cell lifter</li>
+<li>Transfer cell extracts into 15 ml falcons</li>
+<li>Store falcons on ice until further processing</li>
 </ol>
+<p>Repeat this procedure (step 6-10) for all dishes of a single condition first. Once MeOH is added metabolic processes are interrupted and cell extracts can be collected with the help of cell lifter without rush and subsequently transfered to 15 ml falcon and stored on ice until further processing (see chapter <a href="#ccextraction_meoh">Cell extraction methanolic extracts</a>).</p>
+<p>Determine the cell count using your additional petri dishes for each condition.</p>
 </div>
-<div id="tutorial-dataset" class="section level2">
-<h2><span class="header-section-number">4.3</span> Tutorial dataset</h2>
-<p>Birte test measurement</p>
-</div>
-<div id="in-detail" class="section level2">
-<h2><span class="header-section-number">4.4</span> In detail</h2>
-<div id="setup-a-new-r-project" class="section level3">
-<h3><span class="header-section-number">4.4.1</span> Setup a new R-project</h3>
-<p>R-projects provide a secure environment to handle your data from the processing in MTXQCvX2 until the final reports and analysis. Think about it as a big bubble containing and carrying all your data and analysis savely from one place to the other undisturbed of the outside changes.</p>
+<div id="psirm:suspension" class="section level3">
+<h3><span class="header-section-number">17.3.2</span> Supension cell cultures</h3>
+<p>Materials:</p>
 <ul>
-<li>Open R-studio and create a new project following: <code>File -&gt; New project -&gt; New Project -&gt; New Directory</code></li>
-<li>Call the directory <code>tutorial_metmax</code> and the preferred subdirectory.</li>
-<li>I recommend to start each project in a new session (tick the box at the bottom of the dialogue box).</li>
+<li>Cell culture flasks</li>
+<li>Labeling media (LM) supplemented with substrates</li>
+<li>5 ml pipette and tips<a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a></li>
+<li>1 ml pipette</li>
+<li>Beaker</li>
+<li>paper tissues</li>
+<li>Liquid nitrogen</li>
+<li>15 ml falcons</li>
+<li>1.5 ml eppendorf tubes</li>
+<li>Biological waste bin next to your bench</li>
 </ul>
+<p>Procedure:</p>
+<ol style="list-style-type: decimal">
+<li>Pre-warm LM in the water bath</li>
+<li>Determine the cell count of your cell suspension(s)</li>
+<li>Take aliquots of <span class="math inline">\(10-15e+6\)</span> cells and transfer into 15 ml falcon</li>
+<li>Spin down cells very gently 300 g, 2 min at room temperature</li>
+<li>Discard media into beaker</li>
+<li>Resuspend cells gently in three-times 1 ml<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a></li>
+<li>Incubate and keep warm</li>
+<li>Fractionate cell supension in three eppendorf tubes (3x 1 ml each)</li>
+<li>Spin down quickly in top-bench centrifuge<a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a></li>
+<li>Discard media blandtly on paper tissues</li>
+<li>Snap-freeze immediatly in liquid nitrogen</li>
+<li>Store cells until further processing (see chapter <a href="#ccextraction_susp">Cell extraction suspension cells</a>)</li>
+</ol>
+<p>The important step here to be quick is the alquotation of the cell suspension and subsequent spin down in the table centrifuge. Suspension cells are rather small, nevertheless <span class="math inline">\(3e+6\)</span> cells per extract are a good starting point for GC-MS measurements.</p>
 </div>
-<div id="copy-mtxqcvx2-template-files-1" class="section level3">
-<h3><span class="header-section-number">4.4.2</span> Copy MTXQCvX2 template files</h3>
+</div>
+<div id="hints-notes" class="section level2">
+<h2><span class="header-section-number">17.4</span> Hints &amp; notes</h2>
 <ul>
-<li>Download the current version of MTXQCvX2 called fluffy adventure<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></li>
-<li>Open and extract the zip-folder</li>
-<li>Copy all folders and files into your R-project <code>tutorial</code></li>
+<li>The only way to be reproducible and fast is to team up with a second person.</li>
+<li>Keep timing consistently through the experiment.</li>
+<li>Keep substrate concentrations constant throughout the experiment in all solutions.</li>
+<li>Supplement one stable isotopic labeled substrate with all remaining substrates in non-labeled form.</li>
+<li>Think about nutrient levels in your cell culture and your experimental conditions. Maybe you want to change things to physiological levels.</li>
+<li>Add additional plate to each condition in order to have material for western blotting and others.</li>
+<li>Check carefully the confluency of your dishes and determine seeding densities for different conditions.</li>
+<li>In case of small molecule inhibitors: Try to avoid to solve them in DMSO - strong impact on chromatography.</li>
 </ul>
-</div>
-<div id="process-mtxqc_init.rmd-1" class="section level3">
-<h3><span class="header-section-number">4.4.3</span> Process <code>MTXQC_init.Rmd</code></h3>
-<p>The module <code>MTXQC_init.Rmd</code> performs two important steps:
-1. Check-up package installation
-2. Creation of project-folder</p>
-<p>The project folder is supposed to provide a tidy structure while data processing and analysis and contains several pre-defined folder. Besides the following folders: <code>input</code>, <code>output</code> and `figures´ you see a detailed subfolder structure. You find more details about each folder and additional suggestion how to use project-folder in chapter <a href="5-init.html#init">5</a>.</p>
-<p>All you need to do is to process the <code>MTXQC_init.Rmd</code>. The following procedure is how you process all <code>.Rmd</code>-files of MTXQCvX2:</p>
-<ul>
-<li>Click on the small black triangle next to the ball of yarn in the R-Studio toolbar</li>
-<li>Choose <code>Knit with Parameters...</code></li>
-</ul>
-<p>If the <code>.Rmd</code>-file contains defined parameters a shiny dialogue pops up and provides an interactive selection based on the document. In the case of <code>MTXQC_init.Rmd</code> you are asked to define a so-called project-folder.</p>
-<ul>
-<li><strong>Define the name of the project-folder:</strong> <code>t_metmax</code></li>
-</ul>
-<p>Check in the files tab of R-Studio, browse through it and get familiar with the structure. This is the home of your metabolomics projects data analysis.</p>
-</div>
-<div id="copy-input-files-fom-tutorial-dataset" class="section level3">
-<h3><span class="header-section-number">4.4.4</span> Copy input files fom tutorial dataset</h3>
-<p><code>MTXQC_part4.Rmd</code> convienently transform spreadsheet kind of data extracted with Metmax into suitable input files in the style of Maui input files. You do not need necessarily provide all three kind of information (peak areas, MIDs and m/z 73 values). It depends on the scope and setup of your metabolomics experiment.</p>
-<p>If you need detailed instructions how to use metmax have a look at the section <a href="13-metmaxproc.html#metmaxproc">13</a>. The input files of the tutorial dataset have to be copied from `input/metmax/’ into your R-project and project folder at the same location.</p>
-<p>Copy the files into <code>tutorial/input/t_metmax/</code>:</p>
-<ul>
-<li>PeakAreas.csv and</li>
-<li>mz73.csv</li>
-<li>MIDs.csv</li>
-</ul>
-</div>
-<div id="copy-files-annotation.csv-and-sample_extracts.csv-1" class="section level3">
-<h3><span class="header-section-number">4.4.5</span> Copy files: <code>annotation.csv</code> and <code>Sample_extracts.csv</code></h3>
-<p>Both files contain important information about your metabolomics experiment and since these information are highly specific you need to create them on your own and save them in <code>project-folder/input/</code>.</p>
-<p>Browse to both files in the tutorial dataset, have a look at the content and copy both files into <code>t_metmax/input</code>.</p>
-<p><strong>The annotation file</strong></p>
-<p>The herein shown <em>annotation file</em> contains information about the eperimental conditions of each sample and measurement file. The columns <strong>File</strong> and <strong>Type</strong> are mandatory and the minimum content of an annotation file. Additional columns defining further conditions, like cell line or glucose level, are totally customizable to your preferences.</p>
-<p>Though, I suggest to set up a maximum of four parameter. If your project requires more try to create combinations. Later on this helps to visualise your data using MTXQC_part2. The number of parameters is limited by the availabily of diagram axes, facets and paper size. Subsequently written individual reports are independent of this and conditions could be split and extended without any limitations.</p>
-<p><strong>The sample extrats file</strong></p>
-<p>The <em>sample extracts</em> file specify the nature and volume / weight of the sample extracts. The columns <strong>Extract_vol</strong> and <strong>Unit</strong> (count, mg or ul) are mandatory here.</p>
-<p>The minimal file contains these two columns with at least one row / entry, e.g. <span class="math inline">\(1.5e+6\)</span> &amp; count. This would result into the association of <span class="math inline">\(1.5e+6\)</span> cells to each file.</p>
-<p>This file here in this tutorial shows cell extracts defined with the unit <em>count</em> for specific conditions. Please be aware that names of experimental conditions have to match between annotation and sample extracts file.</p>
-<p>Nevertheless it is not necessarily required to define for each combination of conditions a cell count. Please refer FAQs section <a href="14-FAQ.html#createannotation">14.1</a> and <a href="14-FAQ.html#createsampleextracts">14.2</a> for further information how to create and set up both files from the scretch.</p>
-</div>
-<div id="update-metabolite_manual-in-the-file-config_mtxconversion_metabolites.csv" class="section level3">
-<h3><span class="header-section-number">4.4.6</span> Update <code>Metabolite_manual</code> in the file <code>config_mtx/conversion_metabolites.csv</code></h3>
-<p>In order to automatically process through MTXQCvX2 you need to link the names of your intermediates given in ChromaToF with the corresponding metabolites in <code>conversion_metabolites.csv</code></p>
-<ul>
-<li>Open the file <code>conversion_metabolite.csv</code> and your peak area matrix file</li>
-<li>Update the column ‘Metabolite_manual’ with the choosen names</li>
-</ul>
-<p>I suggest to use always a similar format, e.g. <code>#Alanine_3TMS</code>. In case of the presence of main- (MP) and byproducts (BP) use: Metabolite_Derivate_MP/BP, e.g., Glucose_(1MEOX)(5TMS)_MP.
-In that way names keep short, easy to remember and effeciently setup in all other files like the metmax import list to extract the MIDs<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> for each intermediate.</p>
-</div>
-<div id="define-the-internal-standard-and-alkanes-in-config_mtxconversion_metabolites.csv" class="section level3">
-<h3><span class="header-section-number">4.4.7</span> Define the internal standard and alkanes in <code>config_mtx/conversion_metabolites.csv</code></h3>
-<p>Both information are specified in the column <code>Standard</code> with either <code>InternalStandard</code> or <code>Alk</code>, respectively. Furhtermore, we need to define cinnamic acid as internal standard and nine alkanes (c10-c36).</p>
-<p>The in-lab protocol considers nine alkanes from c10 to c36. Standard annotation includes an hashtag, e.g., #c10. Small fun fact: if you use this annotation even Metmax would be able to determine the retention index.</p>
-<p>To do so:</p>
-<ul>
-<li>Open the file: <code>config_mtx/conversion_metabolite.csv</code></li>
-<li>Scroll down to the entry <code>Cinnamic acid trans-, 1TMS</code></li>
-<li>Verify that <code>InternalStandard</code> is defined in the column <code>Standard</code></li>
-<li>Check the annotation of alkanes in <code>Metabolite_manual</code></li>
-<li>Define all nine with adding <code>Alk</code> in the column <code>Standard</code></li>
-</ul>
-</div>
-<div id="process-mtxqc_experimentalsetup.csv-1" class="section level3">
-<h3><span class="header-section-number">4.4.8</span> Process <code>MTXQC_ExperimentalSetup.csv</code></h3>
-<p>We are ready now to start processing the second module of the MTXQCvX2 called the Experimental Setup.
-In order to faciliate automated data processing throughout MTXQC files and parameters have to be defined beforehand for each project-folder.</p>
-<p>Defined parameters are saved in the file <code>MTXQC_params.csv</code> inside the project-folder for future reference enabling to move the project-folder independently of the remaining MTXQC-files. A huge advantage for debugging and sharing your project<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a></p>
-<p>Define the following parameter:</p>
-<ul>
-<li><strong>Define project-folder:</strong> t_metmax</li>
-<li><strong>Define input-format:</strong> metmax</li>
-<li><strong>Name of annotation file:</strong> annotation.csv</li>
-<li><strong>Name of sample extracts file:</strong> sample_extracts.csv</li>
-<li><strong>Type of experiment:</strong> pSIRM</li>
-<li><strong>Applied 13C-substrates:</strong> glc</li>
-<li><strong>Internal standard:</strong> check</li>
-<li><strong>Type of samples:</strong> cell extracts</li>
-<li><strong>Additional calibration curves:</strong> no</li>
-<li><strong>Integrate add. calibration curves:</strong> no</li>
-<li><strong>Quantification standards:</strong> Quant1_v4</li>
-<li><strong>Volume polar phase of Quants:</strong> 500</li>
-<li><strong>Technical replicates:</strong><a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> 2</li>
-</ul>
-<p>Confirm the parameter and file definition and wait a moment. Check if you can find the file <code>MTXQC_params.csv</code>.</p>
-<p>Have a look at the produced pdf-file and check the comments and messages. Throughout MTXQCvX2 messages inform about:
-* Successfull data imports
-* Fatal errors causing an automatic stop of data processing and
-* Warnings pointing towards things that should be checked before moving to the next step.</p>
-</div>
-<div id="process-mtxqc_part4.rmd" class="section level3">
-<h3><span class="header-section-number">4.4.9</span> Process <code>MTXQC_part4.Rmd</code></h3>
-<p>Now everything is prepared to transform our spreadsheet data into proper MTXQCvX2 input files. Please go ahead and define the following parameter to run <code>MTXQC_part4.Rmd</code>:</p>
-<ul>
-<li><strong>Project folder:</strong> t_metmax</li>
-<li><strong>File containing peak areas:</strong> PeakAreas.csv</li>
-<li><strong>File containing mz 73 values:</strong> mz73.csv</li>
-<li><strong>File containing MIDs:</strong> MIDs.csv</li>
-<li><strong>Generate file for internal standard:</strong> (check)</li>
-<li><strong>Generate file for alkanes:</strong> (check)</li>
-<li><strong>Generate file for sum of area normalisation:</strong> (check)</li>
-<li><strong>Generate ManualQuantTable and samples file:</strong> (check)</li>
-<li><strong>Determine isotope incorporation:</strong> (check)</li>
-</ul>
-<p>After the successfull processing you should find the parameter file <code>Metmax_params.csv</code> inside your project folder, as well as all files in their correct <code>input-folders</code>.</p>
-<p>Have a look and check if you got all of them and have a look at the messages in the <code>MTXQC_part4.Rmd</code> report.</p>
-</div>
-<div id="process-mtxqc_part1.rmd-1" class="section level3">
-<h3><span class="header-section-number">4.4.10</span> Process <code>MTXQC_part1.Rmd</code></h3>
-<p>Since we have defined all required input parameter the main module is ready to run after the definition of only three parameter:</p>
-<ul>
-<li><strong>Definition of the project-folder:</strong> t_metmax</li>
-<li><strong>Type of data:</strong> metmax</li>
-<li><strong>Manual validated data:</strong> none</li>
-</ul>
-<p>Also here, scroll carefully through the generated pdf-file and have a look at the messages. If all works out it doesn’t matter, but it might help to know what should be written if you end up with an error message instead of.</p>
-<p>Each generated graphic is going to be explained in detail in chapter <a href="7-part1.html#part1">7</a>. For now please refer to my phd thesis <span class="citation">(Zasada <a href="#ref-Zasada2017">2017</a>)</span>.</p>
-<p>All quality metrices are visualised on the last page of the report split into two heatmaps:</p>
-<ul>
-<li>GC-performance (orange): across all measurements</li>
-<li>Quantification &amp; isotope incorporation (blue): for each intermediate individually, but across all exp. conditions</li>
-</ul>
-<p>Besides the generation of the MTXQC_part1 report several <code>csv-files</code> are exported into the output folder summarising statistics of all quality control metrices. The content of each file is summarised in the dictionary of tables (chapter <a href="15-tables.html#tables">15</a>).</p>
-<p>The most important file <code>CalculationFileData.csv</code> summarises all experimental conditions, normalisation factors as well as information about calibration curve parameter and derived quantities. You find this file here - <code>project-folder/output/quant/</code>.</p>
-<p>It is worth to open this file in a program of your choice and check for a selected intermediate the content. Wrong assignments of conditions in the annotation or sample extracts-file might cause duplication of values, easily to identify if exactly the same peak areas, so the same file, appears multiple times.</p>
-<p><code>CalculationFileData.csv</code> is all about the absolute quantities and data normalisation. Why does it not contain information about isotope incorporation you might ask. Well, depending on the experimental setup you might follow different ways how to combine both entities. Furthermore <code>MTXQC_part1.Rmd</code> is not about doing any processing of the data in the sense of analysis or statistics<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>. It is supposed to assess the quality meaning the evaluation of the mass isotopomer distributions (MIDs) that are the basis for the calculation of the isotope incorporation.</p>
-<p>The next module has been set up to give you a first quick report about the content of your data performing basic post processing steps inclduing the statistics part.</p>
-</div>
-<div id="process-mtxqc_part2.rmd-1" class="section level3">
-<h3><span class="header-section-number">4.4.11</span> Process <code>MTXQC_part2.Rmd</code></h3>
-<p>This module aims to provide you a quick overview of your data. It generates, based on your parameter definition while processing this file, statistics of quantities for each intermediate as well as isotope incorporation and 13C-labeled quantities.</p>
-<p>A senseful association of your experimental parameter might provide you even ready-to-show plots for a presentation or report. Different color schemes are in place to meet your personal taste - play a bit and find your favorite ;).</p>
-<p>All kind of outputs (graphics, statistics) are saved at <code>output/quant/...</code> into a day-specific folder<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>, meaning if you repeat the same analysis several times a day the content is replaced with each run<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>. Simply modify the folder name to avoid this behaviour. If you go on with your analysis the next or another day a new folder is created.</p>
-<p>Go and process this module with the following parameter:</p>
-<ul>
-<li><strong>Project-folder:</strong> t_metmax</li>
-<li><strong>Type of analysis:</strong> less_stringent</li>
-<li><strong>Internal standard:</strong> QC<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a></li>
-<li><strong>Quantitative value:</strong> InstStd_Conc_pmio<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a></li>
-<li><strong>par1:</strong> Time</li>
-<li><strong>par2:</strong> CL</li>
-<li><strong>par3:</strong> none</li>
-<li><strong>par4:</strong> none</li>
-<li><strong>updated:</strong> none</li>
-<li><strong>pre-defined color scheme:</strong> choose yourself</li>
-</ul>
-<p>Feel free to add further plots at the end of this report if required or define your project specific color code at the beginning of the document.</p>
-<p>I recommend to use the output of <code>MTXQC_part2.Rmd</code> as a kind of overall visualisation of the data. Specific questions might be addressed in smaller reports using the output-files of <code>MTXQC_part2.Rmd</code>.</p>
-<p>I furthermore suggest to process both type of analysis - stringent and less stringent - to get an impression at what points the manual validation of distinct intermediates might be useful.</p>
-</div>
-</div>
-<div id="at-the-end-1" class="section level2">
-<h2><span class="header-section-number">4.5</span> At the end…</h2>
-<p>So far you have used MTXQCvX2 to generate two reports:
-1. one summarising the quality of the generated data and
-2. a first statistical overview about the content of your data.</p>
-<p>With this the tutorial ends and refers to the plenty of detailed information scattered in a number of additional chapters of this documentation.
-The FAQ section tries to guide you through more specific settings and introduces you to the flexibility of MTXQCvX2.</p>
-<p>Since every metabolomics experiment has it’s own purpose and reasoning I want to point out, that MTXQCvX2 does not want to provide a magical tool giving the perfect solution for everyone. It rather tries to provide a common platform for discussions, information exchange and inspiration by reducing the time that has to be spend on “the boring part of research”. There is no limit to make MTXQC your own perfect tool writing your own reports and extensions. Feel free and hoepfully motivated to share your report as a template with your colleagues.</p>
 
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Zasada2017">
-<p>Zasada, Christin. 2017. “Experimental and Mathematical Analysis of the Central Carbon Metabolism in Cancer and Stem Cells.” <em>Humboldt University</em>, February.</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="9">
-<li id="fn9"><p><a href="http://gmd.mpimp-golm.mpg.de/apps/metmax/default.htm" class="uri">http://gmd.mpimp-golm.mpg.de/apps/metmax/default.htm</a><a href="4-metmax.html#fnref9" class="footnote-back">↩</a></p></li>
-<li id="fn10"><p>github.com/ChrisZasada/fluffy_adventure<a href="4-metmax.html#fnref10" class="footnote-back">↩</a></p></li>
-<li id="fn11"><p>Mass isotopomer distribution<a href="4-metmax.html#fnref11" class="footnote-back">↩</a></p></li>
-<li id="fn12"><p>Just zip-file the project-folder and send it via mail.<a href="4-metmax.html#fnref12" class="footnote-back">↩</a></p></li>
-<li id="fn13"><p>Also called backups<a href="4-metmax.html#fnref13" class="footnote-back">↩</a></p></li>
-<li id="fn14"><p>Quality metrices are a different pair of shoes here and are not data per se<a href="4-metmax.html#fnref14" class="footnote-back">↩</a></p></li>
-<li id="fn15"><p>Called: Date_PostProcessing_AnalysisParam_QuantitativeValue<a href="4-metmax.html#fnref15" class="footnote-back">↩</a></p></li>
-<li id="fn16"><p>Same thing for the generated pdf-report so I recommend to move it into the post processing folder for future reference<a href="4-metmax.html#fnref16" class="footnote-back">↩</a></p></li>
-<li id="fn17"><p>meaning, that all the internal standard has to be within a defined range of variation, files with higher variation are excluded from the analysis<a href="4-metmax.html#fnref17" class="footnote-back">↩</a></p></li>
-<li id="fn18"><p>Translated: Normalised (regarding the internal standard) quantities in (pmol/1e+6 cells)<a href="4-metmax.html#fnref18" class="footnote-back">↩</a></p></li>
+<ol start="41">
+<li id="fn41"><p>Pelleting these cells and snap-freezing might give usefull additional samples for western blotting.<a href="17-psirm.html#fnref41" class="footnote-back">↩</a></p></li>
+<li id="fn42"><p>I would rather recommend this up to 2 min of labeling<a href="17-psirm.html#fnref42" class="footnote-back">↩</a></p></li>
+<li id="fn43"><p>Not required for short term labeling<a href="17-psirm.html#fnref43" class="footnote-back">↩</a></p></li>
+<li id="fn44"><p>Highly recommended, makes labeling and harvest super quick<a href="17-psirm.html#fnref44" class="footnote-back">↩</a></p></li>
+<li id="fn45"><p>Highly recommended, makes labeling and harvest super quick<a href="17-psirm.html#fnref45" class="footnote-back">↩</a></p></li>
+<li id="fn46"><p>To generate three replicates<a href="17-psirm.html#fnref46" class="footnote-back">↩</a></p></li>
+<li id="fn47"><p>Most of the times 30 s are already enough<a href="17-psirm.html#fnref47" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -528,8 +467,8 @@ The FAQ section tries to guide you through more specific settings and introduces
           </div>
         </div>
       </div>
-<a href="3-maui.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="5-init.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="16-protocols.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="18-gcms.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

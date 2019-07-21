@@ -1745,6 +1745,91 @@ In case you want to define more than one pair of m/z-values have a look at the d
 
 ** \texttt{mid\_backups.csv}
 
+\hypertarget{maui-incorp}{%
+\section{How do I define a new mass couple for the automated export of the incorporation in MAUI}\label{maui-incorp}}
+
+Three files have to be updated in order to export the incorporation directly in MAUI. Detailed descriptions are stated for each file separately below.
+
+** \texttt{pSIRM-MassRanges-ForIncorp\_v3.txt}
+
+This file contains the following information for each intermediates:
+
+\begin{itemize}
+\tightlist
+\item
+  Metabolite name, shortened version (\emph{Alanine}, further details below)
+\item
+  Derivate ( \emph{(3TMS)})
+\item
+  Lettercode (\emph{Ala})
+\item
+  Starting mass of the fragment (m\_0, \emph{188})
+\item
+  End mass of the fragment (m\_end, \emph{191})
+\item
+  Mass of interest (m\_inc, \emph{190})
+\end{itemize}
+
+The metabolite name that has to be defined has to fulfill specific criteria, otherwise MAUI won't be able to extract the correct intermediate. Copy the library name in case you have to add a new metabolite and shorten the name, take care of existing white spaces.
+
+Let's consider these different cases:
+
+\begin{itemize}
+\tightlist
+\item
+  Alanine, Aspartic acid: Intermediates and their different derivates, single m\_inc
+\item
+  Fructose\_: Intermediates with main- and by-products
+\item
+  Pyruvic acid\_: Unique part of the metabolite name to exclude close related intermediates, e.g.~Pyruvic acid, 3-hydroxy
+\item
+  Citric acid 275: Multiple mass couples per intermediate
+\end{itemize}
+
+** \texttt{Natural\_MIDs\_v3.txt}
+
+You need to define the natural distribution for each intermediate, derivate and defined mass couple. In case of multiple mass couples, e.g.~Citric acid 275, Citric acid 276, you need to add the same MID multiple times.
+
+The following information are listed:
+
+\begin{itemize}
+\tightlist
+\item
+  Metabolite name: simplified version
+\item
+  Derivate (\emph{(2TMS)})
+\item
+  Mass m/z
+\item
+  Intensity values
+\item
+  Mass isotopomer distribution
+\end{itemize}
+
+** \texttt{pSIRM-MassRanges-ForQuant\_v3.txt}
+
+This file originiates back to the beginning of the development of pSIRM methodologies. Back then we determined the quantities for metabolites, which areaffected by the incorporation of stable isotopes, by summarising all intensities of the fragment masses from m\_0 to m\_end.
+
+Nowadays we do not use this approach any more. Nevertheless you need to add the information to this file to maintain a sufficient processing using MAUI.
+
+File content:
+
+\begin{itemize}
+\tightlist
+\item
+  Metabolite name, taking care of name specifics, described before
+\item
+  Derivate (\emph{(3TMS)})
+\item
+  Lettercode
+\item
+  Starting mass of the fragment m\_0
+\item
+  End mass of the fragment m\_end
+\item
+  Mass of interest m\_inc
+\end{itemize}
+
 \hypertarget{howmanval-chroma}{%
 \section{How do I prepare my data in ChromaToF for manual data validation}\label{howmanval-chroma}}
 
@@ -2196,15 +2281,6 @@ N\_count & Number of evaluated MIDs & 54\\
 
 \hypertarget{files-for-metmax-processing}{%
 \section{Files for Metmax-processing}\label{files-for-metmax-processing}}
-
-\hypertarget{FAQ}{%
-\chapter{Frequently Asked Questions}\label{FAQ}}
-
-\hypertarget{what-are-additional-quantification-standards}{%
-\section{What are additional quantification standards}\label{what-are-additional-quantification-standards}}
-
-\hypertarget{how-do-i-extend-conversion_metabolite.csv}{%
-\section{How do I extend conversion\_metabolite.csv}\label{how-do-i-extend-conversion_metabolite.csv}}
 
 \hypertarget{protocols}{%
 \chapter{Appendix - Protocols}\label{protocols}}

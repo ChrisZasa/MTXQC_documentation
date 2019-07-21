@@ -97,6 +97,57 @@ In case you want to define more than one pair of m/z-values have a look at the d
 
 ** `mid_backups.csv`
 
+## How do I define a new mass couple for the automated export of the incorporation in MAUI{#maui-incorp} 
+
+Three files have to be updated in order to export the incorporation directly in MAUI. Detailed descriptions are stated for each file separately below.
+
+** `pSIRM-MassRanges-ForIncorp_v3.txt`
+
+This file contains the following information for each intermediates:
+
+  * Metabolite name, shortened version (_Alanine_, further details below)
+  * Derivate ( _(3TMS)_)
+  * Lettercode (_Ala_)
+  * Starting mass of the fragment (m_0, _188_)
+  * End mass of the fragment (m_end, _191_)
+  * Mass of interest (m_inc, _190_)
+  
+The metabolite name that has to be defined has to fulfill specific criteria, otherwise MAUI won't be able to extract the correct intermediate. Copy the library name in case you have to add a new metabolite and shorten the name, take care of existing white spaces.
+
+Let's consider these different cases:
+
+  * Alanine, Aspartic acid: Intermediates and their different derivates, single m_inc 
+  * Fructose_: Intermediates with main- and by-products
+  * Pyruvic acid_: Unique part of the metabolite name to exclude close related intermediates, e.g. Pyruvic acid, 3-hydroxy 
+  * Citric acid 275: Multiple mass couples per intermediate
+  
+** `Natural_MIDs_v3.txt`
+
+You need to define the natural distribution for each intermediate, derivate and defined mass couple. In case of multiple mass couples, e.g. Citric acid 275, Citric acid 276, you need to add the same MID multiple times.
+
+The following information are listed:
+
+  * Metabolite name: simplified version
+  * Derivate (_(2TMS)_)
+  * Mass m/z
+  * Intensity values
+  * Mass isotopomer distribution
+
+** `pSIRM-MassRanges-ForQuant_v3.txt`
+
+This file originiates back to the beginning of the development of pSIRM methodologies. Back then we determined the quantities for metabolites, which areaffected by the incorporation of stable isotopes, by summarising all intensities of the fragment masses from m_0 to m_end.
+
+Nowadays we do not use this approach any more. Nevertheless you need to add the information to this file to maintain a sufficient processing using MAUI. 
+
+File content:
+
+  * Metabolite name, taking care of name specifics, described before
+  * Derivate (_(3TMS)_)
+  * Lettercode
+  * Starting mass of the fragment m_0
+  * End mass of the fragment m_end
+  * Mass of interest m_inc
+
 
 ## How do I prepare my data in ChromaToF for manual data validation{#howmanval-chroma}
 
